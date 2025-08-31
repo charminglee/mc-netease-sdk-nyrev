@@ -1,0 +1,295 @@
+<component name="InspectionProjectProfileManager">
+  <profile version="1.0" is_locked="false">
+    <option name="myName" value="Project Default" />
+    <inspection_tool class="AngularAmbiguousComponentTag" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularBindingTypeMismatch" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularCliAddDependency" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="AngularDeferBlockOnTrigger" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularForBlockNonIterableVar" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularIllegalForLoopTrackAccess" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularInaccessibleSymbol" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularIncorrectBlockUsage" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularIncorrectLetUsage" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularIncorrectTemplateDefinition" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularInsecureBindingToEvent" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="AngularInvalidAnimationTriggerAssignment" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularInvalidEntryComponent" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularInvalidI18nAttribute" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="AngularInvalidImportedOrDeclaredSymbol" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularInvalidSelector" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularInvalidTemplateReferenceVariable" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularMissingEventHandler" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularMissingOrInvalidDeclarationInModule" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularMissingRequiredDirectiveInputBinding" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularMultipleStructuralDirectives" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularNgOptimizedImage" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="AngularNonEmptyNgContent" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularNonStandaloneComponentImports" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularRecursiveModuleImportExport" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularUndefinedBinding" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularUndefinedModuleExport" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularUndefinedTag" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularUnresolvedPipe" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularUnsupportedSyntax" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="AngularUnusedComponentImport" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="BeatScheduleCeleryTaskInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CheckImageSize" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ComposeErroneousRelation" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ComposeMissingKeys" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ComposeUnknownKeys" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ComposeUnknownValues" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="ComposeUnquotedPorts" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConstanceFieldsetsMissingInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ConstanceSettingUsageInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="CustomRegExpInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DbtConfigurationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DevContainerIdeSettings" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="DevcontainerFolder" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="DjangoBrokenLineCommentInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoCloseTagInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoOrmInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoRelationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoUnresolvedFilterInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoUnresolvedLoadInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoUnresolvedStaticReferenceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoUnresolvedTagInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoUnresolvedTemplateReferenceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DjangoUnresolvedUrlInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="DjangoUrlArgumentsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DockerFileAddOrCopyPaths" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DockerFileArgumentCount" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="DockerFileAssignments" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="DockerFileDuplicatedStageName" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="DockerFileEntrypointWithoutExec" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DockerFileRunCommandMissingContinuation" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="DockerJsonFormStringLiterals" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicatedBlockNamesInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="DuplicatedCode" enabled="false" level="WEAK WARNING" enabled_by_default="false">
+      <Languages>
+        <language minSize="285" name="Python" />
+      </Languages>
+    </inspection_tool>
+    <inspection_tool class="EndBlockNamesInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="ExtendsTagPositionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="GrazieInspection" enabled="true" level="GRAMMAR_ERROR" enabled_by_default="true" />
+    <inspection_tool class="HtmlDeprecatedAttribute" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlDeprecatedTag" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlFormInputWithoutLabel" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlNonExistentInternetResource" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="HtmlPresentationalElement" enabled="false" level="INFORMATION" enabled_by_default="false" />
+    <inspection_tool class="HtmlRequiredAltAttribute" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredLangAttribute" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HtmlRequiredSummaryAttribute" enabled="false" level="INFORMATION" enabled_by_default="false" />
+    <inspection_tool class="HtmlRequiredTitleAttribute" enabled="false" level="INFORMATION" enabled_by_default="false" />
+    <inspection_tool class="HtmlRequiredTitleElement" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpClientDuplicateImportInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpClientInappropriateProtocolUsageInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpClientRunRequestNameInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpClientUnresolvedAuthId" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="HttpClientUnresolvedVariable" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestAmbiguityEncoding" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestContentLengthIsIgnored" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestCustomHttpMethodInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestEnvironmentAuthConfigurationValidationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestJsonBodyInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestPlaceholder" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestRequestSeparatorJsonBodyInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestRequestSeparatorXmlBodyInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestRequestSeparatorYamlBodyInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpRequestWhitespaceInsideRequestTargetPath" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="HttpUrlsUsage" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="IgnoreCoverEntry" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="IgnoreDuplicateEntry" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="IgnoreIncorrectEntry" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="IgnoreRelativeEntry" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="IgnoreSyntaxEntry" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="IncorrectHttpHeaderInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="InjectedReferences" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="JsonStandardCompliance" enabled="true" level="ERROR" enabled_by_default="true">
+      <option name="myWarnAboutComments" value="false" />
+    </inspection_tool>
+    <inspection_tool class="KarmaConfigFile" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="LanguageDetectionInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="LessResolvedByNameOnly" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="LessUnresolvedMixin" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="LessUnresolvedVariable" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MongoJSDeprecationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MongoJSExtDeprecationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MongoJSExtResolveInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MongoJSExtSideEffectsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MongoJSResolveInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MongoJSSideEffectsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MsBuiltinInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MsOrderByInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="MysqlLoadDataPathInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MysqlParsingInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="MysqlSpaceAfterFunctionNameInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="OraMissingBodyInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="OraOverloadInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="OraUnmatchedForwardDeclarationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="PgSelectFromProcedureInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PostCssCustomMedia" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="PostCssCustomSelector" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="PostCssMediaRange" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="PostCssNesting" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PostCssUnresolvedModuleValueReference" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="Puppet3Deprecations" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="Puppet4Deprecations" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PuppetMultipleHashSetParamsPerResourceInstance" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="PuppetUnresolved" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyAugmentAssignmentInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="PyBroadExceptionInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyChainedComparisonsInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoreConstantInTheMiddle" value="true" />
+    </inspection_tool>
+    <inspection_tool class="PyClassHasNoInitInspection" enabled="false" level="TEXT ATTRIBUTES" enabled_by_default="false" editorAttributes="CONSIDERATION_ATTRIBUTES" />
+    <inspection_tool class="PyCompatibilityInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ourVersions">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="2.7" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyInconsistentReturnsInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyMandatoryEncodingInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="myEncodingFormatIndex" value="1" />
+    </inspection_tool>
+    <inspection_tool class="PyMethodMayBeStaticInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyOldStyleClassesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="E251" />
+          <option value="E302" />
+          <option value="E501" />
+          <option value="E722" />
+          <option value="E303" />
+          <option value="W391" />
+          <option value="E101" />
+          <option value="E306" />
+          <option value="E731" />
+          <option value="W191" />
+          <option value="E741" />
+          <option value="E305" />
+          <option value="E701" />
+          <option value="E127" />
+          <option value="E301" />
+          <option value="E402" />
+          <option value="E221" />
+          <option value="E272" />
+          <option value="E203" />
+          <option value="E222" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyPep8NamingInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
+      <option name="ignoredErrors">
+        <list>
+          <option value="N802" />
+          <option value="N803" />
+          <option value="N806" />
+          <option value="N801" />
+          <option value="N813" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyProtectedMemberInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyRedeclarationInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyShadowingNamesInspection" enabled="false" level="WEAK WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyStatementEffectInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="PyTypeCheckerInspection" enabled="true" level="TEXT ATTRIBUTES" enabled_by_default="true" editorAttributes="CONSIDERATION_ATTRIBUTES" />
+    <inspection_tool class="PyUnresolvedReferencesInspection" enabled="true" level="WARNING" enabled_by_default="true" editorAttributes="WARNING_ATTRIBUTES">
+      <option name="ignoredIdentifiers">
+        <list>
+          <option value="_collections_abc.dict_keys.__add__" />
+          <option value="xrange" />
+          <option value="long" />
+          <option value="_collections_abc.dict_keys.__add__" />
+          <option value="dict.viewkeys" />
+          <option value="dict.viewvalues" />
+          <option value="dict.viewitems" />
+          <option value="dict.iteritems" />
+          <option value="dict.iterkeys" />
+          <option value="dict.itervalues" />
+          <option value="unicode" />
+          <option value="raw_input" />
+          <option value="typing_extensions.deprecated" />
+        </list>
+      </option>
+    </inspection_tool>
+    <inspection_tool class="PyUnusedLocalInspection" enabled="true" level="WEAK WARNING" enabled_by_default="true" editorAttributes="NOT_USED_ELEMENT_ATTRIBUTES" />
+    <inspection_tool class="ReassignedToPlainText" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SSBasedInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SassScssResolvedByNameOnly" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="SassScssUnresolvedMixin" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SassScssUnresolvedPlaceholderSelector" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SassScssUnresolvedVariable" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlAddNotNullColumnInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlAggregatesInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlAmbiguousColumnInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlAutoIncrementDuplicateInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlCallNotationInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="SqlCaseVsCoalesceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlCaseVsIfInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlCheckUsingColumnsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlConstantExpressionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlCurrentSchemaInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlDeprecateTypeInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlDerivedTableAliasInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlDialectInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlDropIndexedColumnInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlDtInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlDuplicateColumnInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlGotoInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlIdentifierInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlIllegalCursorStateInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlInsertIntoGeneratedColumnInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlInsertNullIntoNotNullInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlInsertValuesInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlJoinCountInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlJoinWithoutOnInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlMisleadingReferenceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlMissingColumnAliasesInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlMissingReturnInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="SqlMultipleLimitClausesInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlNamedArgumentsInspection" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="SqlNoDataSourceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantAliasInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantCodeInCoalesceInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantElseNullInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantLimitInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlRedundantOrderingDirectionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlResolveInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="SqlShadowingAliasInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlShouldBeInGroupByInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlSideEffectsInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlSignatureInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlSingleSessionModeInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlStorageInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlStringLengthExceededInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlTransactionStatementInTriggerInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlTriggerTransitionInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlTypeInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlUnicodeStringLiteralInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlUnreachableCodeInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlUnusedCteInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlUnusedSubqueryItemInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlUnusedVariableInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SqlWithoutWhereInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="Stylelint" enabled="false" level="ERROR" enabled_by_default="false" />
+    <inspection_tool class="SwJsonMaybeSpecificationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SwJsonUnresolvedReferencesInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="SwYamlMaybeSpecificationInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="SwYamlUnresolvedReferencesInspection" enabled="true" level="ERROR" enabled_by_default="true" />
+    <inspection_tool class="TsLint" enabled="false" level="WARNING" enabled_by_default="false" />
+    <inspection_tool class="VueDataFunction" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="VueDeprecatedSymbol" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="VueDuplicateTag" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="VueMissingComponentImportInspection" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="VueUnrecognizedDirective" enabled="true" level="WARNING" enabled_by_default="true" />
+    <inspection_tool class="VueUnrecognizedSlot" enabled="true" level="WEAK WARNING" enabled_by_default="true" />
+    <inspection_tool class="WebpackConfigHighlighting" enabled="true" level="WARNING" enabled_by_default="true" />
+  </profile>
+</component>

@@ -73,8 +73,6 @@ dmypy.json
 
 
 ### JetBrains IDEs
-.idea/GitCommitMessageStorage.xml
-
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
@@ -155,3 +153,6 @@ http-client.private.env.json
 # Apifox Helper cache
 .idea/.cache/.Apifox_Helper
 .idea/ApifoxUploaderProjectSetting.xml
+
+.idea/GitCommitMessageStorage.xml
+/.idea/git_toolbox_prj.xml

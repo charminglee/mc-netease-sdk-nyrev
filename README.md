@@ -34,3 +34,4 @@ pip install mc-netease-sdk-nyrev
 ### 其他修正
 
 1. 移除`MC`文件夹（无用文件）、`Meta`与`Preset`文件夹（零件相关模块）。
+2. 移除`mod_log.py`模块。

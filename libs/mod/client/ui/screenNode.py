@@ -1,11 +1,17 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from mod.client.ui.screenNode import ScreenNode
-from typing import List
-from typing import Tuple
+if 0:
+    from mod.client.ui.screenNode import ScreenNode
+    from typing import List
+    from typing import Tuple
+
 
 class ScreenNode(object):
+    def __init__(self, namespace, name, param=None):
+        pass
+
     def SetBindWorldPosition(self, dimension, position):
         # type: (int, Tuple[float,float,float]) -> 'bool'
         """
@@ -242,5 +248,5 @@ class ScreenNode(object):
         """
         根据路径获取BaseUIControl实例
         """
-        pass
+        return BaseUIControl(self, path)
 

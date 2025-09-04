@@ -1,25 +1,34 @@
 # -*- coding: utf-8 -*-
 
-from mod.client.ui.controls.minimapUIControl import MiniMapUIControl
-from mod.client.ui.controls.inputPanelUIControl import InputPanelUIControl
-from mod.client.ui.controls.itemRendererUIControl import ItemRendererUIControl
-from mod.client.ui.controls.neteaseComboBoxUIControl import NeteaseComboBoxUIControl
-from mod.client.ui.controls.progressBarUIControl import ProgressBarUIControl
-from mod.client.ui.controls.buttonUIControl import ButtonUIControl
-from mod.client.ui.controls.switchToggleUIControl import SwitchToggleUIControl
-from mod.client.ui.controls.imageUIControl import ImageUIControl
-from mod.client.ui.controls.stackPanelUIControl import StackPanelUIControl
-from typing import Tuple
-from mod.client.ui.controls.selectionWheelUIControl import SelectionWheelUIControl
-from mod.client.ui.controls.textEditBoxUIControl import TextEditBoxUIControl
-from mod.client.ui.controls.gridUIControl import GridUIControl
-from mod.client.ui.controls.labelUIControl import LabelUIControl
-from mod.client.ui.controls.neteasePaperDollUIControl import NeteasePaperDollUIControl
-from mod.client.ui.controls.baseUIControl import BaseUIControl
-from mod.client.ui.controls.scrollViewUIControl import ScrollViewUIControl
-from mod.client.ui.controls.sliderUIControl import SliderUIControl
 
-class BaseUIControl():
+if 0:
+    from mod.client.ui.controls.minimapUIControl import MiniMapUIControl
+    from mod.client.ui.controls.inputPanelUIControl import InputPanelUIControl
+    from mod.client.ui.controls.itemRendererUIControl import ItemRendererUIControl
+    from mod.client.ui.controls.neteaseComboBoxUIControl import NeteaseComboBoxUIControl
+    from mod.client.ui.controls.progressBarUIControl import ProgressBarUIControl
+    from mod.client.ui.controls.buttonUIControl import ButtonUIControl
+    from mod.client.ui.controls.switchToggleUIControl import SwitchToggleUIControl
+    from mod.client.ui.controls.imageUIControl import ImageUIControl
+    from mod.client.ui.controls.stackPanelUIControl import StackPanelUIControl
+    from typing import Tuple
+    from mod.client.ui.controls.selectionWheelUIControl import SelectionWheelUIControl
+    from mod.client.ui.controls.textEditBoxUIControl import TextEditBoxUIControl
+    from mod.client.ui.controls.gridUIControl import GridUIControl
+    from mod.client.ui.controls.labelUIControl import LabelUIControl
+    from mod.client.ui.controls.neteasePaperDollUIControl import NeteasePaperDollUIControl
+    from mod.client.ui.controls.scrollViewUIControl import ScrollViewUIControl
+    from mod.client.ui.controls.sliderUIControl import SliderUIControl
+
+
+class BaseUIControl(object):
+    def __init__(self, sn, path):
+        self.__path = path
+        self.__sn = sn
+
+    def FullPath(self):
+        return self.__module__ + self.__path
+
     def SetPosition(self, pos):
         # type: (Tuple[float,float]) -> 'None'
         """
@@ -95,7 +104,7 @@ class BaseUIControl():
         """
         获取控件的裁剪偏移信息
         """
-        pass
+        return (1, 1)
 
     def SetClipsChildren(self, clipsChildren):
         # type: (bool) -> 'bool'
@@ -109,7 +118,7 @@ class BaseUIControl():
         """
         根据控件路径返回某控件是否开启裁剪内容
         """
-        pass
+        return False
 
     def SetMaxSize(self, maxSize):
         # type: (Tuple[float,float]) -> 'bool'
@@ -123,7 +132,7 @@ class BaseUIControl():
         """
         获取控件所允许的最大的大小值
         """
-        pass
+        return (1, 1)
 
     def SetMinSize(self, minSize):
         # type: (Tuple[float,float]) -> 'bool'
@@ -137,21 +146,21 @@ class BaseUIControl():
         """
         获取控件所允许的最小的大小值
         """
-        pass
+        return (1, 1)
 
     def GetPosition(self):
         # type: () -> 'Tuple[float,float]'
         """
         获取控件相对父节点的坐标
         """
-        pass
+        return (1, 1)
 
     def GetGlobalPosition(self):
         # type: () -> 'Tuple[float,float]'
         """
         获取控件全局坐标
         """
-        pass
+        return (1, 1)
 
     def SetSize(self, size, resizeChildren=False):
         # type: (Tuple[float,float], bool) -> 'None'
@@ -165,7 +174,7 @@ class BaseUIControl():
         """
         获取控件的大小
         """
-        pass
+        return (1, 1)
 
     def SetVisible(self, visible, forceUpdate=True):
         # type: (bool, bool) -> 'None'
@@ -179,7 +188,7 @@ class BaseUIControl():
         """
         根据控件路径返回某控件是否已显示
         """
-        pass
+        return True
 
     def SetTouchEnable(self, enable):
         # type: (bool) -> 'None'
@@ -207,21 +216,21 @@ class BaseUIControl():
         """
         返回当前控件的相对路径，路径从画布节点开始算起
         """
-        pass
+        return self.__path
 
     def GetChildByName(self, childName):
         # type: (str) -> 'BaseUIControl'
         """
         根据子控件的名称获取BaseUIControl实例
         """
-        pass
+        return BaseUIControl(self.__sn, self.__path + "/" + childName)
 
     def GetChildByPath(self, childPath):
         # type: (str) -> 'BaseUIControl'
         """
         根据相对路径获取BaseUIControl实例
         """
-        pass
+        return BaseUIControl(self.__sn, self.__path + childPath)
 
     def resetAnimation(self):
         # type: () -> 'None'
@@ -284,126 +293,142 @@ class BaseUIControl():
         """
         控件是否对名称为animName的动画进行了注册回调
         """
-        pass
+        return False
 
     def asLabel(self):
         # type: () -> 'LabelUIControl'
         """
         将当前BaseUIControl转换为LabelUIControl实例，如当前控件非Label类型则返回None
         """
-        pass
+        from mod.client.ui.controls.labelUIControl import LabelUIControl
+        LabelUIControl(self.__sn, self.__path)
 
     def asButton(self):
         # type: () -> 'ButtonUIControl'
         """
         将当前BaseUIControl转换为ButtonUIControl实例，如当前控件非button类型则返回None
         """
-        pass
+        from mod.client.ui.controls.buttonUIControl import ButtonUIControl
+        ButtonUIControl(self.__sn, self.__path)
 
     def asImage(self):
         # type: () -> 'ImageUIControl'
         """
         将当前BaseUIControl转换为ImageUIControl实例，如当前控件非image类型则返回None
         """
-        pass
+        from mod.client.ui.controls.imageUIControl import ImageUIControl
+        ImageUIControl(self.__sn, self.__path)
 
     def asGrid(self):
         # type: () -> 'GridUIControl'
         """
         将当前BaseUIControl转换为GridUIControl实例，如当前控件非grid类型则返回None
         """
-        pass
+        from mod.client.ui.controls.gridUIControl import GridUIControl
+        GridUIControl(self.__sn, self.__path)
 
     def asScrollView(self):
         # type: () -> 'ScrollViewUIControl'
         """
         将当前BaseUIControl转换为ScrollViewUIControl实例，如当前控件非scrollview类型则返回None
         """
-        pass
+        from mod.client.ui.controls.scrollViewUIControl import ScrollViewUIControl
+        ScrollViewUIControl(self.__sn, self.__path)
 
     def asSwitchToggle(self):
         # type: () -> 'SwitchToggleUIControl'
         """
         将当前BaseUIControl转换为SwitchToggleUIControl实例，如当前控件非panel类型或非toggle则返回None
         """
-        pass
+        from mod.client.ui.controls.switchToggleUIControl import SwitchToggleUIControl
+        SwitchToggleUIControl(self.__sn, self.__path)
 
     def asTextEditBox(self):
         # type: () -> 'TextEditBoxUIControl'
         """
         将当前BaseUIControl转换为TextEditBoxUIControl实例，如当前控件非editbox类型则返回None
         """
-        pass
+        from mod.client.ui.controls.textEditBoxUIControl import TextEditBoxUIControl
+        TextEditBoxUIControl(self.__sn, self.__path)
 
     def asProgressBar(self, fillImagePath='/filled_progress_bar'):
         # type: (str) -> 'ProgressBarUIControl'
         """
         将当前BaseUIControl转换为ProgressBarUIControl实例，如当前控件非panel类型则返回None
         """
-        pass
+        from mod.client.ui.controls.progressBarUIControl import ProgressBarUIControl
+        ProgressBarUIControl(self.__sn, self.__path)
 
     def asNeteasePaperDoll(self):
         # type: () -> 'NeteasePaperDollUIControl'
         """
         将当前BaseUIControl转换为NeteasePaperDollUIControl实例，如当前控件非custom类型则返回None
         """
-        pass
+        from mod.client.ui.controls.neteasePaperDollUIControl import NeteasePaperDollUIControl
+        NeteasePaperDollUIControl(self.__sn, self.__path)
 
     def asMiniMap(self):
         # type: () -> 'MiniMapUIControl'
         """
         将当前BaseUIControl转换为MiniMapUIControl实例，如当前控件非小地图类型则返回None
         """
-        pass
+        from mod.client.ui.controls.minimapUIControl import MiniMapUIControl
+        MiniMapUIControl(self.__sn, self.__path)
 
     def asSlider(self):
         # type: () -> 'SliderUIControl'
         """
         将当前BaseUIControl转换为SliderUIControl实例，如当前控件非滑动条类型则返回None
         """
-        pass
+        from mod.client.ui.controls.sliderUIControl import SliderUIControl
+        SliderUIControl(self.__sn, self.__path)
 
     def asItemRenderer(self):
         # type: () -> 'ItemRendererUIControl'
         """
         将当前BaseUIControl转换为ItemRenderer实例，如当前控件非custom类型则返回None
         """
-        pass
+        from mod.client.ui.controls.itemRendererUIControl import ItemRendererUIControl
+        ItemRendererUIControl(self.__sn, self.__path)
 
     def asNeteaseComboBox(self):
         # type: () -> 'NeteaseComboBoxUIControl'
         """
         将当前BaseUIControl转换为NeteaseComboBoxUIControl实例，如当前控件非panel类型则返回None
         """
-        pass
+        from mod.client.ui.controls.neteaseComboBoxUIControl import NeteaseComboBoxUIControl
+        NeteaseComboBoxUIControl(self.__sn, self.__path)
 
     def asStackPanel(self):
         # type: () -> 'StackPanelUIControl'
         """
         将当前BaseUIControl转换为StackPanelUIControl实例，如当前控件非stackPanel类型则返回None
         """
-        pass
+        from mod.client.ui.controls.stackPanelUIControl import StackPanelUIControl
+        StackPanelUIControl(self.__sn, self.__path)
 
     def asInputPanel(self):
         # type: () -> 'InputPanelUIControl'
         """
         将当前BaseUIControl转换为InputPanelUIControl实例，如当前控件非inputPanel类型则返回None
         """
-        pass
+        from mod.client.ui.controls.inputPanelUIControl import InputPanelUIControl
+        InputPanelUIControl(self.__sn, self.__path)
 
     def asSelectionWheel(self):
         # type: () -> 'SelectionWheelUIControl'
         """
         将当前BaseUIControl转换为SelectionWheelUIControl实例，如当前控件非selectionWheel类型则返回None
         """
-        pass
+        from mod.client.ui.controls.selectionWheelUIControl import SelectionWheelUIControl
+        SelectionWheelUIControl(self.__sn, self.__path)
 
     def GetPropertyBag(self):
         # type: () -> 'str'
         """
         获取PropertyBag
         """
-        pass
+        return {}
 
     def SetPropertyBag(self, params):
         # type: (dict) -> 'bool'

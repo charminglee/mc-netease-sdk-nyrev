@@ -1,11 +1,12 @@
 # -*- coding: utf-8 -*-
 
+from typing import Union
+from typing import Any
 from mod.client.component.skyRenderCompClient import SkyRenderCompClient
 from mod.client.component.frameAniTransComp import FrameAniTransComp
 from mod.client.component.actorRenderCompClient import ActorRenderCompClient
 from mod.client.component.actionCompClient import ActionCompClient
 from mod.client.component.itemCompClient import ItemCompClient
-from typing import Union
 from mod.client.component.frameAniControlComp import FrameAniControlComp
 from mod.client.component.attrCompClient import AttrCompClient
 from mod.client.component.textNotifyCompClient import TextNotifyComponet
@@ -56,7 +57,6 @@ from mod.client.component.particleControlComp import ParticleControlComp
 from mod.client.component.tameCompClient import TameComponentClient
 from mod.client.component.modAttrCompClient import ModAttrComponentClient
 from mod.client.component.playerAnimCompClient import PlayerAnimCompClient
-from typing import Any
 from mod.client.component.achievementCompClient import AchievementCompClient
 from mod.client.component.dimensionCompClient import DimensionCompClient
 

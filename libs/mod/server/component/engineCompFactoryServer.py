@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 
+from typing import Union
 from mod.server.component.effectCompServer import EffectComponentServer
 from mod.server.component.actorMotionCompServer import ActorMotionComponentServer
 from mod.server.component.blockInfoCompServer import BlockInfoComponentServer
-from typing import Union
 from mod.server.component.blockEntityCompServer import BlockEntityCompServer
 from mod.server.component.blockCompServer import BlockCompServer
 from mod.server.component.scaleCompServer import ScaleComponentServer

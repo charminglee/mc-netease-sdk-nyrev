@@ -1,23 +1,29 @@
 # -*- coding: utf-8 -*-
 
-from typing import Generator
-from typing import Union
-from mod.client.ui.NativeScreenManager import NativeScreenManager
-from mod.client.ui.screenNode import ScreenNode
-from typing import List
-from mod.client.component.engineCompFactoryClient import EngineCompFactoryClient
-from mod.client.ui.viewRequest import ViewRequest
-from typing import Type
-from mod.common.component.baseComponent import BaseComponent
-from mod.client.ui.CustomUIControlProxy import CustomUIControlProxy
-import mod.common.minecraftEnum as minecraftEnum
-from mod.client.ui.viewBinder import ViewBinder
-from mod.client.system.clientSystem import ClientSystem
-from typing import Tuple
-from mod.common.minecraftEnum import WalkState
-from typing import Callable
-from mod.client.plugin.illustratedBook.bookManager import BookManager
-from typing import Any
+
+if 0:
+    from typing import Generator
+    from typing import Union
+    from mod.client.ui.NativeScreenManager import NativeScreenManager
+    from mod.client.ui.screenNode import ScreenNode
+    from typing import List
+    from mod.client.component.engineCompFactoryClient import EngineCompFactoryClient
+    from mod.client.ui.viewRequest import ViewRequest
+    from typing import Type
+    from mod.common.component.baseComponent import BaseComponent
+    from mod.client.ui.CustomUIControlProxy import CustomUIControlProxy
+    import mod.common.minecraftEnum as minecraftEnum
+    from mod.client.ui.viewBinder import ViewBinder
+    from mod.client.system.clientSystem import ClientSystem
+    from typing import Tuple
+    from mod.common.minecraftEnum import WalkState
+    from typing import Callable
+    from mod.client.plugin.illustratedBook.bookManager import BookManager
+    from typing import Any
+
+
+_system_dict = {}
+
 
 def RegisterComponent(nameSpace, name, clsPath):
     # type: (str, str, str) -> 'bool'
@@ -31,14 +37,21 @@ def RegisterSystem(nameSpace, systemName, clsPath):
     """
     用于将系统注册到引擎中，引擎会创建一个该系统的实例，并在退出游戏时回收。系统可以执行我们引擎赋予的基本逻辑，例如监听事件、执行Tick函数、与服务端进行通讯等。
     """
-    pass
+    module_path = clsPath[:clsPath.rfind(".")]
+    cls_name = clsPath.split(".")[-1]
+    from importlib import import_module
+    module = import_module(module_path)
+    cls = getattr(module, cls_name, None)
+    if cls:
+        ins = cls(nameSpace, systemName)
+        _system_dict[(nameSpace, systemName)] = ins
 
 def GetSystem(nameSpace, systemName):
     # type: (str, str) -> 'ClientSystem'
     """
     用于获取其他系统实例
     """
-    pass
+    return _system_dict.get((nameSpace, systemName))
 
 def CreateComponent(entityId, nameSpace, name):
     # type: (Union[str,int], str, str) -> 'BaseComponent'
@@ -269,7 +282,8 @@ def GetClientSystemCls():
     """
     用于获取客户端system基类。实现新的system时，需要继承该接口返回的类
     """
-    pass
+    from mod.client.system.clientSystem import ClientSystem
+    return ClientSystem
 
 def GetComponentCls():
     # type: () -> 'Type[BaseComponent]'
@@ -283,14 +297,14 @@ def GetEngineNamespace():
     """
     获取引擎事件的命名空间。监听引擎事件时，namespace传该接口返回的namespace
     """
-    pass
+    return "Minecraft"
 
 def GetEngineSystemName():
     # type: () -> 'str'
     """
     获取引擎系统名。监听引擎事件时，systemName传该接口返回的systemName
     """
-    pass
+    return "Engine"
 
 def GetLevelId():
     # type: () -> 'str'
@@ -311,28 +325,36 @@ def GetScreenNodeCls():
     """
     获得ScreenNode类
     """
-    pass
+    from mod.client.ui.screenNode import ScreenNode
+    return ScreenNode
 
 def GetViewBinderCls():
     # type: () -> 'Type[ViewBinder]'
     """
     获得ViewBinder类
     """
-    pass
+    from mod.client.ui.viewBinder import ViewBinder
+    return ViewBinder
 
 def GetViewViewRequestCls():
     # type: () -> 'Type[ViewRequest]'
     """
     获得ViewRequest类
     """
-    pass
+    from mod.client.ui.viewRequest import ViewRequest
+    return ViewRequest
 
 def GetNativeScreenManagerCls():
     # type: () -> 'Type[NativeScreenManager]'
     """
     获得NativeScreenManager类
     """
-    pass
+    class a:
+        @staticmethod
+        def instance():
+            from mod.client.ui.NativeScreenManager import NativeScreenManager
+            return NativeScreenManager()
+    return a
 
 def GetCustomUIControlProxyCls():
     # type: () -> 'Type[CustomUIControlProxy]'
@@ -346,7 +368,8 @@ def GetUIScreenProxyCls():
     """
     获得原生界面Screen代理基类
     """
-    pass
+    from mod.client.ui.CustomUIScreenProxy import CustomUIScreenProxy
+    return CustomUIScreenProxy
 
 def GetMiniMapScreenNodeCls():
     # type: () -> 'Type[MiniMapBaseScreen]'
@@ -794,7 +817,8 @@ def ImportModule(path):
     """
     使用字符串路径导入模块，作用与importlib.import_module类似，但只能导入当前加载的mod中的模块
     """
-    pass
+    from importlib import import_module
+    return import_module(path)
 
 def ToggleGyroSensor(isOpen=False):
     # type: (bool) -> 'bool'

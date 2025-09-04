@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-class CustomUIScreenProxy(ScreenBase):
+class CustomUIScreenProxy(object):
 	def __init__(self, screenName, screenNode):
 		pass
 

@@ -1,17 +1,23 @@
 # -*- coding: utf-8 -*-
 
-from typing import Generator
-from typing import Tuple
-from typing import Union
-from typing import List
-from mod.server.component.engineCompFactoryServer import EngineCompFactoryServer
-from typing import Any
-from typing import Callable
-from mod.server.gamePlay.AI.customGoal import CustomGoal
-from mod.server.system.serverSystem import ServerSystem
-from typing import Type
-from mod.common.component.baseComponent import BaseComponent
-import mod.common.minecraftEnum as minecraftEnum
+
+if 0:
+    from typing import Generator
+    from typing import Tuple
+    from typing import Union
+    from typing import List
+    from mod.server.component.engineCompFactoryServer import EngineCompFactoryServer
+    from typing import Any
+    from typing import Callable
+    from mod.server.gamePlay.AI.customGoal import CustomGoal
+    from mod.server.system.serverSystem import ServerSystem
+    from typing import Type
+    from mod.common.component.baseComponent import BaseComponent
+    import mod.common.minecraftEnum as minecraftEnum
+
+
+_system_dict = {}
+
 
 def RegisterComponent(nameSpace, name, clsPath):
     # type: (str, str, str) -> 'bool'
@@ -25,14 +31,21 @@ def RegisterSystem(nameSpace, systemName, clsPath):
     """
     用于将系统注册到引擎中，引擎会创建一个该系统的实例，并在退出游戏时回收。系统可以执行我们引擎赋予的基本逻辑，例如监听事件、执行Tick函数、与客户端进行通讯等。
     """
-    pass
+    module_path = clsPath[:clsPath.rfind(".")]
+    cls_name = clsPath.split(".")[-1]
+    from importlib import import_module
+    module = import_module(module_path)
+    cls = getattr(module, cls_name, None)
+    if cls:
+        ins = cls(nameSpace, systemName)
+        _system_dict[(nameSpace, systemName)] = ins
 
 def GetSystem(nameSpace, systemName):
     # type: (str, str) -> 'ServerSystem'
     """
     获取已注册的系统
     """
-    pass
+    return _system_dict.get((nameSpace, systemName))
 
 def CreateComponent(entityId, nameSpace, name):
     # type: (Union[str,int], str, str) -> 'BaseComponent'
@@ -67,14 +80,15 @@ def GetMinecraftEnum():
     """
     用于获取枚举值文档中的枚举值
     """
-    pass
+    return minecraftEnum
 
 def GetServerSystemCls():
     # type: () -> 'Type[ServerSystem]'
     """
     用于获取服务器system基类。实现新的system时，需要继承该接口返回的类
     """
-    pass
+    from mod.server.system.serverSystem import ServerSystem
+    return ServerSystem
 
 def GetComponentCls():
     # type: () -> 'Type[BaseComponent]'
@@ -88,14 +102,14 @@ def GetEngineNamespace():
     """
     获取引擎事件的命名空间。监听引擎事件时，namespace传该接口返回的namespace
     """
-    pass
+    return "Minecraft"
 
 def GetEngineSystemName():
     # type: () -> 'str'
     """
     获取引擎系统名。监听引擎事件时，systemName传该接口返回的systemName
     """
-    pass
+    return "Engine"
 
 def GetLevelId():
     # type: () -> 'str'
@@ -319,7 +333,8 @@ def ImportModule(path):
     """
     使用字符串路径导入模块，作用与importlib.import_module类似，但只能导入当前加载的mod中的模块
     """
-    pass
+    from importlib import import_module
+    return import_module(path)
 
 def GetMinecraftVersion():
     # type: () -> 'str'

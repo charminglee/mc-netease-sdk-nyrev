@@ -1,5 +1,7 @@
 ### Project
 *.zip
+publish.cmd
+/.pypirc
 
 
 ### Python template
@@ -156,4 +158,3 @@ http-client.private.env.json
 
 .idea/GitCommitMessageStorage.xml
 /.idea/git_toolbox_prj.xml
-/.pypirc

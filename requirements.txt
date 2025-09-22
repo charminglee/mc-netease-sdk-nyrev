@@ -1,2 +1,5 @@
 typing==3.7.4.3
-typing-extensions==3.10.0.2
+typing-extensions
+build
+setuptools
+twine

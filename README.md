@@ -25,6 +25,9 @@ pip install mc-netease-sdk-nyrev
 6. 补充`ScreenNode.__init__()`。
 7. `CustomUIScreenProxy`的父类改为`object`。
 8. 修复`DrawingCompClient`一系列接口的返回值类型错误导致无法补全的问题。
+9. 补全`mcmath`模块的类型注解。
+10. 补全`mod`模块的类型注解。
+10. 优化`baseSystem`模块的类型注解。
 
 ### IDE运行支持
 

@@ -27,7 +27,7 @@ except:
 
 setup(
     name="mc-netease-sdk-nyrev",
-    version="1.1.4",
+    version="1.1.5",
     description="Netease ModSDK completion library revised version by Nuoyan",
     long_description=long_description,
     long_description_content_type="text/markdown",

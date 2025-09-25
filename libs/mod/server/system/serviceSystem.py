@@ -2,7 +2,7 @@
 
 from typing import Any, Optional, Callable
 
-class ServiceSystem():
+class ServiceSystem(object):
     def CreateEventData(self):
         # type: () -> dict
         """

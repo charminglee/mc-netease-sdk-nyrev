@@ -12,7 +12,7 @@ class QueryVariableComponentServer(BaseComponent):
         pass
 
     def GetAllProperties(self):
-        # type: () -> 'Tuple[str]'
+        # type: () -> Tuple[str, ...]
         """
         获取实体属性列表
         """

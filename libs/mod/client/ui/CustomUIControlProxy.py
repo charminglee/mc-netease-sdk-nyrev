@@ -21,15 +21,12 @@ class CustomUIControlProxy(object):
         pass
 
     def OnCreate(self):
-        # type: () -> None
         pass
 
     def OnDestroy(self):
-        # type: () -> None
         pass
 
     def OnTick(self):
-        # type: () -> None
         pass
 
     def GetCustomUIControl(self):

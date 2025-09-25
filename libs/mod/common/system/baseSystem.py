@@ -7,6 +7,12 @@ class BaseSystem(object):
         # type: (str, str) -> None
         pass
 
+    def Update(self):
+        pass
+
+    def Destroy(self):
+        pass
+
     def CreateEventData(self):
         # type: () -> dict
         """

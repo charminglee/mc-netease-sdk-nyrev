@@ -70,478 +70,478 @@ from mod.server.component.shareableCompServer import ShareableComponentServer
 from mod.server.component.blockUseEventWhiteListCompServer import BlockUseEventWhiteListComponentServer
 from mod.server.component.actorLootCompServer import ActorLootComponentServer
 
-class EngineCompFactoryServer():
+class EngineCompFactoryServer(object):
     def CreateAchievement(self, entityId):
-        # type: (str) -> 'AchievementCompServer'
+        # type: (str) -> AchievementCompServer
         """
         创建自定义成就系统组件
         """
         pass
 
     def CreateAction(self, entityId):
-        # type: (Union[str, int]) -> 'ActionCompServer'
+        # type: (Union[str, int]) -> ActionCompServer
         """
         创建action组件
         """
         pass
 
     def CreateActorCollidable(self, entityId):
-        # type: (Union[str, int]) -> 'ActorCollidableCompServer'
+        # type: (Union[str, int]) -> ActorCollidableCompServer
         """
         创建actorCollidable组件
         """
         pass
 
     def CreateActorLoot(self, entityId):
-        # type: (Union[str, int]) -> 'ActorLootComponentServer'
+        # type: (Union[str, int]) -> ActorLootComponentServer
         """
         创建actorLoot组件
         """
         pass
 
     def CreateActorMotion(self, entityId):
-        # type: (Union[str, int]) -> 'ActorMotionComponentServer'
+        # type: (Union[str, int]) -> ActorMotionComponentServer
         """
         创建actorMotion组件
         """
         pass
 
     def CreateActorOwner(self, entityId):
-        # type: (Union[str, int]) -> 'ActorOwnerComponentServer'
+        # type: (Union[str, int]) -> ActorOwnerComponentServer
         """
         创建actorOwner组件
         """
         pass
 
     def CreateActorPushable(self, entityId):
-        # type: (Union[str, int]) -> 'ActorPushableCompServer'
+        # type: (Union[str, int]) -> ActorPushableCompServer
         """
         创建actorPushable组件
         """
         pass
 
     def CreateAiCommand(self, entityId):
-        # type: (str) -> 'AiCommandComponentServer'
+        # type: (str) -> AiCommandComponentServer
         """
         创建魔法指令组件
         """
         pass
 
     def CreateAttr(self, entityId):
-        # type: (Union[str, int]) -> 'AttrCompServer'
+        # type: (Union[str, int]) -> AttrCompServer
         """
         创建attr组件
         """
         pass
 
     def CreateAuxValue(self, entityId):
-        # type: (Union[str, int]) -> 'AuxValueComponentServer'
+        # type: (Union[str, int]) -> AuxValueComponentServer
         """
         创建auxValue组件
         """
         pass
 
     def CreateBiome(self, entityId):
-        # type: (Union[str, int]) -> 'BiomeCompServer'
+        # type: (Union[str, int]) -> BiomeCompServer
         """
         创建biome组件
         """
         pass
 
     def CreateBlock(self, entityId):
-        # type: (Union[str, int]) -> 'BlockCompServer'
+        # type: (Union[str, int]) -> BlockCompServer
         """
         创建block组件
         """
         pass
 
     def CreateBlockEntity(self, entityId):
-        # type: (Union[str, int]) -> 'BlockEntityCompServer'
+        # type: (Union[str, int]) -> BlockEntityCompServer
         """
         创建方块实体组件
         """
         pass
 
     def CreateBlockEntityData(self, entityId):
-        # type: (Union[str, int]) -> 'BlockEntityExDataCompServer'
+        # type: (Union[str, int]) -> BlockEntityExDataCompServer
         """
         创建blockEntityData组件
         """
         pass
 
     def CreateBlockInfo(self, entityId):
-        # type: (Union[str, int]) -> 'BlockInfoComponentServer'
+        # type: (Union[str, int]) -> BlockInfoComponentServer
         """
         创建blockInfo组件
         """
         pass
 
     def CreateBlockState(self, entityId):
-        # type: (Union[str, int]) -> 'BlockStateComponentServer'
+        # type: (Union[str, int]) -> BlockStateComponentServer
         """
         创建blockState组件
         """
         pass
 
     def CreateBlockUseEventWhiteList(self, entityId):
-        # type: (Union[str, int]) -> 'BlockUseEventWhiteListComponentServer'
+        # type: (Union[str, int]) -> BlockUseEventWhiteListComponentServer
         """
         创建blockUseEventWhiteList组件
         """
         pass
 
     def CreateBreath(self, entityId):
-        # type: (Union[str, int]) -> 'BreathCompServer'
+        # type: (Union[str, int]) -> BreathCompServer
         """
         创建breath组件
         """
         pass
 
     def CreateBulletAttributes(self, entityId):
-        # type: (Union[str, int]) -> 'BulletAttributesComponentServer'
+        # type: (Union[str, int]) -> BulletAttributesComponentServer
         """
         创建bulletAttributes组件
         """
         pass
 
     def CreateChatExtension(self, entityId):
-        # type: (str) -> 'ChatExtensionComponentServer'
+        # type: (str) -> ChatExtensionComponentServer
         """
         创建聊天扩展组件
         """
         pass
 
     def CreateChestBlock(self, entityId):
-        # type: (Union[str, int]) -> 'ChestContainerCompServer'
+        # type: (Union[str, int]) -> ChestContainerCompServer
         """
         创建chestBlock组件
         """
         pass
 
     def CreateChunkSource(self, entityId):
-        # type: (Union[str, int]) -> 'ChunkSourceCompServer'
+        # type: (Union[str, int]) -> ChunkSourceCompServer
         """
         创建chunkSource组件
         """
         pass
 
     def CreateCollisionBox(self, entityId):
-        # type: (Union[str, int]) -> 'CollisionBoxComponentServer'
+        # type: (Union[str, int]) -> CollisionBoxComponentServer
         """
         创建collisionBox组件
         """
         pass
 
     def CreateCommand(self, entityId):
-        # type: (Union[str, int]) -> 'CommandCompServer'
+        # type: (Union[str, int]) -> CommandCompServer
         """
         创建command组件
         """
         pass
 
     def CreateControlAi(self, entityId):
-        # type: (Union[str, int]) -> 'ControlAiCompServer'
+        # type: (Union[str, int]) -> ControlAiCompServer
         """
         创建controlAi组件
         """
         pass
 
     def CreateDimension(self, entityId):
-        # type: (Union[str, int]) -> 'DimensionCompServer'
+        # type: (Union[str, int]) -> DimensionCompServer
         """
         创建dimension组件
         """
         pass
 
     def CreateEffect(self, entityId):
-        # type: (Union[str, int]) -> 'EffectComponentServer'
+        # type: (Union[str, int]) -> EffectComponentServer
         """
         创建effect组件
         """
         pass
 
     def CreateEngineType(self, entityId):
-        # type: (Union[str, int]) -> 'EngineTypeComponentServer'
+        # type: (Union[str, int]) -> EngineTypeComponentServer
         """
         创建engineType组件
         """
         pass
 
     def CreateEntityComponent(self, entityId):
-        # type: (str) -> 'EntityComponentServer'
+        # type: (str) -> EntityComponentServer
         """
         创建原版实体组件的组件
         """
         pass
 
     def CreateEntityDefinitions(self, entityId):
-        # type: (Union[str, int]) -> 'EntityDefinitionsCompServer'
+        # type: (Union[str, int]) -> EntityDefinitionsCompServer
         """
         创建实体定义组件
         """
         pass
 
     def CreateEntityEvent(self, entityId):
-        # type: (Union[str, int]) -> 'EntityEventComponentServer'
+        # type: (Union[str, int]) -> EntityEventComponentServer
         """
         创建entityEvent组件
         """
         pass
 
     def CreateExp(self, entityId):
-        # type: (Union[str, int]) -> 'ExpComponentServer'
+        # type: (Union[str, int]) -> ExpComponentServer
         """
         创建exp组件
         """
         pass
 
     def CreateExplosion(self, entityId):
-        # type: (Union[str, int]) -> 'ExplosionComponentServer'
+        # type: (Union[str, int]) -> ExplosionComponentServer
         """
         创建explosion组件
         """
         pass
 
     def CreateExtraData(self, entityId):
-        # type: (Union[str, int]) -> 'ExDataCompServer'
+        # type: (Union[str, int]) -> ExDataCompServer
         """
         创建extraData组件
         """
         pass
 
     def CreateFeature(self, entityId):
-        # type: (Union[str, int]) -> 'FeatureCompServer'
+        # type: (Union[str, int]) -> FeatureCompServer
         """
         创建feature组件
         """
         pass
 
     def CreateFly(self, entityId):
-        # type: (Union[str, int]) -> 'FlyComponentServer'
+        # type: (Union[str, int]) -> FlyComponentServer
         """
         创建fly组件
         """
         pass
 
     def CreateGame(self, entityId):
-        # type: (Union[str, int]) -> 'GameComponentServer'
+        # type: (Union[str, int]) -> GameComponentServer
         """
         创建game组件
         """
         pass
 
     def CreateGravity(self, entityId):
-        # type: (Union[str, int]) -> 'GravityComponentServer'
+        # type: (Union[str, int]) -> GravityComponentServer
         """
         创建gravity组件
         """
         pass
 
     def CreateHttp(self, entityId):
-        # type: (Union[str, int]) -> 'HttpToWebServerCompServer'
+        # type: (Union[str, int]) -> HttpToWebServerCompServer
         """
         创建http组件
         """
         pass
 
     def CreateHurt(self, entityId):
-        # type: (Union[str, int]) -> 'HurtCompServer'
+        # type: (Union[str, int]) -> HurtCompServer
         """
         创建hurt组件
         """
         pass
 
     def CreateInteract(self, entityId):
-        # type: (str) -> 'InteractComponentServer'
+        # type: (str) -> InteractComponentServer
         """
         创建实体交互组件
         """
         pass
 
     def CreateItem(self, entityId):
-        # type: (Union[str, int]) -> 'ItemCompServer'
+        # type: (Union[str, int]) -> ItemCompServer
         """
         创建item组件
         """
         pass
 
     def CreateItemBanned(self, entityId):
-        # type: (Union[str, int]) -> 'ItemBannedCompServer'
+        # type: (Union[str, int]) -> ItemBannedCompServer
         """
         创建itembanned组件
         """
         pass
 
     def CreateLoot(self, entityId):
-        # type: (Union[str, int]) -> 'LootComponentServer'
+        # type: (Union[str, int]) -> LootComponentServer
         """
         创建loot组件
         """
         pass
 
     def CreateLv(self, entityId):
-        # type: (Union[str, int]) -> 'LevelComponentServer'
+        # type: (Union[str, int]) -> LevelComponentServer
         """
         创建lv组件
         """
         pass
 
     def CreateMobSpawn(self, entityId):
-        # type: (Union[str, int]) -> 'MobSpawnComponentServer'
+        # type: (Union[str, int]) -> MobSpawnComponentServer
         """
         创建mobSpawn组件
         """
         pass
 
     def CreateModAttr(self, entityId):
-        # type: (Union[str, int]) -> 'ModAttrComponentServer'
+        # type: (Union[str, int]) -> ModAttrComponentServer
         """
         创建modAttr组件
         """
         pass
 
     def CreateModel(self, entityId):
-        # type: (Union[str, int]) -> 'ModelComponentServer'
+        # type: (Union[str, int]) -> ModelComponentServer
         """
         创建model组件
         """
         pass
 
     def CreateMoveTo(self, entityId):
-        # type: (Union[str, int]) -> 'MoveToComponentServer'
+        # type: (Union[str, int]) -> MoveToComponentServer
         """
         创建moveTo组件
         """
         pass
 
     def CreateMsg(self, entityId):
-        # type: (Union[str, int]) -> 'MsgComponentServer'
+        # type: (Union[str, int]) -> MsgComponentServer
         """
         创建msg组件
         """
         pass
 
     def CreateName(self, entityId):
-        # type: (Union[str, int]) -> 'NameComponentServer'
+        # type: (Union[str, int]) -> NameComponentServer
         """
         创建name组件
         """
         pass
 
     def CreatePersistence(self, entityId):
-        # type: (Union[str, int]) -> 'PersistenceCompServer'
+        # type: (Union[str, int]) -> PersistenceCompServer
         """
         创建persistence组件
         """
         pass
 
     def CreatePet(self, entityId):
-        # type: (Union[str, int]) -> 'PetComponentServer'
+        # type: (Union[str, int]) -> PetComponentServer
         """
         创建pet组件
         """
         pass
 
     def CreatePlayer(self, entityId):
-        # type: (Union[str, int]) -> 'PlayerCompServer'
+        # type: (Union[str, int]) -> PlayerCompServer
         """
         创建player组件
         """
         pass
 
     def CreatePortal(self, entityId):
-        # type: (Union[str, int]) -> 'PortalComponentServer'
+        # type: (Union[str, int]) -> PortalComponentServer
         """
         创建portal组件
         """
         pass
 
     def CreatePos(self, entityId):
-        # type: (Union[str, int]) -> 'PosComponentServer'
+        # type: (Union[str, int]) -> PosComponentServer
         """
         创建pos组件
         """
         pass
 
     def CreateProjectile(self, entityId):
-        # type: (Union[str, int]) -> 'ProjectileComponentServer'
+        # type: (Union[str, int]) -> ProjectileComponentServer
         """
         创建projectile组件
         """
         pass
 
     def CreateQueryVariable(self, entityId):
-        # type: (Union[str, int]) -> 'QueryVariableComponentServer'
+        # type: (Union[str, int]) -> QueryVariableComponentServer
         """
         创建queryVariable组件
         """
         pass
 
     def CreateRecipe(self, entityId):
-        # type: (Union[str, int]) -> 'RecipeCompServer'
+        # type: (Union[str, int]) -> RecipeCompServer
         """
         创建recipe组件
         """
         pass
 
     def CreateRedStone(self, entityId):
-        # type: (Union[str, int]) -> 'RedStoneComponentServer'
+        # type: (Union[str, int]) -> RedStoneComponentServer
         """
         创建redStone组件
         """
         pass
 
     def CreateRide(self, entityId):
-        # type: (Union[str, int]) -> 'RideCompServer'
+        # type: (Union[str, int]) -> RideCompServer
         """
         创建ride组件
         """
         pass
 
     def CreateRot(self, entityId):
-        # type: (Union[str, int]) -> 'RotComponentServer'
+        # type: (Union[str, int]) -> RotComponentServer
         """
         创建rot组件
         """
         pass
 
     def CreateScale(self, entityId):
-        # type: (Union[str, int]) -> 'ScaleComponentServer'
+        # type: (Union[str, int]) -> ScaleComponentServer
         """
         创建scale组件
         """
         pass
 
     def CreateShareables(self, entityId):
-        # type: (str) -> 'ShareableComponentServer'
+        # type: (str) -> ShareableComponentServer
         """
         创建实体拾取组件
         """
         pass
 
     def CreateTag(self, entityId):
-        # type: (Union[str, int]) -> 'TagComponentServer'
+        # type: (Union[str, int]) -> TagComponentServer
         """
         创建tag组件
         """
         pass
 
     def CreateTame(self, entityId):
-        # type: (Union[str, int]) -> 'TameComponentServer'
+        # type: (Union[str, int]) -> TameComponentServer
         """
         创建tame组件
         """
         pass
 
     def CreateTime(self, entityId):
-        # type: (Union[str, int]) -> 'TimeComponentServer'
+        # type: (Union[str, int]) -> TimeComponentServer
         """
         创建time组件
         """
         pass
 
     def CreateWeather(self, entityId):
-        # type: (Union[str, int]) -> 'WeatherComponentServer'
+        # type: (Union[str, int]) -> WeatherComponentServer
         """
         创建weather组件
         """

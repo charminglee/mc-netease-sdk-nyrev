@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 class CustomGoal(object):
     def __init__(self, entityId, argsJson):
+        # type: (str, dict) -> None
         pass
 
     def CanUse(self):

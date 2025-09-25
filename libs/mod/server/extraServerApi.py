@@ -27,7 +27,7 @@ def RegisterComponent(nameSpace, name, clsPath):
     pass
 
 def RegisterSystem(nameSpace, systemName, clsPath):
-    # type: (str, str, str) -> 'ServerSystem'
+    # type: (str, str, str) -> ServerSystem
     """
     用于将系统注册到引擎中，引擎会创建一个该系统的实例，并在退出游戏时回收。系统可以执行我们引擎赋予的基本逻辑，例如监听事件、执行Tick函数、与客户端进行通讯等。
     """
@@ -41,7 +41,7 @@ def RegisterSystem(nameSpace, systemName, clsPath):
         _system_dict[(nameSpace, systemName)] = ins
 
 def GetSystem(nameSpace, systemName):
-    # type: (str, str) -> 'ServerSystem'
+    # type: (str, str) -> ServerSystem
     """
     获取已注册的系统
     """
@@ -69,21 +69,21 @@ def DestroyComponent(entityId, nameSpace, name):
     pass
 
 def GetEngineCompFactory():
-    # type: () -> 'EngineCompFactoryServer'
+    # type: () -> EngineCompFactoryServer
     """
     获取引擎组件的工厂，通过工厂可以创建服务端的引擎组件
     """
     pass
 
 def GetMinecraftEnum():
-    # type: () -> minecraftEnum
+    # type: () -> minecraftEnum._MinecraftEnum
     """
     用于获取枚举值文档中的枚举值
     """
     return minecraftEnum
 
 def GetServerSystemCls():
-    # type: () -> 'Type[ServerSystem]'
+    # type: () -> Type[ServerSystem]
     """
     用于获取服务器system基类。实现新的system时，需要继承该接口返回的类
     """
@@ -126,7 +126,7 @@ def GetEngineActor():
     pass
 
 def getEntitiesOrBlockFromRay(dimensionId, pos, rot, distance=16, isThrough=False, filterType=1):
-    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, minecraftEnum) -> List[dict]
+    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[dict]
     """
     从指定位置发射一条射线，获取与射线相交的实体和方块
     """
@@ -280,7 +280,7 @@ def GetPlatform():
     pass
 
 def GetCustomGoalCls():
-    # type: () -> 'Type[CustomGoal]'
+    # type: () -> Type[CustomGoal]
     """
     用于获取服务器自定义行为节点的基类。实现新的行为节点时，需要继承该接口返回的类
     """

@@ -4,7 +4,7 @@ from typing import Tuple
 from typing import Optional
 from mod.common.utils.timer import CallLater
 from typing import List
-from typing import Any
+from typing import Any, Callable
 from mod.common.component.baseComponent import BaseComponent
 
 class GameComponentServer(BaseComponent):
@@ -417,7 +417,7 @@ class GameComponentServer(BaseComponent):
     def GetChinese(self, langStr):
         # type: (str) -> str
         """
-        获取langStr对应的中文，可参考PC开发包中\handheld\localization\handheld\data\resource_packs\vanilla\texts\zh_CN.lang
+        获取langStr对应的中文，可参考PC开发包中data/resource_packs/vanilla/texts/zh_CN.lang
         """
         pass
 

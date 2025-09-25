@@ -20,35 +20,30 @@ class ScreenNode(object):
         pass
 
     def Update(self):
-        # type: () -> None
         """
         客户端每帧调用，1秒有30帧
         """
         pass
 
     def Destroy(self):
-        # type: () -> None
         """
         UI生命周期函数，当UI销毁时调用。
         """
         pass
 
     def Create(self):
-        # type: () -> None
         """
         UI生命周期函数，当UI创建成功时调用。
         """
         pass
 
     def OnDeactive(self):
-        # type: () -> None
         """
         UI生命周期函数，当栈顶UI有其他UI入栈时调用。
         """
         pass
 
     def OnActive(self):
-        # type: () -> None
         """
         UI生命周期函数，当UI重新回到栈顶时调用。
         """

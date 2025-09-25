@@ -3,7 +3,7 @@
 from typing import Union
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Callable, Any
 
 class ChunkSourceCompServer(BaseComponent):
     def SetAddArea(self, key, dimensionId, minPos, maxPos):
@@ -42,28 +42,28 @@ class ChunkSourceCompServer(BaseComponent):
         pass
 
     def GetLoadedChunks(self, dimension):
-        # type: (int) -> 'Union[None,List[Tuple[int,int]]]'
+        # type: (int) -> Union[List[Tuple[int,int]], None]
         """
         获取指定维度当前已经加载完毕的全部区块的坐标列表
         """
         pass
 
     def GetChunkEntites(self, dimension, pos):
-        # type: (int, Tuple[int, int, int]) -> 'Union[None,List[str]]'
+        # type: (int, Tuple[int, int, int]) -> Union[List[str], None]
         """
         获取指定位置的区块中，全部的实体和玩家的ID列表
         """
         pass
 
     def GetChunkMinPos(self, chunkPos):
-        # type: (Tuple[int,int]) -> 'Union[None,Tuple[int, int, int]]'
+        # type: (Tuple[int,int]) -> Union[Tuple[int, int, int], None]
         """
         获取某区块最小点的坐标
         """
         pass
 
     def GetChunkMaxPos(self, chunkPos):
-        # type: (Tuple[int,int]) -> 'Union[None,Tuple[int, int, int]]'
+        # type: (Tuple[int,int]) -> Union[Tuple[int, int, int], None]
         """
         获取某区块最大点的坐标
         """
@@ -98,7 +98,7 @@ class ChunkSourceCompServer(BaseComponent):
         pass
 
     def DoTaskOnChunkAsync(self, dimensionId, posMin, posMax, callback):
-        # type: (int, Tuple[int, int, int], Tuple[int, int, int], Callable) -> bool
+        # type: (int, Tuple[int, int, int], Tuple[int, int, int], Callable[[dict], Any]) -> bool
         """
         异步加载指定范围区块，加载完成后调用输入的回调函数。
         """

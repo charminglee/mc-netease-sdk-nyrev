@@ -190,7 +190,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetChestPairedPosition(self, pos, dimensionId=-1):
-        # type: (Tuple[int, int, int], int) -> 'Union[Tuple[int, int, int],None]'
+        # type: (Tuple[int, int, int], int) -> Union[Tuple[int, int, int], None]
         """
         获取与箱子A合并成一个大箱子的箱子B的坐标
         """
@@ -302,7 +302,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetLoadBlocks(self):
-        # type: () -> 'List'
+        # type: () -> List[str]
         """
         获取已经加载的方块id
         """

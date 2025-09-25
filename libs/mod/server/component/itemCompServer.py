@@ -62,14 +62,14 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetInvItemEnchantData(self, slotPos):
-        # type: (int) -> 'List[Tuple[int,int]]'
+        # type: (int) -> List[Tuple[int, int]]
         """
         获取物品栏的物品附魔信息
         """
         pass
 
     def GetInvItemModEnchantData(self, slotPos):
-        # type: (int) -> 'List[Tuple[str,int]]'
+        # type: (int) -> List[Tuple[str, int]]
         """
         获取物品栏的物品自定义附魔信息
         """
@@ -97,14 +97,14 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetEquItemEnchant(self, slotPos):
-        # type: (int) -> 'List[Tuple[int,int]]'
+        # type: (int) -> List[Tuple[int, int]]
         """
         获取装备槽位中盔甲的附魔
         """
         pass
 
     def GetEquItemModEnchant(self, slotPos):
-        # type: (int) -> 'List[Tuple[str,int]]'
+        # type: (int) -> List[Tuple[str, int]]
         """
         获取装备槽位中盔甲的自定义附魔
         """
@@ -258,7 +258,7 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetItemDefenceAngle(self, posType, slotPos):
-        # type: (int, int) -> 'List[float]'
+        # type: (int, int) -> List[float]
         """
         获取盾牌物品的抵挡角度范围
         """

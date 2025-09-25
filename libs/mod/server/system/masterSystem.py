@@ -2,7 +2,7 @@
 
 from typing import Any, Optional, Callable
 
-class MasterSystem():
+class MasterSystem(object):
     def CreateEventData(self):
         # type: () -> dict
         """

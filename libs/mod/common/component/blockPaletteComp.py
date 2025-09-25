@@ -1,18 +1,28 @@
 # -*- coding: utf-8 -*-
 
 from typing import List
-from typing import Tuple
+from typing import Tuple, TypedDict, Dict, Union
+
+
+class __BlockPaletteSerializedDict(TypedDict):
+    extra: Dict[Tuple[str, int], List[int]]
+    void: bool
+    actor: Dict[str, Dict[int, dict]]
+    volume: Tuple[int, int, int]
+    common: Dict[Tuple[str, int], List[int]]
+    eliminateAir: bool
+
 
 class BlockPaletteComponent(object):
     def SerializeBlockPalette(self):
-        # type: () -> dict
+        # type: () -> __BlockPaletteSerializedDict
         """
         序列化方块调色板中的数据，用于方块调色板在客户端及服务端的事件数据之间传输。
         """
         pass
 
     def DeserializeBlockPalette(self, dataDict):
-        # type: (dict) -> bool
+        # type: (__BlockPaletteSerializedDict) -> bool
         """
         反序列化方块调色板数据字典中的数据，用于方块调色板在客户端及服务端的事件数据之间传输。
         """

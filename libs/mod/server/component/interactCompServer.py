@@ -4,7 +4,7 @@ from mod.common.component.baseComponent import BaseComponent
 
 class InteractComponentServer(BaseComponent):
     def SetEntityInteractFilter(self, index, interactFilter):
-        # type: (int, str) -> 'bool'
+        # type: (int, str) -> bool
         """
         设置与生物可交互的条件
         """

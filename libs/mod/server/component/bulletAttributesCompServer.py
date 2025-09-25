@@ -3,7 +3,7 @@
 
 class BulletAttributesComponentServer(object):
     def GetSourceEntityId(self):
-        # type: () -> 'str'
+        # type: () -> str
         """
         获取抛射物发射者实体id
         """

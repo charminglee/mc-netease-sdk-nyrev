@@ -22,14 +22,14 @@ class MainPool(object):
 
 
 	def EmitOrder(self, key, func, callback, *args):
-		# type: (string/int, function, function, *args) -> None
+		# type: (string/int, Callable, Callable, *args) -> None
 		"""
 		添加一个异步任务
 
 		Args:
 			key            string/int     相同key的任务，线程池顺序执行；不同key的任务，线程池会并行执行。可以确认某些任务按照顺序执行。
-			func           function       任务对应的函数，该函数会在线程池中运行。该任务和主线程会并行执行，需要确认任务是线程安全的。函数必须返回一个元组，若返回为空则要求返回空元组("()")。函数输入参数是*args
-			callback       function       回调函数，它在主线程执行。func的返回值会是callback的实参。若没有回调，则传入None。
+			func           Callable       任务对应的函数，该函数会在线程池中运行。该任务和主线程会并行执行，需要确认任务是线程安全的。函数必须返回一个元组，若返回为空则要求返回空元组("()")。函数输入参数是*args
+			callback       Callable       回调函数，它在主线程执行。func的返回值会是callback的实参。若没有回调，则传入None。
 			*args          *args          func函数的非关键字参数
 
 		"""

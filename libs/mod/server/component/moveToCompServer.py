@@ -4,7 +4,7 @@ from typing import Tuple
 
 class MoveToComponentServer(object):
     def SetMoveSetting(self, pos, speed, maxIteration, callback=None):
-        # type: (Tuple[float,float,float], float, int, function) -> 'None'
+        # type: (Tuple[float, float, float], float, int, Callable) -> None
         """
         寻路组件
         """

@@ -22,13 +22,13 @@ def BanUser(uid, banTime, reason, bCombineReason):
 
 
 def GetBanUserInfo(uid, callback):
-	# type: (int/long, function) -> None
+	# type: (int/long, Callable) -> None
 	"""
 	获取玩家的封禁信息
 
 	Args:
 		uid            int/long       玩家uid
-		callback       function       回调函数，包含两个参数：第一个参数是uid；第二个参数是封禁信息，若获取失败，则为None，若没有被封禁则为“{}”，若被封禁，则为dict，解释参见备注
+		callback       Callable       回调函数，包含两个参数：第一个参数是uid；第二个参数是封禁信息，若获取失败，则为None，若没有被封禁则为“{}”，若被封禁，则为dict，解释参见备注
 
 	"""
 	pass
@@ -139,13 +139,13 @@ def GetServerLoadedModsByType(serverType):
 
 
 def GetUserSilentInfo(uid, callback):
-	# type: (int/long, function) -> None
+	# type: (int/long, Callable) -> None
 	"""
 	获取玩家的禁言信息
 
 	Args:
 		uid            int/long       玩家uid
-		callback       function       回调函数，包含两个参数：第一个参数是uid；第二个参数是禁言信息，若获取失败，则为None，若没有被禁言则为“{}”，若被禁言，则为dict，解释如下：
+		callback       Callable       回调函数，包含两个参数：第一个参数是uid；第二个参数是禁言信息，若获取失败，则为None，若没有被禁言则为“{}”，若被禁言，则为dict，解释如下：
 
 	"""
 	pass
@@ -166,12 +166,12 @@ def IsService(serverId):
 
 
 def SetLoginStratege(func):
-	# type: (function) -> bool
+	# type: (Callable) -> bool
 	"""
 	设置玩家登陆选服策略，要求服务器启动后加载mod时候设置
 
 	Args:
-		func           function       计算玩家登陆服务器，包含两个参数：第一个参数为玩家uid；第二个参数为回调函数，执行后续登陆逻辑，无论登陆是否成功，必须要执行，回调函数只有一个参数，也即目标服务器。
+		func           Callable       计算玩家登陆服务器，包含两个参数：第一个参数为玩家uid；第二个参数为回调函数，执行后续登陆逻辑，无论登陆是否成功，必须要执行，回调函数只有一个参数，也即目标服务器。
 
 	Returns:
 		bool           True设置成功，False表示失败。失败后请延迟一帧后重试

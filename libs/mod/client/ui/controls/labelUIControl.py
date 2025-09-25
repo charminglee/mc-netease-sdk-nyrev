@@ -5,84 +5,84 @@ from typing import Tuple
 
 class LabelUIControl(BaseUIControl):
     def SetText(self, text, syncSize=False):
-        # type: (str, bool) -> 'None'
+        # type: (str, bool) -> None
         """
         设置Label的文本信息
         """
         pass
 
     def GetText(self):
-        # type: () -> 'str'
+        # type: () -> str
         """
         获取Label的文本信息，获取失败会返回None
         """
         pass
 
     def SetTextColor(self, color):
-        # type: (Tuple[float,float,float]) -> 'None'
+        # type: (Tuple[float, float, float]) -> None
         """
         设置Label文本的颜色
         """
         pass
 
     def GetTextColor(self):
-        # type: () -> 'Tuple[float,float,float,float]'
+        # type: () -> Tuple[float, float, float, float]
         """
         获取Label文本颜色
         """
         pass
 
     def SetTextFontSize(self, scale):
-        # type: (float) -> 'None'
+        # type: (float) -> None
         """
         设置Label中文本字体的大小
         """
         pass
 
     def SetTextAlignment(self, textAlignment):
-        # type: (str) -> 'bool'
+        # type: (str) -> bool
         """
         设置文本控件的文本对齐方式
         """
         pass
 
     def GetTextAlignment(self):
-        # type: () -> 'str'
+        # type: () -> str
         """
         获取文本控件的文本对齐方式
         """
         pass
 
     def SetTextLinePadding(self, textLinePadding):
-        # type: (float) -> 'bool'
+        # type: (float) -> bool
         """
         设置文本控件的行间距
         """
         pass
 
     def GetTextLinePadding(self):
-        # type: () -> 'float'
+        # type: () -> float
         """
         获取文本控件的行间距
         """
         pass
 
     def EnableTextShadow(self):
-        # type: () -> 'bool'
+        # type: () -> bool
         """
         使文本控件显示阴影
         """
         pass
 
     def DisableTextShadow(self):
-        # type: () -> 'bool'
+        # type: () -> bool
         """
         关闭文本控件显示阴影
         """
         pass
 
     def IsTextShadowEnabled(self):
-        # type: () -> 'bool'
+        # type: () -> bool
         """
         判断文本控件是否显示阴影
         """

@@ -5,12 +5,12 @@
 
 
 def AddGetPlayerLockTask(func):
-	# type: (function) -> bool
+	# type: (Callable) -> bool
 	"""
 	添加获取玩家在线锁时的处理任务，会在玩家刚连接到服务端时执行，在所有任务都完成后，才会继续玩家的登录流程
 
 	Args:
-		func           function       处理任务，需要接收两个参数：uid和callback，详见示例
+		func           Callable       处理任务，需要接收两个参数：uid和callback，详见示例
 
 	Returns:
 		bool           True:添加成功<br>False:添加失败
@@ -369,13 +369,13 @@ def NotifyClientToOpenShopUi(playerId):
 
 
 def RegisterOpCommand(url, callback):
-	# type: (str, function) -> None
+	# type: (str, Callable) -> None
 	"""
 	注册一个新的HTTP接口
 
 	Args:
 		url            str            接口url
-		callback       function       响应HTTP请求的实例函数，参数有两个，第一个参数clientId，类型为int，是请求方的唯一标识，用于返回请求处理结果；第二个参数requestData，类型为dict，包含HTTP请求的参数（requestBody）
+		callback       Callable       响应HTTP请求的实例函数，参数有两个，第一个参数clientId，类型为int，是请求方的唯一标识，用于返回请求处理结果；第二个参数requestData，类型为dict，包含HTTP请求的参数（requestBody）
 
 	"""
 	pass
@@ -606,7 +606,7 @@ def StopShowFakeSeed():
 
 
 def TransferToOtherServer(playerId, typeName, transferParam, callback):
-	# type: (str, str, str, function) -> None
+	# type: (str, str, str, Callable) -> None
 	"""
 	玩家转移到指定类型的服务器，假如同类服务器有多个，就根据负载均衡选择一个
 
@@ -614,14 +614,14 @@ def TransferToOtherServer(playerId, typeName, transferParam, callback):
 		playerId       str            玩家id
 		typeName       str            目标服务器的类型，对应MCStudio中配置：服务器配置->游戏配置->类型
 		transferParam  str            切服传入参数，默认空字符串。当玩家跳转到目标服务器触发AddServerPlayerEvent事件时，AddServerPlayerEvent事件会携带这个参数
-		callback       function       回调函数，返回转服API经过master的逻辑判定之后的结果，参数有三个，isSuc(bool), reasonCode(int), message(str)，isSuc返回是否成功；reasonCode代表失败的错误码，message为失败的理由的中文描述
+		callback       Callable       回调函数，返回转服API经过master的逻辑判定之后的结果，参数有三个，isSuc(bool), reasonCode(int), message(str)，isSuc返回是否成功；reasonCode代表失败的错误码，message为失败的理由的中文描述
 
 	"""
 	pass
 
 
 def TransferToOtherServerById(playerId, serverId, transferParam, callback):
-	# type: (str, str, str, function) -> None
+	# type: (str, str, str, Callable) -> None
 	"""
 	玩家迁移到指定服务器id的服务器
 
@@ -629,7 +629,7 @@ def TransferToOtherServerById(playerId, serverId, transferParam, callback):
 		playerId       str            玩家id
 		serverId       str            目标服务器id，服务器id对应公共配置中serverid，公共配置参见[GetCommonConfig](#GetCommonConfig)备注
 		transferParam  str            切服传入参数，默认空字符串。当玩家跳转到目标服务器触发AddServerPlayerEvent事件时，AddServerPlayerEvent事件会携带这个参数
-		callback       function       回调函数，返回转服API经过master的逻辑判定之后的结果，参数有三个，isSuc(bool), reasonCode(int), message(str)，isSuc返回是否成功；reasonCode代表失败的错误码，message为失败的理由的中文描述
+		callback       Callable       回调函数，返回转服API经过master的逻辑判定之后的结果，参数有三个，isSuc(bool), reasonCode(int), message(str)，isSuc返回是否成功；reasonCode代表失败的错误码，message为失败的理由的中文描述
 
 	"""
 	pass

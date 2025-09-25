@@ -225,26 +225,26 @@ def GetOnlineKey(uid):
 
 
 def GetOnlineServerInfoOfMultiPlayers(uids, callback):
-	# type: (list(int/long), function) -> None
+	# type: (list(int/long), Callable) -> None
 	"""
 	获取多个玩家在线信息
 
 	Args:
 		uids           list(int/long) 玩家的netease uid列表，列表不能超过100，若超过100，本api会抛出Exception
-		callback       function       回调函数，该函数会被异步执行。函数只需要一个参数，是list(dict)类型。每个dict包含的键以及含义说明："uid":玩家的netease uid；      "serverId"：玩家所在lobby或game的服务器id， 若玩家不在线则为None;"proxyId"：客户端连接的proxy服务器id， 若玩家不在线则为None;     "protocolVersion"：玩家客户端协议版本号， 若玩家不在线则为None
+		callback       Callable       回调函数，该函数会被异步执行。函数只需要一个参数，是list(dict)类型。每个dict包含的键以及含义说明："uid":玩家的netease uid；      "serverId"：玩家所在lobby或game的服务器id， 若玩家不在线则为None;"proxyId"：客户端连接的proxy服务器id， 若玩家不在线则为None;     "protocolVersion"：玩家客户端协议版本号， 若玩家不在线则为None
 
 	"""
 	pass
 
 
 def GetOnlineServerInfoOfPlayer(uid, callback):
-	# type: (int/long, function) -> None
+	# type: (int/long, Callable) -> None
 	"""
 	获取玩家在线信息
 
 	Args:
 		uid            int/long       玩家的netease uid，玩家的唯一标识
-		callback       function       回调函数，该函数会被异步执行。函数只需要一个参数，是dict类型。dict包含的键以及含义说明："uid":玩家的netease uid；  "serverId"：玩家所在lobby或game的服务器id， 若玩家不在线则为None;"proxyId"：客户端连接的proxy服务器id， 若玩家不在线则为None；   "protocolVersion"：玩家客户端协议版本号， 若玩家不在线则为None
+		callback       Callable       回调函数，该函数会被异步执行。函数只需要一个参数，是dict类型。dict包含的键以及含义说明："uid":玩家的netease uid；  "serverId"：玩家所在lobby或game的服务器id， 若玩家不在线则为None;"proxyId"：客户端连接的proxy服务器id， 若玩家不在线则为None；   "protocolVersion"：玩家客户端协议版本号， 若玩家不在线则为None
 
 	"""
 	pass

@@ -4,14 +4,14 @@ from mod.common.component.baseComponent import BaseComponent
 
 class LevelComponentServer(BaseComponent):
     def GetPlayerLevel(self):
-        # type: () -> 'int'
+        # type: () -> int
         """
         获取玩家等级
         """
         pass
 
     def AddPlayerLevel(self, level):
-        # type: (int) -> 'bool'
+        # type: (int) -> bool
         """
         修改玩家等级
         """

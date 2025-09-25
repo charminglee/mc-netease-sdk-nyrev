@@ -20,7 +20,7 @@ _system_dict = {}
 
 
 def RegisterComponent(nameSpace, name, clsPath):
-    # type: (str, str, str) -> 'bool'
+    # type: (str, str, str) -> bool
     """
     用于将组件注册到引擎中
     """
@@ -48,21 +48,21 @@ def GetSystem(nameSpace, systemName):
     return _system_dict.get((nameSpace, systemName))
 
 def CreateComponent(entityId, nameSpace, name):
-    # type: (Union[str,int], str, str) -> 'BaseComponent'
+    # type: (Union[str, int], str, str) -> BaseComponent
     """
     给实体创建服务端组件
     """
     pass
 
 def GetComponent(entityId, nameSpace, name):
-    # type: (str, str, str) -> 'BaseComponent'
+    # type: (str, str, str) -> BaseComponent
     """
     获取实体的服务端组件。一般用来判断某个组件是否创建过，其他情况请使用CreateComponent
     """
     pass
 
 def DestroyComponent(entityId, nameSpace, name):
-    # type: (str, str, str) -> 'None'
+    # type: (str, str, str) -> None
     """
     删除实体的服务端组件
     """
@@ -76,7 +76,7 @@ def GetEngineCompFactory():
     pass
 
 def GetMinecraftEnum():
-    # type: () -> 'minecraftEnum'
+    # type: () -> minecraftEnum
     """
     用于获取枚举值文档中的枚举值
     """
@@ -91,189 +91,189 @@ def GetServerSystemCls():
     return ServerSystem
 
 def GetComponentCls():
-    # type: () -> 'Type[BaseComponent]'
+    # type: () -> Type[BaseComponent]
     """
     用于获取服务器component基类。实现新的component时，需要继承该接口返回的类
     """
     pass
 
 def GetEngineNamespace():
-    # type: () -> 'str'
+    # type: () -> str
     """
     获取引擎事件的命名空间。监听引擎事件时，namespace传该接口返回的namespace
     """
     return "Minecraft"
 
 def GetEngineSystemName():
-    # type: () -> 'str'
+    # type: () -> str
     """
     获取引擎系统名。监听引擎事件时，systemName传该接口返回的systemName
     """
     return "Engine"
 
 def GetLevelId():
-    # type: () -> 'str'
+    # type: () -> str
     """
     获取levelId。某些组件需要levelId创建，可以用此接口获取levelId。其中level即为当前地图的游戏。
     """
     pass
 
 def GetEngineActor():
-    # type: () -> 'dict'
+    # type: () -> dict
     """
     获取所有维度中已加载的所有实体（不包含玩家）。
     """
     pass
 
 def getEntitiesOrBlockFromRay(dimensionId, pos, rot, distance=16, isThrough=False, filterType=1):
-    # type: (int, Tuple[float,float,float], Tuple[float,float,float], int, bool, minecraftEnum) -> 'List[dict]'
+    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, minecraftEnum) -> List[dict]
     """
     从指定位置发射一条射线，获取与射线相交的实体和方块
     """
     pass
 
 def GetPlayerList():
-    # type: () -> 'List[str]'
+    # type: () -> List[str]
     """
     获取所有维度中的全部玩家的id列表
     """
     pass
 
 def SetEntityLimit(num):
-    # type: (int) -> 'bool'
+    # type: (int) -> bool
     """
     设置世界最大可生成实体数量上限。可生成实体指具有spawnrule的实体。当前世界上被加载的可生成实体数量超过这个上限时，生物就不会再通过spawnrule刷出。
     """
     pass
 
 def GetEntityLimit():
-    # type: () -> 'int'
+    # type: () -> int
     """
     获取世界最大可生成实体数量上限。可生成实体的含义见SetEntityLimit
     """
     pass
 
 def GetLocalPosFromWorld(pos, entityId):
-    # type: (Tuple[float,float,float], str) -> 'Tuple[float,float,float]'
+    # type: (Tuple[float, float, float], str) -> Tuple[float, float, float]
     """
     获取基于实体的世界坐标对应的局部坐标
     """
     pass
 
 def GetWorldPosFromLocal(pos, entityId):
-    # type: (Tuple[float,float,float], str) -> 'Tuple[float,float,float]'
+    # type: (Tuple[float, float, float], str) -> Tuple[float, float, float]
     """
     获取基于实体的局部坐标对应的世界坐标
     """
     pass
 
 def GetDirFromRot(rot):
-    # type: (Tuple[float,float]) -> 'Tuple[float,float,float]'
+    # type: (Tuple[float, float]) -> Tuple[float, float, float]
     """
     通过旋转角度获取朝向
     """
     pass
 
 def GetRotFromDir(dir):
-    # type: (Tuple[float,float,float]) -> 'Tuple[float,float]'
+    # type: (Tuple[float, float, float]) -> Tuple[float, float]
     """
     通过朝向获取旋转角度
     """
     pass
 
 def StartProfile():
-    # type: () -> 'bool'
+    # type: () -> bool
     """
     开始启动服务端脚本性能分析，启动后调用StopProfile即可在路径fileName生成函数性能火焰图，此接口只支持PC端。生成的火焰图可以用浏览器打开，推荐chrome浏览器。
     """
     pass
 
 def StopProfile(fileName=None):
-    # type: (str) -> 'bool'
+    # type: (str) -> bool
     """
     停止服务端脚本性能分析并生成火焰图，与StartProfile配合使用，此接口只支持PC端
     """
     pass
 
 def StartMemProfile():
-    # type: () -> 'bool'
+    # type: () -> bool
     """
     开始启动服务端脚本内存分析，启动后调用StopMemProfile即可在路径fileName生成函数内存火焰图，此接口只支持PC端。生成的火焰图可以用浏览器打开，推荐chrome浏览器。
     """
     pass
 
 def StopMemProfile(fileName=None):
-    # type: (str) -> 'bool'
+    # type: (str) -> bool
     """
     停止服务端脚本内存分析并生成火焰图，与StartMemProfile配合使用，此接口只支持PC端
     """
     pass
 
 def StartMultiProfile():
-    # type: () -> 'bool'
+    # type: () -> bool
     """
     开始启动服务端与客户端双端脚本性能分析，启动后调用StopMultiProfile即可在路径fileName生成函数性能火焰图。双端采集时数据误差较大，建议优先使用StartProfile单端版本，此接口只支持PC端
     """
     pass
 
 def StopMultiProfile(fileName=None):
-    # type: (str) -> 'bool'
+    # type: (str) -> bool
     """
     停止双端脚本性能分析并生成火焰图，与StartMultiProfile配合使用，此接口只支持PC端
     """
     pass
 
 def StartRecordPacket():
-    # type: () -> 'bool'
+    # type: () -> bool
     """
     开始启动服务端与客户端之间的引擎收发包统计，启动后调用StopRecordPacket即可获取两个函数调用之间引擎收发包的统计信息，仅支持租赁服与Apollo网络服环境（不支持单机环境）
     """
     pass
 
 def StopRecordPacket():
-    # type: () -> 'dict'
+    # type: () -> dict
     """
     停止服务端与客户端之间的引擎收发包统计并输出结果，与StartRecordPacket配合使用，输出结果为字典，key为网络包名，value字典中记录收发信息，具体见示例，仅支持租赁服与Apollo网络服环境（不支持单机环境）
     """
     pass
 
 def StartRecordEvent():
-    # type: () -> 'bool'
+    # type: () -> bool
     """
     开始启动服务端与客户端之间的脚本事件收发统计，启动后调用StopRecordEvent即可获取两个函数调用之间脚本事件收发的统计信息，仅支持租赁服与Apollo网络服环境（不支持单机环境）
     """
     pass
 
 def StopRecordEvent():
-    # type: () -> 'dict'
+    # type: () -> dict
     """
     停止服务端与客户端之间的脚本事件收发统计并输出结果，与StartRecordEvent配合使用，输出结果为字典，key为网络包名，value字典中记录收发信息，具体见示例，仅支持租赁服与Apollo网络服环境（不支持单机环境）
     """
     pass
 
 def IsInServer():
-    # type: () -> 'bool'
+    # type: () -> bool
     """
     获取当前游戏是否跑在服务器环境下
     """
     pass
 
 def IsInApollo():
-    # type: () -> 'bool'
+    # type: () -> bool
     """
     返回当前游戏Mod是否运行在Apollo网络服
     """
     pass
 
 def AddEntityTickEventWhiteList(identifier):
-    # type: (str) -> 'bool'
+    # type: (str) -> bool
     """
     添加实体类型到EntityTickServerEvent事件的触发白名单。
     """
     pass
 
 def GetPlatform():
-    # type: () -> 'int'
+    # type: () -> int
     """
     获取脚本运行的平台
     """
@@ -287,49 +287,49 @@ def GetCustomGoalCls():
     pass
 
 def StartCoroutine(iterOrFunc, callback=None):
-    # type: (Union[Generator,Callable[[], Generator]], function) -> 'Generator'
+    # type: (Union[Generator,Callable[[], Generator]], Callable) -> 'Generator'
     """
     开启服务端协程，实现函数分段式执行，可用于缓解复杂逻辑计算导致游戏卡顿问题
     """
     pass
 
 def StopCoroutine(iter):
-    # type: (Generator) -> 'bool'
+    # type: (Generator) -> bool
     """
     停止协程
     """
     pass
 
 def GetServerTickTime():
-    # type: () -> 'float'
+    # type: () -> float
     """
     获取服务端引擎上一帧的帧消耗时间
     """
     pass
 
 def SetMcpModLogCanPostDump(canPost):
-    # type: (bool) -> 'None'
+    # type: (bool) -> None
     """
     设置是否可以打印错误信息到McpModLog日志。
     """
     pass
 
 def GetMcpModLogCanPostDump():
-    # type: () -> 'bool'
+    # type: () -> bool
     """
     获取是否可以打印错误信息到McpModLog日志。
     """
     pass
 
 def PostMcpModDump(msg, *args, **kwargs):
-    # type: (str, Any, dict) -> 'None'
+    # type: (str, Any, dict) -> None
     """
     主动打印信息到McpModLog日志，需要先调用 SetMcpModLogCanPostDump 接口进行设置，才能生效。
     """
     pass
 
 def ImportModule(path):
-    # type: (str) -> 'Any'
+    # type: (str) -> Any
     """
     使用字符串路径导入模块，作用与importlib.import_module类似，但只能导入当前加载的mod中的模块
     """
@@ -337,21 +337,21 @@ def ImportModule(path):
     return import_module(path)
 
 def GetMinecraftVersion():
-    # type: () -> 'str'
+    # type: () -> str
     """
     获取Minecraft版本-服务端。
     """
     pass
 
 def GetIntPos(pos):
-    # type: (Tuple[float,float,float]) -> 'Tuple[int,int,int]'
+    # type: (Tuple[float, float, float]) -> Tuple[int, int, int]
     """
     获取坐标所在方块的位置，即浮点数坐标向下取整后的整数坐标。
     """
     pass
 
 def GetHostPlayerId():
-    # type: () -> 'str'
+    # type: () -> str
     """
     获取房主的entityId
     """

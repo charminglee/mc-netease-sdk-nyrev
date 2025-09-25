@@ -5,14 +5,14 @@
 
 
 def RegisterServiceHttp(url, binder, func):
-	# type: (string, instance, function) -> None
+	# type: (string, instance, Callable) -> None
 	"""
 	注册一个新的HTTP接口
 
 	Args:
 		url            string         接口url
 		binder         instance       响应HTTP请求的实例
-		func           function       响应HTTP请求的实例函数
+		func           Callable       响应HTTP请求的实例函数
 
 	"""
 	pass

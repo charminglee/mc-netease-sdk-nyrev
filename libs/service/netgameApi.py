@@ -63,13 +63,13 @@ def GetServiceConfig():
 
 
 def RegisterOpCommand(url, callback):
-	# type: (str, function) -> None
+	# type: (str, Callable) -> None
 	"""
 	注册一个新的HTTP接口
 
 	Args:
 		url            str            接口url
-		callback       function       响应HTTP请求的实例函数，参数有两个，第一个参数clientId，类型为int，是请求方的唯一标识，用于返回请求处理结果；第二个参数requestData，类型为dict，包含HTTP请求的参数（requestBody）
+		callback       Callable       响应HTTP请求的实例函数，参数有两个，第一个参数clientId，类型为int，是请求方的唯一标识，用于返回请求处理结果；第二个参数requestData，类型为dict，包含HTTP请求的参数（requestBody）
 
 	"""
 	pass

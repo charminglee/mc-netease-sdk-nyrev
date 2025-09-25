@@ -5,7 +5,7 @@ from typing import Tuple
 
 class QueryVariableComponentServer(BaseComponent):
     def EvalMolangExpression(self, expression):
-        # type: (str) -> 'dict'
+        # type: (str) -> dict
         """
         在实体上下文上执行molang表达式
         """
@@ -19,7 +19,7 @@ class QueryVariableComponentServer(BaseComponent):
         pass
 
     def SetPropertyValue(self, propertyName, value):
-        # type: (str, str) -> 'bool'
+        # type: (str, str) -> bool
         """
         设置实体属性的值
         """

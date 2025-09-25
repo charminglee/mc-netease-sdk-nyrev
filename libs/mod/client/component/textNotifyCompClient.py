@@ -4,7 +4,7 @@ from mod.common.component.baseComponent import BaseComponent
 
 class TextNotifyComponet(BaseComponent):
     def SetLeftCornerNotify(self, textMsg):
-        # type: (str) -> 'bool'
+        # type: (str) -> bool
         """
         客户端设置左上角通知信息
         """

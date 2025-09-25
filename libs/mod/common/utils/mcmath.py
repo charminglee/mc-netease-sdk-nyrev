@@ -10,13 +10,11 @@ def Clamp(x, minVal, maxVal):
 
 
 class Vector3(object):
-    x: float
-    y: float
-    z: float
-
     def __init__(self, *args):
         # type: (Union[float, Tuple[float, float, float]]) -> None
-        pass
+        self.x = 0.0 # type: float
+        self.y = 0.0 # type: float
+        self.z = 0.0 # type: float
 
     @staticmethod
     def One():
@@ -315,13 +313,13 @@ class Matrix(object):
     @property
     def row(self):
         # type: () -> int
-        pass
+        return 0
 
     # Returns the number of columns in the matrix
     @property
     def col(self):
         # type: () -> int
-        pass
+        return 0
 
     # Returns the value of element (i,j): x[i,j]
     def __getitem__(self, ndxTuple):

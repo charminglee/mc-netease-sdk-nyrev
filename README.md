@@ -29,6 +29,19 @@ pip install mc-netease-sdk-nyrev
 10. 补充`mod`模块的类型注解。
 11. 优化`baseSystem`模块的类型注解。
 12. 补充`BlockEntityData`的类型注解。
+13. 删除文档注释中多余的网址。
+14. 移除`CustomUIControlProxy`模块。
+15. 补充`CustomUIScreenProxy`的类型注解。
+16. 补充缺失的`miniMapBaseScreen`模块。
+17. 补充`NativeScreenManager`的类型注解。
+18. 补充`ViewBinder`的类型注解。
+19. 优化`BaseUIControl`的类型注解。
+20. 优化`ButtonUIControl`的类型注解。
+21. 优化`NeteaseComboBoxUIControl`的类型注解。
+22. 优化`NeteasePaperDollUIControl`的类型注解。
+23. 优化`SelectionWheelUIControl`的类型注解。
+24. 优化`extraClientApi`模块的类型注解。
+25. 优化`extraServerApi`模块的类型注解。
 
 ### IDE运行支持
 

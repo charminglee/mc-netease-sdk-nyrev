@@ -1,4 +1,11 @@
 # -*- coding: utf-8 -*-
+
+
+if 0:
+	from typing import Optional, Callable, TypeVar, Any
+	_F = TypeVar("_F", bound=Callable[..., Any])
+
+
 class ViewBinder(object):
 	ButtonFilter = 0x10000000
 	BF_ButtonClickUp	=	0 | ButtonFilter
@@ -24,9 +31,11 @@ class ViewBinder(object):
 
 	@staticmethod
 	def binding(bind_flag, binding_name = None):
+		# type: (int, Optional[str]) -> Callable[[_F], _F]
 		pass
 
 	@staticmethod
 	def binding_collection(bind_flag, collection_name, binding_name = None):
+		# type: (int, str, Optional[str]) -> Callable[[_F], _F]
 		pass
 

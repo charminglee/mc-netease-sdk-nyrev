@@ -5,7 +5,7 @@
 
 
 def AsyncExecuteWithOrderKey(dbName, orderKey, sql, params, callback):
-	# type: (string, string/int, string, tuple, function) -> None
+	# type: (string, string/int, string, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，执行所有mysql操作。同AsyncExecute的区别是可以显示指定orderKey
 
@@ -14,14 +14,14 @@ def AsyncExecuteWithOrderKey(dbName, orderKey, sql, params, callback):
 		orderKey       string/int     相同的orderKey会顺序执行，不同的orderKey会并行执行
 		sql            string         mysql查询语句，格式化字符串
 		params         tuple          填充sql
-		callback       function       回调函数，只有一个输入参数，它在主线程执行。func的返回值会是callback的实参。若func抛出异常，则callback输入参数是None。若没有回调，则传入None
+		callback       Callable       回调函数，只有一个输入参数，它在主线程执行。func的返回值会是callback的实参。若func抛出异常，则callback输入参数是None。若没有回调，则传入None
 
 	"""
 	pass
 
 
 def AsyncQueryWithOrderKey(dbName, orderKey, sql, params, callback):
-	# type: (string, string/int, string, tuple, function) -> None
+	# type: (string, string/int, string, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，执行mysql查询。同AsyncQuery区别是可以显示指定orderKey
 
@@ -30,7 +30,7 @@ def AsyncQueryWithOrderKey(dbName, orderKey, sql, params, callback):
 		orderKey       string/int     相同的orderKey会顺序执行，不同的orderKey会并行执行
 		sql            string         mysql查询语句，格式化字符串
 		params         tuple          填充sql
-		callback       function       回调函数，只有一个输入参数，它在主线程执行。func的返回值会是callback的实参。若func抛出异常，则callback输入参数是None。若没有回调，则传入None
+		callback       Callable       回调函数，只有一个输入参数，它在主线程执行。func的返回值会是callback的实参。若func抛出异常，则callback输入参数是None。若没有回调，则传入None
 
 	"""
 	pass

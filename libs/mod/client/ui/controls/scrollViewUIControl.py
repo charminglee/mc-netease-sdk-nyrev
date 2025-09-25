@@ -4,42 +4,42 @@ from mod.client.ui.controls.baseUIControl import BaseUIControl
 
 class ScrollViewUIControl(BaseUIControl):
     def SetScrollViewPos(self, pos):
-        # type: (float) -> 'None'
+        # type: (float) -> None
         """
         设置当前scroll_view内容的位置
         """
         pass
 
     def GetScrollViewPos(self):
-        # type: () -> 'float'
+        # type: () -> float
         """
         获得当前scroll_view最上方内容的位置
         """
         pass
 
     def SetScrollViewPercentValue(self, percent_value):
-        # type: (int) -> 'None'
+        # type: (int) -> None
         """
         设置当前scroll_view内容的百分比位置
         """
         pass
 
     def GetScrollViewPercentValue(self):
-        # type: () -> 'int'
+        # type: () -> int
         """
         获取当前scroll_view内容的百分比位置
         """
         pass
 
     def GetScrollViewContentPath(self):
-        # type: () -> 'str'
+        # type: () -> str
         """
         返回该scroll_view内容的路径
         """
         pass
 
     def GetScrollViewContentControl(self):
-        # type: () -> 'BaseUIControl'
+        # type: () -> BaseUIControl
         """
         返回该scroll_view内容的BaseUIControl实例
         """

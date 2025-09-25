@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+from typing import Optional
 from mod.common.component.baseComponent import BaseComponent
 
 class HurtCompServer(BaseComponent):
@@ -11,7 +12,7 @@ class HurtCompServer(BaseComponent):
         pass
 
     def Hurt(self, damage, cause, attackerId=None, childAttackerId=None, knocked=True, customTag=None):
-        # type: (float, str, str, str, bool, str) -> bool
+        # type: (float, str, Optional[str], Optional[str], bool, Optional[str]) -> bool
         """
         设置实体伤害
         """

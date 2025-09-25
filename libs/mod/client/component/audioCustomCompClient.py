@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from typing import Tuple
+from typing import Tuple, Optional
 
 class AudioCustomComponentClient(object):
     def DisableOriginMusic(self, disable):
@@ -18,7 +18,7 @@ class AudioCustomComponentClient(object):
         pass
 
     def PlayCustomMusic(self, name, pos=(0, 0, 0), volume=1, pitch=1, loop=False, entityId=None):
-        # type: (str, Tuple[float, float, float], float, float, bool, str) -> str
+        # type: (str, Tuple[float, float, float], float, float, bool, Optional[str]) -> str
         """
         播放场景音效，包括原版音效及自定义音效
         """

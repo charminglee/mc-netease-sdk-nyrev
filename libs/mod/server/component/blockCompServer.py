@@ -3,7 +3,7 @@
 from typing import List
 from mod.common.component.blockPaletteComp import BlockPaletteComponent
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Optional
 
 class BlockCompServer(BaseComponent):
     def RegisterBlockPatterns(self, pattern, defines, result_actor_name):
@@ -14,7 +14,7 @@ class BlockCompServer(BaseComponent):
         pass
 
     def CreateMicroBlockResStr(self, identifier, start, end, colorMap=None, isMerge=False, icon=''):
-        # type: (str, Tuple[int, int, int], Tuple[int, int, int], dict, bool, str) -> str
+        # type: (str, Tuple[int, int, int], Tuple[int, int, int], Optional[dict], bool, str) -> str
         """
         生成微缩方块资源Json字符串
         """

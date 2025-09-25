@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from typing import Union
+from typing import Optional, Callable, Any
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 
@@ -13,28 +13,28 @@ class HttpToWebServerCompServer(BaseComponent):
         pass
 
     def QueryLobbyUserItem(self, callback, uid):
-        # type: (Callable, int) -> None
+        # type: (Callable[[dict], Any], int) -> None
         """
         查询还没发货的订单。仅联机大厅可用
         """
         pass
 
     def LobbyGetStorage(self, callback, uid, keys):
-        # type: (Callable, int, List[str]) -> None
+        # type: (Callable[[dict], Any], int, List[str]) -> None
         """
         获取存储的数据。仅联机大厅可用
         """
         pass
 
     def LobbySetStorageAndUserItem(self, callback, uid, orderId=None, entitiesGetter=None):
-        # type: (Callable, int, Union[int,None], Union[Callable,None]) -> None
+        # type: (Callable[[dict], Any], int, Optional[int], Optional[Callable[[], List[dict]]]) -> None
         """
         设置订单已发货或者存数据。仅联机大厅可用
         """
         pass
 
     def LobbyGetStorageBySort(self, callback, key, ascend, offset, length):
-        # type: (Callable, str, bool, int, int) -> None
+        # type: (Callable[[dict], Any], str, bool, int, int) -> None
         """
         排序获取存储的数据。仅联机大厅可用
         """

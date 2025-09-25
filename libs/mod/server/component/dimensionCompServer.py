@@ -2,7 +2,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Optional
 
 class DimensionCompServer(BaseComponent):
     def ChangePlayerDimension(self, dimensionId, pos):
@@ -20,7 +20,7 @@ class DimensionCompServer(BaseComponent):
         pass
 
     def ChangeEntityDimension(self, dimensionId, pos=None):
-        # type: (int, Tuple[int, int, int]) -> bool
+        # type: (int, Optional[Tuple[int, int, int]]) -> bool
         """
         传送实体
         """

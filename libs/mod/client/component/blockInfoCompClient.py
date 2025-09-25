@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from typing import Union
+from typing import Union, Optional
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
 
@@ -48,7 +48,7 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def GetDestroyTotalTime(self, blockName, itemName=None, miningArgs=None):
-        # type: (str, str, dict) -> float
+        # type: (str, Optional[str], Optional[dict]) -> float
         """
         获取使用物品破坏方块需要的时间
         """

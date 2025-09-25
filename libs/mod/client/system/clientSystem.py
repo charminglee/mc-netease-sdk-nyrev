@@ -2,7 +2,7 @@
 
 from typing import Union
 from mod.common.system.baseSystem import BaseSystem
-from typing import Tuple
+from typing import Tuple, Optional
 
 class ClientSystem(BaseSystem):
     def NotifyToServer(self, eventName, eventData):
@@ -13,14 +13,14 @@ class ClientSystem(BaseSystem):
         pass
 
     def CreateEngineSfx(self, path, pos=None, rot=None, scale=None):
-        # type: (str, Tuple[float, float, float], Tuple[float, float, float], Tuple[float, float, float]) -> Union[int, None]
+        # type: (str, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]]) -> Union[int, None]
         """
         创建序列帧特效
         """
         pass
 
     def CreateEngineSfxFromEditor(self, path, pos=None, rot=None, scale=None):
-        # type: (str, Tuple[float, float, float], Tuple[float, float, float], Tuple[float, float, float]) -> Union[int, None]
+        # type: (str, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]]) -> Union[int, None]
         """
         指使用资源包中effects/xxx.json，按照编辑器中编辑好的参数创建序列帧。支持环状序列帧
         """

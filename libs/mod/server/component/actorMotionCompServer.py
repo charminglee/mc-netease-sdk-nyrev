@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
-from typing import Tuple
+from typing import Tuple, Optional
 from mod.common.component.baseComponent import BaseComponent
-from mod.common.minecraftEnum import TimeEaseType
 
 class ActorMotionComponentServer(BaseComponent):
     def SetMotion(self, motion):
@@ -34,14 +33,14 @@ class ActorMotionComponentServer(BaseComponent):
         pass
 
     def AddEntityTrackMotion(self, targetPos, duraTime, startPos=None, relativeCoord=False, isLoop=False, targetRot=None, startRot=None, useVelocityDir=False, ease='linear'):
-        # type: (Tuple[float, float, float], float, Tuple[float, float, float], bool, bool, Tuple[float, float], Tuple[float, float], bool, TimeEaseType) -> int
+        # type: (Tuple[float, float, float], float, Optional[Tuple[float, float, float]], bool, bool, Optional[Tuple[float, float]], Optional[Tuple[float, float]], bool, str) -> int
         """
         给实体（不含玩家）添加轨迹运动器
         """
         pass
 
     def AddEntityVelocityMotion(self, velocity, accelerate=None, useVelocityDir=True):
-        # type: (Tuple[float, float, float], Tuple[float, float, float], bool) -> int
+        # type: (Tuple[float, float, float], Optional[Tuple[float, float, float]], bool) -> int
         """
         给实体（不含玩家）添加速度运动器
         """
@@ -90,14 +89,14 @@ class ActorMotionComponentServer(BaseComponent):
         pass
 
     def AddPlayerTrackMotion(self, targetPos, duraTime, startPos=None, relativeCoord=False, isLoop=False, targetRot=None, startRot=None, useVelocityDir=False, ease='linear'):
-        # type: (Tuple[float, float, float], float, Tuple[float, float, float], bool, bool, Tuple[float, float], Tuple[float, float], bool, TimeEaseType) -> int
+        # type: (Tuple[float, float, float], float, Optional[Tuple[float, float, float]], bool, bool, Optional[Tuple[float, float]], Optional[Tuple[float, float]], bool, str) -> int
         """
         给玩家添加轨迹运动器
         """
         pass
 
     def AddPlayerVelocityMotion(self, velocity, accelerate=None, useVelocityDir=True):
-        # type: (Tuple[float, float, float], Tuple[float, float, float], bool) -> int
+        # type: (Tuple[float, float, float], Optional[Tuple[float, float, float]], bool) -> int
         """
         给玩家添加速度运动器
         """

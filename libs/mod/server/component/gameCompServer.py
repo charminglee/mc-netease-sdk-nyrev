@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from typing import Tuple
-from typing import Union
+from typing import Optional
 from mod.common.utils.timer import CallLater
 from typing import List
 from typing import Any
@@ -394,7 +394,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def SetSpawnDimensionAndPosition(self, dimensionId=None, pos=None):
-        # type: (Union[int,None], Union[Tuple[int, int, int],None]) -> bool
+        # type: (Optional[int], Optional[Tuple[int, int, int]]) -> bool
         """
         设置世界出生点维度与坐标
         """
@@ -457,7 +457,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def GetEntityDamage(self, entityId, targetEntityId=None):
-        # type: (str, str) -> float
+        # type: (str, Optional[str]) -> float
         """
         获取生物(包括玩家)的攻击力
         """

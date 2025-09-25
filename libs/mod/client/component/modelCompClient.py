@@ -2,7 +2,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Optional
 
 class ModelComponentClient(BaseComponent):
     def SetModel(self, modelName):
@@ -34,7 +34,7 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def PlayAnim(self, aniName, isLoop, modelId=None):
-        # type: (str, bool, int) -> bool
+        # type: (str, bool, Optional[int]) -> bool
         """
         播放骨骼动画
         """
@@ -48,14 +48,14 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def GetAnimLength(self, aniName, modelId=None):
-        # type: (str, int) -> float
+        # type: (str, Optional[int]) -> float
         """
         获取某个骨骼动画的长度，单位为秒
         """
         pass
 
     def SetAnimSpeed(self, aniName, speed, modelId=None):
-        # type: (str, float, int) -> bool
+        # type: (str, float, Optional[int]) -> bool
         """
         设置某个骨骼动画的播放速度
         """
@@ -97,14 +97,14 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetTexture(self, texture, modelId=None):
-        # type: (str, int) -> bool
+        # type: (str, Optional[int]) -> bool
         """
         设置骨骼模型的贴图，该接口与SetModelTexture功能相同，但属于客户端接口。
         """
         pass
 
     def GetTexture(self, modelId=None):
-        # type: (int) -> str
+        # type: (Optional[int]) -> str
         """
         获取骨骼模型的贴图路径
         """
@@ -125,14 +125,14 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetLegacyBindRot(self, enable, modelId=None):
-        # type: (bool, int) -> bool
+        # type: (bool, Optional[int]) -> bool
         """
         用于修复特效挂接到骨骼时的方向
         """
         pass
 
     def GetBoneWorldPos(self, boneName, modelId=None):
-        # type: (str, int) -> Tuple[float, float, float]
+        # type: (str, Optional[int]) -> Tuple[float, float, float]
         """
         获取骨骼的坐标
         """
@@ -377,7 +377,7 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetModelMultiPassMaterial(self, modelId, materialList, materialCpuList=None, boneName=''):
-        # type: (int, List[str], List[str], str) -> bool
+        # type: (int, List[str], Optional[List[str]], str) -> bool
         """
         设置骨骼模型多pass中使用到的材质列表，也可对单个骨骼设置所使用的自定义多Pass材质。如果需要设置单个骨骼所使用的多Pass材质，需要先在netease_model.json下设置"useSplitMeshes"字段为true。
         """

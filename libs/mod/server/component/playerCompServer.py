@@ -2,7 +2,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Optional, Callable
 
 class PlayerCompServer(BaseComponent):
     def GetPlayerHunger(self):
@@ -307,7 +307,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def CollectOnlineClientData(self, collectTypes, callback, extraArgs=None):
-        # type: (List[str], Callable, dict) -> None
+        # type: (List[str], Callable, Optional[dict]) -> None
         """
         收集在线玩家客户端数据，用于判断玩家是否作弊
         """
@@ -328,7 +328,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetRelevantPlayer(self, exceptList=None):
-        # type: (List[str]) -> List[str]
+        # type: (Optional[List[str]]) -> List[str]
         """
         获取附近玩家id列表
         """

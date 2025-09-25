@@ -3,7 +3,7 @@
 from typing import Union
 from typing import List
 from mod.common.system.baseSystem import BaseSystem
-from typing import Tuple
+from typing import Tuple, Optional
 
 class ServerSystem(BaseSystem):
     def BroadcastToAllClient(self, eventName, eventData):
@@ -28,7 +28,7 @@ class ServerSystem(BaseSystem):
         pass
 
     def CreateEngineEntityByNBT(self, nbtDict, pos=None, rot=None, dimensionId=0, isNpc=False, isGlobal=None):
-        # type: (dict, Union[Tuple[float, float, float],None], Union[Tuple[float, float],None], int, bool, Union[None,bool]) -> Union[str, None]
+        # type: (dict, Optional[Tuple[float, float, float]], Optional[Tuple[float, float]], int, bool, Optional[bool]) -> Union[str, None]
         """
         根据nbt数据创建实体
         """

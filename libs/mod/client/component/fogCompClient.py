@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Optional
 
 class FogCompClient(BaseComponent):
     def SetFogColor(self, color):
@@ -33,7 +33,7 @@ class FogCompClient(BaseComponent):
         pass
 
     def SetFogLength(self, start=None, end=None):
-        # type: (float, float) -> bool
+        # type: (Optional[float], Optional[float]) -> bool
         """
         设置雾效范围
         """

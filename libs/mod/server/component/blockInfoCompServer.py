@@ -4,7 +4,7 @@ from typing import Union
 from typing import Tuple
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Any
+from typing import Any, Optional
 
 class BlockInfoComponentServer(BaseComponent):
     def GetBlockLightLevel(self, pos, dimensionId=-1):
@@ -239,7 +239,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetDestroyTotalTime(self, blockName, itemName=None, miningArgs=None):
-        # type: (str, str, dict) -> float
+        # type: (str, Optional[str], Optional[dict]) -> float
         """
         获取使用物品破坏方块需要的时间
         """

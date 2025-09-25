@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from typing import Any
+from typing import Any, Optional, Callable
 
 class MasterSystem():
     def CreateEventData(self):
@@ -39,7 +39,7 @@ class MasterSystem():
         pass
 
     def RequestToService(self, module, event, eventData, callback=None, timeout=2.0):
-        # type: (str, str, dict, Callable, int) -> None
+        # type: (str, str, dict, Optional[Callable], int) -> None
         """
         给service/master发请求。
         """

@@ -9,6 +9,7 @@ if 0:
     from mod.client.component.engineCompFactoryClient import EngineCompFactoryClient
     from mod.client.ui.viewRequest import ViewRequest
     from mod.common.component.baseComponent import BaseComponent
+    from mod.client.ui.CustomUIScreenProxy import CustomUIScreenProxy
     from mod.client.ui.CustomUIControlProxy import CustomUIControlProxy
     from mod.common import minecraftEnum
     from mod.client.ui.viewBinder import ViewBinder
@@ -76,21 +77,21 @@ def GetEngineCompFactory():
     pass
 
 def RegisterUI(nameSpace, uiKey, clsPath, uiScreenDef=None):
-    # type: (str, str, str, str) -> bool
+    # type: (str, str, str, Optional[str]) -> bool
     """
     注册UI，创建UI前，需要先注册UI。同一UI只需要注册一次即可。详见界面创建流程及生命周期
     """
     pass
 
 def CreateUI(nameSpace, uiKey=None, createParams=None):
-    # type: (str, str, dict) -> ScreenNode
+    # type: (str, Optional[str], Optional[dict]) -> ScreenNode
     """
     创建UI，详见界面创建流程及生命周期
     """
     pass
 
 def GetUI(nameSpace, uiKey=None):
-    # type: (str, str) -> ScreenNode
+    # type: (str, Optional[str]) -> ScreenNode
     """
     获取UI节点，详见界面创建流程及生命周期
     """
@@ -358,7 +359,7 @@ def GetCustomUIControlProxyCls():
     pass
 
 def GetUIScreenProxyCls():
-    # type: () -> Type[CustomUIControlProxy]
+    # type: () -> Type[CustomUIScreenProxy]
     """
     获得原生界面Screen代理基类
     """
@@ -457,7 +458,7 @@ def StartProfile():
     pass
 
 def StopProfile(fileName=None):
-    # type: (str) -> bool
+    # type: (Optional[str]) -> bool
     """
     停止客户端脚本性能分析并生成火焰图，与StartProfile配合使用，此接口只支持PC端
     """
@@ -471,7 +472,7 @@ def StartMemProfile():
     pass
 
 def StopMemProfile(fileName=None):
-    # type: (str) -> bool
+    # type: (Optional[str]) -> bool
     """
     停止客户端脚本内存分析并生成火焰图，与StartMemProfile配合使用，此接口只支持PC端
     """
@@ -485,7 +486,7 @@ def StartMultiProfile():
     pass
 
 def StopMultiProfile(fileName=None):
-    # type: (str) -> bool
+    # type: (Optional[str]) -> bool
     """
     停止双端脚本性能分析并生成火焰图，与StartMultiProfile配合使用，此接口只支持PC端
     """
@@ -716,7 +717,7 @@ def OpenEmoteGui():
     pass
 
 def StartCoroutine(iterOrFunc, callback=None):
-    # type: (Union[Generator, Callable[[], Generator]], Optional[Callable]) -> Generator
+    # type: (Union[Generator, Callable[[], Generator]], Optional[Callable[[], Any]]) -> Generator
     """
     开启客户端协程，实现函数分段式执行，可用于缓解复杂逻辑计算导致游戏卡顿问题
     """

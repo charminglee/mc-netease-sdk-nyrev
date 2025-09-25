@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from typing import Any
+from typing import Any, Optional
 from mod.common.component.baseComponent import BaseComponent
 
 class ModAttrComponentServer(BaseComponent):
@@ -19,7 +19,7 @@ class ModAttrComponentServer(BaseComponent):
         pass
 
     def GetAttr(self, paramName, defaultValue=None):
-        # type: (str, Any) -> Any
+        # type: (str, Optional[Any]) -> Any
         """
         获取SetAttr设置的属性值
         """

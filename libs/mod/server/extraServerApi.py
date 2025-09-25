@@ -2,16 +2,16 @@
 
 
 if 0:
-    from typing import Generator
+    from typing import Generator, Optional
     from typing import Tuple
     from typing import Union
     from typing import List
-    from mod.server.component.engineCompFactoryServer import EngineCompFactoryServer
     from typing import Any
+    from typing import Type
     from typing import Callable
+    from mod.server.component.engineCompFactoryServer import EngineCompFactoryServer
     from mod.server.gamePlay.AI.customGoal import CustomGoal
     from mod.server.system.serverSystem import ServerSystem
-    from typing import Type
     from mod.common.component.baseComponent import BaseComponent
     import mod.common.minecraftEnum as minecraftEnum
 
@@ -189,7 +189,7 @@ def StartProfile():
     pass
 
 def StopProfile(fileName=None):
-    # type: (str) -> bool
+    # type: (Optional[str]) -> bool
     """
     停止服务端脚本性能分析并生成火焰图，与StartProfile配合使用，此接口只支持PC端
     """
@@ -203,7 +203,7 @@ def StartMemProfile():
     pass
 
 def StopMemProfile(fileName=None):
-    # type: (str) -> bool
+    # type: (Optional[str]) -> bool
     """
     停止服务端脚本内存分析并生成火焰图，与StartMemProfile配合使用，此接口只支持PC端
     """
@@ -217,7 +217,7 @@ def StartMultiProfile():
     pass
 
 def StopMultiProfile(fileName=None):
-    # type: (str) -> bool
+    # type: (Optional[str]) -> bool
     """
     停止双端脚本性能分析并生成火焰图，与StartMultiProfile配合使用，此接口只支持PC端
     """
@@ -287,7 +287,7 @@ def GetCustomGoalCls():
     pass
 
 def StartCoroutine(iterOrFunc, callback=None):
-    # type: (Union[Generator,Callable[[], Generator]], Callable) -> 'Generator'
+    # type: (Union[Generator, Callable[[], Generator]], Optional[Callable[[], Any]]) -> Generator
     """
     开启服务端协程，实现函数分段式执行，可用于缓解复杂逻辑计算导致游戏卡顿问题
     """

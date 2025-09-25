@@ -1,10 +1,11 @@
 # -*- coding: utf-8 -*-
 
+from typing import Optional
 from mod.common.component.baseComponent import BaseComponent
 
 class CommandCompServer(BaseComponent):
     def SetCommand(self, cmdStr, entityId=None, showOutput=False):
-        # type: (str, str, bool) -> bool
+        # type: (str, Optional[str], bool) -> bool
         """
         使用游戏内指令
         """

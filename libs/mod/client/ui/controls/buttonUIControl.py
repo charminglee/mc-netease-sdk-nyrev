@@ -3,7 +3,7 @@
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
 if 0:
-    from typing import Callable, TypedDict, Any
+    from typing import Callable, TypedDict, Any, Optional
 
     class __BtnTouchCallbackDict(TypedDict):
         #collection_name
@@ -25,7 +25,7 @@ if 0:
 
 class ButtonUIControl(BaseUIControl):
     def AddTouchEventParams(self, args=None):
-        # type: (dict) -> None
+        # type: (Optional[dict]) -> None
         """
         开启按钮回调功能，不调用该函数则按钮无回调
         """

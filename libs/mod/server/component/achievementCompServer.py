@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from typing import List
+from typing import List, Callable, Optional
 from mod.common.component.baseComponent import BaseComponent
 
 class AchievementCompServer(BaseComponent):
@@ -12,14 +12,14 @@ class AchievementCompServer(BaseComponent):
         pass
 
     def SetNodeFinish(self, playerId, nodeId, callback=None, getExtra=None):
-        # type: (str, str, Callable, Callable) -> bool
+        # type: (str, str, Optional[Callable], Optional[Callable]) -> bool
         """
         设置对应玩家的对应成就节点完成
         """
         pass
 
     def AddNodeProgress(self, playerId, nodeId, delta, callback=None, getExtra=None):
-        # type: (str, str, int, Callable, Callable) -> bool
+        # type: (str, str, int, Optional[Callable], Optional[Callable]) -> bool
         """
         增加对应玩家的对应成就节点的成就进度
         """
@@ -40,7 +40,7 @@ class AchievementCompServer(BaseComponent):
         pass
 
     def LobbySetAchievementStorage(self, callback, playerId, nodeId, delta, getExtraData=None):
-        # type: (Callable, int, str, int, Callable) -> None
+        # type: (Callable, int, str, int, Optional[Callable]) -> None
         """
         添加成就节点的进度。
         """

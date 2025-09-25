@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from typing import Tuple
+from typing import Tuple, Optional
 
 class ImageUIControl(BaseUIControl):
     def SetSprite(self, texturePath):
@@ -75,7 +75,7 @@ class ImageUIControl(BaseUIControl):
         pass
 
     def SetImageAdaptionType(self, imageAdaptionType, imageAdaptionData=None):
-        # type: (str, Tuple[float, float, float, float]) -> bool
+        # type: (str, Optional[Tuple[float, float, float, float]]) -> bool
         """
         设置图片控件的图片适配方式以及信息
         """

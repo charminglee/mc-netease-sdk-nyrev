@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from typing import Any, Callable, Dict
+from typing import Any, Callable, Dict, Optional
 from mod.common.component.baseComponent import BaseComponent
 
 class ModAttrComponentClient(BaseComponent):
@@ -26,7 +26,7 @@ class ModAttrComponentClient(BaseComponent):
         pass
 
     def GetAttr(self, paramName, defaultValue=None):
-        # type: (str, Any) -> Any
+        # type: (str, Optional[Any]) -> Any
         """
         获取SetAttr设置的属性值
         """

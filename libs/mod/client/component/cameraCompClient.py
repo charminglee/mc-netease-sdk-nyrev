@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from typing import Tuple
+from typing import Tuple, Optional
 from mod.common.component.baseComponent import BaseComponent
 from mod.common.minecraftEnum import TimeEaseType
 
@@ -209,14 +209,14 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def AddCameraTrackMotion(self, targetPos, duraTime, startPos=None, relativeCoord=False, isLoop=False, targetRot=None, startRot=None, useVelocityDir=False, ease='linear'):
-        # type: (Tuple[float, float, float], float, Tuple[float, float, float], bool, bool, Tuple[float, float, float], Tuple[float, float, float], bool, TimeEaseType) -> int
+        # type: (Tuple[float, float, float], float, Optional[Tuple[float, float, float]], bool, bool, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]], bool, TimeEaseType) -> int
         """
         给相机添加轨迹运动器
         """
         pass
 
     def AddCameraVelocityMotion(self, velocity, accelerate=None, useVelocityDir=True):
-        # type: (Tuple[float, float, float], Tuple[float, float, float], bool) -> int
+        # type: (Tuple[float, float, float], Optional[Tuple[float, float, float]], bool) -> int
         """
         给相机添加速度运动器
         """

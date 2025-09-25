@@ -30,7 +30,7 @@ pip install mc-netease-sdk-nyrev
 11. 优化`baseSystem`模块的类型注解。
 12. 补充`BlockEntityData`的类型注解。
 13. 删除文档注释中多余的网址。
-14. 移除`CustomUIControlProxy`模块。
+14. 补充`CustomUIControlProxy`的类型注解。
 15. 补充`CustomUIScreenProxy`的类型注解。
 16. 补充缺失的`miniMapBaseScreen`模块。
 17. 补充`NativeScreenManager`的类型注解。

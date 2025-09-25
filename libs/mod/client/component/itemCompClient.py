@@ -2,7 +2,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Optional
 
 class ItemCompClient(BaseComponent):
     def GetOffhandItem(self, getUserData=False):
@@ -34,7 +34,7 @@ class ItemCompClient(BaseComponent):
         pass
 
     def SetDropItemTransform(self, entityId, position, rotation=None, scale=None):
-        # type: (str, Tuple[float, float, float], Tuple[float, float, float], float) -> bool
+        # type: (str, Tuple[float, float, float], Optional[Tuple[float, float, float]], Optional[float]) -> bool
         """
         设置通过AddDropItemToWorld添加的掉落物的位置、角度和缩放
         """
@@ -69,21 +69,21 @@ class ItemCompClient(BaseComponent):
         pass
 
     def GetItemFormattedHoverText(self, itemName, auxValue=0, showCategory=False, userData=None):
-        # type: (str, int, bool, dict) -> str
+        # type: (str, int, bool, Optional[dict]) -> str
         """
         获取物品的格式化hover文本，如：§f灾厄旗帜§r
         """
         pass
 
     def GetItemHoverName(self, itemName, auxValue=0, userData=None):
-        # type: (str, int, dict) -> str
+        # type: (str, int, Optional[dict]) -> str
         """
         获取物品的hover名称，如：灾厄旗帜§r
         """
         pass
 
     def GetItemEffectName(self, itemName, auxValue=0, userData=None):
-        # type: (str, int, dict) -> str
+        # type: (str, int, Optional[dict]) -> str
         """
         获取物品的状态描述，如：§7保护 0§r
         """

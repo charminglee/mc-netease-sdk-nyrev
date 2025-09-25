@@ -153,7 +153,7 @@ class ScreenNode(object):
         pass
 
     def CreateChildControl(self, defName, childName, parentControl=None, forceUpdate=True):
-        # type: (str, str, BaseUIControl, bool) -> BaseUIControl
+        # type: (str, str, Optional[BaseUIControl], bool) -> BaseUIControl
         """
         在当前画布中创建子控件，如果该子控件已经存在则返回已存在的子控件
         """

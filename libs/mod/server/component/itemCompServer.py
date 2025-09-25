@@ -2,7 +2,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Optional
 
 class ItemCompServer(BaseComponent):
     def SpawnItemToPlayerCarried(self, itemDict, playerId):
@@ -209,7 +209,7 @@ class ItemCompServer(BaseComponent):
         pass
 
     def SetPlayerUIItem(self, playerId, slot, itemDict=None, needBack=True, isNeteaseUI=False):
-        # type: (str, int, dict, bool, bool) -> bool
+        # type: (str, int, Optional[dict], bool, bool) -> bool
         """
         设置合成容器的物品
         """

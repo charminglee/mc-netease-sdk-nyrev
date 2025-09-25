@@ -265,7 +265,7 @@ def SetResponse(response):
     pass
 
 def GetMinecraftEnum():
-    # type: () -> minecraftEnum
+    # type: () -> minecraftEnum._MinecraftEnum
     """
     用于获取枚举值文档中的枚举值
     """

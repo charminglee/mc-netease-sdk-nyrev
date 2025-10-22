@@ -83,7 +83,6 @@ def GetMinecraftEnum():
     return minecraftEnum
 
 def GetServerSystemCls():
-    # type: () -> Type[ServerSystem]
     """
     用于获取服务器system基类。实现新的system时，需要继承该接口返回的类
     """

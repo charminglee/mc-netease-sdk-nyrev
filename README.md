@@ -19,10 +19,10 @@ pip install mc-netease-sdk-nyrev
 
 1. 移除所有接口返回值类型上的单引号（完全多余）。
 2. 删除文档注释中多余的网址。
-3. 修复`EngineCompFactoryClient.CreateDrawing()`的返回值类型错误导致无法补全的问题。
-4. 修复`EngineCompFactoryClient.CreateDimension()`的返回值类型错误导致无法补全的问题。
-5. 补充`BaseUIControl.__init__()`。
-6. 补充`ScreenNode.__init__()`。
+3. 补充`BaseUIControl.__init__()`。
+4. 补充`ScreenNode.__init__()`。
+5. 修复`EngineCompFactoryClient.CreateDrawing()`的返回值类型错误导致无法补全的问题。
+6. 修复`EngineCompFactoryClient.CreateDimension()`的返回值类型错误导致无法补全的问题。
 7. 修复`DrawingCompClient`一系列接口的返回值类型错误导致无法补全的问题。
 8. 补充`mcmath`模块的类型注解。
 9. 补充`mod`模块的类型注解。
@@ -41,6 +41,7 @@ pip install mc-netease-sdk-nyrev
 22. 优化`extraClientApi`模块的类型注解。
 23. 优化`extraServerApi`模块的类型注解。
 24. 优化各component类的类型注解。
+25. 修复`NativeScreenManager`的补全问题。
 
 ### IDE运行支持
 

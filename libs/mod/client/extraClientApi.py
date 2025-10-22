@@ -273,7 +273,6 @@ def GetMinecraftEnum():
     return minecraftEnum
 
 def GetClientSystemCls():
-    # type: () -> Type[ClientSystem]
     """
     用于获取客户端system基类。实现新的system时，需要继承该接口返回的类
     """
@@ -316,7 +315,6 @@ def GetLocalPlayerId():
     pass
 
 def GetScreenNodeCls():
-    # type: () -> Type[ScreenNode]
     """
     获得ScreenNode类
     """
@@ -324,7 +322,6 @@ def GetScreenNodeCls():
     return ScreenNode
 
 def GetViewBinderCls():
-    # type: () -> Type[ViewBinder]
     """
     获得ViewBinder类
     """
@@ -332,7 +329,6 @@ def GetViewBinderCls():
     return ViewBinder
 
 def GetViewViewRequestCls():
-    # type: () -> Type[ViewRequest]
     """
     获得ViewRequest类
     """
@@ -340,16 +336,11 @@ def GetViewViewRequestCls():
     return ViewRequest
 
 def GetNativeScreenManagerCls():
-    # type: () -> Type[NativeScreenManager]
     """
     获得NativeScreenManager类
     """
-    class a:
-        @staticmethod
-        def instance():
-            from mod.client.ui.NativeScreenManager import NativeScreenManager
-            return NativeScreenManager()
-    return a
+    from mod.client.ui.NativeScreenManager import NativeScreenManager
+    return NativeScreenManager
 
 def GetCustomUIControlProxyCls():
     # type: () -> Type[CustomUIControlProxy]
@@ -359,7 +350,6 @@ def GetCustomUIControlProxyCls():
     pass
 
 def GetUIScreenProxyCls():
-    # type: () -> Type[CustomUIScreenProxy]
     """
     获得原生界面Screen代理基类
     """

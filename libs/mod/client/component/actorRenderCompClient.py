@@ -117,8 +117,8 @@ class ActorRenderCompClient(BaseComponent):
         """
         pass
 
-    def RebuildPlayerRender(self):
-        # type: () -> bool
+    def RebuildPlayerRender(self, clearBindParticle=False):
+        # type: (bool) -> bool
         """
         重建玩家的数据渲染器
         """

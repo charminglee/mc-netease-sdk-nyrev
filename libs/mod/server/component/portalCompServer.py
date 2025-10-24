@@ -6,7 +6,7 @@ from typing import Tuple
 
 class PortalComponentServer(BaseComponent):
     def DetectStructure(self, playerId, pattern, defines, touchPos, pos, dimensionId=-1):
-        # type: (None, List[str], dict, List[Tuple[int,int]], Tuple[int, int, int], int) -> 'Tuple[bool,Tuple[int, int, int],Tuple[int, int, int]]'
+        # type: (None, List[str], dict, List[Tuple[int,int]], Tuple[int, int, int], int) -> Tuple[bool, Tuple[int, int, int], Tuple[int, int, int]]
         """
         检测自定义门的结构
         """

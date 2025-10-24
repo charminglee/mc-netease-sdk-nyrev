@@ -139,7 +139,7 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def SetBlockEntityModelScale(self, pos, scale):
-        # type: (Tuple[int, int, int], Tuple[int, int, int]) -> bool
+        # type: (Tuple[int, int, int], Tuple[float, float, float]) -> bool
         """
         设置自定义方块实体的实体模型大小的缩放值，可通过该接口来调整自定义方块实体的实体模型的大小。只有自定义方块实体定义实体模型才生效，实体模型在resource_pack/entity/下定义，详细可参考自定义方块实体动画的教学文档。
         """
@@ -254,6 +254,20 @@ class BlockInfoComponentClient(BaseComponent):
         # type: (str, int, Tuple[float, float, float]) -> bool
         """
         停止指定位置播放的方块被开始破坏时的粒子效果。
+        """
+        pass
+
+    def SetCrackFrame(self, dimensionId, blockPos, frame):
+        # type: (int, Tuple[int, int, int], int) -> bool
+        """
+        仅客户端的破坏纹理的渲染，可自定义破坏阶段在第几帧。
+        """
+        pass
+
+    def DestroyCrackFrame(self, dimensionId, blockPos):
+        # type: (int, Tuple[int, int, int]) -> bool
+        """
+        销毁特定方块位置上的破坏纹理（仅能销毁SetCrackFrame接口创建的破坏纹理）。
         """
         pass
 

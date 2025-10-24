@@ -1,7 +1,7 @@
 <div align="center">
 
   # 网易我的世界ModSDK补全库修正版  
-  **已更新至 3.5 版本，支持Python2与Python3**
+  **已更新至 3.6 版本，支持Python2与Python3**
 
 </div>
 

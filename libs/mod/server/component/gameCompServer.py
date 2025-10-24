@@ -477,3 +477,10 @@ class GameComponentServer(BaseComponent):
         """
         pass
 
+    def UseItemAttackEntity(self, itemDict, entityId, cause=None, attackerPos=None, knocked=False, customTag=None):
+        # type: (dict, str, str, Tuple[float, float, float], bool, str) -> dict
+        """
+        使用指定物品攻击某个实体。
+        """
+        pass
+

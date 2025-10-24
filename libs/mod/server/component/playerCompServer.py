@@ -439,3 +439,10 @@ class PlayerCompServer(BaseComponent):
         """
         pass
 
+    def OpenNeteaseContainer(self, screenName, customDescription, isCloseReturnItem=False):
+        # type: (str, str, bool) -> bool
+        """
+        打开自定义容器界面，不依赖于方块。该界面的物品数据需由开发者自行维护。
+        """
+        pass
+

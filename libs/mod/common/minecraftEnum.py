@@ -1398,11 +1398,22 @@ class RenderControllerArrayType(object):
 	Texture = 2 #贴图
 
 class RenderLayer(object):
-	Blend = 4		# 半透明
-	Opaque = 5		# 不透明
-	Alpha = 7		# 全透明
-	SeasonOpaque = 9	# 原版用于渲染不透明树叶
-	SeasonAlpha = 10	# 原版用于渲染局部全透明方块
+	DOUBLE_SIDED = 0 # 双面
+	BLEND_WATER = 1 # 半透明水面
+	ALPHATEST_MICRO_BLOCK = 2 # 全透明微缩方块
+	RAY_TRACED_WATER = 3 # 原版光线追踪水面
+	DEFERRED_WATER = 4 # 原版延迟渲染水面
+	BLEND = 5 # 半透明
+	OPAQUE = 6 # 不透明
+	OPTIONAL_ALPHATEST = 7 # 局部全透明
+	ALPHATEST = 8 # 全透明
+	SEASONS_OPAQUE = 9 # 原版用于渲染不透明树叶
+	SEASONS_OPTIONAL_ALPHATEST = 10 # 原版用于渲染局部全透明方块
+	ALPHATEST_SINGLE_SIDE = 11 # 单面全透明
+	ENDPORTAL = 12 # 原版末地传送门
+	BARRIER = 13 # 原版屏障
+	LIGHT = 14 # 原版光源
+	STRUCTURE_VOID = 15
 
 class SetBlockType(object):
 	MAN_MADE = 0       #人为
@@ -1416,6 +1427,7 @@ class ShapeType(object):
 	ARROW = 4 # 箭头
 	TEXT = 5 # 文本
 	SPHERE = 6 # 球
+	COUNT = 7 # 图形数量
 
 class SliderOptionId(object):
 	Undefined = ""

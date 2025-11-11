@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from mod.common.component.baseComponent import BaseComponent
+
 
 class QueryVariableComponentClient(BaseComponent):
     def Register(self, variableName, defalutValue):

@@ -1,8 +1,17 @@
 # -*- coding: utf-8 -*-
 
-from typing import Union
-from typing import List
+
+from typing import Optional
+from typing import List, TypedDict
 from mod.common.component.baseComponent import BaseComponent
+
+
+class __EffectDict(TypedDict):
+    effectName: str
+    duration: int
+    duration_f: float
+    amplifier: int
+
 
 class EffectComponentServer(BaseComponent):
     def AddEffectToEntity(self, effectName, duration, amplifier, showParticles):
@@ -20,7 +29,7 @@ class EffectComponentServer(BaseComponent):
         pass
 
     def GetAllEffects(self):
-        # type: () -> Union[List[dict], None]
+        # type: () -> Optional[List[__EffectDict]]
         """
         获取实体当前所有状态效果
         """

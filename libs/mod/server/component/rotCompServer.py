@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple
+
 
 class RotComponentServer(object):
     def SetRot(self, rot):

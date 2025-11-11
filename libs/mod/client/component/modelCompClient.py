@@ -1,8 +1,13 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional
+from typing import Tuple, Optional, Literal
+
+
+__UniformIndex = Literal[1, 2, 3, 4]
+
 
 class ModelComponentClient(BaseComponent):
     def SetModel(self, modelName):
@@ -272,14 +277,14 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetExtraUniformValue(self, modelId, uniformIndex, vec4data):
-        # type: (int, int, Tuple[float, float, float, float]) -> bool
+        # type: (int, __UniformIndex, Tuple[float, float, float, float]) -> bool
         """
         设置shader中特定Uniform的值
         """
         pass
 
     def GetExtraUniformValue(self, modelId, uniformIndex):
-        # type: (int, int) -> Tuple[float, float, float, float]
+        # type: (int, __UniformIndex) -> Tuple[float, float, float, float]
         """
         获取在骨骼模型shader中使用的自定义变量Uniform的值
         """

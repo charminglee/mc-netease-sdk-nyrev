@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class SkyRenderCompClient(BaseComponent):
     def SetSkyColor(self, color):

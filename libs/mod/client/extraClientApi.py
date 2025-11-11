@@ -1,23 +1,30 @@
 # -*- coding: utf-8 -*-
 
 
-if 0:
-    from typing import Generator, Union, List, Type, Tuple, Any, Callable, Optional
-    from mod.client.ui.NativeScreenManager import NativeScreenManager
-    from mod.client.ui.screenNode import ScreenNode
-    from mod.client.ui.miniMapBaseScreen import MiniMapBaseScreen
-    from mod.client.component.engineCompFactoryClient import EngineCompFactoryClient
-    from mod.client.ui.viewRequest import ViewRequest
-    from mod.common.component.baseComponent import BaseComponent
-    from mod.client.ui.CustomUIScreenProxy import CustomUIScreenProxy
-    from mod.client.ui.CustomUIControlProxy import CustomUIControlProxy
-    from mod.common import minecraftEnum
-    from mod.client.ui.viewBinder import ViewBinder
-    from mod.client.system.clientSystem import ClientSystem
-    from mod.client.plugin.illustratedBook.bookManager import BookManager
+from typing import Generator, Union, List, Type, Tuple, Any, Callable, Optional, TypedDict, Dict, Literal
+from mod.client.ui import NativeScreenManager
+from mod.client.ui.screenNode import ScreenNode
+from mod.client.ui.miniMapBaseScreen import MiniMapBaseScreen
+from mod.client.component.engineCompFactoryClient import EngineCompFactoryClient
+from mod.client.ui.viewRequest import ViewRequest
+from mod.common.component.baseComponent import BaseComponent
+from mod.client.ui.CustomUIScreenProxy import CustomUIScreenProxy
+from mod.client.ui.CustomUIControlProxy import CustomUIControlProxy
+from mod.common import minecraftEnum
+from mod.client.ui.viewBinder import ViewBinder
+from mod.client.system.clientSystem import ClientSystem
+from mod.client.plugin.illustratedBook.bookManager import BookManager
 
 
-_system_dict = {}
+class __EntityDict(TypedDict):
+    dimensionId: int
+    identifier: str
+class __RayReturnDict(TypedDict):
+    type: Literal["Entity", "Block"]
+    entityId: str
+    pos: Tuple[int, int, int]
+    identifier: str
+    hitPos: Tuple[float, float, float]
 
 
 def RegisterComponent(nameSpace, name, clsPath):
@@ -28,35 +35,28 @@ def RegisterComponent(nameSpace, name, clsPath):
     pass
 
 def RegisterSystem(nameSpace, systemName, clsPath):
-    # type: (str, str, str) -> ClientSystem
+    # type: (str, str, str) -> Optional[ClientSystem]
     """
     用于将系统注册到引擎中，引擎会创建一个该系统的实例，并在退出游戏时回收。系统可以执行我们引擎赋予的基本逻辑，例如监听事件、执行Tick函数、与服务端进行通讯等。
     """
-    module_path = clsPath[:clsPath.rfind(".")]
-    cls_name = clsPath.split(".")[-1]
-    from importlib import import_module
-    module = import_module(module_path)
-    cls = getattr(module, cls_name, None)
-    if cls:
-        ins = cls(nameSpace, systemName)
-        _system_dict[(nameSpace, systemName)] = ins
+    pass
 
 def GetSystem(nameSpace, systemName):
-    # type: (str, str) -> ClientSystem
+    # type: (str, str) -> Optional[ClientSystem]
     """
     用于获取其他系统实例
     """
-    return _system_dict.get((nameSpace, systemName))
+    pass
 
 def CreateComponent(entityId, nameSpace, name):
-    # type: (Union[str, int], str, str) -> BaseComponent
+    # type: (Union[str, int], str, str) -> Optional[BaseComponent]
     """
     给实体创建客户端组件
     """
     pass
 
 def GetComponent(entityId, nameSpace, name):
-    # type: (str, str, str) -> BaseComponent
+    # type: (str, str, str) -> Optional[BaseComponent]
     """
     获取实体的客户端组件。一般用来判断某个组件是否创建过，其他情况请使用CreateComponent
     """
@@ -84,21 +84,21 @@ def RegisterUI(nameSpace, uiKey, clsPath, uiScreenDef=None):
     pass
 
 def CreateUI(nameSpace, uiKey=None, createParams=None):
-    # type: (str, Optional[str], Optional[dict]) -> ScreenNode
+    # type: (str, Optional[str], Optional[dict]) -> Optional[ScreenNode]
     """
     创建UI，详见界面创建流程及生命周期
     """
     pass
 
 def GetUI(nameSpace, uiKey=None):
-    # type: (str, Optional[str]) -> ScreenNode
+    # type: (str, Optional[str]) -> Optional[ScreenNode]
     """
     获取UI节点，详见界面创建流程及生命周期
     """
     pass
 
 def GetTopUINode():
-    # type: () -> ScreenNode
+    # type: () -> Optional[ScreenNode]
     """
     获取Push进来的最顶层界面，包括原生界面，详见 界面创建流程及生命周期 
     """
@@ -265,19 +265,91 @@ def SetResponse(response):
     """
     pass
 
+class __MinecraftEnumModule:
+    ActorDamageCause = minecraftEnum.ActorDamageCause
+    AniCheatBlockBreak = minecraftEnum.AniCheatBlockBreak
+    AniCheatConsts = minecraftEnum.AniCheatConsts
+    AniCheatMove = minecraftEnum.AniCheatMove
+    AniCheatMoveRewind = minecraftEnum.AniCheatMoveRewind
+    AnimationModeType = minecraftEnum.AnimationModeType
+    ArmorSlotType = minecraftEnum.ArmorSlotType
+    AttrType = minecraftEnum.AttrType
+    AttributeBuffType = minecraftEnum.AttributeBuffType
+    BiomeType = minecraftEnum.BiomeType
+    BlockBreathability = minecraftEnum.BlockBreathability
+    BrewingStandSlotType = minecraftEnum.BrewingStandSlotType
+    ButtonEventType = minecraftEnum.ButtonEventType
+    ButtonState = minecraftEnum.ButtonState
+    CatVariantType = minecraftEnum.CatVariantType
+    Change = minecraftEnum.Change
+    ColorCode = minecraftEnum.ColorCode
+    CommandBlockType = minecraftEnum.CommandBlockType
+    ConditionType = minecraftEnum.ConditionType
+    ContainerType = minecraftEnum.ContainerType
+    EffectType = minecraftEnum.EffectType
+    EnchantSlotType = minecraftEnum.EnchantSlotType
+    EnchantType = minecraftEnum.EnchantType
+    EntityColorType = minecraftEnum.EntityColorType
+    EntityComponentType = minecraftEnum.EntityComponentType
+    EntityTeleportCause = minecraftEnum.EntityTeleportCause
+    EntityType = minecraftEnum.EntityType
+    Facing = minecraftEnum.Facing
+    FoxType = minecraftEnum.FoxType
+    GameDiffculty = minecraftEnum.GameDiffculty
+    GameType = minecraftEnum.GameType
+    GamepadKeyType = minecraftEnum.GamepadKeyType
+    HorseSpotType = minecraftEnum.HorseSpotType
+    HorseType = minecraftEnum.HorseType
+    InputMode = minecraftEnum.InputMode
+    InventoryType = minecraftEnum.InventoryType
+    ItemAcquisitionMethod = minecraftEnum.ItemAcquisitionMethod
+    ItemCategory = minecraftEnum.ItemCategory
+    ItemColor = minecraftEnum.ItemColor
+    ItemPosType = minecraftEnum.ItemPosType
+    ItemType = minecraftEnum.ItemType
+    ItemUseMethodEnum = minecraftEnum.ItemUseMethodEnum
+    KeyBoardType = minecraftEnum.KeyBoardType
+    MirrorModeType = minecraftEnum.MirrorModeType
+    OpenContainerId = minecraftEnum.OpenContainerId
+    OptionId = minecraftEnum.OptionId
+    OriginGUIName = minecraftEnum.OriginGUIName
+    PermissionChangeCause = minecraftEnum.PermissionChangeCause
+    PistonFacing = minecraftEnum.PistonFacing
+    PlayerActionType = minecraftEnum.PlayerActionType
+    PlayerExhauseRatioType = minecraftEnum.PlayerExhauseRatioType
+    PlayerUISlot = minecraftEnum.PlayerUISlot
+    RayFilterType = minecraftEnum.RayFilterType
+    RedstoneModeType = minecraftEnum.RedstoneModeType
+    RenderControllerArrayType = minecraftEnum.RenderControllerArrayType
+    RenderLayer = minecraftEnum.RenderLayer
+    SetBlockType = minecraftEnum.SetBlockType
+    ShapeType = minecraftEnum.ShapeType
+    SliderOptionId = minecraftEnum.SliderOptionId
+    StructureFeatureType = minecraftEnum.StructureFeatureType
+    TimeEaseType = minecraftEnum.TimeEaseType
+    TouchEvent = minecraftEnum.TouchEvent
+    TradeLevelType = minecraftEnum.TradeLevelType
+    TransferServerFailReason = minecraftEnum.TransferServerFailReason
+    UICategory = minecraftEnum.UICategory
+    UiBaseLayer = minecraftEnum.UiBaseLayer
+    UseAnimation = minecraftEnum.UseAnimation
+    VillagerClothingType = minecraftEnum.VillagerClothingType
+    VirtualWorldObjectType = minecraftEnum.VirtualWorldObjectType
+    WalkState = minecraftEnum.WalkState
+
 def GetMinecraftEnum():
-    # type: () -> minecraftEnum._MinecraftEnum
+    # type: () -> __MinecraftEnumModule
     """
     用于获取枚举值文档中的枚举值
     """
-    return minecraftEnum
+    pass
 
 def GetClientSystemCls():
+    # type: () -> Type[ClientSystem]
     """
     用于获取客户端system基类。实现新的system时，需要继承该接口返回的类
     """
-    from mod.client.system.clientSystem import ClientSystem
-    return ClientSystem
+    pass
 
 def GetComponentCls():
     # type: () -> Type[BaseComponent]
@@ -315,32 +387,35 @@ def GetLocalPlayerId():
     pass
 
 def GetScreenNodeCls():
+    # type: () -> Type[ScreenNode]
     """
     获得ScreenNode类
     """
-    from mod.client.ui.screenNode import ScreenNode
-    return ScreenNode
+    pass
 
 def GetViewBinderCls():
+    # type: () -> Type[ViewBinder]
     """
     获得ViewBinder类
     """
-    from mod.client.ui.viewBinder import ViewBinder
-    return ViewBinder
+    pass
 
 def GetViewViewRequestCls():
+    # type: () -> Type[ViewRequest]
     """
     获得ViewRequest类
     """
-    from mod.client.ui.viewRequest import ViewRequest
-    return ViewRequest
+    pass
+
+class __NativeScreenManagerModule:
+    instance = NativeScreenManager.instance
 
 def GetNativeScreenManagerCls():
+    # type: () -> __NativeScreenManagerModule
     """
     获得NativeScreenManager类
     """
-    from mod.client.ui.NativeScreenManager import NativeScreenManager
-    return NativeScreenManager
+    pass
 
 def GetCustomUIControlProxyCls():
     # type: () -> Type[CustomUIControlProxy]
@@ -350,11 +425,11 @@ def GetCustomUIControlProxyCls():
     pass
 
 def GetUIScreenProxyCls():
+    # type: () -> Type[CustomUIScreenProxy]
     """
     获得原生界面Screen代理基类
     """
-    from mod.client.ui.CustomUIScreenProxy import CustomUIScreenProxy
-    return CustomUIScreenProxy
+    pass
 
 def GetMiniMapScreenNodeCls():
     # type: () -> Type[MiniMapBaseScreen]
@@ -595,7 +670,7 @@ def GetModConfigJson(path):
     pass
 
 def PushScreen(namespace, uiname, createParams=None):
-    # type: (str, str, Optional[dict]) -> ScreenNode
+    # type: (str, str, Optional[dict]) -> Optional[ScreenNode]
     """
     使用堆栈管理的方式创建UI
     """
@@ -609,7 +684,7 @@ def PopScreen():
     pass
 
 def GetTopScreen():
-    # type: () -> ScreenNode
+    # type: () -> Optional[ScreenNode]
     """
     获取UI堆栈栈顶的UI节点
     """
@@ -777,7 +852,7 @@ def GetPlayerList():
     pass
 
 def GetEngineActor():
-    # type: () -> dict
+    # type: () -> Dict[str, __EntityDict]
     """
     获取客户端当前维度中已加载的所有实体（不包含玩家）。
     """
@@ -802,8 +877,6 @@ def ImportModule(path):
     """
     使用字符串路径导入模块，作用与importlib.import_module类似，但只能导入当前加载的mod中的模块
     """
-    from importlib import import_module
-    return import_module(path)
 
 def ToggleGyroSensor(isOpen=False):
     # type: (bool) -> bool
@@ -834,7 +907,7 @@ def HideCrossHairGUI(isHide):
     pass
 
 def getEntitiesOrBlockFromRay(pos, rot, distance=16, isThrough=False, filterType=1):
-    # type: (Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[dict]
+    # type: (Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[__RayReturnDict]
     """
     从指定位置发射一条射线，获取与射线相交的实体和方块
     """

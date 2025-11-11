@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Optional
 from mod.common.component.baseComponent import BaseComponent
+
 
 class CommandCompServer(BaseComponent):
     def SetCommand(self, cmdStr, entityId=None, showOutput=False):

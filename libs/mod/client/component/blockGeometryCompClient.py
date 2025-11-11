@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.blockPaletteComp import BlockPaletteComponent
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class BlockGeometryCompClient(BaseComponent):
     def CombineBlockPaletteToGeometry(self, blockPalette, geometryName, unsupportedMode=0):

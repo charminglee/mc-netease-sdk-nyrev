@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
+
 
 class InteractComponentServer(BaseComponent):
     def SetEntityInteractFilter(self, index, interactFilter):

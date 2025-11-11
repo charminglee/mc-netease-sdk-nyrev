@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple
+
 
 class PosComponentServer(object):
     def SetPos(self, pos):

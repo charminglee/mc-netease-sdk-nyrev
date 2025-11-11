@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 from typing import Any
+
 
 class PostProcessComponent(BaseComponent):
     def SetEnableByName(self, name, enable):

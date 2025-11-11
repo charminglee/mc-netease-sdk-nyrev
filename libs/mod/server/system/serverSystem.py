@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from typing import List
 from mod.common.system.baseSystem import BaseSystem
 from typing import Tuple, Optional
+
 
 class ServerSystem(BaseSystem):
     def BroadcastToAllClient(self, eventName, eventData):

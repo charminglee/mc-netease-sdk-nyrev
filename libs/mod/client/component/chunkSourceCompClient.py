@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class ChunkSourceCompClient(BaseComponent):
     def GetChunkPosFromBlockPos(self, blockPos):

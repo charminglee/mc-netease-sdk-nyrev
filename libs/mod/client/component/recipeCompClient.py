@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
+
 
 class RecipeCompClient(BaseComponent):
     def GetRecipesByResult(self, resultIdentifier, tag, aux=0, maxResultNum=-1):

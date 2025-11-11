@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple, Optional
+
 
 class ActorLootComponentServer(BaseComponent):
     def SpawnLootTable(self, pos, identifier, playerKillerId=None, damageCauseEntityId=None):

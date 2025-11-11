@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple
+
 
 class PosComponentClient(object):
     def GetPos(self):

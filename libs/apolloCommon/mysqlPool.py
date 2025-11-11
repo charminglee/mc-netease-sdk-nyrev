@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 
+
 """下面是mysql线程池的接口
 """
 
 
+from typing import Optional
+from typing import Union, Callable, Any
+
+
 def AsyncExecuteFunctionWithOrderKey(func, orderKey, callback, *args, **kwargs):
-	# type: (Callable, str/int, Callable, *args, **kwargs) -> None
+	# type: (Callable, Union[str, int], Callable, Any, Any) -> None
 	"""
 	添加一个异步mysql任务，func将在子线程中执行，注意func中不支持执行引擎提供的API
 
@@ -21,7 +26,7 @@ def AsyncExecuteFunctionWithOrderKey(func, orderKey, callback, *args, **kwargs):
 
 
 def AsyncExecuteWithOrderKey(orderKey, sql, params, callback):
-	# type: (str/int, str, tuple, Callable) -> None
+	# type: (Union[str, int], str, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，执行所有mysql操作
 
@@ -36,7 +41,7 @@ def AsyncExecuteWithOrderKey(orderKey, sql, params, callback):
 
 
 def AsyncExecutemanyWithOrderKey(orderKey, sql, paramsList, callback):
-	# type: (string/int, string, list, Callable) -> None
+	# type: (Union[str, int], str, list, Callable) -> None
 	"""
 	添加一个异步mysql任务，针对同一条sql语句，使用paramsList中的每个参数各执行一次，并且返回成功修改/新建的记录数，其中任何一条语句执行失败，最终所有语句都会被执行失败，返回None
 
@@ -51,7 +56,7 @@ def AsyncExecutemanyWithOrderKey(orderKey, sql, paramsList, callback):
 
 
 def AsyncInsertOneWithOrderKey(orderKey, sql, params, callback):
-	# type: (string/int, string, tuple, Callable) -> None
+	# type: (Union[str, int], str, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，向主键为AUTO INCREASEl类型的表格中插入一条记录，并且返回新建记录的主键
 
@@ -66,7 +71,7 @@ def AsyncInsertOneWithOrderKey(orderKey, sql, params, callback):
 
 
 def AsyncQueryWithOrderKey(orderKey, sql, params, callback):
-	# type: (str/int, str, tuple, Callable) -> None
+	# type: (Union[str, int], str, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，执行mysql查询
 
@@ -101,7 +106,7 @@ def InitDB(poolSize):
 
 
 def SyncFetchAll(sql, params):
-	# type: (string, tuple) -> None/list
+	# type: (str, tuple) -> Optional[list]
 	"""
 	阻塞性执行sql语句，查询数据
 
@@ -116,7 +121,7 @@ def SyncFetchAll(sql, params):
 
 
 def SyncInsert(sql, params):
-	# type: (string, tuple) -> None/id
+	# type: (str, tuple) -> Optional[int]
 	"""
 	阻塞性执行sql语句，插入数据
 

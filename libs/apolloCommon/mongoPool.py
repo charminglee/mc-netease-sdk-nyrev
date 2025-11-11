@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+
 """下面是mongo线程池的接口
 """
 
 
+from typing import Union, Callable, Any
+
+
 def AsyncExecute(collection, func, callback, *args, **kwargs):
-	# type: (str, Callable, Callable, *args, **kwargs) -> None
+	# type: (str, Callable, Callable, Any, Any) -> None
 	"""
 	添加一个异步mongo任务
 
@@ -21,7 +25,7 @@ def AsyncExecute(collection, func, callback, *args, **kwargs):
 
 
 def AsyncExecuteWithOrderKey(collection, func, orderKey, callback, *args, **kwargs):
-	# type: (str, Callable, str/int, Callable, *args, **kwargs) -> None
+	# type: (str, Callable, Union[str, int], Callable, Any, Any) -> None
 	"""
 	添加一个异步mongo任务。同async_execute区别是，可以显示设置orderKey
 

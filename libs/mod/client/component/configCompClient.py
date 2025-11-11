@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
+
 
 class ConfigCompClient(BaseComponent):
     def GetConfigData(self, configName, isGlobal=False):

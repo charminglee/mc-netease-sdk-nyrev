@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-if 0:
-    from typing import Any
-    from .controls.baseUIControl import BaseUIControl
+from .controls.baseUIControl import BaseUIControl
 
 
 class NativeScreenRegisterData:

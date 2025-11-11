@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Optional
 from mod.common.component.baseComponent import BaseComponent
+
 
 class HurtCompServer(BaseComponent):
     def ImmuneDamage(self, immune):

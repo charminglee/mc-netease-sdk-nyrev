@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Any, Callable, Union
+
 
 class BaseSystem(object):
     def __init__(self, namespace, systemName):

@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.client.ui.controls.baseUIControl import BaseUIControl
+
 
 class TextEditBoxUIControl(BaseUIControl):
     def GetEditText(self):

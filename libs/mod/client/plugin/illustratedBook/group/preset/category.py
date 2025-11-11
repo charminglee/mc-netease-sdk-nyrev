@@ -1,13 +1,11 @@
-
 # -*- coding: utf-8 -*-
+
+
 from mod.client.plugin.illustratedBook.group.pageGroup import PageGroup
 from typing import List
-from typing import Dict
-from typing import Tuple
 
 
 class Category(PageGroup):
-
     def GetSons(self):
         # type: () -> List[PageGroup]
         """
@@ -28,7 +26,6 @@ class Category(PageGroup):
             返回该目录解锁状态
         """ 
         pass
-
 
     def Lock(self):
         # type: () -> None

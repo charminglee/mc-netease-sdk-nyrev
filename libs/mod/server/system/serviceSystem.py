@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Any, Optional, Callable
+
 
 class ServiceSystem(object):
     def CreateEventData(self):

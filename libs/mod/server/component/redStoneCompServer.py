@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class RedStoneComponentServer(BaseComponent):
     def GetStrength(self, pos, dimensionId=-1):

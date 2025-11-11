@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+
 """这里是service的一些服务的管理接口
 """
 
 
+from typing import List
+
+
 def GetServerIdsByServerType(serverType):
-	# type: (str) -> list(int)
+	# type: (str) -> List[int]
 	"""
 	根据类型获取服务器id列表
 

@@ -1,11 +1,12 @@
-
 # -*- coding: utf-8 -*-
+
+
 from mod.client.plugin.illustratedBook.page.basePage import BasePage
 
-class TitlePage(BasePage):
 
+class TitlePage(BasePage):
     def SetTitleData(self):
-        # type: () -> TitlePage
+        # type: () -> 'TitlePage'
         """
             设置标题的数据
         """

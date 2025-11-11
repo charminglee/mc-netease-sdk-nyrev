@@ -1,8 +1,46 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple
-from typing import List
+from typing import List, Literal
 from mod.common.component.baseComponent import BaseComponent
+
+
+__TimeEaseType = Literal[
+    "linear",
+    "spring",
+    "in_quad",
+    "out_quad",
+    "in_out_quad",
+    "in_cubic",
+    "out_cubic",
+    "in_out_cubic",
+    "in_quart",
+    "out_quart",
+    "in_out_quart",
+    "in_quint",
+    "out_quint",
+    "in_out_quint",
+    "in_sine",
+    "out_sine",
+    "in_out_sine",
+    "in_expo",
+    "out_expo",
+    "in_out_expo",
+    "in_circ",
+    "out_circ",
+    "in_out_circ",
+    "in_bounce",
+    "out_bounce",
+    "in_out_bounce",
+    "in_back",
+    "out_back",
+    "in_out_back",
+    "in_elastic",
+    "out_elastic",
+    "in_out_elastic",
+]
+
 
 class VirtualWorldCompClient(BaseComponent):
     def VirtualWorldCreate(self):
@@ -90,7 +128,7 @@ class VirtualWorldCompClient(BaseComponent):
         pass
 
     def CameraMoveTo(self, pos, targetPos, upVector, zoom, time, ease='linear'):
-        # type: (Tuple[float, float, float], Tuple[float, float, float], Tuple[float, float, float], float, float, str) -> bool
+        # type: (Tuple[float, float, float], Tuple[float, float, float], Tuple[float, float, float], float, float, __TimeEaseType) -> bool
         """
         设置相机移动动画, 会根据当前相机状态与传入参数按时间进行插值显示
         """
@@ -265,14 +303,14 @@ class VirtualWorldCompClient(BaseComponent):
         pass
 
     def ModelMoveTo(self, objId, pos, time, ease='linear'):
-        # type: (int, Tuple[float, float, float], float, str) -> bool
+        # type: (int, Tuple[float, float, float], float, __TimeEaseType) -> bool
         """
         设置模型平移运动
         """
         pass
 
     def ModelRotateTo(self, objId, rot, time, ease='linear'):
-        # type: (int, Tuple[float, float, float], float, str) -> bool
+        # type: (int, Tuple[float, float, float], float, __TimeEaseType) -> bool
         """
         设置模型旋转运动
         """
@@ -298,4 +336,3 @@ class VirtualWorldCompClient(BaseComponent):
         把对象绑定到模型上, 支持绑定序列帧，粒子，文本和其它模型
         """
         pass
-

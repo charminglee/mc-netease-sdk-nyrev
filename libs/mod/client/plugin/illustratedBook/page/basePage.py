@@ -1,29 +1,27 @@
-
 # -*- coding: utf-8 -*-
+
+
 from mod.client.plugin.illustratedBook.comp.baseComp import BaseComp
-from typing import List
-from typing import Dict
-from typing import Tuple
-from typing import Iterable
+from typing import Tuple, Optional, Any
+
 
 class BasePage(object):
-
     def __init__(self, size = None, position = None):
-        # type: (Tuple[int, int], Tuple[int, int]) -> BasePage
+        # type: (Optional[Tuple[int, int]], Optional[Tuple[int, int]]) -> None
         """
             初始化页面
         """
         pass
 
     def Show(self):
-        # type: () -> BasePage
+        # type: () -> 'BasePage'
         """
             显示页面
         """       
         return self
 
     def Hide(self):
-        # type: () -> BasePage
+        # type: () -> 'BasePage'
         """
             隐藏页面
         """       
@@ -79,28 +77,28 @@ class BasePage(object):
         pass
 
     def Call(self, callbackDict):
-        # type: (Dict) -> object
+        # type: (dict) -> Any
         """
             调用回调函数
         """      
         pass
 
     def ResetCompsPosition(self):
-        # type: () -> BasePage
+        # type: () -> 'BasePage'
         """
             重置所有组件的位置为页面当前的位置
         """      
         return self        
 
     def GetPageGroup(self):
-        # type: () -> BasePage
+        # type: () -> 'BasePage'
         """
             获取页面当前所在的页组对象
         """      
         pass
 
     def AddComps(self, *comps):
-        # type: (*BaseComp) -> BasePage
+        # type: (BaseComp) -> 'BasePage'
         """
             向页面中添加组件
         """      

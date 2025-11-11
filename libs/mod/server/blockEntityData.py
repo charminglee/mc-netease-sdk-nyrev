@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
+
 
 class BlockEntityData(object):
     def __getitem__(self, key):

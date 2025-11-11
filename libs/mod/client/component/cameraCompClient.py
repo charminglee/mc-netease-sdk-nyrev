@@ -1,8 +1,45 @@
 # -*- coding: utf-8 -*-
 
-from typing import Tuple, Optional
+
+from typing import Tuple, Optional, Literal
 from mod.common.component.baseComponent import BaseComponent
-from mod.common.minecraftEnum import TimeEaseType
+
+
+__TimeEaseType = Literal[
+    "linear",
+    "spring",
+    "in_quad",
+    "out_quad",
+    "in_out_quad",
+    "in_cubic",
+    "out_cubic",
+    "in_out_cubic",
+    "in_quart",
+    "out_quart",
+    "in_out_quart",
+    "in_quint",
+    "out_quint",
+    "in_out_quint",
+    "in_sine",
+    "out_sine",
+    "in_out_sine",
+    "in_expo",
+    "out_expo",
+    "in_out_expo",
+    "in_circ",
+    "out_circ",
+    "in_out_circ",
+    "in_bounce",
+    "out_bounce",
+    "in_out_bounce",
+    "in_back",
+    "out_back",
+    "in_out_back",
+    "in_elastic",
+    "out_elastic",
+    "in_out_elastic",
+]
+
 
 class CameraComponentClient(BaseComponent):
     def GetFov(self):
@@ -209,7 +246,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def AddCameraTrackMotion(self, targetPos, duraTime, startPos=None, relativeCoord=False, isLoop=False, targetRot=None, startRot=None, useVelocityDir=False, ease='linear'):
-        # type: (Tuple[float, float, float], float, Optional[Tuple[float, float, float]], bool, bool, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]], bool, TimeEaseType) -> int
+        # type: (Tuple[float, float, float], float, Optional[Tuple[float, float, float]], bool, bool, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]], bool, __TimeEaseType) -> int
         """
         给相机添加轨迹运动器
         """

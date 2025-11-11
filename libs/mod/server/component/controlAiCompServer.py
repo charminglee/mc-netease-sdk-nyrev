@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
+
 
 class ControlAiCompServer(BaseComponent):
     def SetBlockControlAi(self, isBlock, freezeAnim=False):

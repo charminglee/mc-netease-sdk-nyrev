@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-if 0:
-	from .screenNode import ScreenNode
+from .screenNode import ScreenNode
 
 
 class CustomUIScreenProxy(object):

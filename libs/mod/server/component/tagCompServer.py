@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
+
 
 class TagComponentServer(BaseComponent):
     def GetEntityTags(self):

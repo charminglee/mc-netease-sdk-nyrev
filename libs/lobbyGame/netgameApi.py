@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 """这里是lobbygame的一些通用的接口
 """
+
+
+from typing import Callable, Union, Optional, Tuple
 
 
 def AddGetPlayerLockTask(func):
@@ -174,7 +178,7 @@ def GetOnlinePlayerNum():
 
 
 def GetPlatformUid(playerId):
-	# type: (str) -> int/long/None
+	# type: (str) -> Union[int, long, None]
 	"""
 	获取玩家登录端的uid，假如玩家从手机端登录，返回手机端的uid，否则返回PC端的uid
 
@@ -239,7 +243,7 @@ def GetPlayerNickname(playerId):
 
 
 def GetPlayerUid(playerId):
-	# type: (str) -> int/long
+	# type: (str) -> Union[int, long]
 	"""
 	获取玩家的uid
 
@@ -293,7 +297,7 @@ def GetUidIsSilent(uid):
 
 
 def HidePlayerFootprint(playerId, hide):
-	# type: (playerId, bool) -> bool
+	# type: (str, bool) -> bool
 	"""
 	隐藏某个玩家的会员脚印外观
 
@@ -308,7 +312,7 @@ def HidePlayerFootprint(playerId, hide):
 
 
 def HidePlayerMagicCircle(playerId, hide):
-	# type: (playerId, bool) -> bool
+	# type: (str, bool) -> bool
 	"""
 	隐藏某个玩家的会员法阵外观
 
@@ -323,7 +327,7 @@ def HidePlayerMagicCircle(playerId, hide):
 
 
 def IsPlayerPeUser(playerId):
-	# type: (str) -> bool/None
+	# type: (str) -> Optional[bool]
 	"""
 	获取玩家是否从手机端登录
 
@@ -476,7 +480,7 @@ def SetEnableLimitArea(limit, x, y, z, offsetX, offsetZ):
 
 
 def SetForbidDragonEggTeleportField(fid, dimensionId, minPos, maxPos, priority, isForbid):
-	# type: (int, int, tuple(int), tuple(int), int, bool) -> bool
+	# type: (int, int, Tuple[int, int, int], Tuple[int, int, int], int, bool) -> bool
 	"""
 	设置禁止龙蛋传送的地图区域
 
@@ -495,7 +499,7 @@ def SetForbidDragonEggTeleportField(fid, dimensionId, minPos, maxPos, priority, 
 
 
 def SetForbidFlowField(fid, dimensionId, minPos, maxPos, priority, isForbid):
-	# type: (int, int, tuple(int), tuple(int), int, bool) -> bool
+	# type: (int, int, Tuple[int, int, int], Tuple[int, int, int], int, bool) -> bool
 	"""
 	设置地图区域，不同的ID的区域边界会阻挡流体的流动
 

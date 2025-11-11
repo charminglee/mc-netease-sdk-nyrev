@@ -1,22 +1,29 @@
 # -*- coding: utf-8 -*-
 
 
-if 0:
-    from typing import Generator, Optional
-    from typing import Tuple
-    from typing import Union
-    from typing import List
-    from typing import Any
-    from typing import Type
-    from typing import Callable
-    from mod.server.component.engineCompFactoryServer import EngineCompFactoryServer
-    from mod.server.gamePlay.AI.customGoal import CustomGoal
-    from mod.server.system.serverSystem import ServerSystem
-    from mod.common.component.baseComponent import BaseComponent
-    import mod.common.minecraftEnum as minecraftEnum
+from typing import Generator, Optional
+from typing import Tuple
+from typing import Union
+from typing import List
+from typing import Any
+from typing import Type
+from typing import Callable, Dict, TypedDict, Literal
+from mod.server.component.engineCompFactoryServer import EngineCompFactoryServer
+from mod.server.gamePlay.AI.customGoal import CustomGoal
+from mod.server.system.serverSystem import ServerSystem
+from mod.common.component.baseComponent import BaseComponent
+from mod.common import minecraftEnum
 
 
-_system_dict = {}
+class __EntityDict(TypedDict):
+    dimensionId: int
+    identifier: str
+class __RayReturnDict(TypedDict):
+    type: Literal["Entity", "Block"]
+    entityId: str
+    pos: Tuple[int, int, int]
+    identifier: str
+    hitPos: Tuple[float, float, float]
 
 
 def RegisterComponent(nameSpace, name, clsPath):
@@ -27,35 +34,28 @@ def RegisterComponent(nameSpace, name, clsPath):
     pass
 
 def RegisterSystem(nameSpace, systemName, clsPath):
-    # type: (str, str, str) -> ServerSystem
+    # type: (str, str, str) -> Optional[ServerSystem]
     """
     用于将系统注册到引擎中，引擎会创建一个该系统的实例，并在退出游戏时回收。系统可以执行我们引擎赋予的基本逻辑，例如监听事件、执行Tick函数、与客户端进行通讯等。
     """
-    module_path = clsPath[:clsPath.rfind(".")]
-    cls_name = clsPath.split(".")[-1]
-    from importlib import import_module
-    module = import_module(module_path)
-    cls = getattr(module, cls_name, None)
-    if cls:
-        ins = cls(nameSpace, systemName)
-        _system_dict[(nameSpace, systemName)] = ins
+    pass
 
 def GetSystem(nameSpace, systemName):
-    # type: (str, str) -> ServerSystem
+    # type: (str, str) -> Optional[ServerSystem]
     """
     获取已注册的系统
     """
-    return _system_dict.get((nameSpace, systemName))
+    pass
 
 def CreateComponent(entityId, nameSpace, name):
-    # type: (Union[str, int], str, str) -> BaseComponent
+    # type: (Union[str, int], str, str) -> Optional[BaseComponent]
     """
     给实体创建服务端组件
     """
     pass
 
 def GetComponent(entityId, nameSpace, name):
-    # type: (str, str, str) -> BaseComponent
+    # type: (str, str, str) -> Optional[BaseComponent]
     """
     获取实体的服务端组件。一般用来判断某个组件是否创建过，其他情况请使用CreateComponent
     """
@@ -75,19 +75,91 @@ def GetEngineCompFactory():
     """
     pass
 
+class __MinecraftEnumModule:
+    ActorDamageCause = minecraftEnum.ActorDamageCause
+    AniCheatBlockBreak = minecraftEnum.AniCheatBlockBreak
+    AniCheatConsts = minecraftEnum.AniCheatConsts
+    AniCheatMove = minecraftEnum.AniCheatMove
+    AniCheatMoveRewind = minecraftEnum.AniCheatMoveRewind
+    AnimationModeType = minecraftEnum.AnimationModeType
+    ArmorSlotType = minecraftEnum.ArmorSlotType
+    AttrType = minecraftEnum.AttrType
+    AttributeBuffType = minecraftEnum.AttributeBuffType
+    BiomeType = minecraftEnum.BiomeType
+    BlockBreathability = minecraftEnum.BlockBreathability
+    BrewingStandSlotType = minecraftEnum.BrewingStandSlotType
+    ButtonEventType = minecraftEnum.ButtonEventType
+    ButtonState = minecraftEnum.ButtonState
+    CatVariantType = minecraftEnum.CatVariantType
+    Change = minecraftEnum.Change
+    ColorCode = minecraftEnum.ColorCode
+    CommandBlockType = minecraftEnum.CommandBlockType
+    ConditionType = minecraftEnum.ConditionType
+    ContainerType = minecraftEnum.ContainerType
+    EffectType = minecraftEnum.EffectType
+    EnchantSlotType = minecraftEnum.EnchantSlotType
+    EnchantType = minecraftEnum.EnchantType
+    EntityColorType = minecraftEnum.EntityColorType
+    EntityComponentType = minecraftEnum.EntityComponentType
+    EntityTeleportCause = minecraftEnum.EntityTeleportCause
+    EntityType = minecraftEnum.EntityType
+    Facing = minecraftEnum.Facing
+    FoxType = minecraftEnum.FoxType
+    GameDiffculty = minecraftEnum.GameDiffculty
+    GameType = minecraftEnum.GameType
+    GamepadKeyType = minecraftEnum.GamepadKeyType
+    HorseSpotType = minecraftEnum.HorseSpotType
+    HorseType = minecraftEnum.HorseType
+    InputMode = minecraftEnum.InputMode
+    InventoryType = minecraftEnum.InventoryType
+    ItemAcquisitionMethod = minecraftEnum.ItemAcquisitionMethod
+    ItemCategory = minecraftEnum.ItemCategory
+    ItemColor = minecraftEnum.ItemColor
+    ItemPosType = minecraftEnum.ItemPosType
+    ItemType = minecraftEnum.ItemType
+    ItemUseMethodEnum = minecraftEnum.ItemUseMethodEnum
+    KeyBoardType = minecraftEnum.KeyBoardType
+    MirrorModeType = minecraftEnum.MirrorModeType
+    OpenContainerId = minecraftEnum.OpenContainerId
+    OptionId = minecraftEnum.OptionId
+    OriginGUIName = minecraftEnum.OriginGUIName
+    PermissionChangeCause = minecraftEnum.PermissionChangeCause
+    PistonFacing = minecraftEnum.PistonFacing
+    PlayerActionType = minecraftEnum.PlayerActionType
+    PlayerExhauseRatioType = minecraftEnum.PlayerExhauseRatioType
+    PlayerUISlot = minecraftEnum.PlayerUISlot
+    RayFilterType = minecraftEnum.RayFilterType
+    RedstoneModeType = minecraftEnum.RedstoneModeType
+    RenderControllerArrayType = minecraftEnum.RenderControllerArrayType
+    RenderLayer = minecraftEnum.RenderLayer
+    SetBlockType = minecraftEnum.SetBlockType
+    ShapeType = minecraftEnum.ShapeType
+    SliderOptionId = minecraftEnum.SliderOptionId
+    StructureFeatureType = minecraftEnum.StructureFeatureType
+    TimeEaseType = minecraftEnum.TimeEaseType
+    TouchEvent = minecraftEnum.TouchEvent
+    TradeLevelType = minecraftEnum.TradeLevelType
+    TransferServerFailReason = minecraftEnum.TransferServerFailReason
+    UICategory = minecraftEnum.UICategory
+    UiBaseLayer = minecraftEnum.UiBaseLayer
+    UseAnimation = minecraftEnum.UseAnimation
+    VillagerClothingType = minecraftEnum.VillagerClothingType
+    VirtualWorldObjectType = minecraftEnum.VirtualWorldObjectType
+    WalkState = minecraftEnum.WalkState
+
 def GetMinecraftEnum():
-    # type: () -> minecraftEnum._MinecraftEnum
+    # type: () -> __MinecraftEnumModule
     """
     用于获取枚举值文档中的枚举值
     """
-    return minecraftEnum
+    pass
 
 def GetServerSystemCls():
+    # type: () -> Type[ServerSystem]
     """
     用于获取服务器system基类。实现新的system时，需要继承该接口返回的类
     """
-    from mod.server.system.serverSystem import ServerSystem
-    return ServerSystem
+    pass
 
 def GetComponentCls():
     # type: () -> Type[BaseComponent]
@@ -118,14 +190,14 @@ def GetLevelId():
     pass
 
 def GetEngineActor():
-    # type: () -> dict
+    # type: () -> Dict[str, __EntityDict]
     """
     获取所有维度中已加载的所有实体（不包含玩家）。
     """
     pass
 
 def getEntitiesOrBlockFromRay(dimensionId, pos, rot, distance=16, isThrough=False, filterType=1):
-    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[dict]
+    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[__RayReturnDict]
     """
     从指定位置发射一条射线，获取与射线相交的实体和方块
     """
@@ -332,8 +404,7 @@ def ImportModule(path):
     """
     使用字符串路径导入模块，作用与importlib.import_module类似，但只能导入当前加载的mod中的模块
     """
-    from importlib import import_module
-    return import_module(path)
+    pass
 
 def GetMinecraftVersion():
     # type: () -> str

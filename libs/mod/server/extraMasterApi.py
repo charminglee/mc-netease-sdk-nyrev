@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.server.system.masterSystem import MasterSystem
+
 
 def GetSystem(nameSpace, systemName):
     # type: (str, str) -> MasterSystem

@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+
 """下面是mysql扩展线程池的一些接口
 """
 
 
+from typing import Union, Callable
+
+
 def AsyncExecuteWithOrderKey(dbName, orderKey, sql, params, callback):
-	# type: (string, string/int, string, tuple, Callable) -> None
+	# type: (str, Union[str, int], str, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，执行所有mysql操作。同AsyncExecute的区别是可以显示指定orderKey
 
@@ -21,7 +25,7 @@ def AsyncExecuteWithOrderKey(dbName, orderKey, sql, params, callback):
 
 
 def AsyncQueryWithOrderKey(dbName, orderKey, sql, params, callback):
-	# type: (string, string/int, string, tuple, Callable) -> None
+	# type: (str, Union[str, int], str, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，执行mysql查询。同AsyncQuery区别是可以显示指定orderKey
 
@@ -45,7 +49,7 @@ def Finish():
 
 
 def InitDB(dbName, poolSize):
-	# type: (string, int) -> None
+	# type: (str, int) -> None
 	"""
 	初始化mysql连接池。可以支持多个mysql实例，它可以同“mysql连接池”一起使用。MCStudio打开配置文件目录，在deploy.json文件中配置extra_mysql，配置方法参见备注
 

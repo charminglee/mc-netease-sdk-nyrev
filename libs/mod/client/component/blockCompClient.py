@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import List
 from mod.common.component.blockPaletteComp import BlockPaletteComponent
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class BlockCompClient(BaseComponent):
     def GetBlankBlockPalette(self):

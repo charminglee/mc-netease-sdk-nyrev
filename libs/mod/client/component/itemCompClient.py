@@ -1,19 +1,128 @@
 # -*- coding: utf-8 -*-
 
-from typing import List
+
+from typing import List, TypedDict
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional
+from typing import Tuple, Optional, Literal
+
+
+class __ItemDict(TypedDict, total=False):
+    newItemName: str
+    newAuxValue: int
+    itemName: str
+    auxValue: int
+    count: int
+    showInHand: bool
+    enchantData: List[Tuple[int, int]]
+    modEnchantData: List[Tuple[str, int]]
+    customTips: str
+    extraId: str
+    userData: Optional[dict]
+    durability: int
+class __ItemBasicInfo(TypedDict, total=False):
+    itemName: str
+    maxStackSize: int
+    maxDurability: int
+    id_aux: int
+    tierDict: Optional[dict]
+    itemCategory: Literal[
+        "construction",
+        "nature",
+        "equipment",
+        "items",
+        "custom",
+        "",
+    ]
+    itemType: Literal[
+        "book",
+        "sword",
+        "shears",
+        "axe",
+        "clock",
+        "bucket",
+        "fishing_rod",
+        "hoe",
+        "shovel",
+        "pickaxe",
+        "dye",
+        "food",
+        "block",
+        "armor",
+        "custom_ranged_weapon",
+        "compass",
+        "trident",
+        "potion",
+        "crossbow",
+    ]
+    customItemType: str
+    tags: List[str]
+    customTips: str
+    itemTierLevel: Literal[-1, 0, 1, 2, 3, 4]
+    fuelDuration: float
+    foodNutrition: int
+    foodSaturation: float
+    weaponDamage: int
+    armorDefense: int
+    armorSlot: int
+    armorToughness: int
+    armorKnockbackResistance: float
+    enchant_slot_type: int
+class __EnchantDict(TypedDict, total=False):
+    identifier: str
+    description: str
+    primary_slots: Literal[
+        "all",
+        "g_armor",
+        "armor_head",
+        "armor_torso",
+        "armor_legs",
+        "armor_feet",
+        "sword",
+        "bow",
+        "spear",
+        "crossbow",
+        "g_tool",
+        "hoe",
+        "shears",
+        "flintsteel",
+        "shield",
+        "g_digging",
+        "axe",
+        "pickaxe",
+        "shovel",
+        "fishing_rod",
+        "carrot_stick",
+        "elytra",
+        "cosmetic_head",
+        "compass",
+        "mushroom_stick",
+        "brush",
+    ]
+    cost: List[int]
+    frequency: Literal[
+        "common",
+        "uncommon",
+        "rare",
+        "very_rare",
+    ]
+    is_treasure_only: bool
+    is_discoverable: bool
+    is_lootable: bool
+    is_curse: bool
+    max_level: int
+    incompatible: List[str]
+
 
 class ItemCompClient(BaseComponent):
     def GetOffhandItem(self, getUserData=False):
-        # type: (bool) -> dict
+        # type: (bool) -> __ItemDict
         """
         获取左手物品的信息
         """
         pass
 
     def GetCarriedItem(self, getUserData=False):
-        # type: (bool) -> dict
+        # type: (bool) -> __ItemDict
         """
         获取右手物品的信息
         """
@@ -27,7 +136,7 @@ class ItemCompClient(BaseComponent):
         pass
 
     def AddDropItemToWorld(self, itemDict, dimension_id, position, bobSpeed=0, spinSpeed=0):
-        # type: (dict, int, Tuple[float, float, float], float, float) -> str
+        # type: (__ItemDict, int, Tuple[float, float, float], float, float) -> str
         """
         在客户端添加一个掉落物渲染
         """
@@ -62,7 +171,7 @@ class ItemCompClient(BaseComponent):
         pass
 
     def GetItemBasicInfo(self, itemName, auxValue=0, isEnchanted=False):
-        # type: (str, int, bool) -> dict
+        # type: (str, int, bool) -> __ItemBasicInfo
         """
         获取物品的基础信息
         """
@@ -111,7 +220,7 @@ class ItemCompClient(BaseComponent):
         pass
 
     def GetPlayerItem(self, posType, slotPos=0, getUserData=False):
-        # type: (int, int, bool) -> dict
+        # type: (int, int, bool) -> __ItemDict
         """
         获取玩家物品，支持获取背包（本地玩家），盔甲栏，副手以及主手物品
         """
@@ -125,7 +234,7 @@ class ItemCompClient(BaseComponent):
         pass
 
     def GetAllEnchantsInfo(self):
-        # type: () -> List[dict]
+        # type: () -> List[__EnchantDict]
         """
         获取目前已注册的所有附魔信息
         """

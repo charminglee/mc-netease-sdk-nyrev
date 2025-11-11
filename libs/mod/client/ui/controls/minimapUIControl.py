@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.client.ui.controls.baseUIControl import BaseUIControl
 from typing import Tuple
+
 
 class MiniMapUIControl(BaseUIControl):
     def ZoomIn(self, value=0.05):

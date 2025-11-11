@@ -2,9 +2,8 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-if 0:
-    from typing import List
-    from typing import Tuple, Optional
+from typing import List
+from typing import Tuple, Optional
 
 
 class ScreenNode(object):
@@ -148,7 +147,7 @@ class ScreenNode(object):
         pass
 
     def CreateChildControl(self, defName, childName, parentControl=None, forceUpdate=True):
-        # type: (str, str, Optional[BaseUIControl], bool) -> BaseUIControl
+        # type: (str, str, Optional[BaseUIControl], bool) -> Optional[BaseUIControl]
         """
         在当前画布中创建子控件，如果该子控件已经存在则返回已存在的子控件
         """
@@ -239,9 +238,9 @@ class ScreenNode(object):
         pass
 
     def GetBaseUIControl(self, path):
-        # type: (str) -> BaseUIControl
+        # type: (str) -> Optional[BaseUIControl]
         """
         根据路径获取BaseUIControl实例
         """
-        return BaseUIControl(self, path)
+        pass
 

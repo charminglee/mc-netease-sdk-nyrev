@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple, Optional, Callable, Any
+
 
 class MoveToComponentServer(object):
     def SetMoveSetting(self, pos, speed, maxIteration, callback=None):

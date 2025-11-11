@@ -1,8 +1,8 @@
-
 # -*- coding: utf-8 -*-
+
+
 from mod.client.plugin.illustratedBook.bookConfig import BookConfig
 from mod.client.plugin.illustratedBook.bookInstance.preset.normalBook import NormalBook
-
 from mod.client.plugin.illustratedBook.comp.baseComp import BaseComp
 from mod.client.plugin.illustratedBook.comp.preset.buttonComp import ButtonComp
 from mod.client.plugin.illustratedBook.comp.preset.entityComp import EntityComp
@@ -10,24 +10,17 @@ from mod.client.plugin.illustratedBook.comp.preset.highlightComp import Highligh
 from mod.client.plugin.illustratedBook.comp.preset.imageComp import ImageComp
 from mod.client.plugin.illustratedBook.comp.preset.textComp import TextComp
 from mod.client.plugin.illustratedBook.comp.preset.progressBarComp import ProgressBarComp
-
 from mod.client.plugin.illustratedBook.page.basePage import BasePage
 from mod.client.plugin.illustratedBook.page.preset.titlePage import TitlePage
-
 from mod.client.plugin.illustratedBook.group.pageGroup import PageGroup
 from mod.client.plugin.illustratedBook.group.preset.book import Book
 from mod.client.plugin.illustratedBook.group.preset.category import Category
 from mod.client.plugin.illustratedBook.group.preset.entry import Entry
-
-
-from typing import List
-from typing import Dict
 from typing import Tuple
-from typing import TypeVar
 from typing import Type
 
-class BookManager(object):
 
+class BookManager(object):
     def GetBookInstance(self, bookName):
         # type: (str) -> NormalBook
         """
@@ -57,7 +50,7 @@ class BookManager(object):
         pass
 
     def AddPageType(self, pageName, pageCls):
-        # type: (str, Type) -> None
+        # type: (str, type) -> None
         """
             注册自定义页面
         """ 

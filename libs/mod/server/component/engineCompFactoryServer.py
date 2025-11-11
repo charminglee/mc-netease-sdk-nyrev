@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from mod.server.component.effectCompServer import EffectComponentServer
 from mod.server.component.actorMotionCompServer import ActorMotionComponentServer
@@ -69,6 +70,7 @@ from mod.server.component.modAttrCompServer import ModAttrComponentServer
 from mod.server.component.shareableCompServer import ShareableComponentServer
 from mod.server.component.blockUseEventWhiteListCompServer import BlockUseEventWhiteListComponentServer
 from mod.server.component.actorLootCompServer import ActorLootComponentServer
+
 
 class EngineCompFactoryServer(object):
     def CreateAchievement(self, entityId):

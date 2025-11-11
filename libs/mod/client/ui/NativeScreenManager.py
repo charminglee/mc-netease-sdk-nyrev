@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-if 0:
-	from typing import List
+from typing import List
 
 
 class NativeScreenManager(object):
@@ -25,10 +24,7 @@ class NativeScreenManager(object):
 		# type: (str, str) -> None
 		pass
 
-	_instance = None
 
-	@classmethod
-	def instance(cls):
-		if not cls._instance:
-			cls._instance = cls()
-		return cls._instance
+def instance():
+	# type: () -> NativeScreenManager
+	pass

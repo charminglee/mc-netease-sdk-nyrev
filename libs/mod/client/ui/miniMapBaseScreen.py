@@ -2,8 +2,7 @@
 
 
 from .screenNode import ScreenNode
-if 0:
-    from typing import Tuple
+from typing import Tuple
 
 
 class MiniMapBaseScreen(ScreenNode):

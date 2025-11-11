@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple
 from mod.common.component.baseComponent import BaseComponent
 from mod.client.component.drawingShapeCompClient import DrawingShapeCompClient
+
 
 class DrawingCompClient(BaseComponent):
     def AddBoxShape(self, pos, scale=(1, 1, 1), color=(1, 1, 1)):

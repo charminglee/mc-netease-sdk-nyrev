@@ -1,11 +1,13 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import List, Callable, Optional
 from mod.common.component.baseComponent import BaseComponent
 
+
 class AchievementCompServer(BaseComponent):
     def GetNodeDetailInfo(self, playerId, nodeId):
-        # type: (str, str) -> dict
+        # type: (str, str) -> Optional[dict]
         """
         获取对应玩家的对应节点信息
         """

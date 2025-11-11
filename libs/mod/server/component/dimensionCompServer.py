@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple, Optional, Callable, Any
+
 
 class DimensionCompServer(BaseComponent):
     def ChangePlayerDimension(self, dimensionId, pos):
@@ -41,7 +43,7 @@ class DimensionCompServer(BaseComponent):
         pass
 
     def RegisterEntityAOIEvent(self, dimension, name, aabb, ignoredEntities, entityType=1):
-        # type: (int, str, Tuple[float,float,float,float,float,float], List[str], int) -> bool
+        # type: (int, str, Tuple[float, float, float, float, float, float], List[str], int) -> bool
         """
         注册感应区域，有实体进入时和离开时会有消息通知
         """
@@ -55,7 +57,7 @@ class DimensionCompServer(BaseComponent):
         pass
 
     def CreateEntityAOI(self, dimension, name, aabb, func):
-        # type: (int, str, Tuple[float,float,float,float,float,float], Callable[[dict], Any]) -> bool
+        # type: (int, str, Tuple[float, float, float, float, float, float], Callable[[dict], Any]) -> bool
         """
         注册感应区域，有实体进入时和离开时会触发回调函数func
         """

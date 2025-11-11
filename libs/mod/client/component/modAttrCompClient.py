@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Any, Callable, Dict, Optional
 from mod.common.component.baseComponent import BaseComponent
+
 
 class ModAttrComponentClient(BaseComponent):
     def RegisterUpdateFunc(self, paramName, func):

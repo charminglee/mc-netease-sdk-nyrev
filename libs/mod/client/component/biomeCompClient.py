@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class BiomeCompClient(BaseComponent):
     def GetBiomeName(self, pos):

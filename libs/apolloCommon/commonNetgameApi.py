@@ -1,11 +1,16 @@
 # -*- coding: utf-8 -*-
 
+
 """下面是公共的接口
 """
 
 
+from typing import Callable, Any, Union, List
+from mod.common.utils.timer import CallLater
+
+
 def AddRepeatedTimer(delay, func, *args, **kwargs):
-	# type: (float, func, *args, **kwargs) -> timer
+	# type: (float, Callable, Any, Any) -> CallLater
 	"""
 	添加服务端触发的定时器，重复执行
 
@@ -22,7 +27,7 @@ def AddRepeatedTimer(delay, func, *args, **kwargs):
 
 
 def AddTimer(delay, func, *args, **kwargs):
-	# type: (float, func, *args, **kwargs) -> timer
+	# type: (float, Callable, Any, Any) -> CallLater
 	"""
 	添加服务端触发的定时器，非重复
 
@@ -39,7 +44,7 @@ def AddTimer(delay, func, *args, **kwargs):
 
 
 def CancelTimer(timer):
-	# type: (timer对象) -> None
+	# type: (CallLater) -> None
 	"""
 	取消定时器
 
@@ -104,7 +109,7 @@ def CloseAsyncTaskSlowCheck():
 
 
 def ConvertBsonToInt(input):
-	# type: (dict/list/tuple/str/unicode) -> dict/list/tuple/str/unicode
+	# type: (Union[dict, list, tuple, str, unicode]) -> Union[dict, list, tuple, str, unicode]
 	"""
 	递归转换输入数据中的所有bson.int64.Int64类型的对象为int类型
 
@@ -211,7 +216,7 @@ def GetModScriptRootDir(scriptRootName):
 
 
 def GetOnlineKey(uid):
-	# type: (int/long) -> str
+	# type: (Union[int, long]) -> str
 	"""
 	输入玩家uid，返回此玩家保存在redis中的在线标识的key
 
@@ -225,7 +230,7 @@ def GetOnlineKey(uid):
 
 
 def GetOnlineServerInfoOfMultiPlayers(uids, callback):
-	# type: (list(int/long), Callable) -> None
+	# type: (List[Union[int, long]], Callable) -> None
 	"""
 	获取多个玩家在线信息
 
@@ -238,7 +243,7 @@ def GetOnlineServerInfoOfMultiPlayers(uids, callback):
 
 
 def GetOnlineServerInfoOfPlayer(uid, callback):
-	# type: (int/long, Callable) -> None
+	# type: (Union[int, long], Callable) -> None
 	"""
 	获取玩家在线信息
 
@@ -261,7 +266,7 @@ def GetServerType():
 
 
 def GetWeekOnlineKey(uid, week):
-	# type: (int/long) -> str
+	# type: (Union[int, long], int) -> str
 	"""
 	输入玩家uid，返回此玩家保存在redis中的本周的在线时间
 
@@ -341,7 +346,7 @@ def StopYappiProfile(fileName):
 
 
 def ToPcUid(uid):
-	# type: (int/long) -> int/long
+	# type: (Union[int, long]) -> Union[int, long]
 	"""
 	将玩家的uid转换为pc平台的uid
 
@@ -355,7 +360,7 @@ def ToPcUid(uid):
 
 
 def ToPeUid(uid):
-	# type: (int/long) -> int/long
+	# type: (Union[int, long]) -> Union[int, long]
 	"""
 	将玩家的uid转换为pe平台的uid
 
@@ -369,7 +374,7 @@ def ToPeUid(uid):
 
 
 def UnicodeConvert(input):
-	# type: (dict/list/tuple/str/unicode) -> dict/list/tuple/str/unicode
+	# type: (Union[dict, list, tuple, str, unicode]) -> Union[dict, list, tuple, str, unicode]
 	"""
 	递归转换输入数据中的所有unicode格式的字符串为utf-8格式
 

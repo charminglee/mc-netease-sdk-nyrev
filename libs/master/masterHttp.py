@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+
 """这里是Master的Http接口
 """
 
 
+from typing import Any, Callable
+
+
 def RegisterMasterHttp(url, binder, func):
-	# type: (str, instance, Callable) -> None
+	# type: (str, Any, Callable) -> None
 	"""
 	注册一个新的HTTP接口
 

@@ -1,14 +1,10 @@
-
 # -*- coding: utf-8 -*-
+
+
 from mod.client.plugin.illustratedBook.group.pageGroup import PageGroup
-from mod.client.plugin.illustratedBook.group.preset.category import Category
-from typing import List
-from typing import Dict
-from typing import Tuple
 
 
 class Entry(PageGroup):
-
     def GetParent(self):
         # type: () -> float
         """

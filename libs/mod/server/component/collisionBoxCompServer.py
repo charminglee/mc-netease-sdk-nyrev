@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple
+
 
 class CollisionBoxComponentServer(object):
     def SetSize(self, size):

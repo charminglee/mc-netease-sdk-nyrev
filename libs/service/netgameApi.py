@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 """这里是Service的一些接口
 """
+
+
+from typing import List, Callable
 
 
 def GetCommonConfig():
@@ -25,7 +29,7 @@ def GetServerId():
 
 
 def GetServerLoadedModsById(serverId):
-	# type: (int) -> list(str)
+	# type: (int) -> List[str]
 	"""
 	根据服务器id获取服务器加载mod列表
 
@@ -39,7 +43,7 @@ def GetServerLoadedModsById(serverId):
 
 
 def GetServerLoadedModsByType(serverType):
-	# type: (str) -> list(str)
+	# type: (str) -> List[str]
 	"""
 	根据服务器类型获取服务器加载mod列表。若同种类型服务器配置了不同的mod，则返回其中一个对应mod列表。
 

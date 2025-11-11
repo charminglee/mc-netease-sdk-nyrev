@@ -1,6 +1,11 @@
 # -*- coding: utf-8 -*-
 
-from typing import Tuple
+
+from typing import Tuple, Literal
+
+
+__ShapeType = Literal[1, 2, 3, 4, 5, 6]
+
 
 class DrawingShapeCompClient():
     def GetPos(self):
@@ -25,7 +30,7 @@ class DrawingShapeCompClient():
         pass
 
     def GetType(self):
-        # type: () -> int
+        # type: () -> __ShapeType
         """
         获取Shape的类型
         """

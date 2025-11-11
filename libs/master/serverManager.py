@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 """这里是master关于服务器管理的一些接口
 """
+
+
+from typing import List
 
 
 def GetAllResetingServers():
@@ -151,7 +155,7 @@ def ResetServer(serverId):
 
 
 def RollingCloseServers(serverIds):
-	# type: (list(int)) -> None
+	# type: (List[int]) -> None
 	"""
 	滚动关服
 

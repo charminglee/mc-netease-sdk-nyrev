@@ -17,7 +17,7 @@ pip install mc-netease-sdk-nyrev
 
 ### 接口修正
 
-1. 移除所有接口返回值类型上的单引号（完全多余）。
+1. 移除所有接口返回值类型上的单引号。
 2. 删除文档注释中多余的网址。
 3. 补充`BaseUIControl.__init__()`。
 4. 补充`ScreenNode.__init__()`。
@@ -42,14 +42,12 @@ pip install mc-netease-sdk-nyrev
 23. 优化`extraServerApi`模块的类型注解。
 24. 优化各component类的类型注解。
 25. 修复`NativeScreenManager`的补全问题。
-
-### IDE运行支持
-
-1. 实现了`BaseUIControl`的一些方法。
-2. 实现了`ScreenNode.GetBaseUIControl()`。
-3. 实现了`extraClientApi`和`extraServerApi`的一些方法。
+26. 部分格式固定的字典（如物品信息字典、附魔信息字典）使用`TypedDict`表示，以支持对字典key的补全（目前仅Python3支持该功能）。
+27. 用`Literal`表示枚举值参数。
+28. 优化`illustratedBook`各模块的类型注解。
+29. 优化了`apolloCommon`、`lobby`、`lobbyGame`、`master`、`service`各模块的类型注解。
 
 ### 其他修正
 
-1. 移除`MC`文件夹（无用文件）、`Meta`与`Preset`文件夹（零件相关模块）。
-2. 移除`mod_log`模块。
+1. 移除`MC`文件夹（未知用途）。
+2. 移除`Meta`与`Preset`文件夹（零件/预设相关模块，官方已停止维护）。

@@ -1,24 +1,22 @@
-
 # -*- coding: utf-8 -*-
+
+
 from mod.client.plugin.illustratedBook.group.preset.book import Book
 from mod.client.plugin.illustratedBook.group.preset.category import Category
 from mod.client.plugin.illustratedBook.group.preset.entry import Entry
-from typing import List
-from typing import Dict
-from typing import Tuple
 
 
 class NormalBook(object):
 
     def GetOriginJsonData(self):
-        # type: () -> Dict
+        # type: () -> dict
         """
             获取从书本json文件传过来未经处理的数据，如果想获取当前被修改的数据则可以调用GetCurrentJsonData
         """
         pass
 
     def GetCurrentJsonData(self):
-        # type: () -> Dict
+        # type: () -> dict
         """
             获取从书本json文件传过来并经过修改的数据，如果想获取未被修改的数据则可以调用GetOriginJsonData
         """   

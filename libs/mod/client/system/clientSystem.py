@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from mod.common.system.baseSystem import BaseSystem
 from typing import Tuple, Optional
+
 
 class ClientSystem(BaseSystem):
     def NotifyToServer(self, eventName, eventData):

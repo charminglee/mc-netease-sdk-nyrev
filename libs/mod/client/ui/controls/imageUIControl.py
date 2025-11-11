@@ -1,7 +1,24 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from typing import Tuple, Optional
+from typing import Tuple, Optional, Literal
+
+
+__ClipDirection = Literal[
+    "fromLeftToRight",
+    "fromRightToLeft",
+    "fromOutsideToInside",
+    "fromTopToBottom",
+    "fromBottomToTop",
+]
+__ImageAdaptionType = Literal[
+    "normal",
+    "filled",
+    "oldNineSlice",
+    "originNineSlice",
+]
+
 
 class ImageUIControl(BaseUIControl):
     def SetSprite(self, texturePath):
@@ -61,21 +78,21 @@ class ImageUIControl(BaseUIControl):
         pass
 
     def SetClipDirection(self, clipDirection):
-        # type: (str) -> bool
+        # type: (__ClipDirection) -> bool
         """
         设置图片控件的裁剪方向
         """
         pass
 
     def GetClipDirection(self):
-        # type: () -> str
+        # type: () -> __ClipDirection
         """
         获取图片控件的裁剪方向
         """
         pass
 
     def SetImageAdaptionType(self, imageAdaptionType, imageAdaptionData=None):
-        # type: (str, Optional[Tuple[float, float, float, float]]) -> bool
+        # type: (__ImageAdaptionType, Optional[Tuple[float, float, float, float]]) -> bool
         """
         设置图片控件的图片适配方式以及信息
         """

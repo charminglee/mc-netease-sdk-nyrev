@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple, Optional
+
 
 class AudioCustomComponentClient(object):
     def DisableOriginMusic(self, disable):

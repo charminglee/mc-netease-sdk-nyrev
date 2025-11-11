@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+
 """这里是一些Master的基础API接口。
 """
 
 
+from typing import Union, Callable, Optional, List
+
+
 def BanUser(uid, banTime, reason, bCombineReason):
-	# type: (int/long, int, str, bool) -> bool
+	# type: (Union[int, long], int, str, bool) -> bool
 	"""
 	封禁某个玩家
 
@@ -22,7 +26,7 @@ def BanUser(uid, banTime, reason, bCombineReason):
 
 
 def GetBanUserInfo(uid, callback):
-	# type: (int/long, Callable) -> None
+	# type: (Union[int, long], Callable) -> None
 	"""
 	获取玩家的封禁信息
 
@@ -45,7 +49,7 @@ def GetCommonConfig():
 
 
 def GetGameTypeByServerId(serverId):
-	# type: (int) -> None或str
+	# type: (int) -> Optional[str]
 	"""
 	获取指定ID服务器的类型
 
@@ -69,7 +73,7 @@ def GetOnlineUidList():
 
 
 def GetProtocolVersionByUID(uid):
-	# type: (int/long) -> None或者int
+	# type: (Union[int, long]) -> Optional[int]
 	"""
 	获取在线玩家客户端协议版本号。多协议版本引擎中（比如同时支持1.14客户端和1.15客户端），需要把客户端分配到相同协议版本的lobby/game中
 
@@ -83,7 +87,7 @@ def GetProtocolVersionByUID(uid):
 
 
 def GetServerIdByUid(uid):
-	# type: (int/long) -> None或者int
+	# type: (Union[int, long]) -> Optional[int]
 	"""
 	获取在线玩家所在的服务器的ID，返回的信息为当前控制服内存缓存中的信息，玩家很可能很快就离线或者转服
 
@@ -97,7 +101,7 @@ def GetServerIdByUid(uid):
 
 
 def GetServerIdsByGameType(gameType):
-	# type: (str) -> list(int)
+	# type: (str) -> List[int]
 	"""
 	获取指定类型的服务器id列表
 
@@ -111,7 +115,7 @@ def GetServerIdsByGameType(gameType):
 
 
 def GetServerLoadedModsById(serverId):
-	# type: (int) -> list(str)
+	# type: (int) -> List[str]
 	"""
 	根据服务器id获取服务器加载mod列表
 
@@ -125,7 +129,7 @@ def GetServerLoadedModsById(serverId):
 
 
 def GetServerLoadedModsByType(serverType):
-	# type: (str) -> list(str)
+	# type: (str) -> List[str]
 	"""
 	根据服务器类型获取服务器加载mod列表。若同种类型服务器配置了不同的mod，则返回其中一个对应mod列表。
 
@@ -139,7 +143,7 @@ def GetServerLoadedModsByType(serverType):
 
 
 def GetUserSilentInfo(uid, callback):
-	# type: (int/long, Callable) -> None
+	# type: (Union[int, long], Callable) -> None
 	"""
 	获取玩家的禁言信息
 
@@ -180,7 +184,7 @@ def SetLoginStratege(func):
 
 
 def SilentByUID(uid, banTime, reason):
-	# type: (int/long, int, str) -> bool
+	# type: (Union[int, long], int, str) -> bool
 	"""
 	禁言某个玩家
 
@@ -196,7 +200,7 @@ def SilentByUID(uid, banTime, reason):
 
 
 def UnBanUser(uid):
-	# type: (int/long) -> bool
+	# type: (Union[int, long]) -> bool
 	"""
 	解除某个玩家的封禁
 
@@ -210,7 +214,7 @@ def UnBanUser(uid):
 
 
 def UnSilentByUID(uid):
-	# type: (int/long) -> bool
+	# type: (Union[int, long]) -> bool
 	"""
 	解除某个玩家的禁言
 

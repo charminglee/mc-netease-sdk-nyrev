@@ -2,8 +2,7 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-if 0:
-    from typing import Callable, Any
+from typing import Callable, Any
 
 
 class SelectionWheelUIControl(BaseUIControl):

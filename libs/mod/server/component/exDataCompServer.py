@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from typing import Any
 from mod.common.component.baseComponent import BaseComponent
+
 
 class ExDataCompServer(BaseComponent):
     def SetExtraData(self, key, value, autoSave=True):

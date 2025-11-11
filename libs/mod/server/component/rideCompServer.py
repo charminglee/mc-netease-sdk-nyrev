@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class RideCompServer(BaseComponent):
     def SetEntityRide(self, playerId, tamedEntityId):

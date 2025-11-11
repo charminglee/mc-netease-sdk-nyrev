@@ -1,8 +1,10 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
+
 
 class ItemBannedCompServer(BaseComponent):
     def AddBannedItem(self, itemName):

@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Any, Optional
 from mod.common.component.baseComponent import BaseComponent
+
 
 class ModAttrComponentServer(BaseComponent):
     def SetAttr(self, paramName, paramValue, needRestore=False, autoSave=True):

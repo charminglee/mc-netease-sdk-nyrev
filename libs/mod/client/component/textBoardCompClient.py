@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple, Optional
+
 
 class TextBoardComponentClient(object):
     def SetText(self, boardId, text):

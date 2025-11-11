@@ -1,8 +1,26 @@
 # -*- coding: utf-8 -*-
 
-from typing import List
+
+from typing import List, Any
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional, Callable
+from typing import Tuple, Optional, Callable, Literal, TypedDict
+
+
+__GameType = Literal[0, 1, 2]
+class __AbilitiesDict(TypedDict):
+    build: bool
+    mine: bool
+    doorsandswitches: bool
+    opencontainers: bool
+    attackplayers: bool
+    attackmobs: bool
+    op: bool
+    teleport: bool
+class __RespawnPosDict(TypedDict):
+    dimensionId: int
+    pos: Tuple[int, int, int]
+__Operation = Literal[0, 1, 2, 3]
+
 
 class PlayerCompServer(BaseComponent):
     def GetPlayerHunger(self):
@@ -160,7 +178,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def SetPlayerGameType(self, gameType):
-        # type: (int) -> bool
+        # type: (__GameType) -> bool
         """
         设置玩家个人游戏模式
         """
@@ -237,28 +255,28 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetPlayerOperation(self):
-        # type: () -> int
+        # type: () -> __Operation
         """
         获取玩家权限类型信息
         """
         pass
 
     def GetPlayerAbilities(self):
-        # type: () -> dict
+        # type: () -> __AbilitiesDict
         """
         获取玩家具体权限
         """
         pass
 
     def GetPlayerExhaustionRatioByType(self, type):
-        # type: (int) -> float
+        # type: (Literal[0, 1, 2, 3, 4, 9]) -> float
         """
         获取玩家某行为饥饿度消耗倍率
         """
         pass
 
     def SetPlayerExhaustionRatioByType(self, type, ratio):
-        # type: (int, float) -> bool
+        # type: (Literal[0, 1, 2, 3, 4, 9], float) -> bool
         """
         设置玩家某行为饥饿度消耗倍率
         """
@@ -300,14 +318,14 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetPlayerRespawnPos(self):
-        # type: () -> dict
+        # type: () -> __RespawnPosDict
         """
         获取玩家复活点
         """
         pass
 
     def CollectOnlineClientData(self, collectTypes, callback, extraArgs=None):
-        # type: (List[str], Callable, Optional[dict]) -> None
+        # type: (List[Literal["game", "player", "world", "entity"]], Callable[[str, Optional[dict]], Any], Optional[dict]) -> None
         """
         收集在线玩家客户端数据，用于判断玩家是否作弊
         """
@@ -419,7 +437,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def SetPermissionLevel(self, level):
-        # type: (int) -> bool
+        # type: (__Operation) -> bool
         """
         设置玩家权限等级
         """

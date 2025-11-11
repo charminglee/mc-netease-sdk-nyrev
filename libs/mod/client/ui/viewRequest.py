@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+
+
 class ViewRequest(object):
 	Nothing = 0
 	Refresh = 1 << 0

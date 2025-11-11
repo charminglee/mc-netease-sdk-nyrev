@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
+
 
 class TameComponentClient(BaseComponent):
     def GetOwnerId(self):

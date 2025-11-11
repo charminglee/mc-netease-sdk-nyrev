@@ -2,11 +2,26 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-if 0:
-    from typing import Callable, TypedDict, Any, Optional
+from typing import Callable, Any, Optional
+from mod.client.ui.screenNode import ScreenNode
 
 
 class ButtonUIControl(BaseUIControl):
+    def __init__(self, screenNode, path):
+        # type: (ScreenNode, str) -> None
+        super(ButtonUIControl, self).__init__(screenNode, path)
+        self.buttonArgs = None                      # type: Optional[dict]
+        self.buttonHoverArgs = None                 # type: Optional[dict]
+        self.onButtonTouchUpCallback = None         # type: Callable[[dict], Any]
+        self.onButtonTouchDownCallback = None       # type: Callable[[dict], Any]
+        self.onButtonTouchCancelCallback = None     # type: Callable[[dict], Any]
+        self.onButtonTouchMoveCallback = None       # type: Callable[[dict], Any]
+        self.onButtonTouchMoveInCallback = None     # type: Callable[[dict], Any]
+        self.onButtonTouchMoveOutCallback = None    # type: Callable[[dict], Any]
+        self.onButtonScreenExitCallback = None      # type: Callable[[dict], Any]
+        self.onButtonHoverMoveInCallback = None     # type: Callable[[dict], Any]
+        self.onButtonHoverMoveOutCallback = None    # type: Callable[[dict], Any]
+
     def AddTouchEventParams(self, args=None):
         # type: (Optional[dict]) -> None
         """

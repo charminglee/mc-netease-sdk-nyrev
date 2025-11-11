@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
+
 
 class AuxValueComponentClient(BaseComponent):
     def GetAuxValue(self):

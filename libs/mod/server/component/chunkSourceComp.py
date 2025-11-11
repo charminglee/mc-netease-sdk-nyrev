@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Union
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple, Callable, Any
+
 
 class ChunkSourceCompServer(BaseComponent):
     def SetAddArea(self, key, dimensionId, minPos, maxPos):
@@ -42,7 +44,7 @@ class ChunkSourceCompServer(BaseComponent):
         pass
 
     def GetLoadedChunks(self, dimension):
-        # type: (int) -> Union[List[Tuple[int,int]], None]
+        # type: (int) -> Union[List[Tuple[int, int]], None]
         """
         获取指定维度当前已经加载完毕的全部区块的坐标列表
         """
@@ -56,21 +58,21 @@ class ChunkSourceCompServer(BaseComponent):
         pass
 
     def GetChunkMinPos(self, chunkPos):
-        # type: (Tuple[int,int]) -> Union[Tuple[int, int, int], None]
+        # type: (Tuple[int, int]) -> Union[Tuple[int, int, int], None]
         """
         获取某区块最小点的坐标
         """
         pass
 
     def GetChunkMaxPos(self, chunkPos):
-        # type: (Tuple[int,int]) -> Union[Tuple[int, int, int], None]
+        # type: (Tuple[int, int]) -> Union[Tuple[int, int, int], None]
         """
         获取某区块最大点的坐标
         """
         pass
 
     def GetChunkMobNum(self, dimension, chunkPos):
-        # type: (int, Tuple[int,int]) -> int
+        # type: (int, Tuple[int, int]) -> int
         """
         获取某区块中的生物数量（不包括玩家，但包括盔甲架）
         """
@@ -84,14 +86,14 @@ class ChunkSourceCompServer(BaseComponent):
         pass
 
     def IsChunkGenerated(self, dimensionId, chunkPos):
-        # type: (int, Tuple[int,int]) -> bool
+        # type: (int, Tuple[int, int]) -> bool
         """
         获取某个区块是否生成过。
         """
         pass
 
     def IsSlimeChunk(self, dimensionId, chunkPos):
-        # type: (int, Tuple[int,int]) -> bool
+        # type: (int, Tuple[int, int]) -> bool
         """
         获取某个区块是否是史莱姆区块。
         """

@@ -1,13 +1,11 @@
-
 # -*- coding: utf-8 -*-
+
+
 from mod.client.plugin.illustratedBook.page.basePage import BasePage
 from typing import List
-from typing import Dict
-from typing import Tuple
 
 
 class PageGroup(object):
-
     def GetAddr(self):
         # type: () -> str
         """

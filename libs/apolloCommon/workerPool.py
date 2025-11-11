@@ -1,7 +1,11 @@
 # -*- coding: utf-8 -*-
 
+
 """下面是异步任务池的接口
 """
+
+
+from typing import Union, Callable, Any
 
 
 def ForkNewPool(orderSize):
@@ -19,10 +23,8 @@ def ForkNewPool(orderSize):
 
 
 class MainPool(object):
-
-
 	def EmitOrder(self, key, func, callback, *args):
-		# type: (string/int, Callable, Callable, *args) -> None
+		# type: (Union[str, int], Callable, Callable, Any) -> None
 		"""
 		添加一个异步任务
 

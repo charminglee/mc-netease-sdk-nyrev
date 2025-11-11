@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class FrameAniSkeletonBindComp(BaseComponent):
     def Bind(self, modelId, boneName, offset, rot):

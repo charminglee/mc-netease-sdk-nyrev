@@ -7,7 +7,7 @@
 |   Author: Nuoyan
 |   Email : 1279735247@qq.com
 |   Gitee : https://gitee.com/charming-lee
-|   Date  : 2025-10-24
+|   Date  : 2025-11-01
 |
 | ==============================================
 """
@@ -22,12 +22,12 @@ except:
     try:
         long_description = open("README.md", encoding="utf-8").read()
     except:
-        long_description = "Netease ModSDK completion library revised version by Nuoyan\nSee https://github.com/charminglee/mc-netease-sdk-nyrev"
+        long_description = "Netease ModSDK completion library revised version by Nuoyan.\nSee https://github.com/charminglee/mc-netease-sdk-nyrev"
 
 
 setup(
     name="mc-netease-sdk-nyrev",
-    version="3.6.0.64435",
+    version="3.6.0.64435-1",
     description="Netease ModSDK completion library revised version by Nuoyan",
     long_description=long_description,
     long_description_content_type="text/markdown",

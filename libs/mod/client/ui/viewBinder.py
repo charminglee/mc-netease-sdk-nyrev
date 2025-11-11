@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 
 
-if 0:
-	from typing import Optional, Callable, TypeVar, Any
-	_F = TypeVar("_F", bound=Callable[..., Any])
+from typing import Optional, Callable, TypeVar, Any
+
+
+_F = TypeVar("_F", bound=Callable[..., Any])
 
 
 class ViewBinder(object):

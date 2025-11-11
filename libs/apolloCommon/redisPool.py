@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+
 """下面是redis线程池的接口
 """
 
 
+from typing import Union, Callable, Any
+
+
 def AsyncDelete(key, callback):
-	# type: (string, Callable) -> None
+	# type: (str, Callable) -> None
 	"""
 	执行redis操作，删除某个redis key,相当于redis中执行命令:del key
 
@@ -18,7 +22,7 @@ def AsyncDelete(key, callback):
 
 
 def AsyncFuncWithKey(func, orderKey, callback, *args, **kwargs):
-	# type: (Callable, str/int, Callable, *args, **kwargs) -> None
+	# type: (Callable, Union[str, int], Callable, Any, Any) -> None
 	"""
 	添加一个异步redis任务
 
@@ -47,7 +51,7 @@ def AsyncGet(key, callback):
 
 
 def AsyncHgetall(key, callback):
-	# type: (string, Callable) -> None
+	# type: (str, Callable) -> None
 	"""
 	执行redis操作，获取key的value,相当于redis中执行命令:hgetall key
 
@@ -60,7 +64,7 @@ def AsyncHgetall(key, callback):
 
 
 def AsyncMget(keys, callback):
-	# type: (list/tuple, Callable) -> None
+	# type: (Union[list, tuple], Callable) -> None
 	"""
 	执行redis操作，获取多个key的值,相当于redis中执行命令:mget key1 key2 ...
 
@@ -73,7 +77,7 @@ def AsyncMget(keys, callback):
 
 
 def AsyncSet(key, value, callback):
-	# type: (string, string, Callable) -> None
+	# type: (str, str, Callable) -> None
 	"""
 	执行redis操作，设置key的值为value,相当于redis中执行命令:set key value
 

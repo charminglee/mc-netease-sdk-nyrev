@@ -1,22 +1,66 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import Tuple
 from typing import Optional
 from mod.common.utils.timer import CallLater
 from typing import List
-from typing import Any, Callable
+from typing import Any, Callable, Literal, TypedDict
 from mod.common.component.baseComponent import BaseComponent
+
+
+__GameType = Literal[0, 1, 2]
+__GameDifficulty = Literal[0, 1, 2, 3]
+class _OptionInfoDict(TypedDict, total=False):
+    pvp: bool
+    show_coordinates: bool
+    fire_spreads: bool
+    tnt_explodes: bool
+    mob_loot: bool
+    natural_regeneration: bool
+    respawn_block_explosion: bool
+    respawn_radius: bool
+    tile_drops: bool
+    immediate_respawn: bool
+class _CheatInfoDict(TypedDict, total=False):
+    enable: bool
+    always_day: bool
+    mob_griefing: bool
+    keep_inventory: bool
+    weather_cycle: bool
+    mob_spawn: bool
+    entities_drop_loot: bool
+    daylight_cycle: bool
+    command_blocks_enabled: bool
+    random_tick_speed: int
+class __GameRuleDict(TypedDict, total=False):
+    option_info: _OptionInfoDict
+    cheat_info: _CheatInfoDict
+class __ItemDict(TypedDict, total=False):
+    newItemName: str
+    newAuxValue: int
+    itemName: str
+    auxValue: int
+    count: int
+    showInHand: bool
+    enchantData: List[Tuple[int, int]]
+    modEnchantData: List[Tuple[str, int]]
+    customTips: str
+    extraId: str
+    userData: Optional[dict]
+    durability: int
+
 
 class GameComponentServer(BaseComponent):
     def GetGameType(self):
-        # type: () -> int
+        # type: () -> __GameType
         """
         获取默认游戏模式
         """
         pass
 
     def GetGameDiffculty(self):
-        # type: () -> int
+        # type: () -> __GameDifficulty
         """
         获取游戏难度
         """
@@ -163,7 +207,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def SetGameDifficulty(self, difficulty):
-        # type: (int) -> bool
+        # type: (__GameDifficulty) -> bool
         """
         设置游戏难度
         """
@@ -191,7 +235,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def SetDefaultGameType(self, gameType):
-        # type: (int) -> bool
+        # type: (__GameType) -> bool
         """
         设置默认游戏模式
         """
@@ -219,14 +263,14 @@ class GameComponentServer(BaseComponent):
         pass
 
     def SetGameRulesInfoServer(self, gameRuleDict):
-        # type: (dict) -> bool
+        # type: (__GameRuleDict) -> bool
         """
         设置游戏规则。所有参数均可选。
         """
         pass
 
     def GetGameRulesInfoServer(self):
-        # type: () -> dict
+        # type: () -> __GameRuleDict
         """
         获取游戏规则
         """
@@ -289,7 +333,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def PlaceStructure(self, playerId, pos, structureName, dimensionId=-1, rotation=0, animationMode=0, animationTime=0, inculdeEntity=True, removeBlock=False, mirrorMode=0, integrity=100, seed=-1):
-        # type: (None, Tuple[float, float, float], str, int, int, int, float, bool, bool, int, float, int) -> bool
+        # type: (None, Tuple[float, float, float], str, int, Literal[0, 90, 180, 270], Literal[0, 1, 2], float, bool, bool, Literal[0, 1, 2, 3], float, int) -> bool
         """
         放置结构
         """
@@ -478,7 +522,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def UseItemAttackEntity(self, itemDict, entityId, cause=None, attackerPos=None, knocked=False, customTag=None):
-        # type: (dict, str, str, Tuple[float, float, float], bool, str) -> dict
+        # type: (__ItemDict, str, Optional[str], Optional[Tuple[float, float, float]], bool, Optional[str]) -> __ItemDict
         """
         使用指定物品攻击某个实体。
         """

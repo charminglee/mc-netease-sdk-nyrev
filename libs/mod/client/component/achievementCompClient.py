@@ -1,7 +1,9 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
 
 class AchievementCompClient(BaseComponent):
     def SetAchievementGatePosition(self, x, y):

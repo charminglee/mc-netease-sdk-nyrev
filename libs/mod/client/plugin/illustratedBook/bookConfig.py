@@ -1,8 +1,7 @@
+# -*- coding: UTF-8 -*-
 
-#-*- coding: UTF-8 -*- 
 
 class BookConfig:
-
     class TextSize:
         infotext = 6
         footprint = 8
@@ -13,8 +12,8 @@ class BookConfig:
 
     class Colors:
         TextDefault = (0.1875, 0.01171875, 0.01171875, 1.0)
-        BookTitle = (249.0/255.0, 221.0/255.0, 166.0/255.0, 1.0)
-        SubTitle = (72.0/255.0, 30.0/255.0, 23.0/255.0, 1.0)
+        BookTitle = (249.0 / 255.0, 221.0 / 255.0, 166.0 / 255.0, 1.0)
+        SubTitle = (72.0 / 255.0, 30.0 / 255.0, 23.0 / 255.0, 1.0)
 
     class TextAlign:
         Left = 0
@@ -30,9 +29,9 @@ class BookConfig:
 
     # 这里记录的是一些预设用到的数据
     class Images:
-        blank = "textures/ui/book_gui/blank" 
+        blank = "textures/ui/book_gui/blank"
         categoryDefaultIcon = "textures/items/book_normal"
-        lockBtn_dark = "textures/ui/book_gui/icon02" 
-        sqrtPanel_light = "textures/ui/book_gui/panel04"   
+        lockBtn_dark = "textures/ui/book_gui/icon02"
+        sqrtPanel_light = "textures/ui/book_gui/panel04"
         progressBar_light = "textures/ui/book_gui/progressbar01_01"
-        progressBar_dark = "textures/ui/book_gui/progressbar01_bg"   
+        progressBar_dark = "textures/ui/book_gui/progressbar01_bg"

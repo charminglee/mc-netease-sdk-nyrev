@@ -1,11 +1,18 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, TypedDict, Any
+
+
+class __MolangReturnDict(TypedDict):
+    value: Any
+    error: str
+
 
 class QueryVariableComponentServer(BaseComponent):
     def EvalMolangExpression(self, expression):
-        # type: (str) -> dict
+        # type: (str) -> __MolangReturnDict
         """
         在实体上下文上执行molang表达式
         """

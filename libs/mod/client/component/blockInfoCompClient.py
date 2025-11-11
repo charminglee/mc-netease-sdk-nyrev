@@ -1,8 +1,18 @@
 # -*- coding: utf-8 -*-
 
-from typing import Union, Optional
+
+from typing import TypedDict, Union, Optional
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Literal
+
+
+class __MiningArgs(TypedDict, total=False):
+    haste: int
+    conduit_power: int
+    mining_fatigue: int
+    mining_efficiency: int
+__UniformIndex = Literal[1, 2, 3, 4]
+
 
 class BlockInfoComponentClient(BaseComponent):
     def GetBlockClip(self, pos):
@@ -27,7 +37,7 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def GetTopBlockHeight(self, pos):
-        # type: (Tuple[int,int]) -> Union[int, None]
+        # type: (Tuple[int, int]) -> Union[int, None]
         """
         获取当前维度某一位置最高的非空气方块的高度
         """
@@ -48,7 +58,7 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def GetDestroyTotalTime(self, blockName, itemName=None, miningArgs=None):
-        # type: (str, Optional[str], Optional[dict]) -> float
+        # type: (str, Optional[str], __MiningArgs) -> float
         """
         获取使用物品破坏方块需要的时间
         """
@@ -216,14 +226,14 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def SetBlockEntityExtraUniforms(self, pos, uniformIndex, data):
-        # type: (Tuple[int, int, int], int, Tuple[float, float, float, float]) -> bool
+        # type: (Tuple[int, int, int], __UniformIndex, Tuple[float, float, float, float]) -> bool
         """
         设置可在自定义方块实体的shader当中使用的自定义变量的值，该自定义变量总共可设置EXTRA_ACTOR_UNIFORM1,EXTRA_ACTOR_UNIFORM2,EXTRA_ACTOR_UNIFORM3,EXTRA_ACTOR_UNIFORM4，总共4组，每组为一个vec4(float, float, float ,float)类型的向量，向量的默认值为(1.0,1.0,1.0,1.0)。
         """
         pass
 
     def GetBlockEntityExtraUniforms(self, pos, uniformIndex):
-        # type: (Tuple[int, int, int], int) -> Tuple[float, float, float, float]
+        # type: (Tuple[int, int, int], __UniformIndex) -> Tuple[float, float, float, float]
         """
         获取在自定义方块实体的shader当中使用的自定义变量的值，该自定义变量总共可设置EXTRA_ACTOR_UNIFORM1,EXTRA_ACTOR_UNIFORM2,EXTRA_ACTOR_UNIFORM3,EXTRA_ACTOR_UNIFORM4，总共4组，每组为一个vec4(float, float, float ,float)类型的向量。
         """

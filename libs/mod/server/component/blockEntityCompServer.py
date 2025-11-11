@@ -1,7 +1,34 @@
 # -*- coding: utf-8 -*-
 
+
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Literal, TypedDict, Optional, List
+
+
+__Side = Literal[0, 1]
+class __CommandBlockDict(TypedDict):
+    cmd: str
+    name: str
+    mode: Literal[0, 1, 2]
+    isConditional: Literal[0, 1]
+    redstoneMode: Literal[0, 1]
+class __SignTextStyleDict(TypedDict):
+    color: Tuple[float, float, float, float]
+    lighting: bool
+class __ItemDict(TypedDict, total=False):
+    newItemName: str
+    newAuxValue: int
+    itemName: str
+    auxValue: int
+    count: int
+    showInHand: bool
+    enchantData: List[Tuple[int, int]]
+    modEnchantData: List[Tuple[str, int]]
+    customTips: str
+    extraId: str
+    userData: Optional[dict]
+    durability: int
+
 
 class BlockEntityCompServer(BaseComponent):
     def SetCommandBlock(self, pos, dimensionId, cmd, name, mode, isConditional, redstoneMode):
@@ -12,7 +39,7 @@ class BlockEntityCompServer(BaseComponent):
         pass
 
     def GetCommandBlock(self, pos, dimensionId):
-        # type: (Tuple[int, int, int], int) -> dict
+        # type: (Tuple[int, int, int], int) -> __CommandBlockDict
         """
         获取命令方块的设置内容
         """
@@ -40,14 +67,14 @@ class BlockEntityCompServer(BaseComponent):
         pass
 
     def SetSignTextStyle(self, pos, dimensionId, color, lighting, side=0):
-        # type: (Tuple[int, int, int], int, Tuple[float, float, float, float], bool, int) -> bool
+        # type: (Tuple[int, int, int], int, Tuple[float, float, float, float], bool, __Side) -> bool
         """
         设置告示牌的文本样式
         """
         pass
 
     def GetSignTextStyle(self, pos, dimensionId, side=0):
-        # type: (Tuple[int, int, int], int, int) -> dict
+        # type: (Tuple[int, int, int], int, __Side) -> __SignTextStyleDict
         """
         获取告示牌的文本样式信息
         """
@@ -82,14 +109,14 @@ class BlockEntityCompServer(BaseComponent):
         pass
 
     def SetFrameItem(self, pos, dimensionId, itemDict):
-        # type: (Tuple[int, int, int], int, dict) -> bool
+        # type: (Tuple[int, int, int], int, __ItemDict) -> bool
         """
         设置物品展示框的物品
         """
         pass
 
     def GetFrameItem(self, pos, dimensionId):
-        # type: (Tuple[int, int, int], int) -> dict
+        # type: (Tuple[int, int, int], int) -> __ItemDict
         """
         获取物品展示框的物品
         """

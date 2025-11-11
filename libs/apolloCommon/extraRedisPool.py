@@ -19,7 +19,7 @@ def AsyncDelete(dbName, key, callback):
 
 
 def AsyncFuncWithKey(dbName, func, orderKey, callback, *args, **kwargs):
-	# type: (str, Callable, str/int, Callable, *args, **kwargs) -> None
+	# type: (str, Callable, Union[str, int], Callable, *args, **kwargs) -> None
 	"""
 	添加一个异步redis任务
 

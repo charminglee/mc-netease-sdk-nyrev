@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
+
 from typing import List
-from typing import Tuple, TypedDict, Dict, Union
+from typing import Tuple, TypedDict, Dict
 
 
 class __BlockPaletteSerializedDict(TypedDict):

@@ -1,11 +1,15 @@
 # -*- coding: utf-8 -*-
 
+
 """这里是service的一些HTTP接口
 """
 
 
+from typing import Callable, Any
+
+
 def RegisterServiceHttp(url, binder, func):
-	# type: (string, instance, Callable) -> None
+	# type: (str, Any, Callable) -> None
 	"""
 	注册一个新的HTTP接口
 
@@ -19,7 +23,7 @@ def RegisterServiceHttp(url, binder, func):
 
 
 def SendHttpRequestToMaster(requestUrl, body):
-	# type: (string, string) -> None
+	# type: (str, str) -> None
 	"""
 	给master发送http请求
 
@@ -32,7 +36,7 @@ def SendHttpRequestToMaster(requestUrl, body):
 
 
 def SendHttpResponse(clientId, message):
-	# type: (int, string) -> None
+	# type: (int, str) -> None
 	"""
 	发送HTTP的Response。支持异步返回，返回时指定输入clientId
 

@@ -1,9 +1,11 @@
 # -*- coding: utf-8 -*-
 
 
-from mod.client.ui.controls.baseUIControl import BaseUIControl
+from typing import Literal
 from typing import List
 from typing import Tuple, Optional
+from mod.client.ui.controls.baseUIControl import BaseUIControl
+from mod.client.ui.richText import RichTextItem
 
 
 class ScreenNode(object):
@@ -77,7 +79,7 @@ class ScreenNode(object):
         pass
 
     def ChangeBindAutoScale(self, autoScale):
-        # type: (int) -> bool
+        # type: (Literal[0, 1]) -> bool
         """
         设置已绑定实体的UI是否根据绑定实体与本地玩家间的距离动态缩放，**只对已绑定实体的UI界面生效，如何将UI与实体绑定详见CreateUI接口**
         """
@@ -105,7 +107,7 @@ class ScreenNode(object):
         pass
 
     def GetBindAutoScale(self):
-        # type: () -> int
+        # type: () -> Literal[0, 1]
         """
         获取该绑定实体的UI是否动态缩放，未绑定的UI将传回默认值1
         """
@@ -203,7 +205,7 @@ class ScreenNode(object):
         pass
 
     def GetRichTextItem(self, componentPath):
-        # type: (str) -> object
+        # type: (str) -> RichTextItem
         """
         返回一个富文本控件实例
         """

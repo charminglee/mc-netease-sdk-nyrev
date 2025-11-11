@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Optional, Literal
+from typing import Tuple, Optional, Literal, TypedDict, Dict
 from mod.common.component.baseComponent import BaseComponent
 
 
@@ -39,6 +39,16 @@ __TimeEaseType = Literal[
     "out_elastic",
     "in_out_elastic",
 ]
+class __TargetInfoDict(TypedDict):
+    type: Literal["Entity", "Block", "None"]
+    entityId: str
+    hitPosX: float
+    hitPosY: float
+    hitPosZ: float
+    x: int
+    y: int
+    z: int
+    face: Literal[0, 1, 2, 3, 4, 5]
 
 
 class CameraComponentClient(BaseComponent):
@@ -71,7 +81,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def PickFacing(self):
-        # type: () -> dict
+        # type: () -> __TargetInfoDict
         """
         获取准星选中的实体或者方块
         """
@@ -92,7 +102,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def GetChosen(self):
-        # type: () -> dict
+        # type: () -> __TargetInfoDict
         """
         获取屏幕点击位置的实体或方块信息，通常与GetEntityByCoordEvent配合使用
         """
@@ -197,7 +207,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def LockModCameraPitch(self, enable):
-        # type: (int) -> bool
+        # type: (Literal[0, 1]) -> bool
         """
         锁定摄像机上下角度（第三人称下生效，锁定后不能上下调整视角）
         """
@@ -225,7 +235,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def LockModCameraYaw(self, enable):
-        # type: (int) -> bool
+        # type: (Literal[0, 1]) -> bool
         """
         锁定摄像机左右角度（第三人称下生效，锁定后不能通过鼠标左右调整视角）
         """
@@ -274,7 +284,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def GetCameraMotions(self):
-        # type: () -> dict
+        # type: () -> Dict[int, Literal[0, 1, 2]]
         """
         获取相机上的所有运动器
         """

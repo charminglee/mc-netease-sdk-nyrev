@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Optional
 from typing import List, TypedDict
 from mod.common.component.baseComponent import BaseComponent
 
@@ -29,7 +28,7 @@ class EffectComponentServer(BaseComponent):
         pass
 
     def GetAllEffects(self):
-        # type: () -> Optional[List[__EffectDict]]
+        # type: () -> List[__EffectDict]
         """
         获取实体当前所有状态效果
         """

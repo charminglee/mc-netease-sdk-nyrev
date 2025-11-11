@@ -46,6 +46,7 @@ pip install mc-netease-sdk-nyrev
 27. 用`Literal`表示枚举值参数。
 28. 优化`illustratedBook`各模块的类型注解。
 29. 优化了`apolloCommon`、`lobby`、`lobbyGame`、`master`、`service`各模块的类型注解。
+30. 补充富文本控件实例`RichTextItem`相关补全。
 
 ### 其他修正
 

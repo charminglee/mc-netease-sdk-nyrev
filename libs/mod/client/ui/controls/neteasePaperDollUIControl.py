@@ -5,7 +5,7 @@ from mod.client.ui.controls.baseUIControl import BaseUIControl
 from typing import TypedDict, Dict, Tuple
 
 
-class __RenderEntityParamDict(TypedDict, total=False):
+class __EntityParamDict(TypedDict, total=False):
     entity_id: str
     entity_identifier: str
     scale: float
@@ -15,7 +15,7 @@ class __RenderEntityParamDict(TypedDict, total=False):
     init_rot_z: float
     molang_dict: Dict[str, float]
     rotation_axis: Tuple[int, int, int]
-class __RenderSkeletonModelParamDict(TypedDict, total=False):
+class __SkeletonModelParamDict(TypedDict, total=False):
     skeleton_model_name: str
     animation: str
     animation_looped: bool
@@ -27,7 +27,7 @@ class __RenderSkeletonModelParamDict(TypedDict, total=False):
     molang_dict: Dict[str, float]
     rotation_axis: Tuple[int, int, int]
     light_direction: Tuple[float, float, float]
-class __RenderBlockGeometryModelParamDict(TypedDict, total=False):
+class __BlockGeometryModelParamDict(TypedDict, total=False):
     block_geometry_model_name: str
     scale: float
     init_rot_x: float
@@ -46,21 +46,21 @@ class NeteasePaperDollUIControl(BaseUIControl):
         pass
 
     def RenderEntity(self, params):
-        # type: (__RenderEntityParamDict) -> bool
+        # type: (__EntityParamDict) -> bool
         """
         渲染实体
         """
         pass
 
     def RenderSkeletonModel(self, params):
-        # type: (__RenderSkeletonModelParamDict) -> bool
+        # type: (__SkeletonModelParamDict) -> bool
         """
         渲染骨骼模型（不依赖实体）
         """
         pass
 
     def RenderBlockGeometryModel(self, params):
-        # type: (__RenderBlockGeometryModelParamDict) -> bool
+        # type: (__BlockGeometryModelParamDict) -> bool
         """
         渲染网格体模型
         """

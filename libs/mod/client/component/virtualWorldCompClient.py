@@ -2,7 +2,7 @@
 
 
 from typing import Tuple
-from typing import List, Literal
+from typing import List, Literal, Dict
 from mod.common.component.baseComponent import BaseComponent
 
 
@@ -184,7 +184,7 @@ class VirtualWorldCompClient(BaseComponent):
         pass
 
     def ModelUpdateAnimationMolangVariable(self, objId, molangDict):
-        # type: (int, dict) -> bool
+        # type: (int, Dict[str, float]) -> bool
         """
         更新微软原版模型表达式变量，可控制动作的改变
         """

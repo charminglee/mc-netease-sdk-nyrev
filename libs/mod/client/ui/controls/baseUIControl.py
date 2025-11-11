@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Any, Callable, Dict, Optional, Literal
+from typing import Tuple, Any, Callable, Dict, Optional, Literal, TypedDict
 from mod.client.ui.controls.minimapUIControl import MiniMapUIControl
 from mod.client.ui.controls.inputPanelUIControl import InputPanelUIControl
 from mod.client.ui.controls.itemRendererUIControl import ItemRendererUIControl
@@ -44,6 +44,27 @@ __PropertyNameNoAll = Literal[
     "uv",
     "wait",
 ]
+class __FullPositionDict(TypedDict, total=False):
+    followType: Literal["none", "parent", "maxChildren", "maxSibling", "children", "x", "y"]
+    relativeValue: float
+    absoluteValue: float
+class __FullSizeDict(TypedDict, total=False):
+    fit: bool
+    followType: Literal["none", "parent", "maxChildren", "maxSibling", "children", "x", "y"]
+    relativeValue: float
+    absoluteValue: float
+__Axis = Literal["x", "y"]
+__Anchor = Literal[
+    "top_left",
+    "top_middle",
+    "top_right",
+    "left_middle",
+    "center",
+    "right_middle",
+    "bottom_left",
+    "bottom_middle",
+    "bottom_right",
+]
 
 
 class BaseUIControl(object):
@@ -63,56 +84,56 @@ class BaseUIControl(object):
         pass
 
     def SetFullSize(self, axis, paramDict):
-        # type: (str, dict) -> bool
+        # type: (__Axis, __FullSizeDict) -> bool
         """
         设置控件的大小，支持比例形式以及绝对值
         """
         pass
 
     def GetFullSize(self, axis):
-        # type: (str) -> dict
+        # type: (__Axis) -> __FullSizeDict
         """
         获取控件的大小，支持百分比以及绝对值
         """
         pass
 
     def SetFullPosition(self, axis, paramDict):
-        # type: (str, dict) -> bool
+        # type: (__Axis, __FullPositionDict) -> bool
         """
         设置控件的锚点坐标（全局坐标），支持比例值以及绝对值
         """
         pass
 
     def GetFullPosition(self, axis):
-        # type: (str) -> dict
+        # type: (__Axis) -> __FullPositionDict
         """
         获取控件的锚点坐标，支持比例值以及绝对值
         """
         pass
 
     def SetAnchorFrom(self, anchorFrom):
-        # type: (str) -> bool
+        # type: (__Anchor) -> bool
         """
         设置控件相对于父节点的锚点
         """
         pass
 
     def GetAnchorFrom(self):
-        # type: () -> str
+        # type: () -> __Anchor
         """
         判断控件相对于父节点的哪个锚点来计算位置与大小
         """
         pass
 
     def SetAnchorTo(self, anchorTo):
-        # type: (str) -> bool
+        # type: (__Anchor) -> bool
         """
         设置控件自身锚点位置
         """
         pass
 
     def GetAnchorTo(self):
-        # type: () -> str
+        # type: () -> __Anchor
         """
         获取控件自身锚点位置信息
         """

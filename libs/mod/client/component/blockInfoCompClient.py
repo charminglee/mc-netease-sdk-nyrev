@@ -3,7 +3,7 @@
 
 from typing import TypedDict, Union, Optional
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Literal
+from typing import Tuple, Literal, List
 
 
 class __MiningArgs(TypedDict, total=False):
@@ -12,6 +12,17 @@ class __MiningArgs(TypedDict, total=False):
     mining_fatigue: int
     mining_efficiency: int
 __UniformIndex = Literal[1, 2, 3, 4]
+__Facing = Literal[0, 1, 2, 3, 4, 5]
+class _TextureDict(TypedDict):
+    paths: List[str]
+    name: str
+class __TextureInfoDict(TypedDict):
+    North: _TextureDict
+    West: _TextureDict
+    Up: _TextureDict
+    Down: _TextureDict
+    East: _TextureDict
+    South: _TextureDict
 
 
 class BlockInfoComponentClient(BaseComponent):
@@ -51,7 +62,7 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def GetBlockTextures(self, blockName, face=6):
-        # type: (str, int) -> dict
+        # type: (str, __Facing) -> __TextureInfoDict
         """
         获取方块的初始贴图信息
         """

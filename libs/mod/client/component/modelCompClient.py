@@ -3,7 +3,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional, Literal
+from typing import Tuple, Optional, Literal, Dict
 
 
 __UniformIndex = Literal[1, 2, 3, 4]
@@ -347,7 +347,7 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetAnim1DMultiControlParam(self, modelId, paramName, animWeightDict):
-        # type: (int, str, dict) -> bool
+        # type: (int, str, Dict[str, float]) -> bool
         """
         新建动画的1D控制参数后，设置用于根据权重控制多动画进行混合的参数
         """

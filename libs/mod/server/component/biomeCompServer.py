@@ -1,9 +1,14 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import List
+from typing import List, TypedDict
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
+
+
+class __SetBiomeResultDict(TypedDict):
+    Update: bool
+    BlockList: List[Tuple[int, int, int]]
 
 
 class BiomeCompServer(BaseComponent):
@@ -36,7 +41,7 @@ class BiomeCompServer(BaseComponent):
         pass
 
     def SetBiomeByPosList(self, posList, biomeName, dimId):
-        # type: (List[Tuple[int, int, int]], str, int) -> dict
+        # type: (List[Tuple[int, int, int]], str, int) -> __SetBiomeResultDict
         """
         设置所有列表中位置所属的生物群系信息
         """

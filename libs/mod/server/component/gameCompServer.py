@@ -49,6 +49,48 @@ class __ItemDict(TypedDict, total=False):
     extraId: str
     userData: Optional[dict]
     durability: int
+class __ScoreDict(TypedDict, total=False):
+    displayName: str
+    name: str
+    criteriaName: Literal["dummy"]
+    value: int
+__ActorDamageCause = Literal[
+    "none",
+    "override",
+    "contact",
+    "entity_attack",
+    "projectile",
+    "suffocation",
+    "fall",
+    "fire",
+    "fire_tick",
+    "lava",
+    "drowning",
+    "block_explosion",
+    "entity_explosion",
+    "void",
+    "self_destruct",
+    "self_destruct",
+    "magic",
+    "wither",
+    "starve",
+    "anvil",
+    "thorns",
+    "falling_block",
+    "piston",
+    "fly_into_wall",
+    "magma",
+    "fireworks",
+    "lightning",
+    "freezing",
+    "stalactite",
+    "stalagmite",
+    "ram_attack",
+    "custom",
+    "sonic_boom",
+    "camp_fire",
+    "soul_camp_fire",
+]
 
 
 class GameComponentServer(BaseComponent):
@@ -73,7 +115,7 @@ class GameComponentServer(BaseComponent):
         """
         pass
 
-    def SetNotifyMsg(self, msg, color='\xc2\xa7f'):
+    def SetNotifyMsg(self, msg, color='§f'):
         # type: (str, str) -> bool
         """
         设置消息通知
@@ -186,7 +228,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def GetPlayerGameType(self, playerId):
-        # type: (str) -> int
+        # type: (str) -> __GameType
         """
         获取指定玩家的游戏模式
         """
@@ -487,14 +529,14 @@ class GameComponentServer(BaseComponent):
         pass
 
     def GetAllScoreboardObjects(self):
-        # type: () -> List[dict]
+        # type: () -> List[__ScoreDict]
         """
         获取所有记分板项
         """
         pass
 
     def GetAllPlayerScoreboardObjects(self):
-        # type: () -> List[dict]
+        # type: () -> List[__ScoreDict]
         """
         获取玩家记分项
         """
@@ -522,9 +564,8 @@ class GameComponentServer(BaseComponent):
         pass
 
     def UseItemAttackEntity(self, itemDict, entityId, cause=None, attackerPos=None, knocked=False, customTag=None):
-        # type: (__ItemDict, str, Optional[str], Optional[Tuple[float, float, float]], bool, Optional[str]) -> __ItemDict
+        # type: (__ItemDict, str, __ActorDamageCause, Optional[Tuple[float, float, float]], bool, Optional[str]) -> __ItemDict
         """
         使用指定物品攻击某个实体。
         """
         pass
-

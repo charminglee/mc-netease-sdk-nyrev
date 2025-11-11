@@ -19,7 +19,7 @@ class MsgComponentServer(BaseComponent):
         """
         pass
 
-    def NotifyOneMessage(self, playerId, msg, color='\xc2\xa7f'):
+    def NotifyOneMessage(self, playerId, msg, color='§f'):
         # type: (str, str, str) -> None
         """
         给指定玩家发送聊天框消息

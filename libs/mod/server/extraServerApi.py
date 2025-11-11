@@ -18,7 +18,7 @@ from mod.common import minecraftEnum
 class __EntityDict(TypedDict):
     dimensionId: int
     identifier: str
-class __RayReturnDict(TypedDict):
+class __RayResultDict(TypedDict):
     type: Literal["Entity", "Block"]
     entityId: str
     pos: Tuple[int, int, int]
@@ -169,14 +169,14 @@ def GetComponentCls():
     pass
 
 def GetEngineNamespace():
-    # type: () -> str
+    # type: () -> Literal["Minecraft"]
     """
     获取引擎事件的命名空间。监听引擎事件时，namespace传该接口返回的namespace
     """
     return "Minecraft"
 
 def GetEngineSystemName():
-    # type: () -> str
+    # type: () -> Literal["Engine"]
     """
     获取引擎系统名。监听引擎事件时，systemName传该接口返回的systemName
     """
@@ -197,7 +197,7 @@ def GetEngineActor():
     pass
 
 def getEntitiesOrBlockFromRay(dimensionId, pos, rot, distance=16, isThrough=False, filterType=1):
-    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[__RayReturnDict]
+    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[__RayResultDict]
     """
     从指定位置发射一条射线，获取与射线相交的实体和方块
     """
@@ -393,7 +393,7 @@ def GetMcpModLogCanPostDump():
     pass
 
 def PostMcpModDump(msg, *args, **kwargs):
-    # type: (str, Any, dict) -> None
+    # type: (str, Any, Any) -> None
     """
     主动打印信息到McpModLog日志，需要先调用 SetMcpModLogCanPostDump 接口进行设置，才能生效。
     """

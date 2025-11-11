@@ -2,10 +2,17 @@
 
 
 from mod.common.utils.timer import CallLater
-from typing import Any
+from typing import Any, TypedDict
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Callable
+from typing import Tuple, Callable, Literal
+
+
+class __ScoreDict(TypedDict, total=False):
+    displayName: str
+    name: str
+    criteriaName: Literal["dummy"]
+    value: int
 
 
 class GameComponentClient(BaseComponent):
@@ -241,14 +248,14 @@ class GameComponentClient(BaseComponent):
         pass
 
     def GetAllScoreboardObjects(self):
-        # type: () -> List[dict]
+        # type: () -> List[__ScoreDict]
         """
         获取所有记分板项
         """
         pass
 
     def GetAllPlayerScoreboardObjects(self):
-        # type: () -> List[dict]
+        # type: () -> List[__ScoreDict]
         """
         获取玩家记分项
         """

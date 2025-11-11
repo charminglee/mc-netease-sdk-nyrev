@@ -20,6 +20,7 @@ class __RespawnPosDict(TypedDict):
     dimensionId: int
     pos: Tuple[int, int, int]
 __Operation = Literal[0, 1, 2, 3]
+__PlayerExhauseRatioType = Literal[0, 1, 2, 3, 4, 9]
 
 
 class PlayerCompServer(BaseComponent):
@@ -269,14 +270,14 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetPlayerExhaustionRatioByType(self, type):
-        # type: (Literal[0, 1, 2, 3, 4, 9]) -> float
+        # type: (__PlayerExhauseRatioType) -> float
         """
         获取玩家某行为饥饿度消耗倍率
         """
         pass
 
     def SetPlayerExhaustionRatioByType(self, type, ratio):
-        # type: (Literal[0, 1, 2, 3, 4, 9], float) -> bool
+        # type: (__PlayerExhauseRatioType, float) -> bool
         """
         设置玩家某行为饥饿度消耗倍率
         """

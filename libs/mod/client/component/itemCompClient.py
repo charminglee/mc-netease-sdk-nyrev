@@ -111,6 +111,7 @@ class __EnchantDict(TypedDict, total=False):
     is_curse: bool
     max_level: int
     incompatible: List[str]
+__ItemPosType = Literal[0, 1, 2, 3]
 
 
 class ItemCompClient(BaseComponent):
@@ -220,14 +221,14 @@ class ItemCompClient(BaseComponent):
         pass
 
     def GetPlayerItem(self, posType, slotPos=0, getUserData=False):
-        # type: (int, int, bool) -> __ItemDict
+        # type: (__ItemPosType, int, bool) -> __ItemDict
         """
         获取玩家物品，支持获取背包（本地玩家），盔甲栏，副手以及主手物品
         """
         pass
 
     def GetPlayerAllItems(self, posType, getUserData=False):
-        # type: (int, bool) -> List[dict]
+        # type: (__ItemPosType, bool) -> List[__ItemDict]
         """
         获取玩家指定的槽位的批量物品信息，支持获取盔甲栏，副手以及主手物品，背包物品仅支持本地玩家
         """

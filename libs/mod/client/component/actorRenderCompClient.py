@@ -8,6 +8,15 @@ from typing import Tuple, Literal
 
 __RenderControllerArrayType = Literal[0, 1, 2]
 __UniformIndex = Literal[1, 2, 3, 4]
+__ParamTypeStr = Literal[
+    "textures",
+    "geometry",
+    "materials",
+    "animations",
+    "render_controllers",
+    "particle_effects",
+    "sound_effects",
+]
 
 
 class ActorRenderCompClient(BaseComponent):
@@ -369,7 +378,7 @@ class ActorRenderCompClient(BaseComponent):
         pass
 
     def GetActorRenderParams(self, entityId, paramTypeStr, getValue=False):
-        # type: (str, str, bool) -> List[str]
+        # type: (str, __ParamTypeStr, bool) -> List[str]
         """
         获取实体（包括玩家）渲染参数
         """

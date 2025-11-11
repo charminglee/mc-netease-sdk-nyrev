@@ -19,12 +19,20 @@ from mod.client.plugin.illustratedBook.bookManager import BookManager
 class __EntityDict(TypedDict):
     dimensionId: int
     identifier: str
-class __RayReturnDict(TypedDict):
+class __RayResultDict(TypedDict):
     type: Literal["Entity", "Block"]
     entityId: str
     pos: Tuple[int, int, int]
     identifier: str
     hitPos: Tuple[float, float, float]
+class __CreateParamsDict(TypedDict, total=False):
+    isHud: Literal[0, 1]
+    inputMode: Literal[0, 1]
+    bindEntityId: str
+    bindWorldPosition: Tuple[int, Tuple[float, float, float]]
+    bindOffset: Tuple[float, float, float]
+    autoScale: Literal[0, 1]
+    mini_map_root_path: str
 
 
 def RegisterComponent(nameSpace, name, clsPath):
@@ -84,7 +92,7 @@ def RegisterUI(nameSpace, uiKey, clsPath, uiScreenDef=None):
     pass
 
 def CreateUI(nameSpace, uiKey=None, createParams=None):
-    # type: (str, Optional[str], Optional[dict]) -> Optional[ScreenNode]
+    # type: (str, Optional[str], __CreateParamsDict) -> Optional[ScreenNode]
     """
     创建UI，详见界面创建流程及生命周期
     """
@@ -359,14 +367,14 @@ def GetComponentCls():
     pass
 
 def GetEngineNamespace():
-    # type: () -> str
+    # type: () -> Literal["Minecraft"]
     """
     获取引擎事件的命名空间。监听引擎事件时，namespace传该接口返回的namespace
     """
     return "Minecraft"
 
 def GetEngineSystemName():
-    # type: () -> str
+    # type: () -> Literal["Engine"]
     """
     获取引擎系统名。监听引擎事件时，systemName传该接口返回的systemName
     """
@@ -705,14 +713,14 @@ def PopTopUI():
     pass
 
 def GetPlatform():
-    # type: () -> int
+    # type: () -> Literal[-1, 0, 1, 2]
     """
     获取脚本运行的平台
     """
     pass
 
 def GetWalkState():
-    # type: () -> int
+    # type: () -> Literal[1, 2, 3]
     """
     获取玩家行走/潜行/跑步状态
     """
@@ -796,7 +804,7 @@ def StopCoroutine(iter):
     pass
 
 def OpenInventoryGui(categoryName='', isForce=False):
-    # type: (str, bool) -> None
+    # type: (Literal["construction", "nature", "equipment", "items", "search", ""], bool) -> None
     """
     打开原版背包界面，并支持选中某个分页(支持自定义分页名称)
     """
@@ -838,7 +846,7 @@ def GetMcpModLogCanPostDump():
     pass
 
 def PostMcpModDump(msg, *args, **kwargs):
-    # type: (str, Any, dict) -> None
+    # type: (str, Any, Any) -> None
     """
     主动打印信息到McpModLog日志，需要先调用 SetMcpModLogCanPostDump 接口进行设置，才能生效。
     """
@@ -907,7 +915,7 @@ def HideCrossHairGUI(isHide):
     pass
 
 def getEntitiesOrBlockFromRay(pos, rot, distance=16, isThrough=False, filterType=1):
-    # type: (Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[__RayReturnDict]
+    # type: (Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[__RayResultDict]
     """
     从指定位置发射一条射线，获取与射线相交的实体和方块
     """

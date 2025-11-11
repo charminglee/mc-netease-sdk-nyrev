@@ -1,14 +1,14 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
+from typing import Any
 
 
 class BlockEntityData(object):
     def __getitem__(self, key):
-        # type: (str) -> Union[int, float, str, bool, dict, list]
+        # type: (str) -> Any
         pass
 
     def __setitem__(self, key, value):
-        # type: (str, Union[int, float, str, bool, dict, list]) -> None
+        # type: (str, Any) -> None
         pass

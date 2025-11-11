@@ -292,28 +292,28 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetContainerItem(self, pos, slotPos, dimensionId=-1, getUserData=False):
-        # type: (Tuple[int, int, int], int, int, bool) -> dict
+        # type: (Tuple[int, int, int], int, int, bool) -> __ItemDict
         """
         获取容器内的物品
         """
         pass
 
     def GetEnderChestItem(self, playerId, slotPos, getUserData=False):
-        # type: (str, int, bool) -> dict
+        # type: (str, int, bool) -> __ItemDict
         """
         获取末影箱内的物品
         """
         pass
 
     def GetOpenContainerItem(self, playerId, containerId, getUserData=False):
-        # type: (str, int, bool) -> dict
+        # type: (str, int, bool) -> __ItemDict
         """
         获取开放容器的物品
         """
         pass
 
     def GetPlayerUIItem(self, playerId, slot, getUserData=False, isNeteaseUI=False):
-        # type: (str, int, bool, bool) -> dict
+        # type: (str, int, bool, bool) -> __ItemDict
         """
         获取合成容器的物品
         """

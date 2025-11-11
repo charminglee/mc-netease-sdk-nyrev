@@ -6,12 +6,11 @@ from mod.common.component.baseComponent import BaseComponent
 
 
 __AttrType = Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-__SetDefault = Literal[0, 1]
 
 
 class AttrCompServer(BaseComponent):
     def SetAttrValue(self, attrType, value, setDefault=1):
-        # type: (__AttrType, float, __SetDefault) -> bool
+        # type: (__AttrType, float, Literal[0, 1]) -> bool
         """
         设置实体的引擎属性
         """

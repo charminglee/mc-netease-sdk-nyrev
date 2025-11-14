@@ -7,7 +7,7 @@
 |   Author: Nuoyan
 |   Email : 1279735247@qq.com
 |   Gitee : https://gitee.com/charming-lee
-|   Date  : 2025-11-12
+|   Date  : 2025-11-15
 |
 | ==============================================
 """
@@ -27,7 +27,7 @@ except:
 
 setup(
     name="mc-netease-sdk-nyrev",
-    version="3.6.0.64435-3",
+    version="3.6.0.64490",
     description="Netease ModSDK completion library revised version by Nuoyan",
     long_description=long_description,
     long_description_content_type="text/markdown",

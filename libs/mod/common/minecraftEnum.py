@@ -35,8 +35,8 @@ class ActorDamageCause(object):
     RamAttack = "ram_attack"				# 山羊冲撞
     Custom = "custom"						# 自定义
     SonicBoom = "sonic_boom"				# 音波尖啸(监守者的远程攻击)
-    Campfire = "camp_fire"					# 营火
-    SoulCampfire = "soul_camp_fire"			# 灵魂营火(营火的灵魂火变种)
+    Campfire = "campfire"					# 营火
+    SoulCampfire = "soul_campfire"			# 灵魂营火(营火的灵魂火变种)
 
 class AniCheatBlockBreak(object):
 	OpenSwitch = "server-authoritative-block-breaking"		# 是否开启破坏方块反作弊检查
@@ -1310,9 +1310,10 @@ class OriginGUIName(object):
 	MoveStickBtn = "binding.area.default_move_stick_area" # 新触控摇杆按钮
 
 class PermissionChangeCause(object):
-	ProgrammingInterfaceCaused = 1 #  API变更
-	CommandCaused = 2 #  指令变更（包含玩家输入/命令方块）
-	UserInterfaceCaused = 3#  房主变更（也即房主在设置给他人变更）
+	ProgrammingInterfaceCaused = 1 	#  API变更
+	CommandCaused = 2 				#  指令变更（包含玩家输入/命令方块）
+	UserInterfaceCaused = 3			#  房主变更（也即房主在设置给他人变更）
+	CocosInterfaceCaused = 4		#  cocos发起变更
 
 class PistonFacing(object):
 	Down = 0

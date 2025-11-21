@@ -7,7 +7,11 @@ from typing import Any, Callable, Union
 class BaseSystem(object):
     def __init__(self, namespace, systemName):
         # type: (str, str) -> None
-        pass
+        self.namespace = namespace
+        self.systemName = systemName
+        self.registerEvents = []
+        self.notifyEvents = {}
+        self.nameToListenEvents = {}
 
     def Update(self):
         pass

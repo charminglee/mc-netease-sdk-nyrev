@@ -8,6 +8,10 @@ from typing import Tuple, Optional
 
 
 class ServerSystem(BaseSystem):
+    def __init__(self, namespace, systemName):
+        # type: (str, str) -> None
+        BaseSystem.__init__(self, namespace, systemName)
+
     def BroadcastToAllClient(self, eventName, eventData):
         # type: (str, dict) -> None
         """

@@ -11,7 +11,36 @@ from mod.client.ui.richText import RichTextItem
 class ScreenNode(object):
     def __init__(self, namespace, name, param=None):
         # type: (str, str, Optional[dict]) -> None
-        pass
+        self.namespace = namespace
+        self.name = name
+        self.full_name = namespace + "." + name
+        self.screen_name = ""
+        self.component_path = ""
+        self.parent = None
+        self.children = []
+        self.visible = True
+        self.enable = True
+        self.removed = False
+        self.def_key = ""
+        self.org_key = ""
+        self.input_mode = 1
+        self._button_state = {}
+        self._uiId = -1
+        self._bindEntityId = None
+        self._bindOffset = (0, 1, 0)
+        self._bindAutoScale = 1
+        self._bindScaleRate = -1
+        self._bindDimension = -1
+        self._bindPosition = None
+        self._touchEvents = {}
+        self._hoverEvents = {}
+        self._cachePathToUIControl = {}
+        self.is_push_screen = False
+        self.touch_with_mouse = False
+        self.dirty = False
+        self.fresh_async = False
+        self._is_create_by_ui_preset = False
+        self._origin_screen_visible = None
 
     def SetBindWorldPosition(self, dimension, position):
         # type: (int, Tuple[float, float, float]) -> bool

@@ -7,6 +7,10 @@ from typing import Tuple, Optional
 
 
 class ClientSystem(BaseSystem):
+    def __init__(self, namespace, systemName):
+        # type: (str, str) -> None
+        BaseSystem.__init__(self, namespace, systemName)
+
     def NotifyToServer(self, eventName, eventData):
         # type: (str, dict) -> None
         """

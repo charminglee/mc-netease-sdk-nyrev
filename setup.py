@@ -1,16 +1,13 @@
 # -*- coding: utf-8 -*-
-"""
-| ==============================================
-|
-|   Copyright (c) 2025 Nuoyan
-|
-|   Author: Nuoyan
-|   Email : 1279735247@qq.com
-|   Gitee : https://gitee.com/charming-lee
-|   Date  : 2025-12-01
-|
-| ==============================================
-"""
+# =================================================
+#  ⠀
+#   Copyright (c) 2025 Nuoyan
+#  ⠀
+#   Author: Nuoyan <https://github.com/charminglee>
+#   Email : 1279735247@qq.com
+#   Date  : 2025-12-19
+#  ⠀
+# =================================================
 
 
 from setuptools import setup, find_packages
@@ -27,7 +24,7 @@ except:
 
 setup(
     name="mc-netease-sdk-nyrev",
-    version="3.6.0.64490-2",
+    version="3.6.0.64490-3",
     description="Netease ModSDK completion library revised version by Nuoyan",
     long_description=long_description,
     long_description_content_type="text/markdown",

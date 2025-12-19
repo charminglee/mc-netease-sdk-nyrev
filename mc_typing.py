@@ -1,19 +1,16 @@
 # -*- coding: utf-8 -*-
-"""
-| ==============================================
-|
-|   Copyright (c) 2025 Nuoyan
-|
-|   Author: Nuoyan
-|   Email : 1279735247@qq.com
-|   Gitee : https://gitee.com/charming-lee
-|   Date  : 2025-11-12
-|
-| ==============================================
-"""
+# =================================================
+#  ⠀
+#   Copyright (c) 2025 Nuoyan
+#  ⠀
+#   Author: Nuoyan <https://github.com/charminglee>
+#   Email : 1279735247@qq.com
+#   Date  : 2025-12-19
+#  ⠀
+# =================================================
 
 
-from typing import Tuple, Optional, TypedDict, Literal, List, Dict, Any, Callable
+from typing import Tuple, Optional, TypedDict, Literal, List, Dict, Any
 
 
 __ItemPosType = Literal[0, 1, 2, 3]

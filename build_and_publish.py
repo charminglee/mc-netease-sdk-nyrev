@@ -5,7 +5,7 @@
 #  ⠀
 #   Author: Nuoyan <https://github.com/charminglee>
 #   Email : 1279735247@qq.com
-#   Date  : 2025-12-19
+#   Date  : 2025-12-20
 #  ⠀
 # =================================================
 
@@ -14,12 +14,18 @@ import os
 import build
 from twine.commands import upload
 import glob
+import shutil
 
 
-dist_dir = "dist"
-for fn in os.listdir(dist_dir):
-    path = os.path.join(dist_dir, fn)
-    os.remove(path)
+for fn in os.listdir("build"):
+    fp = os.path.join("build", fn)
+    if os.path.isfile(fp):
+        os.remove(fp)
+    elif os.path.isdir(fp):
+        shutil.rmtree(fp)
+for fn in os.listdir("dist"):
+    fp = os.path.join("dist", fn)
+    os.remove(fp)
 
 
 builder = build.ProjectBuilder(".")

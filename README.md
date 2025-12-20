@@ -1,7 +1,7 @@
 <div align="center">
 
-  # 网易我的世界ModSDK补全库修正版  
-  **已更新至 3.6 版本，支持Python2与Python3**
+  # 网易我的世界 [ModSDK](https://mc.163.com/dev/index.html) 补全库修正版  
+  **已更新至 3.6 版本，支持 Python2 与 Python3**
 
 </div>
 
@@ -52,3 +52,18 @@ pip install mc-netease-sdk-nyrev
 
 1. 移除`MC`文件夹（未知用途）。
 2. 移除`Meta`与`Preset`文件夹（零件/预设相关模块，官方已停止维护）。
+
+## IDE设置优化
+
+通过对 [PyCharm](https://www.jetbrains.com/zh-cn/pycharm/) 进行设置，可在接口的文档注释中自动显示网易文档链接，点击链接即可跳转到该接口对应的网易文档。
+
+<img src="/img/20FC8BF4C775212B968365E95DB52A0F.jpg" width="528" alt="">
+
+设置步骤如下：  
+1. 按快捷键 Ctrl+Alt+S 打开设置；
+2. 找到 Python | External Documentation（外部文档）；
+3. 点击加号，在 Module Name（模块名称）中输入`mod`，在 URL/Path Pattern（URL/路径模式）中输入以下网址：
+   ```
+   https://mc.163.com/dev/mcmanual/mc-dev/mcdocs/1-ModAPI/%E6%8E%A5%E5%8F%A3/Api%E7%B4%A2%E5%BC%95%E8%A1%A8.html?key={function.name}&docindex=2&type=0
+   ```
+4. 最后点击 OK（确定）即可。

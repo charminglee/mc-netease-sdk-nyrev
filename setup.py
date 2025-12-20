@@ -5,7 +5,7 @@
 #  ⠀
 #   Author: Nuoyan <https://github.com/charminglee>
 #   Email : 1279735247@qq.com
-#   Date  : 2025-12-19
+#   Date  : 2025-12-20
 #  ⠀
 # =================================================
 
@@ -24,7 +24,7 @@ except:
 
 setup(
     name="mc-netease-sdk-nyrev",
-    version="3.6.0.64490-3",
+    version="3.6.0.64490-4",
     description="Netease ModSDK completion library revised version by Nuoyan",
     long_description=long_description,
     long_description_content_type="text/markdown",
@@ -32,13 +32,17 @@ setup(
     author_email="1279735247@qq.com",
     url="https://github.com/charminglee/mc-netease-sdk-nyrev",
     license="MIT",
-    packages=find_packages(where="libs"),
-    package_dir={'': "libs"},
     classifiers=[
         "Programming Language :: Python :: 2.7",
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
     ],
+
+    packages=find_packages(where="libs"),
+    include_package_data=True,
+    package_data={'': ["*.pyi"]},
+    package_dir={'': "libs"},
+
     python_requires=">=2.7, <4",
     install_requires=[
         'typing==3.10.0.0; python_version=="2.7"',

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Any, Callable, Dict, Literal, TypedDict
+from typing import Tuple, Any, Callable, Dict, Literal
 from mod.client.ui.controls.minimapUIControl import MiniMapUIControl
 from mod.client.ui.controls.inputPanelUIControl import InputPanelUIControl
 from mod.client.ui.controls.itemRendererUIControl import ItemRendererUIControl
@@ -21,17 +21,6 @@ from mod.client.ui.controls.sliderUIControl import SliderUIControl
 from mod.client.ui.screenNode import ScreenNode
 
 
-class __FullPositionDict(TypedDict, total=False):
-    followType: Literal["none", "parent", "maxChildren", "maxSibling", "children", "x", "y"]
-    relativeValue: float
-    absoluteValue: float
-class __FullSizeDict(TypedDict, total=False):
-    fit: bool
-    followType: Literal["none", "parent", "maxChildren", "maxSibling", "children", "x", "y"]
-    relativeValue: float
-    absoluteValue: float
-
-
 class BaseUIControl(object):
     def __init__(self, screenNode, path):
         # type: (ScreenNode, str) -> None
@@ -49,28 +38,28 @@ class BaseUIControl(object):
         pass
 
     def SetFullSize(self, axis, paramDict):
-        # type: (Literal["x", "y"] | str, __FullSizeDict) -> bool
+        # type: (Literal["x", "y"] | str, Dict[str, bool | str | float]) -> bool
         """
         设置控件的大小，支持比例形式以及绝对值
         """
         pass
 
     def GetFullSize(self, axis):
-        # type: (Literal["x", "y"] | str) -> __FullSizeDict
+        # type: (Literal["x", "y"] | str) -> Dict[str, bool | str | float]
         """
         获取控件的大小，支持百分比以及绝对值
         """
         pass
 
     def SetFullPosition(self, axis, paramDict):
-        # type: (Literal["x", "y"] | str, __FullPositionDict) -> bool
+        # type: (Literal["x", "y"] | str, Dict[str, str | float]) -> bool
         """
         设置控件的锚点坐标（全局坐标），支持比例值以及绝对值
         """
         pass
 
     def GetFullPosition(self, axis):
-        # type: (Literal["x", "y"] | str) -> __FullPositionDict
+        # type: (Literal["x", "y"] | str) -> Dict[str, str | float]
         """
         获取控件的锚点坐标，支持比例值以及绝对值
         """

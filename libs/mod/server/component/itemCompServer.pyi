@@ -3,133 +3,26 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, TypedDict, Literal, Dict
-
-
-class __ItemDict(TypedDict, total=False):
-    newItemName: str
-    newAuxValue: int
-    itemName: str
-    auxValue: int
-    count: int
-    showInHand: bool
-    enchantData: List[Tuple[int, int]]
-    modEnchantData: List[Tuple[str, int]]
-    customTips: str
-    extraId: str
-    userData: dict | None
-    durability: int
-class __ItemBasicInfo(TypedDict, total=False):
-    itemName: str
-    maxStackSize: int
-    maxDurability: int
-    id_aux: int
-    tierDict: dict | None
-    itemCategory: Literal[
-        "construction",
-        "nature",
-        "equipment",
-        "items",
-        "custom",
-        "",
-    ]
-    itemType: Literal[
-        "book",
-        "sword",
-        "shears",
-        "axe",
-        "clock",
-        "bucket",
-        "fishing_rod",
-        "hoe",
-        "shovel",
-        "pickaxe",
-        "dye",
-        "food",
-        "block",
-        "armor",
-        "custom_ranged_weapon",
-        "compass",
-        "trident",
-        "potion",
-        "crossbow",
-    ]
-    customItemType: str
-    tags: List[str]
-    customTips: str
-    itemTierLevel: int
-    fuelDuration: float
-    foodNutrition: int
-    foodSaturation: float
-    weaponDamage: int
-    armorDefense: int
-    armorSlot: int
-    armorToughness: int
-    armorKnockbackResistance: float
-    enchant_slot_type: int
-class __EnchantDict(TypedDict, total=False):
-    identifier: str
-    description: str
-    primary_slots: Literal[
-        "all",
-        "g_armor",
-        "armor_head",
-        "armor_torso",
-        "armor_legs",
-        "armor_feet",
-        "sword",
-        "bow",
-        "spear",
-        "crossbow",
-        "g_tool",
-        "hoe",
-        "shears",
-        "flintsteel",
-        "shield",
-        "g_digging",
-        "axe",
-        "pickaxe",
-        "shovel",
-        "fishing_rod",
-        "carrot_stick",
-        "elytra",
-        "cosmetic_head",
-        "compass",
-        "mushroom_stick",
-        "brush",
-    ]
-    cost: List[int]
-    frequency: Literal[
-        "common",
-        "uncommon",
-        "rare",
-        "very_rare",
-    ]
-    is_treasure_only: bool
-    is_discoverable: bool
-    is_lootable: bool
-    is_curse: bool
-    max_level: int
-    incompatible: List[str]
+from typing import Tuple, Literal, Dict
 
 
 class ItemCompServer(BaseComponent):
     def SpawnItemToPlayerCarried(self, itemDict, playerId):
-        # type: (__ItemDict, str) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None] | None, str) -> bool
         """
         生成物品到玩家右手
         """
         pass
 
     def SpawnItemToPlayerInv(self, itemDict, playerId, slotPos=-1):
-        # type: (__ItemDict, str, int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None] | None, str, int) -> bool
         """
         生成物品到玩家背包
         """
         pass
 
     def GetPlayerItem(self, posType, slotPos=0, getUserData=False):
-        # type: (Literal[0, 1, 2, 3] | int, int, bool) -> __ItemDict
+        # type: (Literal[0, 1, 2, 3] | int, int, bool) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取玩家物品，支持获取背包，盔甲栏，副手以及主手物品
         """
@@ -199,7 +92,7 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetDroppedItem(self, itemEntityId, getUserData=False):
-        # type: (str, bool) -> __ItemDict
+        # type: (str, bool) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取掉落物的物品信息
         """
@@ -227,49 +120,49 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetItemBasicInfo(self, itemName, auxValue=0, isEnchanted=False):
-        # type: (str, int, bool) -> __ItemBasicInfo
+        # type: (str, int, bool) -> Dict[str, str | int | float | list | dict | None]
         """
         获取物品的基础信息
         """
         pass
 
     def GetPlayerAllItems(self, posType, getUserData=False):
-        # type: (Literal[0, 1, 2, 3] | int, bool) -> List[__ItemDict]
+        # type: (Literal[0, 1, 2, 3] | int, bool) -> List[Dict[str, str | int | bool | list | dict | None] | None]
         """
         获取玩家指定的槽位的批量物品信息
         """
         pass
 
     def SetPlayerAllItems(self, itemsDictMap):
-        # type: (Dict[Tuple[Literal[0, 1, 2, 3] | int, int], __ItemDict | None]) -> Dict[Tuple[int, int], bool]
+        # type: (Dict[Tuple[Literal[0, 1, 2, 3] | int, int], Dict[str, str | int | bool | list | dict | None] | None]) -> Dict[Tuple[int, int], bool]
         """
         添加批量物品信息到指定槽位
         """
         pass
 
     def GetEntityItem(self, posType, slotPos=0, getUserData=False):
-        # type: (Literal[0, 1, 2, 3] | int, int, bool) -> __ItemDict
+        # type: (Literal[0, 1, 2, 3] | int, int, bool) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取生物物品，支持获取背包，盔甲栏，副手以及主手物品
         """
         pass
 
     def SetEntityItem(self, posType, itemDict, slotPos=0):
-        # type: (Literal[0, 1, 2, 3] | int, __ItemDict, int) -> bool
+        # type: (Literal[0, 1, 2, 3] | int, Dict[str, str | int | bool | list | dict | None] | None, int) -> bool
         """
         设置生物物品，建议开发者根据生物特性来进行设置，部分生物设置装备后可能不显示但是死亡后仍然会掉落所设置的装备
         """
         pass
 
     def GetCustomName(self, itemDict):
-        # type: (__ItemDict) -> str
+        # type: (Dict[str, str | int | bool | list | dict | None]) -> str
         """
         获取物品的自定义名称，与铁砧修改的名称一致
         """
         pass
 
     def SetCustomName(self, itemDict, name):
-        # type: (__ItemDict, str) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None], str) -> bool
         """
         设置物品的自定义名称，与使用铁砧重命名一致
         """
@@ -290,49 +183,49 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetContainerItem(self, pos, slotPos, dimensionId=-1, getUserData=False):
-        # type: (Tuple[int, int, int], int, int, bool) -> __ItemDict
+        # type: (Tuple[int, int, int], int, int, bool) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取容器内的物品
         """
         pass
 
     def GetEnderChestItem(self, playerId, slotPos, getUserData=False):
-        # type: (str, int, bool) -> __ItemDict
+        # type: (str, int, bool) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取末影箱内的物品
         """
         pass
 
     def GetOpenContainerItem(self, playerId, containerId, getUserData=False):
-        # type: (str, int, bool) -> __ItemDict
+        # type: (str, int, bool) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取开放容器的物品
         """
         pass
 
     def GetPlayerUIItem(self, playerId, slot, getUserData=False, isNeteaseUI=False):
-        # type: (str, int, bool, bool) -> __ItemDict
+        # type: (str, int, bool, bool) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取合成容器的物品
         """
         pass
 
     def SetPlayerUIItem(self, playerId, slot, itemDict=None, needBack=True, isNeteaseUI=False):
-        # type: (str, int, __ItemDict, bool, bool) -> bool
+        # type: (str, int, Dict[str, str | int | bool | list | dict | None] | None, bool, bool) -> bool
         """
         设置合成容器的物品
         """
         pass
 
     def SpawnItemToContainer(self, itemDict, slotPos, blockPos, dimensionId=-1):
-        # type: (__ItemDict, int, Tuple[int, int, int], int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None] | None, int, Tuple[int, int, int], int) -> bool
         """
         生成物品到容器方块的物品栏
         """
         pass
 
     def SpawnItemToEnderChest(self, itemDict, slotPos):
-        # type: (__ItemDict, int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None] | None, int) -> bool
         """
         生成物品到末影箱
         """
@@ -395,49 +288,49 @@ class ItemCompServer(BaseComponent):
         pass
 
     def SetMaxStackSize(self, itemDict, maxStackSize):
-        # type: (__ItemDict, int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None], int) -> bool
         """
          设置物品的最大堆叠数量（存档）
         """
         pass
 
     def SetAttackDamage(self, itemDict, attackDamage):
-        # type: (__ItemDict, int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None], int) -> bool
         """
          设置物品的攻击伤害值
         """
         pass
 
     def SetItemTierLevel(self, itemDict, level):
-        # type: (__ItemDict, int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None], int) -> bool
         """
          设置工具类物品的挖掘等级
         """
         pass
 
     def SetItemTierSpeed(self, itemDict, speed):
-        # type: (__ItemDict, float) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None], float) -> bool
         """
          设置工具类物品的挖掘速度(可通过userData中的ModTierSpeed获取挖掘速度)
         """
         pass
 
     def SetItemLayer(self, itemDict, layer, texture):
-        # type: (__ItemDict, int, str) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None], int, str) -> bool
         """
         设置物品的叠加贴图，可以在物品的上层与下层叠加自定义贴图。具体使用可参考CustomItemsMod示例。
         """
         pass
 
     def RemoveItemLayer(self, itemDict, layer):
-        # type: (__ItemDict, int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None], int) -> bool
         """
         移除物品的叠加贴图。物品叠加贴图详见SetItemLayer
         """
         pass
 
     def GetItemLayer(self, itemDict, layer):
-        # type: (__ItemDict, int) -> str
+        # type: (Dict[str, str | int | bool | list | dict | None], int) -> str
         """
         获取物品的叠加贴图。物品叠加贴图详见SetItemLayer
         """
@@ -465,35 +358,35 @@ class ItemCompServer(BaseComponent):
         pass
 
     def SetBrewingStandSlotItem(self, itemDict, slot, pos, dimensionId):
-        # type: (__ItemDict, int, Tuple[int, int, int], int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None] | None, int, Tuple[int, int, int], int) -> bool
         """
         设置酿造台指定槽位物品
         """
         pass
 
     def GetBrewingStandSlotItem(self, slot, pos, dimensionId):
-        # type: (int, Tuple[int, int, int], int) -> __ItemDict
+        # type: (int, Tuple[int, int, int], int) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取酿造台指定槽位物品
         """
         pass
 
     def SetInputSlotItem(self, itemDict, pos, dimensionId=-1):
-        # type: (__ItemDict, Tuple[int, int, int], int) -> bool
+        # type: (Dict[str, str | int | bool | list | dict | None] | None, Tuple[int, int, int], int) -> bool
         """
         设置熔炉输入栏物品
         """
         pass
 
     def GetInputSlotItem(self, pos, dimensionId=-1):
-        # type: (Tuple[int, int, int], int) -> __ItemDict
+        # type: (Tuple[int, int, int], int) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取熔炉输入栏物品, 支持使用下面参数清空特定槽位:itemDict为空，为{}, 或itemName为minecraft:air，或者count为0
         """
         pass
 
     def GetOutputSlotItem(self, pos, dimensionId=-1):
-        # type: (Tuple[int, int, int], int) -> __ItemDict
+        # type: (Tuple[int, int, int], int) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取熔炉输出栏物品
         """
@@ -507,14 +400,14 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetAllEnchantsInfo(self):
-        # type: () -> List[__EnchantDict]
+        # type: () -> List[Dict[str, str | int | bool | list]]
         """
         获取目前已注册的所有附魔信息
         """
         pass
 
     def GetItemInfoByBlockName(self, blockName, auxValue=0, isLegacy=True):
-        # type: (str, int, bool) -> __ItemDict
+        # type: (str, int, bool) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         通过方块名称及aux值获取物品信息
         """

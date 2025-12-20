@@ -360,7 +360,7 @@ def ToPcUid(uid):
 
 
 def ToPeUid(uid):
-	# type: (int | long) -> int | long]
+	# type: (int | long) -> int | long
 	"""
 	将玩家的uid转换为pe平台的uid
 

@@ -1,28 +1,13 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import List, TypedDict, Tuple
+from typing import List, Dict
 from mod.common.component.baseComponent import BaseComponent
-
-
-class __ItemDict(TypedDict, total=False):
-    newItemName: str
-    newAuxValue: int
-    itemName: str
-    auxValue: int
-    count: int
-    showInHand: bool
-    enchantData: List[Tuple[int, int]]
-    modEnchantData: List[Tuple[str, int]]
-    customTips: str
-    extraId: str
-    userData: dict | None
-    durability: int
 
 
 class ShareableComponentServer(BaseComponent):
     def SetEntityShareablesItems(self, items):
-        # type: (List[__ItemDict]) -> bool
+        # type: (List[Dict[str, str | int | bool | list | dict | None]]) -> bool
         """
         设置生物可分享/可拾取的物品列表
         """

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Generator, List, Type, Tuple, Any, Callable, TypedDict, Dict, Literal
+from typing import Generator, List, Type, Tuple, Any, Callable, Dict, Literal
 from mod.client.ui import NativeScreenManager
 from mod.client.ui.screenNode import ScreenNode
 from mod.client.ui.miniMapBaseScreen import MiniMapBaseScreen
@@ -14,25 +14,6 @@ from mod.common import minecraftEnum
 from mod.client.ui.viewBinder import ViewBinder
 from mod.client.system.clientSystem import ClientSystem
 from mod.client.plugin.illustratedBook.bookManager import BookManager
-
-
-class __EntityDict(TypedDict):
-    dimensionId: int
-    identifier: str
-class __RayResultDict(TypedDict):
-    type: Literal["Entity", "Block"]
-    entityId: str
-    pos: Tuple[int, int, int]
-    identifier: str
-    hitPos: Tuple[float, float, float]
-class __CreateParamsDict(TypedDict, total=False):
-    isHud: int
-    inputMode: int
-    bindEntityId: str
-    bindWorldPosition: Tuple[int, Tuple[float, float, float]]
-    bindOffset: Tuple[float, float, float]
-    autoScale: int
-    mini_map_root_path: str
 
 
 def RegisterComponent(nameSpace, name, clsPath):
@@ -92,7 +73,7 @@ def RegisterUI(nameSpace, uiKey, clsPath, uiScreenDef=None):
     pass
 
 def CreateUI(nameSpace, uiKey=None, createParams=None):
-    # type: (str, str | None, __CreateParamsDict) -> ScreenNode | None
+    # type: (str, str | None, Dict[str, Any]) -> ScreenNode | None
     """
     创建UI，详见界面创建流程及生命周期
     """
@@ -860,7 +841,7 @@ def GetPlayerList():
     pass
 
 def GetEngineActor():
-    # type: () -> Dict[str, __EntityDict]
+    # type: () -> Dict[str, Dict[str, int | str]]
     """
     获取客户端当前维度中已加载的所有实体（不包含玩家）。
     """
@@ -915,7 +896,7 @@ def HideCrossHairGUI(isHide):
     pass
 
 def getEntitiesOrBlockFromRay(pos, rot, distance=16, isThrough=False, filterType=1):
-    # type: (Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[__RayResultDict]
+    # type: (Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[Dict[str, str | tuple]]
     """
     从指定位置发射一条射线，获取与射线相交的实体和方块
     """

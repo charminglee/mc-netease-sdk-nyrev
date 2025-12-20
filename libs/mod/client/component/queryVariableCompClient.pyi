@@ -1,13 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import TypedDict, Any
+from typing import Dict, Any
 from mod.common.component.baseComponent import BaseComponent
-
-
-class __MolangReturnDict(TypedDict):
-    value: Any
-    error: str
 
 
 class QueryVariableComponentClient(BaseComponent):
@@ -47,7 +42,7 @@ class QueryVariableComponentClient(BaseComponent):
         pass
 
     def EvalMolangExpression(self, expression):
-        # type: (str) -> __MolangReturnDict
+        # type: (str) -> Dict[str, str | Any]
         """
         在实体上下文上执行molang表达式
         """

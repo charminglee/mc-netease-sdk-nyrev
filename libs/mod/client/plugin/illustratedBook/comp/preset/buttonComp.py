@@ -3,7 +3,6 @@
 
 from mod.client.plugin.illustratedBook.comp.baseComp import BaseComp
 from mod.client.plugin.illustratedBook.bookConfig import BookConfig
-from typing import Dict
 from typing import Tuple, Callable
 
 

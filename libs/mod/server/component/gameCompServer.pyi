@@ -4,53 +4,8 @@
 from typing import Tuple
 from mod.common.utils.timer import CallLater
 from typing import List
-from typing import Any, Callable, Literal, TypedDict
+from typing import Any, Callable, Literal, Dict
 from mod.common.component.baseComponent import BaseComponent
-
-
-class _OptionInfoDict(TypedDict, total=False):
-    pvp: bool
-    show_coordinates: bool
-    fire_spreads: bool
-    tnt_explodes: bool
-    mob_loot: bool
-    natural_regeneration: bool
-    respawn_block_explosion: bool
-    respawn_radius: bool
-    tile_drops: bool
-    immediate_respawn: bool
-class _CheatInfoDict(TypedDict, total=False):
-    enable: bool
-    always_day: bool
-    mob_griefing: bool
-    keep_inventory: bool
-    weather_cycle: bool
-    mob_spawn: bool
-    entities_drop_loot: bool
-    daylight_cycle: bool
-    command_blocks_enabled: bool
-    random_tick_speed: int
-class __GameRuleDict(TypedDict, total=False):
-    option_info: _OptionInfoDict
-    cheat_info: _CheatInfoDict
-class __ItemDict(TypedDict, total=False):
-    newItemName: str
-    newAuxValue: int
-    itemName: str
-    auxValue: int
-    count: int
-    showInHand: bool
-    enchantData: List[Tuple[int, int]]
-    modEnchantData: List[Tuple[str, int]]
-    customTips: str
-    extraId: str
-    userData: dict | None
-    durability: int
-class __ScoreDict(TypedDict, total=False):
-    displayName: str
-    name: str
-    criteriaName: Literal["dummy"]
-    value: int
 
 
 class GameComponentServer(BaseComponent):
@@ -265,14 +220,14 @@ class GameComponentServer(BaseComponent):
         pass
 
     def SetGameRulesInfoServer(self, gameRuleDict):
-        # type: (__GameRuleDict) -> bool
+        # type: (Dict[str, dict]) -> bool
         """
         设置游戏规则。所有参数均可选。
         """
         pass
 
     def GetGameRulesInfoServer(self):
-        # type: () -> __GameRuleDict
+        # type: () -> Dict[str, dict]
         """
         获取游戏规则
         """
@@ -489,14 +444,14 @@ class GameComponentServer(BaseComponent):
         pass
 
     def GetAllScoreboardObjects(self):
-        # type: () -> List[__ScoreDict]
+        # type: () -> List[Dict[str, str | int]]
         """
         获取所有记分板项
         """
         pass
 
     def GetAllPlayerScoreboardObjects(self):
-        # type: () -> List[__ScoreDict]
+        # type: () -> List[Dict[str, str | int]]
         """
         获取玩家记分项
         """
@@ -524,7 +479,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def UseItemAttackEntity(self, itemDict, entityId, cause=None, attackerPos=None, knocked=False, customTag=None):
-        # type: (__ItemDict, str, Literal["none", "override", "contact", "entity_attack", "projectile", "suffocation", "fall", "fire", "fire_tick", "lava", "drowning", "block_explosion", "entity_explosion", "void", "self_destruct", "self_destruct", "magic", "wither", "starve", "anvil", "thorns", "falling_block", "piston", "fly_into_wall", "magma", "fireworks", "lightning", "freezing", "stalactite", "stalagmite", "ram_attack", "custom", "sonic_boom", "camp_fire", "soul_camp_fire"] | str | None, Tuple[float, float, float] | None, bool, str | None) -> __ItemDict
+        # type: (Dict[str, str | int | bool | list | dict | None] | None, str, Literal["none", "override", "contact", "entity_attack", "projectile", "suffocation", "fall", "fire", "fire_tick", "lava", "drowning", "block_explosion", "entity_explosion", "void", "self_destruct", "self_destruct", "magic", "wither", "starve", "anvil", "thorns", "falling_block", "piston", "fly_into_wall", "magma", "fireworks", "lightning", "freezing", "stalactite", "stalagmite", "ram_attack", "custom", "sonic_boom", "camp_fire", "soul_camp_fire"] | str | None, Tuple[float, float, float] | None, bool, str | None) -> Dict[str, str | int | bool | list | dict | None]
         """
         使用指定物品攻击某个实体。
         """

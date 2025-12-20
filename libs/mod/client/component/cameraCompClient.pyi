@@ -1,20 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Literal, TypedDict, Dict
+from typing import Tuple, Literal, Dict
 from mod.common.component.baseComponent import BaseComponent
-
-
-class __TargetInfoDict(TypedDict):
-    type: Literal["Entity", "Block", "None"]
-    entityId: str
-    hitPosX: float
-    hitPosY: float
-    hitPosZ: float
-    x: int
-    y: int
-    z: int
-    face: int
 
 
 class CameraComponentClient(BaseComponent):
@@ -47,7 +35,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def PickFacing(self):
-        # type: () -> __TargetInfoDict
+        # type: () -> Dict[str, str | float | int]
         """
         获取准星选中的实体或者方块
         """
@@ -68,7 +56,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def GetChosen(self):
-        # type: () -> __TargetInfoDict
+        # type: () -> Dict[str, str | float | int]
         """
         获取屏幕点击位置的实体或方块信息，通常与GetEntityByCoordEvent配合使用
         """

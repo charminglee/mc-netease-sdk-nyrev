@@ -2,13 +2,7 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from typing import TypedDict
-
-
-class __UiItemDict(TypedDict):
-    itemName: str
-    auxValue: int
-    isEnchanted: bool
+from typing import Dict
 
 
 class ItemRendererUIControl(BaseUIControl):
@@ -20,7 +14,7 @@ class ItemRendererUIControl(BaseUIControl):
         pass
 
     def GetUiItem(self):
-        # type: () -> __UiItemDict
+        # type: () -> Dict[str, str | int | bool]
         """
         获取ItemRenderer控件显示的物品，ItemRenderer控件的配置方式详见控件介绍ItemRenderer
         """

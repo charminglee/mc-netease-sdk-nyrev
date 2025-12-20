@@ -1,26 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import TypedDict
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Literal, List
-
-
-class __MiningArgs(TypedDict, total=False):
-    haste: int
-    conduit_power: int
-    mining_fatigue: int
-    mining_efficiency: int
-class _TextureDict(TypedDict):
-    paths: List[str]
-    name: str
-class __TextureInfoDict(TypedDict):
-    North: _TextureDict
-    West: _TextureDict
-    Up: _TextureDict
-    Down: _TextureDict
-    East: _TextureDict
-    South: _TextureDict
+from typing import Tuple, Literal, Dict
 
 
 class BlockInfoComponentClient(BaseComponent):
@@ -60,14 +42,14 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def GetBlockTextures(self, blockName, face=6):
-        # type: (str, Literal[0, 1, 2, 3, 4, 5] | int) -> __TextureInfoDict
+        # type: (str, Literal[0, 1, 2, 3, 4, 5] | int) -> Dict[str, Dict[str, str | list]]
         """
         获取方块的初始贴图信息
         """
         pass
 
     def GetDestroyTotalTime(self, blockName, itemName=None, miningArgs=None):
-        # type: (str, str | None, __MiningArgs) -> float
+        # type: (str, str | None, Dict[str, int]) -> float
         """
         获取使用物品破坏方块需要的时间
         """

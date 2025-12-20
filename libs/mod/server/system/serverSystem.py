@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import List
+from typing import List, Dict
 from mod.common.system.baseSystem import BaseSystem
 from typing import Tuple
 
@@ -47,7 +47,7 @@ class ServerSystem(BaseSystem):
         pass
 
     def CreateEngineItemEntity(self, itemDict, dimensionId=0, pos=(0, 0, 0)):
-        # type: (dict, int, Tuple[float, float, float]) -> str | None
+        # type: (Dict[str, str | int | bool | list | dict | None] | None, int, Tuple[float, float, float]) -> str | None
         """
         用于创建物品实体（即掉落物），返回物品实体的entityId
         """

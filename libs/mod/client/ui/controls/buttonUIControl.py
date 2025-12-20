@@ -12,15 +12,15 @@ class ButtonUIControl(BaseUIControl):
         super(ButtonUIControl, self).__init__(screenNode, path)
         self.buttonArgs = None                      # type: dict | None
         self.buttonHoverArgs = None                 # type: dict | None
-        self.onButtonTouchUpCallback = None         # type: Callable[[dict], Any]
-        self.onButtonTouchDownCallback = None       # type: Callable[[dict], Any]
-        self.onButtonTouchCancelCallback = None     # type: Callable[[dict], Any]
-        self.onButtonTouchMoveCallback = None       # type: Callable[[dict], Any]
-        self.onButtonTouchMoveInCallback = None     # type: Callable[[dict], Any]
-        self.onButtonTouchMoveOutCallback = None    # type: Callable[[dict], Any]
-        self.onButtonScreenExitCallback = None      # type: Callable[[dict], Any]
-        self.onButtonHoverMoveInCallback = None     # type: Callable[[dict], Any]
-        self.onButtonHoverMoveOutCallback = None    # type: Callable[[dict], Any]
+        self.onButtonTouchUpCallback = None         # type: Callable[[dict], Any] | None
+        self.onButtonTouchDownCallback = None       # type: Callable[[dict], Any] | None
+        self.onButtonTouchCancelCallback = None     # type: Callable[[dict], Any] | None
+        self.onButtonTouchMoveCallback = None       # type: Callable[[dict], Any] | None
+        self.onButtonTouchMoveInCallback = None     # type: Callable[[dict], Any] | None
+        self.onButtonTouchMoveOutCallback = None    # type: Callable[[dict], Any] | None
+        self.onButtonScreenExitCallback = None      # type: Callable[[dict], Any] | None
+        self.onButtonHoverMoveInCallback = None     # type: Callable[[dict], Any] | None
+        self.onButtonHoverMoveOutCallback = None    # type: Callable[[dict], Any] | None
 
     def AddTouchEventParams(self, args=None):
         # type: (dict | None) -> None

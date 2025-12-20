@@ -2,17 +2,12 @@
 
 
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, TypedDict, Any
-
-
-class __MolangReturnDict(TypedDict):
-    value: Any
-    error: str
+from typing import Tuple, Dict, Any
 
 
 class QueryVariableComponentServer(BaseComponent):
     def EvalMolangExpression(self, expression):
-        # type: (str) -> __MolangReturnDict
+        # type: (str) -> Dict[str, str | Any]
         """
         在实体上下文上执行molang表达式
         """

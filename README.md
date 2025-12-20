@@ -42,11 +42,10 @@ pip install mc-netease-sdk-nyrev
 23. 优化`extraServerApi`模块的类型注解。
 24. 优化各component类的类型注解。
 25. 修复`NativeScreenManager`的补全问题。
-26. 部分格式固定的字典（如物品信息字典、附魔信息字典）使用`TypedDict`表示，支持对字典key的补全。
-27. 用`Literal`显式表示枚举值参数。
-28. 优化`illustratedBook`各模块的类型注解。
-29. 优化了`apolloCommon`、`lobby`、`lobbyGame`、`master`、`service`各模块的类型注解。
-30. 补充富文本控件实例`RichTextItem`相关补全。
+26. 用`Literal`显式表示枚举值参数。
+27. 优化`illustratedBook`各模块的类型注解。
+28. 优化了`apolloCommon`、`lobby`、`lobbyGame`、`master`、`service`各模块的类型注解。
+29. 补充富文本控件实例`RichTextItem`相关补全。
 
 ### 其他修正
 
@@ -59,11 +58,12 @@ pip install mc-netease-sdk-nyrev
 
 <img src="/img/20FC8BF4C775212B968365E95DB52A0F.jpg" width="528" alt="">
 
-设置步骤如下：  
+设置步骤如下：
+
 1. 按快捷键 Ctrl+Alt+S 打开设置；
 2. 找到 Python | External Documentation（外部文档）；
 3. 点击加号，在 Module Name（模块名称）中输入`mod`，在 URL/Path Pattern（URL/路径模式）中输入以下网址：
    ```
-   https://mc.163.com/dev/mcmanual/mc-dev/mcdocs/1-ModAPI/%E6%8E%A5%E5%8F%A3/Api%E7%B4%A2%E5%BC%95%E8%A1%A8.html?key={function.name}&docindex=2&type=0
+   https://mc.163.com/dev/mcmanual/mc-dev/mcdocs/1-ModAPI/%E6%8E%A5%E5%8F%A3/Api%E7%B4%A2%E5%BC%95%E8%A1%A8.html?key={function.name}&docindex=0&type=0
    ```
 4. 最后点击 OK（确定）即可。

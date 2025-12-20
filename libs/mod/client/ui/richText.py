@@ -20,9 +20,9 @@ class RichTextItem(object):
         self.curRowPathToItem = OrderedDict()   # type: OrderedDict
         self.curRowItem = None
         self.pathToData = {}                    # type: dict
-        self.OnButtonItemClickCallback = None   # type: Callable[[dict, float, float], Any]
-        self.OnLinkItemClickCallback = None     # type: Callable[[dict, float, float], Any]
-        self.OnRichTextCreateFinish = None      # type: Callable[[], Any]
+        self.OnButtonItemClickCallback = None   # type: Callable[[dict, float, float], Any] | None
+        self.OnLinkItemClickCallback = None     # type: Callable[[dict, float, float], Any] | None
+        self.OnRichTextCreateFinish = None      # type: Callable[[], Any] | None
         self.isCreateFinish = True              # type: bool
         self.curRichText = None
         self.curStartIndex = 0                  # type: int

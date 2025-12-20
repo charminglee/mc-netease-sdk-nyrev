@@ -3,21 +3,7 @@
 
 from typing import List, Any
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Callable, Literal, TypedDict
-
-
-class __AbilitiesDict(TypedDict):
-    build: bool
-    mine: bool
-    doorsandswitches: bool
-    opencontainers: bool
-    attackplayers: bool
-    attackmobs: bool
-    op: bool
-    teleport: bool
-class __RespawnPosDict(TypedDict):
-    dimensionId: int
-    pos: Tuple[int, int, int]
+from typing import Tuple, Callable, Literal, Dict
 
 
 class PlayerCompServer(BaseComponent):
@@ -260,7 +246,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetPlayerAbilities(self):
-        # type: () -> __AbilitiesDict
+        # type: () -> Dict[str, bool]
         """
         获取玩家具体权限
         """
@@ -316,7 +302,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetPlayerRespawnPos(self):
-        # type: () -> __RespawnPosDict
+        # type: () -> Dict[str, int | tuple]
         """
         获取玩家复活点
         """

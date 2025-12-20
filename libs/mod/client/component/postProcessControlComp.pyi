@@ -4,28 +4,7 @@
 from typing import Tuple
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Any, TypedDict
-
-
-class _RenderTargetDict(TypedDict):
-    width: float
-    height: float
-class __PassDict(TypedDict, total=False):
-    render_target: _RenderTargetDict
-    material: str
-    depth_enable: bool
-class _ParasDict(TypedDict):
-    name: str
-    value: float
-    range: List[float, float]
-class _PassArrayDict(TypedDict):
-    render_target: _RenderTargetDict
-    material: str
-class __ProcessDict(TypedDict, total=False):
-    name: str
-    enable: bool
-    paras: List[_ParasDict]
-    pass_array: List[_PassArrayDict]
+from typing import Any, Dict
 
 
 class PostProcessComponent(BaseComponent):
@@ -58,14 +37,14 @@ class PostProcessComponent(BaseComponent):
         pass
 
     def InsertPassToPostprocess(self, postName, index, passDict):
-        # type: (str, int, __PassDict) -> bool
+        # type: (str, int, Dict[str, dict | str | bool]) -> bool
         """
         往自定义后处理的多pass中的指定位置插入自定义pass。多pass指定的是graphics_settings/post_process.json中的"pass_array"渲染pass数组。这个后处理会按照这个数组所定义的pass来逐个渲染，每个pass之间的像素输入输出相互连接，即pass数组中第一个pass所使用的fragment shader中的TEXTURE_0为游戏原始输出到屏幕的像素信息。下一个pass所使用的fragment shader中的TEXTURE_0为上一个Pass的fragment shader的输出。最后一个pass的fragment shader的输出即为输出到游戏屏幕的像素信息。
         """
         pass
 
     def PushBackPassToPostprocess(self, postName, passDict):
-        # type: (str, __PassDict) -> bool
+        # type: (str, Dict[str, dict | str | bool]) -> bool
         """
         往自定义后处理的多pass最末尾插入自定义pass。多pass指定的是graphics_settings/post_process.json中的"pass_array"渲染pass数组。这个后处理会按照这个数组所定义的pass来逐个渲染，每个pass之间的像素输入输出相互连接，即pass数组中第一个pass所使用的fragment shader中的TEXTURE_0为游戏原始输出到屏幕的像素信息。下一个pass所使用的fragment shader中的TEXTURE_0为上一个Pass的fragment shader的输出。最后一个pass的fragment shader的输出即为输出到游戏屏幕的像素信息。
         """
@@ -93,7 +72,7 @@ class PostProcessComponent(BaseComponent):
         pass
 
     def AddPostProcess(self, processDict, index=-1):
-        # type: (__ProcessDict, int) -> bool
+        # type: (Dict[str, str | bool | list], int) -> bool
         """
         添加后处理效果，与graphics_settings/post_process.json定义的process等效
         """

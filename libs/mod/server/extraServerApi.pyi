@@ -6,23 +6,12 @@ from typing import Tuple
 from typing import List
 from typing import Any
 from typing import Type
-from typing import Callable, Dict, TypedDict, Literal
+from typing import Callable, Dict, Literal
 from mod.server.component.engineCompFactoryServer import EngineCompFactoryServer
 from mod.server.gamePlay.AI.customGoal import CustomGoal
 from mod.server.system.serverSystem import ServerSystem
 from mod.common.component.baseComponent import BaseComponent
 from mod.common import minecraftEnum
-
-
-class __EntityDict(TypedDict):
-    dimensionId: int
-    identifier: str
-class __RayResultDict(TypedDict):
-    type: Literal["Entity", "Block"]
-    entityId: str
-    pos: Tuple[int, int, int]
-    identifier: str
-    hitPos: Tuple[float, float, float]
 
 
 def RegisterComponent(nameSpace, name, clsPath):
@@ -189,14 +178,14 @@ def GetLevelId():
     pass
 
 def GetEngineActor():
-    # type: () -> Dict[str, __EntityDict]
+    # type: () -> Dict[str, Dict[str, str | int]]
     """
     获取所有维度中已加载的所有实体（不包含玩家）。
     """
     pass
 
 def getEntitiesOrBlockFromRay(dimensionId, pos, rot, distance=16, isThrough=False, filterType=1):
-    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[__RayResultDict]
+    # type: (int, Tuple[float, float, float], Tuple[float, float, float], int, bool, int) -> List[Dict[str, str | tuple]]
     """
     从指定位置发射一条射线，获取与射线相交的实体和方块
     """

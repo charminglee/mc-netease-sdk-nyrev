@@ -1,15 +1,9 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import TypedDict
+from typing import Dict
 from typing import List, Literal
 from mod.common.component.baseComponent import BaseComponent
-
-
-class __RecipeResultDict(TypedDict):
-    fullItemName: str
-    auxValue: int
-    num: int
 
 
 class RecipeCompServer(BaseComponent):
@@ -28,7 +22,7 @@ class RecipeCompServer(BaseComponent):
         pass
 
     def GetRecipeResult(self, recipeId):
-        # type: (str) -> List[__RecipeResultDict]
+        # type: (str) -> List[Dict[str, str | int]]
         """
         根据配方id获取配方结果。仅支持合成配方
         """

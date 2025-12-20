@@ -2,31 +2,7 @@
 
 
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Literal, TypedDict, List
-
-
-class __CommandBlockDict(TypedDict):
-    cmd: str
-    name: str
-    mode: int
-    isConditional: int
-    redstoneMode: int
-class __SignTextStyleDict(TypedDict):
-    color: Tuple[float, float, float, float]
-    lighting: bool
-class __ItemDict(TypedDict, total=False):
-    newItemName: str
-    newAuxValue: int
-    itemName: str
-    auxValue: int
-    count: int
-    showInHand: bool
-    enchantData: List[Tuple[int, int]]
-    modEnchantData: List[Tuple[str, int]]
-    customTips: str
-    extraId: str
-    userData: dict | None
-    durability: int
+from typing import Tuple, Literal, Dict
 
 
 class BlockEntityCompServer(BaseComponent):
@@ -38,7 +14,7 @@ class BlockEntityCompServer(BaseComponent):
         pass
 
     def GetCommandBlock(self, pos, dimensionId):
-        # type: (Tuple[int, int, int], int) -> __CommandBlockDict
+        # type: (Tuple[int, int, int], int) -> Dict[str, str | int]
         """
         获取命令方块的设置内容
         """
@@ -73,7 +49,7 @@ class BlockEntityCompServer(BaseComponent):
         pass
 
     def GetSignTextStyle(self, pos, dimensionId, side=0):
-        # type: (Tuple[int, int, int], int, Literal[0, 1] | int) -> __SignTextStyleDict
+        # type: (Tuple[int, int, int], int, Literal[0, 1] | int) -> Dict[str, tuple | bool]
         """
         获取告示牌的文本样式信息
         """
@@ -108,14 +84,14 @@ class BlockEntityCompServer(BaseComponent):
         pass
 
     def SetFrameItem(self, pos, dimensionId, itemDict):
-        # type: (Tuple[int, int, int], int, __ItemDict) -> bool
+        # type: (Tuple[int, int, int], int, Dict[str, str | int | bool | list | dict | None] | None) -> bool
         """
         设置物品展示框的物品
         """
         pass
 
     def GetFrameItem(self, pos, dimensionId):
-        # type: (Tuple[int, int, int], int) -> __ItemDict
+        # type: (Tuple[int, int, int], int) -> Dict[str, str | int | bool | list | dict | None] | None
         """
         获取物品展示框的物品
         """

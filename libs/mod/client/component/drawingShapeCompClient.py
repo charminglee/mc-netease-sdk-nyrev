@@ -4,7 +4,7 @@
 from typing import Tuple, Literal
 
 
-class DrawingShapeCompClient():
+class DrawingShapeCompClient(object):
     def GetPos(self):
         # type: () -> Tuple[float, float, float]
         """

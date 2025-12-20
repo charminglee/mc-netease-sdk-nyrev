@@ -4,44 +4,7 @@
 from typing import Tuple
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Any, TypedDict, Literal
-
-
-class __BlockDict(TypedDict, total=False):
-    name: str
-    aux: int
-class __JigsawBlockDict(TypedDict, total=False):
-    name: str
-    aux: int
-    jigsaw_name: str
-    jigsaw_target_name: str
-    jigsaw_target_pool: str
-    jigsaw_final_block: str
-    jigsaw_join_type: int
-class _Tier(TypedDict, total=False):
-    digger: Literal["shovel", "pickaxe", "hatchet", "hoe"]
-    destroy_special: bool
-    level: int
-class __BlockInfoDict(TypedDict, total=False):
-    blockLightAbsorption: int
-    blockLightEmission: int
-    breathability: int
-    explosionResistance: float
-    loot: str
-    mapColor: str
-    unwalkable: bool
-    tier: _Tier
-    renderLayer: int
-    solid: bool
-    pathable: bool
-    fireResistant: bool
-    creativeCategory: int
-    destroyTime: float
-class __MiningArgs(TypedDict, total=False):
-    haste: int
-    conduit_power: int
-    mining_fatigue: int
-    mining_efficiency: int
+from typing import Any, Dict, Literal
 
 
 class BlockInfoComponentServer(BaseComponent):
@@ -53,21 +16,21 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def SetBlockNew(self, pos, blockDict, oldBlockHandling=0, dimensionId=-1, isLegacy=False, updateNeighbors=True):
-        # type: (Tuple[int, int, int], __BlockDict, Literal[0, 1, 2] | int, int, bool, bool) -> bool
+        # type: (Tuple[int, int, int], Dict[str, str | int], Literal[0, 1, 2] | int, int, bool, bool) -> bool
         """
         设置某一位置的方块
         """
         pass
 
     def SetJigsawBlock(self, pos, blockDict, dimensionId=-1):
-        # type: (Tuple[int, int, int], __JigsawBlockDict, int) -> bool
+        # type: (Tuple[int, int, int], Dict[str, str | int], int) -> bool
         """
         在某一位置放置拼图方块
         """
         pass
 
     def SetLiquidBlock(self, pos, blockDict, dimensionId=-1):
-        # type: (Tuple[int, int, int], __BlockDict, int) -> bool
+        # type: (Tuple[int, int, int], Dict[str, str | int], int) -> bool
         """
         设置某一位置的方块的extraBlock，可在此设置方块含水等
         """
@@ -123,14 +86,14 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetBlockBasicInfo(self, blockName):
-        # type: (str) -> __BlockInfoDict
+        # type: (str) -> Dict[str, int | float | str | bool | dict]
         """
         获取方块基本信息
         """
         pass
 
     def SetBlockBasicInfo(self, blockName, infoDict, auxValue=0):
-        # type: (str, __BlockInfoDict, int) -> bool
+        # type: (str, Dict[str, int | float | str | bool | dict], int) -> bool
         """
         设置方块基本信息
         """
@@ -151,7 +114,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetLiquidBlock(self, pos, dimensionId=-1):
-        # type: (Tuple[int, int, int], int) -> __BlockDict
+        # type: (Tuple[int, int, int], int) -> Dict[str, str | int]
         """
         获取某个位置的方块所含流体的信息
         """
@@ -277,7 +240,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetDestroyTotalTime(self, blockName, itemName=None, miningArgs=None):
-        # type: (str, str | None, __MiningArgs) -> float
+        # type: (str, str | None, Dict[str, int]) -> float
         """
         获取使用物品破坏方块需要的时间
         """

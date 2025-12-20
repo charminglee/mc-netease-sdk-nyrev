@@ -4,7 +4,7 @@
 from typing import Tuple
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Any, TypedDict, Optional
+from typing import Any, TypedDict
 
 
 class _RenderTargetDict(TypedDict):
@@ -72,14 +72,14 @@ class PostProcessComponent(BaseComponent):
         pass
 
     def RemovePassInPostprocess(self, postName, index):
-        # type: (str, int) -> Optional[dict]
+        # type: (str, int) -> dict | None
         """
         删除自定义后处理的多pass中指定位置的pass。多pass指定的是graphics_settings/post_process.json中的"pass_array"渲染pass数组。这个后处理会按照这个数组所定义的pass来逐个渲染，每个pass之间的像素输入输出相互连接，即pass数组中第一个pass所使用的fragment shader中的TEXTURE_0为游戏原始输出到屏幕的像素信息。下一个pass所使用的fragment shader中的TEXTURE_0为上一个Pass的fragment shader的输出。最后一个pass的fragment shader的输出即为输出到游戏屏幕的像素信息。
         """
         pass
 
     def PopBackPassInPostprocess(self, postName):
-        # type: (str) -> Optional[dict]
+        # type: (str) -> dict | None
         """
         删除自定义后处理的多pass的最末尾的pass。多pass指定的是graphics_settings/post_process.json中的"pass_array"渲染pass数组。这个后处理会按照这个数组所定义的pass来逐个渲染，每个pass之间的像素输入输出相互连接，即pass数组中第一个pass所使用的fragment shader中的TEXTURE_0为游戏原始输出到屏幕的像素信息。下一个pass所使用的fragment shader中的TEXTURE_0为上一个Pass的fragment shader的输出。最后一个pass的fragment shader的输出即为输出到游戏屏幕的像素信息。
         """

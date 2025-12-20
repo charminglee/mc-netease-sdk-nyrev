@@ -42,8 +42,8 @@ pip install mc-netease-sdk-nyrev
 23. 优化`extraServerApi`模块的类型注解。
 24. 优化各component类的类型注解。
 25. 修复`NativeScreenManager`的补全问题。
-26. 部分格式固定的字典（如物品信息字典、附魔信息字典）使用`TypedDict`表示，以支持对字典key的补全（目前仅Python3支持该功能）。
-27. 用`Literal`表示枚举值参数。
+26. 部分格式固定的字典（如物品信息字典、附魔信息字典）使用`TypedDict`表示，支持对字典key的补全。
+27. 用`Literal`显式表示枚举值参数。
 28. 优化`illustratedBook`各模块的类型注解。
 29. 优化了`apolloCommon`、`lobby`、`lobbyGame`、`master`、`service`各模块的类型注解。
 30. 补充富文本控件实例`RichTextItem`相关补全。

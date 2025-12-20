@@ -1,23 +1,11 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import TypedDict, Union
+from typing import TypedDict
 from typing import List, Literal
 from mod.common.component.baseComponent import BaseComponent
 
 
-__RcpTypeStr = Literal[
-    "recipe_shaped",
-    "recipe_shapeless",
-    "recipe_furnace",
-    "recipe_brewing_mix",
-    "recipe_brewing_container",
-    "recipe_smithing_transform",
-    "recipe_smithing_trim",
-    "recipe_smithing_trim",
-    "recipe_smithing_trim",
-    "recipe_smithing_trim",
-]
 class __RecipeResultDict(TypedDict):
     fullItemName: str
     auxValue: int
@@ -26,14 +14,14 @@ class __RecipeResultDict(TypedDict):
 
 class RecipeCompServer(BaseComponent):
     def RemoveRecipe(self, rcpIdentifier, rcpTypeStr):
-        # type: (str, __RcpTypeStr) -> bool
+        # type: (str, Literal["recipe_shaped", "recipe_shapeless", "recipe_furnace", "recipe_brewing_mix", "recipe_brewing_container", "recipe_smithing_transform", "recipe_smithing_trim", "recipe_smithing_trim", "recipe_smithing_trim", "recipe_smithing_trim"] | str) -> bool
         """
         动态禁用配方
         """
         pass
 
     def AddRecipe(self, rcp):
-        # type: (Union[str, dict]) -> bool
+        # type: (str | dict) -> bool
         """
         动态注册配方，支持配方类型详见[配方类型说明]
         """
@@ -54,7 +42,7 @@ class RecipeCompServer(BaseComponent):
         pass
 
     def AddBrewingRecipes(self, brewType, inputName, reagentName, outputName):
-        # type: (Literal["recipe_brewing_mix", "recipe_brewing_container"], str, str, str) -> bool
+        # type: (Literal["recipe_brewing_mix", "recipe_brewing_container"] | str, str, str, str) -> bool
         """
         添加酿造台配方的接口
         """

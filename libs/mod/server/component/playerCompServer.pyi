@@ -3,10 +3,9 @@
 
 from typing import List, Any
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional, Callable, Literal, TypedDict
+from typing import Tuple, Callable, Literal, TypedDict
 
 
-__GameType = Literal[0, 1, 2]
 class __AbilitiesDict(TypedDict):
     build: bool
     mine: bool
@@ -19,8 +18,6 @@ class __AbilitiesDict(TypedDict):
 class __RespawnPosDict(TypedDict):
     dimensionId: int
     pos: Tuple[int, int, int]
-__Operation = Literal[0, 1, 2, 3]
-__PlayerExhauseRatioType = Literal[0, 1, 2, 3, 4, 9]
 
 
 class PlayerCompServer(BaseComponent):
@@ -179,7 +176,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def SetPlayerGameType(self, gameType):
-        # type: (__GameType) -> bool
+        # type: (Literal[0, 1, 2] | int) -> bool
         """
         设置玩家个人游戏模式
         """
@@ -256,7 +253,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetPlayerOperation(self):
-        # type: () -> __Operation
+        # type: () -> Literal[0, 1, 2, 3] | int
         """
         获取玩家权限类型信息
         """
@@ -270,14 +267,14 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetPlayerExhaustionRatioByType(self, type):
-        # type: (__PlayerExhauseRatioType) -> float
+        # type: (Literal[0, 1, 2, 3, 4, 9] | int) -> float
         """
         获取玩家某行为饥饿度消耗倍率
         """
         pass
 
     def SetPlayerExhaustionRatioByType(self, type, ratio):
-        # type: (__PlayerExhauseRatioType, float) -> bool
+        # type: (Literal[0, 1, 2, 3, 4, 9] | int, float) -> bool
         """
         设置玩家某行为饥饿度消耗倍率
         """
@@ -326,7 +323,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def CollectOnlineClientData(self, collectTypes, callback, extraArgs=None):
-        # type: (List[Literal["game", "player", "world", "entity"]], Callable[[str, Optional[dict]], Any], Optional[dict]) -> None
+        # type: (List[Literal["game", "player", "world", "entity"] | str], Callable[[str, dict | None], Any], dict | None) -> None
         """
         收集在线玩家客户端数据，用于判断玩家是否作弊
         """
@@ -347,7 +344,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def GetRelevantPlayer(self, exceptList=None):
-        # type: (Optional[List[str]]) -> List[str]
+        # type: (List[str] | None) -> List[str]
         """
         获取附近玩家id列表
         """
@@ -438,7 +435,7 @@ class PlayerCompServer(BaseComponent):
         pass
 
     def SetPermissionLevel(self, level):
-        # type: (__Operation) -> bool
+        # type: (Literal[0, 1, 2, 3] | int) -> bool
         """
         设置玩家权限等级
         """

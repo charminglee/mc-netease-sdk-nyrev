@@ -2,7 +2,7 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from typing import Tuple, Optional
+from typing import Tuple
 
 
 class GridUIControl(BaseUIControl):
@@ -14,7 +14,7 @@ class GridUIControl(BaseUIControl):
         pass
 
     def GetGridItem(self, x, y):
-        # type: (int, int) -> Optional[BaseUIControl]
+        # type: (int, int) -> BaseUIControl | None
         """
         根据网格位置获取元素控件
         """

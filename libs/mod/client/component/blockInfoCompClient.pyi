@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import TypedDict, Union, Optional
+from typing import TypedDict
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple, Literal, List
 
@@ -11,8 +11,6 @@ class __MiningArgs(TypedDict, total=False):
     conduit_power: int
     mining_fatigue: int
     mining_efficiency: int
-__UniformIndex = Literal[1, 2, 3, 4]
-__Facing = Literal[0, 1, 2, 3, 4, 5]
 class _TextureDict(TypedDict):
     paths: List[str]
     name: str
@@ -48,7 +46,7 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def GetTopBlockHeight(self, pos):
-        # type: (Tuple[int, int]) -> Union[int, None]
+        # type: (Tuple[int, int]) -> int | None
         """
         获取当前维度某一位置最高的非空气方块的高度
         """
@@ -62,14 +60,14 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def GetBlockTextures(self, blockName, face=6):
-        # type: (str, __Facing) -> __TextureInfoDict
+        # type: (str, Literal[0, 1, 2, 3, 4, 5] | int) -> __TextureInfoDict
         """
         获取方块的初始贴图信息
         """
         pass
 
     def GetDestroyTotalTime(self, blockName, itemName=None, miningArgs=None):
-        # type: (str, Optional[str], __MiningArgs) -> float
+        # type: (str, str | None, __MiningArgs) -> float
         """
         获取使用物品破坏方块需要的时间
         """
@@ -97,14 +95,14 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def CreateParticleEffectForBlockEntity(self, pos, path, particleKeyName, effectPos):
-        # type: (Tuple[int, int, int], str, str, Tuple[float, float, float]) -> Union[int, None]
+        # type: (Tuple[int, int, int], str, str, Tuple[float, float, float]) -> int | None
         """
         在自定义方块实体上创建粒子特效，创建后该接口返回粒子特效的Id，利用该Id可以使用特效/粒子中的接口对该粒子特效进行播放、设置位置、大小等操作。与实体的粒子特效创建方式类似。若自定义方块实体已存在键值名称相同的特效，则不会创建新的特效，接口返回已有的特效Id。
         """
         pass
 
     def GetParticleEffectIdInBlockEntity(self, pos, particleKeyName):
-        # type: (Tuple[int, int, int], str) -> Union[int, None]
+        # type: (Tuple[int, int, int], str) -> int | None
         """
         获取在自定义方块实体中已创建的指定粒子特效的Id，已创建的特效分为两种：一是通过resource_pack/entity/下的实体json文件中使用“netease_particle_effects”所定义的特效；二是使用接口CreateParticleEffectForBlockEntity创建的特效。 返回的特效Id可以使用特效/粒子中的接口对该粒子特效进行播放、设置位置、大小等操作。与实体的粒子特效创建方式类似。
         """
@@ -118,14 +116,14 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def CreateFrameEffectForBlockEntity(self, pos, path, frameKeyName, effectPos):
-        # type: (Tuple[int, int, int], str, str, Tuple[float, float, float]) -> Union[int, None]
+        # type: (Tuple[int, int, int], str, str, Tuple[float, float, float]) -> int | None
         """
         在自定义方块实体上创建序列帧特效，创建后该接口返回序列帧特效的Id，利用该Id可以使用特效/序列帧中的接口对该序列帧特效进行播放、设置位置、大小等操作。与实体的序列帧特效创建方式类似。
         """
         pass
 
     def GetFrameEffectIdInBlockEntity(self, pos, frameKeyName):
-        # type: (Tuple[int, int, int], str) -> Union[int, None]
+        # type: (Tuple[int, int, int], str) -> int | None
         """
         获取在自定义方块实体中已创建的指定序列帧特效的Id，已创建的特效分为两种：一是通过resource_pack/entity/下的实体json文件中使用“netease_frame_effects”所定义的特效；二是使用接口CreateFrameEffectForBlockEntity创建的特效。 返回的特效Id可以使用特效/序列帧中的接口对该序列帧特效进行播放、设置位置、大小等操作。与实体的序列帧特效创建方式类似。
         """
@@ -230,21 +228,21 @@ class BlockInfoComponentClient(BaseComponent):
         pass
 
     def GetBlockEntityData(self, pos):
-        # type: (Tuple[int, int, int]) -> Union[dict, None]
+        # type: (Tuple[int, int, int]) -> dict | None
         """
         用于获取客户端当前维度中方块（包括自定义方块）的数据，数据只读不可写，无法获取箱子内的物品信息。
         """
         pass
 
     def SetBlockEntityExtraUniforms(self, pos, uniformIndex, data):
-        # type: (Tuple[int, int, int], __UniformIndex, Tuple[float, float, float, float]) -> bool
+        # type: (Tuple[int, int, int], Literal[1, 2, 3, 4] | int, Tuple[float, float, float, float]) -> bool
         """
         设置可在自定义方块实体的shader当中使用的自定义变量的值，该自定义变量总共可设置EXTRA_ACTOR_UNIFORM1,EXTRA_ACTOR_UNIFORM2,EXTRA_ACTOR_UNIFORM3,EXTRA_ACTOR_UNIFORM4，总共4组，每组为一个vec4(float, float, float ,float)类型的向量，向量的默认值为(1.0,1.0,1.0,1.0)。
         """
         pass
 
     def GetBlockEntityExtraUniforms(self, pos, uniformIndex):
-        # type: (Tuple[int, int, int], __UniformIndex) -> Tuple[float, float, float, float]
+        # type: (Tuple[int, int, int], Literal[1, 2, 3, 4] | int) -> Tuple[float, float, float, float]
         """
         获取在自定义方块实体的shader当中使用的自定义变量的值，该自定义变量总共可设置EXTRA_ACTOR_UNIFORM1,EXTRA_ACTOR_UNIFORM2,EXTRA_ACTOR_UNIFORM3,EXTRA_ACTOR_UNIFORM4，总共4组，每组为一个vec4(float, float, float ,float)类型的向量。
         """

@@ -2,7 +2,7 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from typing import Callable, Any, Optional
+from typing import Callable, Any
 from mod.client.ui.screenNode import ScreenNode
 
 
@@ -10,8 +10,8 @@ class ButtonUIControl(BaseUIControl):
     def __init__(self, screenNode, path):
         # type: (ScreenNode, str) -> None
         super(ButtonUIControl, self).__init__(screenNode, path)
-        self.buttonArgs = None                      # type: Optional[dict]
-        self.buttonHoverArgs = None                 # type: Optional[dict]
+        self.buttonArgs = None                      # type: dict | None
+        self.buttonHoverArgs = None                 # type: dict | None
         self.onButtonTouchUpCallback = None         # type: Callable[[dict], Any]
         self.onButtonTouchDownCallback = None       # type: Callable[[dict], Any]
         self.onButtonTouchCancelCallback = None     # type: Callable[[dict], Any]
@@ -23,7 +23,7 @@ class ButtonUIControl(BaseUIControl):
         self.onButtonHoverMoveOutCallback = None    # type: Callable[[dict], Any]
 
     def AddTouchEventParams(self, args=None):
-        # type: (Optional[dict]) -> None
+        # type: (dict | None) -> None
         """
         开启按钮回调功能，不调用该函数则按钮无回调
         """

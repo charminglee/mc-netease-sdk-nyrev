@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Optional, Callable, TypeVar, Any
+from typing import Callable, TypeVar, Any
 
 
 _F = TypeVar("_F", bound=Callable[..., Any])
@@ -32,11 +32,11 @@ class ViewBinder(object):
 
 	@staticmethod
 	def binding(bind_flag, binding_name = None):
-		# type: (int, Optional[str]) -> Callable[[_F], _F]
+		# type: (int, str | None) -> Callable[[_F], _F]
 		pass
 
 	@staticmethod
 	def binding_collection(bind_flag, collection_name, binding_name = None):
-		# type: (int, str, Optional[str]) -> Callable[[_F], _F]
+		# type: (int, str, str | None) -> Callable[[_F], _F]
 		pass
 

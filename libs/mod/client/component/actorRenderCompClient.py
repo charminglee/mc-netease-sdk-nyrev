@@ -6,19 +6,6 @@ from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple, Literal
 
 
-__RenderControllerArrayType = Literal[0, 1, 2]
-__UniformIndex = Literal[1, 2, 3, 4]
-__ParamTypeStr = Literal[
-    "textures",
-    "geometry",
-    "materials",
-    "animations",
-    "render_controllers",
-    "particle_effects",
-    "sound_effects",
-]
-
-
 class ActorRenderCompClient(BaseComponent):
     def GetNotRenderAtAll(self):
         # type: () -> bool
@@ -378,7 +365,7 @@ class ActorRenderCompClient(BaseComponent):
         pass
 
     def GetActorRenderParams(self, entityId, paramTypeStr, getValue=False):
-        # type: (str, __ParamTypeStr, bool) -> List[str]
+        # type: (str, Literal[ "textures", "geometry", "materials", "animations", "render_controllers", "particle_effects", "sound_effects"] | str, bool) -> List[str]
         """
         获取实体（包括玩家）渲染参数
         """
@@ -399,7 +386,7 @@ class ActorRenderCompClient(BaseComponent):
         pass
 
     def AddActorRenderControllerArray(self, actorIdentifier, renderControllerName, arrayType, arrayName, expression):
-        # type: (str, str, __RenderControllerArrayType, str, str) -> bool
+        # type: (str, str, Literal[0, 1, 2] | int, str, str) -> bool
         """
         增加生物渲染控制器列表中字典arrays元素
         """
@@ -497,28 +484,28 @@ class ActorRenderCompClient(BaseComponent):
         pass
 
     def SetEntityExtraUniforms(self, uniformIndex, data):
-        # type: (__UniformIndex, Tuple[float, float, float, float]) -> bool
+        # type: (Literal[1, 2, 3, 4] | int, Tuple[float, float, float, float]) -> bool
         """
         设置可在实体shader当中使用的自定义变量的值。该自定义变量总共可设置EXTRA_ACTOR_UNIFORM1,EXTRA_ACTOR_UNIFORM2,EXTRA_ACTOR_UNIFORM3,EXTRA_ACTOR_UNIFORM4，总共4组，每组为一个vec4(float, float, float ,float)类型的向量，向量的默认值为(1.0,1.0,1.0,1.0)。
         """
         pass
 
     def SetEntityUIExtraUniforms(self, entityIdentifier, uniformIndex, data):
-        # type: (str, __UniformIndex, Tuple[float, float, float, float]) -> bool
+        # type: (str, Literal[1, 2, 3, 4] | int, Tuple[float, float, float, float]) -> bool
         """
         设置可在实体shader当中使用的UI自定义变量的值，可在微软UI纸娃娃（paperdoll）及网易版纸娃娃（neteasepaperdoll)上使用identifier渲染某一类生物实体时使用。该自定义变量总共可设置EXTRA_ACTOR_UNIFORM1,EXTRA_ACTOR_UNIFORM2,EXTRA_ACTOR_UNIFORM3,EXTRA_ACTOR_UNIFORM4，总共4组，每组为一个vec4(float, float, float ,float)类型的向量，向量的默认值为(1.0,1.0,1.0,1.0)。
         """
         pass
 
     def GetEntityExtraUniforms(self, uniformIndex):
-        # type: (__UniformIndex) -> Tuple[float, float, float, float]
+        # type: (Literal[1, 2, 3, 4] | int) -> Tuple[float, float, float, float]
         """
         获取在实体shader当中使用的自定义变量的值。该自定义变量包含EXTRA_ACTOR_UNIFORM1,EXTRA_ACTOR_UNIFORM2,EXTRA_ACTOR_UNIFORM3,EXTRA_ACTOR_UNIFORM4，总共4组，每组为一个vec4(float, float, float ,float)类型的向量。
         """
         pass
 
     def GetEntityUIExtraUniforms(self, entityIdentifier, uniformIndex):
-        # type: (str, __UniformIndex) -> Tuple[float, float, float, float]
+        # type: (str, Literal[1, 2, 3, 4] | int) -> Tuple[float, float, float, float]
         """
         获取在实体shader当中使用的UI自定义变量的值，该变量可在微软UI纸娃娃（paperdoll）及网易版纸娃娃（neteasepaperdoll)上使用identifier渲染某一类生物实体时使用。该自定义变量包含EXTRA_ACTOR_UNIFORM1,EXTRA_ACTOR_UNIFORM2,EXTRA_ACTOR_UNIFORM3,EXTRA_ACTOR_UNIFORM4，总共4组，每组为一个vec4(float, float, float ,float)类型的向量。
         """

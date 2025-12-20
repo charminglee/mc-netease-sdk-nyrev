@@ -5,9 +5,6 @@ from mod.client.ui.controls.baseUIControl import BaseUIControl
 from typing import Tuple, Literal
 
 
-__TextAlignment = Literal["left", "center", "right"]
-
-
 class LabelUIControl(BaseUIControl):
     def SetText(self, text, syncSize=False):
         # type: (str, bool) -> None
@@ -45,14 +42,14 @@ class LabelUIControl(BaseUIControl):
         pass
 
     def SetTextAlignment(self, textAlignment):
-        # type: (__TextAlignment) -> bool
+        # type: (Literal["left", "center", "right"] | str) -> bool
         """
         设置文本控件的文本对齐方式
         """
         pass
 
     def GetTextAlignment(self):
-        # type: () -> __TextAlignment
+        # type: () -> Literal["left", "center", "right"] | str
         """
         获取文本控件的文本对齐方式
         """

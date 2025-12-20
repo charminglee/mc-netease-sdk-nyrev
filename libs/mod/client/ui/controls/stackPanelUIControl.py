@@ -5,19 +5,16 @@ from mod.client.ui.controls.baseUIControl import BaseUIControl
 from typing import Literal
 
 
-__Orientation = Literal["horizontal", "vertical"]
-
-
 class StackPanelUIControl(BaseUIControl):
     def SetOrientation(self, orientation):
-        # type: (__Orientation) -> bool
+        # type: (Literal["horizontal", "vertical"] | str) -> bool
         """
         设置stackPanel的排列方向
         """
         pass
 
     def GetOrientation(self):
-        # type: () -> __Orientation
+        # type: () -> Literal["horizontal", "vertical"] | str
         """
         获取stackPanel的排列方向
         """

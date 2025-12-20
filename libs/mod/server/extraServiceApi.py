@@ -1,19 +1,18 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Optional
 from mod.server.system.serviceSystem import ServiceSystem
 
 
 def GetSystem(nameSpace, systemName):
-    # type: (str, str) -> Optional[ServiceSystem]
+    # type: (str, str) -> ServiceSystem | None
     """
     获取已注册的系统
     """
     pass
 
 def RegisterSystem(nameSpace, systemName, clsPath):
-    # type: (str, str, str) -> Optional[ServiceSystem]
+    # type: (str, str, str) -> ServiceSystem | None
     """
     系统可以执行我们引擎赋予的基本逻辑，例如监听事件、执行Tick函数、与服务端进行通讯等。
     """

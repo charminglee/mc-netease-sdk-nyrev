@@ -2,12 +2,12 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from typing import Any, Optional, Dict, Callable
+from typing import Any, Dict, Callable
 
 
 class NeteaseComboBoxUIControl(BaseUIControl):
     def AddOption(self, showName, icon=None, userData=None):
-        # type: (str, Optional[str], Optional[Any]) -> bool
+        # type: (str, str | None, Any | None) -> bool
         """
         添加下拉框项，若添加成功则返回True，否则返回False
         """
@@ -105,7 +105,7 @@ class NeteaseComboBoxUIControl(BaseUIControl):
         pass
 
     def RegisterSelectItemCallback(self, callback):
-        # type: (Callable[[int, str, Optional[Any]], Any]) -> None
+        # type: (Callable[[int, str, Any | None], Any]) -> None
         """
         注册选中下拉框内容事件回调
         """

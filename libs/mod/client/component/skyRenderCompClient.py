@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
@@ -156,7 +155,7 @@ class SkyRenderCompClient(BaseComponent):
         pass
 
     def GetSkyTextures(self):
-        # type: () -> Union[List[str], None]
+        # type: () -> List[str] | None
         """
         获取当前维度天空盒贴图，天空盒共6张贴图
         """

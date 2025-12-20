@@ -5,7 +5,7 @@
 #  ⠀
 #   Author: Nuoyan <https://github.com/charminglee>
 #   Email : 1279735247@qq.com
-#   Date  : 2025-12-19
+#   Date  : 2025-12-21
 #  ⠀
 # =================================================
 
@@ -26,177 +26,19 @@ __ShapeType = Literal[1, 2, 3, 4, 5, 6]
 __Persp = Literal[0, 1, 2]
 
 
-__ActorDamageCause = Literal[
-    "none",
-    "override",
-    "contact",
-    "entity_attack",
-    "projectile",
-    "suffocation",
-    "fall",
-    "fire",
-    "fire_tick",
-    "lava",
-    "drowning",
-    "block_explosion",
-    "entity_explosion",
-    "void",
-    "self_destruct",
-    "self_destruct",
-    "magic",
-    "wither",
-    "starve",
-    "anvil",
-    "thorns",
-    "falling_block",
-    "piston",
-    "fly_into_wall",
-    "magma",
-    "fireworks",
-    "lightning",
-    "freezing",
-    "stalactite",
-    "stalagmite",
-    "ram_attack",
-    "custom",
-    "sonic_boom",
-    "camp_fire",
-    "soul_camp_fire",
-]
-__RcpTypeStr = Literal[
-    "recipe_shaped",
-    "recipe_shapeless",
-    "recipe_furnace",
-    "recipe_brewing_mix",
-    "recipe_brewing_container",
-    "recipe_smithing_transform",
-    "recipe_smithing_trim",
-    "recipe_smithing_trim",
-    "recipe_smithing_trim",
-    "recipe_smithing_trim",
-]
-__TimeEaseType = Literal[
-    "linear",
-    "spring",
-    "in_quad",
-    "out_quad",
-    "in_out_quad",
-    "in_cubic",
-    "out_cubic",
-    "in_out_cubic",
-    "in_quart",
-    "out_quart",
-    "in_out_quart",
-    "in_quint",
-    "out_quint",
-    "in_out_quint",
-    "in_sine",
-    "out_sine",
-    "in_out_sine",
-    "in_expo",
-    "out_expo",
-    "in_out_expo",
-    "in_circ",
-    "out_circ",
-    "in_out_circ",
-    "in_bounce",
-    "out_bounce",
-    "in_out_bounce",
-    "in_back",
-    "out_back",
-    "in_out_back",
-    "in_elastic",
-    "out_elastic",
-    "in_out_elastic",
-]
-__Axis = Literal[
-    "x",
-    "y",
-]
-__Anchor = Literal[
-    "top_left",
-    "top_middle",
-    "top_right",
-    "left_middle",
-    "center",
-    "right_middle",
-    "bottom_left",
-    "bottom_middle",
-    "bottom_right",
-]
-__PropertyName = Literal[
-    "all",
-    "size",
-    "offset",
-    "alpha",
-    "clip",
-    "color",
-    "flip_book",
-    "aseprite_flip_book",
-    "uv",
-    "wait",
-]
-__ClipDirection = Literal[
-    "fromLeftToRight",
-    "fromRightToLeft",
-    "fromOutsideToInside",
-    "fromTopToBottom",
-    "fromBottomToTop",
-]
-__ImageAdaptionType = Literal[
-    "normal",
-    "filled",
-    "oldNineSlice",
-    "originNineSlice",
-]
-__TextAlignment = Literal[
-    "left",
-    "center",
-    "right",
-]
-__Orientation = Literal[
-    "horizontal",
-    "vertical",
-]
-__ParamTypeStr = Literal[
-    "textures",
-    "geometry",
-    "materials",
-    "animations",
-    "render_controllers",
-    "particle_effects",
-    "sound_effects",
-]
-__OptionId = Literal[
-    "AUTO_JUMP",
-    "HIDE_PAPERDOLL",
-    "HIDE_HAND",
-    "SPLIT_CONTROLS",
-    "VIEW_BOBBING",
-    "INPUT_MODE",
-    "TRADITION_CONTROLS",
-    "HIDE_HUD",
-    "CAMERA_SHAKE",
-    "TRANSPARENTLEAVES",
-    "FANCY_SKIES",
-    "SMOOTH_LIGHTING",
-    "GRAPHICS",
-    "RENDER_CLOUDS",
-    "FORCE_SPRINT",
-]
-__SliderOptionId = Literal[
-    "MOUSE_SENSITIVITY",
-    "MOUSE_SPYGLASS_DAMPING",
-    "GAMEPAD_SENSITIVITY",
-    "GAMEPAD_SPYGLASS_DAMPING",
-    "GAMEPAD_CURSOR_SENSITIVITY",
-    "TOUCH_SENSITIVITY",
-    "TOUCH_SPYGLASS_DAMPING",
-    "DPAD_SCALE",
-    "GAMMA",
-    "INTERFACE_OPACITY",
-    "FIELD_OF_VIEW",
-]
+__ActorDamageCause = Literal["none", "override", "contact", "entity_attack", "projectile", "suffocation", "fall", "fire", "fire_tick", "lava", "drowning", "block_explosion", "entity_explosion", "void", "self_destruct", "self_destruct", "magic", "wither", "starve", "anvil", "thorns", "falling_block", "piston", "fly_into_wall", "magma", "fireworks", "lightning", "freezing", "stalactite", "stalagmite", "ram_attack", "custom", "sonic_boom", "camp_fire", "soul_camp_fire"]
+__RcpTypeStr = Literal["recipe_shaped", "recipe_shapeless", "recipe_furnace", "recipe_brewing_mix", "recipe_brewing_container", "recipe_smithing_transform", "recipe_smithing_trim", "recipe_smithing_trim", "recipe_smithing_trim", "recipe_smithing_trim"]
+__TimeEaseType = Literal["linear", "spring", "in_quad", "out_quad", "in_out_quad", "in_cubic", "out_cubic", "in_out_cubic", "in_quart", "out_quart", "in_out_quart", "in_quint", "out_quint", "in_out_quint", "in_sine", "out_sine", "in_out_sine", "in_expo", "out_expo", "in_out_expo", "in_circ", "out_circ", "in_out_circ", "in_bounce", "out_bounce", "in_out_bounce", "in_back", "out_back", "in_out_back", "in_elastic", "out_elastic", "in_out_elastic"]
+__Axis = Literal["x", "y"]
+__Anchor = Literal["top_left", "top_middle", "top_right", "left_middle", "center", "right_middle", "bottom_left", "bottom_middle", "bottom_right"]
+__PropertyName = Literal["all", "size", "offset", "alpha", "clip", "color", "flip_book", "aseprite_flip_book", "uv", "wait"]
+__ClipDirection = Literal["fromLeftToRight", "fromRightToLeft", "fromOutsideToInside", "fromTopToBottom", "fromBottomToTop"]
+__ImageAdaptionType = Literal["normal", "filled", "oldNineSlice", "originNineSlice"]
+__TextAlignment = Literal["left", "center", "right"]
+__Orientation = Literal["horizontal", "vertical"]
+__ParamTypeStr = Literal["textures", "geometry", "materials", "animations", "render_controllers", "particle_effects", "sound_effects"]
+__OptionId = Literal["AUTO_JUMP", "HIDE_PAPERDOLL", "HIDE_HAND", "SPLIT_CONTROLS", "VIEW_BOBBING", "INPUT_MODE", "TRADITION_CONTROLS", "HIDE_HUD", "CAMERA_SHAKE", "TRANSPARENTLEAVES", "FANCY_SKIES", "SMOOTH_LIGHTING", "GRAPHICS", "RENDER_CLOUDS", "FORCE_SPRINT"]
+__SliderOptionId = Literal["MOUSE_SENSITIVITY", "MOUSE_SPYGLASS_DAMPING", "GAMEPAD_SENSITIVITY", "GAMEPAD_SPYGLASS_DAMPING", "GAMEPAD_CURSOR_SENSITIVITY", "TOUCH_SENSITIVITY", "TOUCH_SPYGLASS_DAMPING", "DPAD_SCALE", "GAMMA", "INTERFACE_OPACITY", "FIELD_OF_VIEW"]
 
 
 class __ItemDict(TypedDict, total=False):
@@ -220,39 +62,12 @@ class __ItemBasicInfo(TypedDict, total=False):
     maxDurability: int
     id_aux: int
     tierDict: Optional[dict]
-    itemCategory: Literal[
-        "construction",
-        "nature",
-        "equipment",
-        "items",
-        "custom",
-        "",
-    ]
-    itemType: Literal[
-        "book",
-        "sword",
-        "shears",
-        "axe",
-        "clock",
-        "bucket",
-        "fishing_rod",
-        "hoe",
-        "shovel",
-        "pickaxe",
-        "dye",
-        "food",
-        "block",
-        "armor",
-        "custom_ranged_weapon",
-        "compass",
-        "trident",
-        "potion",
-        "crossbow",
-    ]
+    itemCategory: Literal["construction", "nature", "equipment", "items", "custom", ""]
+    itemType: Literal["book", "sword", "shears", "axe", "clock", "bucket", "fishing_rod", "hoe", "shovel", "pickaxe", "dye", "food", "block", "armor", "custom_ranged_weapon", "compass", "trident", "potion", "crossbow"]
     customItemType: str
     tags: List[str]
     customTips: str
-    itemTierLevel: Literal[-1, 0, 1, 2, 3, 4]
+    itemTierLevel: int
     fuelDuration: float
     foodNutrition: int
     foodSaturation: float
@@ -279,41 +94,9 @@ class __EffectDict(TypedDict):
 class __EnchantDict(TypedDict, total=False):
     identifier: str
     description: str
-    primary_slots: Literal[
-        "all",
-        "g_armor",
-        "armor_head",
-        "armor_torso",
-        "armor_legs",
-        "armor_feet",
-        "sword",
-        "bow",
-        "spear",
-        "crossbow",
-        "g_tool",
-        "hoe",
-        "shears",
-        "flintsteel",
-        "shield",
-        "g_digging",
-        "axe",
-        "pickaxe",
-        "shovel",
-        "fishing_rod",
-        "carrot_stick",
-        "elytra",
-        "cosmetic_head",
-        "compass",
-        "mushroom_stick",
-        "brush",
-    ]
+    primary_slots: Literal["all", "g_armor", "armor_head", "armor_torso", "armor_legs", "armor_feet", "sword", "bow", "spear", "crossbow", "g_tool", "hoe", "shears", "flintsteel", "shield", "g_digging", "axe", "pickaxe", "shovel", "fishing_rod", "carrot_stick", "elytra", "cosmetic_head", "compass", "mushroom_stick", "brush"]
     cost: List[int]
-    frequency: Literal[
-        "common",
-        "uncommon",
-        "rare",
-        "very_rare",
-    ]
+    frequency: Literal["common", "uncommon", "rare", "very_rare"]
     is_treasure_only: bool
     is_discoverable: bool
     is_lootable: bool
@@ -363,9 +146,9 @@ class __RecipeResultDict(TypedDict):
 class __CommandBlockDict(TypedDict):
     cmd: str
     name: str
-    mode: Literal[0, 1, 2]
-    isConditional: Literal[0, 1]
-    redstoneMode: Literal[0, 1]
+    mode: int
+    isConditional: int
+    redstoneMode: int
 
 
 class __SignTextStyleDict(TypedDict):
@@ -380,7 +163,7 @@ class __JigsawBlockDict(TypedDict, total=False):
     jigsaw_target_name: str
     jigsaw_target_pool: str
     jigsaw_final_block: str
-    jigsaw_join_type: Literal[0, 1]
+    jigsaw_join_type: int
 
 
 class _OptionInfoDict(TypedDict, total=False):
@@ -444,12 +227,12 @@ class __BlockPaletteSerializedDict(TypedDict):
 
 
 class __CreateParamsDict(TypedDict, total=False):
-    isHud: Literal[0, 1]
-    inputMode: Literal[0, 1]
+    isHud: int
+    inputMode: int
     bindEntityId: str
     bindWorldPosition: Tuple[int, Tuple[float, float, float]]
     bindOffset: Tuple[float, float, float]
-    autoScale: Literal[0, 1]
+    autoScale: int
     mini_map_root_path: str
 
 
@@ -538,7 +321,7 @@ class __TargetInfoDict(TypedDict):
     x: int
     y: int
     z: int
-    face: Literal[0, 1, 2, 3, 4, 5]
+    face: int
 
 
 class _RenderTargetDict(TypedDict):

@@ -1,27 +1,27 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import List, Callable, Optional, Any
+from typing import List, Callable, Any
 from mod.common.component.baseComponent import BaseComponent
 
 
 class AchievementCompServer(BaseComponent):
     def GetNodeDetailInfo(self, playerId, nodeId):
-        # type: (str, str) -> Optional[dict]
+        # type: (str, str) -> dict | None
         """
         获取对应玩家的对应节点信息
         """
         pass
 
     def SetNodeFinish(self, playerId, nodeId, callback=None, getExtra=None):
-        # type: (str, str, Optional[Callable[[Optional[dict]], Any]], Optional[Callable[[], str]]) -> bool
+        # type: (str, str, Callable[[dict | None], Any] | None, Callable[[], str] | None) -> bool
         """
         设置对应玩家的对应成就节点完成
         """
         pass
 
     def AddNodeProgress(self, playerId, nodeId, delta, callback=None, getExtra=None):
-        # type: (str, str, int, Optional[Callable[[Optional[dict]], Any]], Optional[Callable[[], str]]) -> bool
+        # type: (str, str, int, Callable[[dict | None], Any] | None, Callable[[], str] | None) -> bool
         """
         增加对应玩家的对应成就节点的成就进度
         """
@@ -35,14 +35,14 @@ class AchievementCompServer(BaseComponent):
         pass
 
     def LobbyGetAchievementStorage(self, callback, playerId):
-        # type: (Callable[[Optional[dict]], Any], int) -> None
+        # type: (Callable[[dict | None], Any], int) -> None
         """
         获取成就节点的存储的数据。
         """
         pass
 
     def LobbySetAchievementStorage(self, callback, playerId, nodeId, delta, getExtraData=None):
-        # type: (Callable[[Optional[dict]], Any], int, str, int, Optional[Callable[[], str]]) -> None
+        # type: (Callable[[dict | None], Any], int, str, int, Callable[[], str] | None) -> None
         """
         添加成就节点的进度。
         """

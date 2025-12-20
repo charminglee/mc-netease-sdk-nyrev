@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple, Callable, Any
@@ -44,28 +43,28 @@ class ChunkSourceCompServer(BaseComponent):
         pass
 
     def GetLoadedChunks(self, dimension):
-        # type: (int) -> Union[List[Tuple[int, int]], None]
+        # type: (int) -> List[Tuple[int, int]] | None
         """
         获取指定维度当前已经加载完毕的全部区块的坐标列表
         """
         pass
 
     def GetChunkEntites(self, dimension, pos):
-        # type: (int, Tuple[int, int, int]) -> Union[List[str], None]
+        # type: (int, Tuple[int, int, int]) -> List[str] | None
         """
         获取指定位置的区块中，全部的实体和玩家的ID列表
         """
         pass
 
     def GetChunkMinPos(self, chunkPos):
-        # type: (Tuple[int, int]) -> Union[Tuple[int, int, int], None]
+        # type: (Tuple[int, int]) -> Tuple[int, int, int] | None
         """
         获取某区块最小点的坐标
         """
         pass
 
     def GetChunkMaxPos(self, chunkPos):
-        # type: (Tuple[int, int]) -> Union[Tuple[int, int, int], None]
+        # type: (Tuple[int, int]) -> Tuple[int, int, int] | None
         """
         获取某区块最大点的坐标
         """
@@ -79,7 +78,7 @@ class ChunkSourceCompServer(BaseComponent):
         pass
 
     def GetChunkPosFromBlockPos(self, blockPos):
-        # type: (Tuple[int, int, int]) -> Union[Tuple[int, int], None]
+        # type: (Tuple[int, int, int]) -> Tuple[int, int] | None
         """
         通过方块坐标获得该方块所在区块坐标
         """

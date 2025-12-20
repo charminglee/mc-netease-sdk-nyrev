@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Any, Optional, Callable
+from typing import Any, Callable
 
 
 class ServiceSystem(object):
@@ -48,14 +48,14 @@ class ServiceSystem(object):
         pass
 
     def RequestToService(self, module, event, eventData, callback=None, timeout=2.0):
-        # type: (str, str, dict, Optional[Callable], int) -> None
+        # type: (str, str, dict, Callable | None, int) -> None
         """
         给service发请求。两个service间可以通过这个接口通信。
         """
         pass
 
     def RequestToServiceMod(self, modname, method, args, callback=None, timeout=2.0):
-        # type: (str, str, dict, Optional[Callable], int) -> None
+        # type: (str, str, dict, Callable | None, int) -> None
         """
         给service发请求。两个service间可以通过这个接口通信。
         """

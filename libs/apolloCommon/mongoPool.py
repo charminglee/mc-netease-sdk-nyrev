@@ -5,7 +5,7 @@
 """
 
 
-from typing import Union, Callable, Any
+from typing import Callable, Any
 
 
 def AsyncExecute(collection, func, callback, *args, **kwargs):
@@ -25,7 +25,7 @@ def AsyncExecute(collection, func, callback, *args, **kwargs):
 
 
 def AsyncExecuteWithOrderKey(collection, func, orderKey, callback, *args, **kwargs):
-	# type: (str, Callable, Union[str, int], Callable, Any, Any) -> None
+	# type: (str, Callable, str | int, Callable, Any, Any) -> None
 	"""
 	添加一个异步mongo任务。同async_execute区别是，可以显示设置orderKey
 

@@ -1,9 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Generator, Optional
+from typing import Generator
 from typing import Tuple
-from typing import Union
 from typing import List
 from typing import Any
 from typing import Type
@@ -34,28 +33,28 @@ def RegisterComponent(nameSpace, name, clsPath):
     pass
 
 def RegisterSystem(nameSpace, systemName, clsPath):
-    # type: (str, str, str) -> Optional[ServerSystem]
+    # type: (str, str, str) -> ServerSystem | None
     """
     用于将系统注册到引擎中，引擎会创建一个该系统的实例，并在退出游戏时回收。系统可以执行我们引擎赋予的基本逻辑，例如监听事件、执行Tick函数、与客户端进行通讯等。
     """
     pass
 
 def GetSystem(nameSpace, systemName):
-    # type: (str, str) -> Optional[ServerSystem]
+    # type: (str, str) -> ServerSystem | None
     """
     获取已注册的系统
     """
     pass
 
 def CreateComponent(entityId, nameSpace, name):
-    # type: (Union[str, int], str, str) -> Optional[BaseComponent]
+    # type: (str | int, str, str) -> BaseComponent | None
     """
     给实体创建服务端组件
     """
     pass
 
 def GetComponent(entityId, nameSpace, name):
-    # type: (str, str, str) -> Optional[BaseComponent]
+    # type: (str, str, str) -> BaseComponent | None
     """
     获取实体的服务端组件。一般用来判断某个组件是否创建过，其他情况请使用CreateComponent
     """
@@ -169,14 +168,14 @@ def GetComponentCls():
     pass
 
 def GetEngineNamespace():
-    # type: () -> Literal["Minecraft"]
+    # type: () -> Literal["Minecraft"] | str
     """
     获取引擎事件的命名空间。监听引擎事件时，namespace传该接口返回的namespace
     """
     return "Minecraft"
 
 def GetEngineSystemName():
-    # type: () -> Literal["Engine"]
+    # type: () -> Literal["Engine"] | str
     """
     获取引擎系统名。监听引擎事件时，systemName传该接口返回的systemName
     """
@@ -260,7 +259,7 @@ def StartProfile():
     pass
 
 def StopProfile(fileName=None):
-    # type: (Optional[str]) -> bool
+    # type: (str | None) -> bool
     """
     停止服务端脚本性能分析并生成火焰图，与StartProfile配合使用，此接口只支持PC端
     """
@@ -274,7 +273,7 @@ def StartMemProfile():
     pass
 
 def StopMemProfile(fileName=None):
-    # type: (Optional[str]) -> bool
+    # type: (str | None) -> bool
     """
     停止服务端脚本内存分析并生成火焰图，与StartMemProfile配合使用，此接口只支持PC端
     """
@@ -288,7 +287,7 @@ def StartMultiProfile():
     pass
 
 def StopMultiProfile(fileName=None):
-    # type: (Optional[str]) -> bool
+    # type: (str | None) -> bool
     """
     停止双端脚本性能分析并生成火焰图，与StartMultiProfile配合使用，此接口只支持PC端
     """
@@ -358,7 +357,7 @@ def GetCustomGoalCls():
     pass
 
 def StartCoroutine(iterOrFunc, callback=None):
-    # type: (Union[Generator, Callable[[], Generator]], Optional[Callable[[], Any]]) -> Generator
+    # type: (Generator | Callable[[], Generator], Callable[[], Any] | None) -> Generator
     """
     开启服务端协程，实现函数分段式执行，可用于缓解复杂逻辑计算导致游戏卡顿问题
     """

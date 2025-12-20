@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Optional
+from typing import Tuple
 
 
 class TextBoardComponentClient(object):
@@ -69,7 +69,7 @@ class TextBoardComponentClient(object):
         pass
 
     def CreateTextBoardInWorld(self, text, textColor, boardColor=None, faceCamera=True):
-        # type: (str, Tuple[float, float, float, float], Optional[Tuple[float, float, float, float]], bool) -> int
+        # type: (str, Tuple[float, float, float, float], Tuple[float, float, float, float] | None, bool) -> int
         """
         创建文字面板
         """

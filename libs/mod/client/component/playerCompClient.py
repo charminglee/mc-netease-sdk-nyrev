@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from mod.common.component.baseComponent import BaseComponent
 from typing import Tuple
 
@@ -141,7 +140,7 @@ class PlayerCompClient(BaseComponent):
         pass
 
     def getUid(self):
-        # type: () -> Union[long, None]
+        # type: () -> long | None
         """
         获取本地玩家的uid
         """

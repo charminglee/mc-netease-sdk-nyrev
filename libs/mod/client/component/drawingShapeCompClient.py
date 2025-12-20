@@ -4,9 +4,6 @@
 from typing import Tuple, Literal
 
 
-__ShapeType = Literal[1, 2, 3, 4, 5, 6]
-
-
 class DrawingShapeCompClient():
     def GetPos(self):
         # type: () -> Tuple[float, float, float]
@@ -30,7 +27,7 @@ class DrawingShapeCompClient():
         pass
 
     def GetType(self):
-        # type: () -> __ShapeType
+        # type: () -> Literal[1, 2, 3, 4, 5, 6] | int
         """
         获取Shape的类型
         """

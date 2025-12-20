@@ -2,16 +2,15 @@
 
 
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Literal, TypedDict, Optional, List
+from typing import Tuple, Literal, TypedDict, List
 
 
-__Side = Literal[0, 1]
 class __CommandBlockDict(TypedDict):
     cmd: str
     name: str
-    mode: Literal[0, 1, 2]
-    isConditional: Literal[0, 1]
-    redstoneMode: Literal[0, 1]
+    mode: int
+    isConditional: int
+    redstoneMode: int
 class __SignTextStyleDict(TypedDict):
     color: Tuple[float, float, float, float]
     lighting: bool
@@ -26,7 +25,7 @@ class __ItemDict(TypedDict, total=False):
     modEnchantData: List[Tuple[str, int]]
     customTips: str
     extraId: str
-    userData: Optional[dict]
+    userData: dict | None
     durability: int
 
 
@@ -67,14 +66,14 @@ class BlockEntityCompServer(BaseComponent):
         pass
 
     def SetSignTextStyle(self, pos, dimensionId, color, lighting, side=0):
-        # type: (Tuple[int, int, int], int, Tuple[float, float, float, float], bool, __Side) -> bool
+        # type: (Tuple[int, int, int], int, Tuple[float, float, float, float], bool, Literal[0, 1] | int) -> bool
         """
         设置告示牌的文本样式
         """
         pass
 
     def GetSignTextStyle(self, pos, dimensionId, side=0):
-        # type: (Tuple[int, int, int], int, __Side) -> __SignTextStyleDict
+        # type: (Tuple[int, int, int], int, Literal[0, 1] | int) -> __SignTextStyleDict
         """
         获取告示牌的文本样式信息
         """

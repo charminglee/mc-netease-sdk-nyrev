@@ -3,7 +3,7 @@
 
 from typing import List, TypedDict
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional, Literal
+from typing import Tuple, Literal
 
 
 class __ItemDict(TypedDict, total=False):
@@ -17,14 +17,14 @@ class __ItemDict(TypedDict, total=False):
     modEnchantData: List[Tuple[str, int]]
     customTips: str
     extraId: str
-    userData: Optional[dict]
+    userData: dict | None
     durability: int
 class __ItemBasicInfo(TypedDict, total=False):
     itemName: str
     maxStackSize: int
     maxDurability: int
     id_aux: int
-    tierDict: Optional[dict]
+    tierDict: dict | None
     itemCategory: Literal[
         "construction",
         "nature",
@@ -57,7 +57,7 @@ class __ItemBasicInfo(TypedDict, total=False):
     customItemType: str
     tags: List[str]
     customTips: str
-    itemTierLevel: Literal[-1, 0, 1, 2, 3, 4]
+    itemTierLevel: int
     fuelDuration: float
     foodNutrition: int
     foodSaturation: float
@@ -111,7 +111,6 @@ class __EnchantDict(TypedDict, total=False):
     is_curse: bool
     max_level: int
     incompatible: List[str]
-__ItemPosType = Literal[0, 1, 2, 3]
 
 
 class ItemCompClient(BaseComponent):
@@ -144,7 +143,7 @@ class ItemCompClient(BaseComponent):
         pass
 
     def SetDropItemTransform(self, entityId, position, rotation=None, scale=None):
-        # type: (str, Tuple[float, float, float], Optional[Tuple[float, float, float]], Optional[float]) -> bool
+        # type: (str, Tuple[float, float, float], Tuple[float, float, float] | None, float | None) -> bool
         """
         设置通过AddDropItemToWorld添加的掉落物的位置、角度和缩放
         """
@@ -179,21 +178,21 @@ class ItemCompClient(BaseComponent):
         pass
 
     def GetItemFormattedHoverText(self, itemName, auxValue=0, showCategory=False, userData=None):
-        # type: (str, int, bool, Optional[dict]) -> str
+        # type: (str, int, bool, dict | None) -> str
         """
         获取物品的格式化hover文本，如：§f灾厄旗帜§r
         """
         pass
 
     def GetItemHoverName(self, itemName, auxValue=0, userData=None):
-        # type: (str, int, Optional[dict]) -> str
+        # type: (str, int, dict | None) -> str
         """
         获取物品的hover名称，如：灾厄旗帜§r
         """
         pass
 
     def GetItemEffectName(self, itemName, auxValue=0, userData=None):
-        # type: (str, int, Optional[dict]) -> str
+        # type: (str, int, dict | None) -> str
         """
         获取物品的状态描述，如：§7保护 0§r
         """
@@ -221,14 +220,14 @@ class ItemCompClient(BaseComponent):
         pass
 
     def GetPlayerItem(self, posType, slotPos=0, getUserData=False):
-        # type: (__ItemPosType, int, bool) -> __ItemDict
+        # type: (Literal[0, 1, 2, 3] | int, int, bool) -> __ItemDict
         """
         获取玩家物品，支持获取背包（本地玩家），盔甲栏，副手以及主手物品
         """
         pass
 
     def GetPlayerAllItems(self, posType, getUserData=False):
-        # type: (__ItemPosType, bool) -> List[__ItemDict]
+        # type: (Literal[0, 1, 2, 3] | int, bool) -> List[__ItemDict]
         """
         获取玩家指定的槽位的批量物品信息，支持获取盔甲栏，副手以及主手物品，背包物品仅支持本地玩家
         """

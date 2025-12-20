@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Callable, TypeVar, Optional
+from typing import Callable, TypeVar
 
 
 _T = TypeVar("_T")
@@ -10,7 +10,7 @@ _T = TypeVar("_T")
 class Mod(object):
     @staticmethod
     def Binding(name, version=None):
-        # type: (str, Optional[str]) -> Callable[[_T], _T]
+        # type: (str, str | None) -> Callable[[_T], _T]
         pass
 
     @staticmethod

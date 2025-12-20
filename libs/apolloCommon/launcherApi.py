@@ -5,7 +5,7 @@
 """
 
 
-from typing import Union, Callable, List
+from typing import Callable, List
 
 
 def ApplyUserFriend(requestUID, appliedUID, message, callback):
@@ -24,7 +24,7 @@ def ApplyUserFriend(requestUID, appliedUID, message, callback):
 
 
 def GetPcGameUserLike(uid, callback):
-	# type: (Union[int, long], Callable) -> None
+	# type: (int | long, Callable) -> None
 	"""
 	**Master/Service/Lobby/Game接口**，获取玩家是否点赞了当前网络服（仅支持PC玩家）
 
@@ -37,7 +37,7 @@ def GetPcGameUserLike(uid, callback):
 
 
 def GetPeGameUserStars(uid, callback):
-	# type: (Union[int, long], Callable) -> None
+	# type: (int | long, Callable) -> None
 	"""
 	**Master/Service/Lobby/Game接口**，获取玩家对本游戏的评分
 
@@ -63,7 +63,7 @@ def GetUIDByNickname(nickname, callback):
 
 
 def GetUserAuthInfo(uid, callback):
-	# type: (Union[int, long], Callable) -> None
+	# type: (int | long, Callable) -> None
 	"""
 	**Master/Service/Lobby/Game接口**，获取在线玩家实名制、是否绑定信息
 
@@ -76,7 +76,7 @@ def GetUserAuthInfo(uid, callback):
 
 
 def GetUserFriend(uid, callback):
-	# type: (Union[int, long], Callable) -> None
+	# type: (int | long, Callable) -> None
 	"""
 	**Master/Service/Lobby/Game接口**，获取启动器中玩家好友信息
 
@@ -89,7 +89,7 @@ def GetUserFriend(uid, callback):
 
 
 def GetUserGuest(uid, callback):
-	# type: (Union[int, long], Callable) -> None
+	# type: (int | long, Callable) -> None
 	"""
 	**Master/Service/Lobby/Game接口**，获取启动器中玩家是否游客的信息, 此接口已废弃
 
@@ -102,7 +102,7 @@ def GetUserGuest(uid, callback):
 
 
 def GetUsersVIP(uids, callback):
-	# type: (List[Union[int, long]], Callable) -> None
+	# type: (List[int | long], Callable) -> None
 	"""
 	**Master/Service/Lobby/Game接口**，获取启动器中玩家会员信息
 
@@ -127,7 +127,7 @@ def IsGameUnderMaintenance(callback):
 
 
 def ShareApolloGame(uid, message):
-	# type: (Union[int, long], str) -> bool
+	# type: (int | long, str) -> bool
 	"""
 	**Lobby/Game接口**，在RN上拉起“网络游戏分享”的界面，界面包含游戏ICON以及描述
 

@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Generator, Union, List, Type, Tuple, Any, Callable, Optional, TypedDict, Dict, Literal
+from typing import Generator, List, Type, Tuple, Any, Callable, TypedDict, Dict, Literal
 from mod.client.ui import NativeScreenManager
 from mod.client.ui.screenNode import ScreenNode
 from mod.client.ui.miniMapBaseScreen import MiniMapBaseScreen
@@ -26,12 +26,12 @@ class __RayResultDict(TypedDict):
     identifier: str
     hitPos: Tuple[float, float, float]
 class __CreateParamsDict(TypedDict, total=False):
-    isHud: Literal[0, 1]
-    inputMode: Literal[0, 1]
+    isHud: int
+    inputMode: int
     bindEntityId: str
     bindWorldPosition: Tuple[int, Tuple[float, float, float]]
     bindOffset: Tuple[float, float, float]
-    autoScale: Literal[0, 1]
+    autoScale: int
     mini_map_root_path: str
 
 
@@ -43,28 +43,28 @@ def RegisterComponent(nameSpace, name, clsPath):
     pass
 
 def RegisterSystem(nameSpace, systemName, clsPath):
-    # type: (str, str, str) -> Optional[ClientSystem]
+    # type: (str, str, str) -> ClientSystem | None
     """
     用于将系统注册到引擎中，引擎会创建一个该系统的实例，并在退出游戏时回收。系统可以执行我们引擎赋予的基本逻辑，例如监听事件、执行Tick函数、与服务端进行通讯等。
     """
     pass
 
 def GetSystem(nameSpace, systemName):
-    # type: (str, str) -> Optional[ClientSystem]
+    # type: (str, str) -> ClientSystem | None
     """
     用于获取其他系统实例
     """
     pass
 
 def CreateComponent(entityId, nameSpace, name):
-    # type: (Union[str, int], str, str) -> Optional[BaseComponent]
+    # type: (str | int, str, str) -> BaseComponent | None
     """
     给实体创建客户端组件
     """
     pass
 
 def GetComponent(entityId, nameSpace, name):
-    # type: (str, str, str) -> Optional[BaseComponent]
+    # type: (str, str, str) -> BaseComponent | None
     """
     获取实体的客户端组件。一般用来判断某个组件是否创建过，其他情况请使用CreateComponent
     """
@@ -85,28 +85,28 @@ def GetEngineCompFactory():
     pass
 
 def RegisterUI(nameSpace, uiKey, clsPath, uiScreenDef=None):
-    # type: (str, str, str, Optional[str]) -> bool
+    # type: (str, str, str, str | None) -> bool
     """
     注册UI，创建UI前，需要先注册UI。同一UI只需要注册一次即可。详见界面创建流程及生命周期
     """
     pass
 
 def CreateUI(nameSpace, uiKey=None, createParams=None):
-    # type: (str, Optional[str], __CreateParamsDict) -> Optional[ScreenNode]
+    # type: (str, str | None, __CreateParamsDict) -> ScreenNode | None
     """
     创建UI，详见界面创建流程及生命周期
     """
     pass
 
 def GetUI(nameSpace, uiKey=None):
-    # type: (str, Optional[str]) -> Optional[ScreenNode]
+    # type: (str, str | None) -> ScreenNode | None
     """
     获取UI节点，详见界面创建流程及生命周期
     """
     pass
 
 def GetTopUINode():
-    # type: () -> Optional[ScreenNode]
+    # type: () -> ScreenNode | None
     """
     获取Push进来的最顶层界面，包括原生界面，详见 界面创建流程及生命周期 
     """
@@ -367,14 +367,14 @@ def GetComponentCls():
     pass
 
 def GetEngineNamespace():
-    # type: () -> Literal["Minecraft"]
+    # type: () -> Literal["Minecraft"] | str
     """
     获取引擎事件的命名空间。监听引擎事件时，namespace传该接口返回的namespace
     """
     return "Minecraft"
 
 def GetEngineSystemName():
-    # type: () -> Literal["Engine"]
+    # type: () -> Literal["Engine"] | str
     """
     获取引擎系统名。监听引擎事件时，systemName传该接口返回的systemName
     """
@@ -496,14 +496,14 @@ def GetTouchPos():
     pass
 
 def GetNavPath(pos, maxTrimNode=16, maxIteration=800, isSwimmer=False):
-    # type: (Tuple[float, float, float], int, int, bool) -> Union[int, List[Tuple[float, float, float]]]
+    # type: (Tuple[float, float, float], int, int, bool) -> int | List[Tuple[float, float, float]]
     """
     获取本地玩家到目标点的寻路路径，开发者可以通过该接口定制自定义的导航系统。
     """
     pass
 
 def StartNavTo(pos, sfxPath, callback=None, sfxIntl=2, sfxMaxNum=16, sfxScale=(0.5, 0.5), maxIteration=800, isSwimmer=False, fps=20, playIntl=8, duration=60, oneTurnDuration=90, sfxDepthTest=False):
-    # type: (Tuple[float, float, float], str, Optional[Callable[[bool], Any]], float, int, Tuple[float, float], int, bool, int, int, int, int, bool) -> int
+    # type: (Tuple[float, float, float], str, Callable[[bool], Any] | None, float, int, Tuple[float, float], int, bool, int, int, int, int, bool) -> int
     """
     我们提供了一个基于GetNavPath的导航系统实现，做法是在路径上生成序列帧以引导玩家通向目标点，并且当玩家偏离路径会重新进行导航。
     """
@@ -531,7 +531,7 @@ def StartProfile():
     pass
 
 def StopProfile(fileName=None):
-    # type: (Optional[str]) -> bool
+    # type: (str | None) -> bool
     """
     停止客户端脚本性能分析并生成火焰图，与StartProfile配合使用，此接口只支持PC端
     """
@@ -545,7 +545,7 @@ def StartMemProfile():
     pass
 
 def StopMemProfile(fileName=None):
-    # type: (Optional[str]) -> bool
+    # type: (str | None) -> bool
     """
     停止客户端脚本内存分析并生成火焰图，与StartMemProfile配合使用，此接口只支持PC端
     """
@@ -559,7 +559,7 @@ def StartMultiProfile():
     pass
 
 def StopMultiProfile(fileName=None):
-    # type: (Optional[str]) -> bool
+    # type: (str | None) -> bool
     """
     停止双端脚本性能分析并生成火焰图，与StartMultiProfile配合使用，此接口只支持PC端
     """
@@ -678,7 +678,7 @@ def GetModConfigJson(path):
     pass
 
 def PushScreen(namespace, uiname, createParams=None):
-    # type: (str, str, Optional[dict]) -> Optional[ScreenNode]
+    # type: (str, str, dict | None) -> ScreenNode | None
     """
     使用堆栈管理的方式创建UI
     """
@@ -692,7 +692,7 @@ def PopScreen():
     pass
 
 def GetTopScreen():
-    # type: () -> Optional[ScreenNode]
+    # type: () -> ScreenNode | None
     """
     获取UI堆栈栈顶的UI节点
     """
@@ -713,14 +713,14 @@ def PopTopUI():
     pass
 
 def GetPlatform():
-    # type: () -> Literal[-1, 0, 1, 2]
+    # type: () -> Literal[-1, 0, 1, 2] | int
     """
     获取脚本运行的平台
     """
     pass
 
 def GetWalkState():
-    # type: () -> Literal[1, 2, 3]
+    # type: () -> Literal[1, 2, 3] | int
     """
     获取玩家行走/潜行/跑步状态
     """
@@ -790,7 +790,7 @@ def OpenEmoteGui():
     pass
 
 def StartCoroutine(iterOrFunc, callback=None):
-    # type: (Union[Generator, Callable[[], Generator]], Optional[Callable[[], Any]]) -> Generator
+    # type: (Generator | Callable[[], Generator], Callable[[], Any] | None) -> Generator
     """
     开启客户端协程，实现函数分段式执行，可用于缓解复杂逻辑计算导致游戏卡顿问题
     """
@@ -803,8 +803,8 @@ def StopCoroutine(iter):
     """
     pass
 
-def OpenInventoryGui(categoryName='', isForce=False):
-    # type: (Literal["construction", "nature", "equipment", "items", "search", ""], bool) -> None
+def OpenInventoryGui(categoryName="", isForce=False):
+    # type: (Literal["construction", "nature", "equipment", "items", "search", ""] | str, bool) -> None
     """
     打开原版背包界面，并支持选中某个分页(支持自定义分页名称)
     """

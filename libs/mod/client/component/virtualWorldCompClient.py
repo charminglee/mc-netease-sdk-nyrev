@@ -6,42 +6,6 @@ from typing import List, Literal, Dict
 from mod.common.component.baseComponent import BaseComponent
 
 
-__TimeEaseType = Literal[
-    "linear",
-    "spring",
-    "in_quad",
-    "out_quad",
-    "in_out_quad",
-    "in_cubic",
-    "out_cubic",
-    "in_out_cubic",
-    "in_quart",
-    "out_quart",
-    "in_out_quart",
-    "in_quint",
-    "out_quint",
-    "in_out_quint",
-    "in_sine",
-    "out_sine",
-    "in_out_sine",
-    "in_expo",
-    "out_expo",
-    "in_out_expo",
-    "in_circ",
-    "out_circ",
-    "in_out_circ",
-    "in_bounce",
-    "out_bounce",
-    "in_out_bounce",
-    "in_back",
-    "out_back",
-    "in_out_back",
-    "in_elastic",
-    "out_elastic",
-    "in_out_elastic",
-]
-
-
 class VirtualWorldCompClient(BaseComponent):
     def VirtualWorldCreate(self):
         # type: () -> bool
@@ -303,14 +267,14 @@ class VirtualWorldCompClient(BaseComponent):
         pass
 
     def ModelMoveTo(self, objId, pos, time, ease='linear'):
-        # type: (int, Tuple[float, float, float], float, __TimeEaseType) -> bool
+        # type: (int, Tuple[float, float, float], float, Literal["linear", "spring", "in_quad", "out_quad", "in_out_quad", "in_cubic", "out_cubic", "in_out_cubic", "in_quart", "out_quart", "in_out_quart", "in_quint", "out_quint", "in_out_quint", "in_sine", "out_sine", "in_out_sine", "in_expo", "out_expo", "in_out_expo", "in_circ", "out_circ", "in_out_circ", "in_bounce", "out_bounce", "in_out_bounce", "in_back", "out_back", "in_out_back", "in_elastic", "out_elastic", "in_out_elastic"] | str) -> bool
         """
         设置模型平移运动
         """
         pass
 
     def ModelRotateTo(self, objId, rot, time, ease='linear'):
-        # type: (int, Tuple[float, float, float], float, __TimeEaseType) -> bool
+        # type: (int, Tuple[float, float, float], float, Literal["linear", "spring", "in_quad", "out_quad", "in_out_quad", "in_cubic", "out_cubic", "in_out_cubic", "in_quart", "out_quart", "in_out_quart", "in_quint", "out_quint", "in_out_quint", "in_sine", "out_sine", "in_out_sine", "in_expo", "out_expo", "in_out_expo", "in_circ", "out_circ", "in_out_circ", "in_bounce", "out_bounce", "in_out_bounce", "in_back", "out_back", "in_out_back", "in_elastic", "out_elastic", "in_out_elastic"] | str) -> bool
         """
         设置模型旋转运动
         """

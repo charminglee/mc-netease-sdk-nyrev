@@ -5,7 +5,7 @@
 """
 
 
-from typing import Union, Callable, Any
+from typing import Callable, Any
 
 
 def ForkNewPool(orderSize):
@@ -24,7 +24,7 @@ def ForkNewPool(orderSize):
 
 class MainPool(object):
 	def EmitOrder(self, key, func, callback, *args):
-		# type: (Union[str, int], Callable, Callable, Any) -> None
+		# type: (str | int, Callable, Callable, Any) -> None
 		"""
 		添加一个异步任务
 

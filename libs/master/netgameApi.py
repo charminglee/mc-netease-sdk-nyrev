@@ -5,11 +5,11 @@
 """
 
 
-from typing import Union, Callable, Optional, List
+from typing import Callable, List
 
 
 def BanUser(uid, banTime, reason, bCombineReason):
-	# type: (Union[int, long], int, str, bool) -> bool
+	# type: (int | long, int, str, bool) -> bool
 	"""
 	封禁某个玩家
 
@@ -26,7 +26,7 @@ def BanUser(uid, banTime, reason, bCombineReason):
 
 
 def GetBanUserInfo(uid, callback):
-	# type: (Union[int, long], Callable) -> None
+	# type: (int | long, Callable) -> None
 	"""
 	获取玩家的封禁信息
 
@@ -49,7 +49,7 @@ def GetCommonConfig():
 
 
 def GetGameTypeByServerId(serverId):
-	# type: (int) -> Optional[str]
+	# type: (int) -> str | None
 	"""
 	获取指定ID服务器的类型
 
@@ -73,7 +73,7 @@ def GetOnlineUidList():
 
 
 def GetProtocolVersionByUID(uid):
-	# type: (Union[int, long]) -> Optional[int]
+	# type: (int | long) -> int | None
 	"""
 	获取在线玩家客户端协议版本号。多协议版本引擎中（比如同时支持1.14客户端和1.15客户端），需要把客户端分配到相同协议版本的lobby/game中
 
@@ -87,7 +87,7 @@ def GetProtocolVersionByUID(uid):
 
 
 def GetServerIdByUid(uid):
-	# type: (Union[int, long]) -> Optional[int]
+	# type: (int | long) -> int | None
 	"""
 	获取在线玩家所在的服务器的ID，返回的信息为当前控制服内存缓存中的信息，玩家很可能很快就离线或者转服
 
@@ -143,7 +143,7 @@ def GetServerLoadedModsByType(serverType):
 
 
 def GetUserSilentInfo(uid, callback):
-	# type: (Union[int, long], Callable) -> None
+	# type: (int | long, Callable) -> None
 	"""
 	获取玩家的禁言信息
 
@@ -184,7 +184,7 @@ def SetLoginStratege(func):
 
 
 def SilentByUID(uid, banTime, reason):
-	# type: (Union[int, long], int, str) -> bool
+	# type: (int | long, int, str) -> bool
 	"""
 	禁言某个玩家
 
@@ -200,7 +200,7 @@ def SilentByUID(uid, banTime, reason):
 
 
 def UnBanUser(uid):
-	# type: (Union[int, long]) -> bool
+	# type: (int | long) -> bool
 	"""
 	解除某个玩家的封禁
 
@@ -214,7 +214,7 @@ def UnBanUser(uid):
 
 
 def UnSilentByUID(uid):
-	# type: (Union[int, long]) -> bool
+	# type: (int | long) -> bool
 	"""
 	解除某个玩家的禁言
 

@@ -3,10 +3,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional, Literal, Dict
-
-
-__UniformIndex = Literal[1, 2, 3, 4]
+from typing import Tuple, Literal, Dict
 
 
 class ModelComponentClient(BaseComponent):
@@ -39,7 +36,7 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def PlayAnim(self, aniName, isLoop, modelId=None):
-        # type: (str, bool, Optional[int]) -> bool
+        # type: (str, bool, int | None) -> bool
         """
         播放骨骼动画
         """
@@ -53,14 +50,14 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def GetAnimLength(self, aniName, modelId=None):
-        # type: (str, Optional[int]) -> float
+        # type: (str, int | None) -> float
         """
         获取某个骨骼动画的长度，单位为秒
         """
         pass
 
     def SetAnimSpeed(self, aniName, speed, modelId=None):
-        # type: (str, float, Optional[int]) -> bool
+        # type: (str, float, int | None) -> bool
         """
         设置某个骨骼动画的播放速度
         """
@@ -102,14 +99,14 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetTexture(self, texture, modelId=None):
-        # type: (str, Optional[int]) -> bool
+        # type: (str, int | None) -> bool
         """
         设置骨骼模型的贴图，该接口与SetModelTexture功能相同，但属于客户端接口。
         """
         pass
 
     def GetTexture(self, modelId=None):
-        # type: (Optional[int]) -> str
+        # type: (int | None) -> str
         """
         获取骨骼模型的贴图路径
         """
@@ -130,14 +127,14 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetLegacyBindRot(self, enable, modelId=None):
-        # type: (bool, Optional[int]) -> bool
+        # type: (bool, int | None) -> bool
         """
         用于修复特效挂接到骨骼时的方向
         """
         pass
 
     def GetBoneWorldPos(self, boneName, modelId=None):
-        # type: (str, Optional[int]) -> Tuple[float, float, float]
+        # type: (str, int | None) -> Tuple[float, float, float]
         """
         获取骨骼的坐标
         """
@@ -277,14 +274,14 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetExtraUniformValue(self, modelId, uniformIndex, vec4data):
-        # type: (int, __UniformIndex, Tuple[float, float, float, float]) -> bool
+        # type: (int, Literal[1, 2, 3, 4] | int, Tuple[float, float, float, float]) -> bool
         """
         设置shader中特定Uniform的值
         """
         pass
 
     def GetExtraUniformValue(self, modelId, uniformIndex):
-        # type: (int, __UniformIndex) -> Tuple[float, float, float, float]
+        # type: (int, Literal[1, 2, 3, 4] | int) -> Tuple[float, float, float, float]
         """
         获取在骨骼模型shader中使用的自定义变量Uniform的值
         """
@@ -382,7 +379,7 @@ class ModelComponentClient(BaseComponent):
         pass
 
     def SetModelMultiPassMaterial(self, modelId, materialList, materialCpuList=None, boneName=''):
-        # type: (int, List[str], Optional[List[str]], str) -> bool
+        # type: (int, List[str], List[str] | None, str) -> bool
         """
         设置骨骼模型多pass中使用到的材质列表，也可对单个骨骼设置所使用的自定义多Pass材质。如果需要设置单个骨骼所使用的多Pass材质，需要先在netease_model.json下设置"useSplitMeshes"字段为true。
         """

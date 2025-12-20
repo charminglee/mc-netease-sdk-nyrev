@@ -5,7 +5,7 @@
 """
 
 
-from typing import Union, Callable, Any
+from typing import Callable, Any
 
 
 def AsyncDelete(key, callback):
@@ -22,7 +22,7 @@ def AsyncDelete(key, callback):
 
 
 def AsyncFuncWithKey(func, orderKey, callback, *args, **kwargs):
-	# type: (Callable, Union[str, int], Callable, Any, Any) -> None
+	# type: (Callable, str | int, Callable, Any, Any) -> None
 	"""
 	添加一个异步redis任务
 
@@ -64,7 +64,7 @@ def AsyncHgetall(key, callback):
 
 
 def AsyncMget(keys, callback):
-	# type: (Union[list, tuple], Callable) -> None
+	# type: (list | tuple, Callable) -> None
 	"""
 	执行redis操作，获取多个key的值,相当于redis中执行命令:mget key1 key2 ...
 

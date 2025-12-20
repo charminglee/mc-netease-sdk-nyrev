@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Any, Callable, Dict, Optional, Literal, TypedDict
+from typing import Tuple, Any, Callable, Dict, Literal, TypedDict
 from mod.client.ui.controls.minimapUIControl import MiniMapUIControl
 from mod.client.ui.controls.inputPanelUIControl import InputPanelUIControl
 from mod.client.ui.controls.itemRendererUIControl import ItemRendererUIControl
@@ -21,29 +21,6 @@ from mod.client.ui.controls.sliderUIControl import SliderUIControl
 from mod.client.ui.screenNode import ScreenNode
 
 
-__PropertyName = Literal[
-    "all",
-    "size",
-    "offset",
-    "alpha",
-    "clip",
-    "color",
-    "flip_book",
-    "aseprite_flip_book",
-    "uv",
-    "wait",
-]
-__PropertyNameNoAll = Literal[
-    "size",
-    "offset",
-    "alpha",
-    "clip",
-    "color",
-    "flip_book",
-    "aseprite_flip_book",
-    "uv",
-    "wait",
-]
 class __FullPositionDict(TypedDict, total=False):
     followType: Literal["none", "parent", "maxChildren", "maxSibling", "children", "x", "y"]
     relativeValue: float
@@ -53,18 +30,6 @@ class __FullSizeDict(TypedDict, total=False):
     followType: Literal["none", "parent", "maxChildren", "maxSibling", "children", "x", "y"]
     relativeValue: float
     absoluteValue: float
-__Axis = Literal["x", "y"]
-__Anchor = Literal[
-    "top_left",
-    "top_middle",
-    "top_right",
-    "left_middle",
-    "center",
-    "right_middle",
-    "bottom_left",
-    "bottom_middle",
-    "bottom_right",
-]
 
 
 class BaseUIControl(object):
@@ -84,56 +49,56 @@ class BaseUIControl(object):
         pass
 
     def SetFullSize(self, axis, paramDict):
-        # type: (__Axis, __FullSizeDict) -> bool
+        # type: (Literal["x", "y"] | str, __FullSizeDict) -> bool
         """
         设置控件的大小，支持比例形式以及绝对值
         """
         pass
 
     def GetFullSize(self, axis):
-        # type: (__Axis) -> __FullSizeDict
+        # type: (Literal["x", "y"] | str) -> __FullSizeDict
         """
         获取控件的大小，支持百分比以及绝对值
         """
         pass
 
     def SetFullPosition(self, axis, paramDict):
-        # type: (__Axis, __FullPositionDict) -> bool
+        # type: (Literal["x", "y"] | str, __FullPositionDict) -> bool
         """
         设置控件的锚点坐标（全局坐标），支持比例值以及绝对值
         """
         pass
 
     def GetFullPosition(self, axis):
-        # type: (__Axis) -> __FullPositionDict
+        # type: (Literal["x", "y"] | str) -> __FullPositionDict
         """
         获取控件的锚点坐标，支持比例值以及绝对值
         """
         pass
 
     def SetAnchorFrom(self, anchorFrom):
-        # type: (__Anchor) -> bool
+        # type: (Literal["top_left", "top_middle", "top_right", "left_middle", "center", "right_middle", "bottom_left", "bottom_middle", "bottom_right"] | str) -> bool
         """
         设置控件相对于父节点的锚点
         """
         pass
 
     def GetAnchorFrom(self):
-        # type: () -> __Anchor
+        # type: () -> Literal["top_left", "top_middle", "top_right", "left_middle", "center", "right_middle", "bottom_left", "bottom_middle", "bottom_right"] | str
         """
         判断控件相对于父节点的哪个锚点来计算位置与大小
         """
         pass
 
     def SetAnchorTo(self, anchorTo):
-        # type: (__Anchor) -> bool
+        # type: (Literal["top_left", "top_middle", "top_right", "left_middle", "center", "right_middle", "bottom_left", "bottom_middle", "bottom_right"] | str) -> bool
         """
         设置控件自身锚点位置
         """
         pass
 
     def GetAnchorTo(self):
-        # type: () -> __Anchor
+        # type: () -> Literal["top_left", "top_middle", "top_right", "left_middle", "center", "right_middle", "bottom_left", "bottom_middle", "bottom_right"] | str
         """
         获取控件自身锚点位置信息
         """
@@ -266,14 +231,14 @@ class BaseUIControl(object):
         pass
 
     def GetChildByName(self, childName):
-        # type: (str) -> Optional['BaseUIControl']
+        # type: (str) -> 'BaseUIControl' | None
         """
         根据子控件的名称获取BaseUIControl实例
         """
         pass
 
     def GetChildByPath(self, childPath):
-        # type: (str) -> Optional['BaseUIControl']
+        # type: (str) -> 'BaseUIControl' | None
         """
         根据相对路径获取BaseUIControl实例
         """
@@ -286,36 +251,36 @@ class BaseUIControl(object):
         """
         pass
 
-    def PauseAnimation(self, propertyName='all'):
-        # type: (__PropertyName) -> bool
+    def PauseAnimation(self, propertyName="all"):
+        # type: (Literal["all", "size", "offset", "alpha", "clip", "color", "flip_book", "aseprite_flip_book", "uv", "wait"] | str) -> bool
         """
         暂停动画，暂停后的动画会停在当前的状态
         """
         pass
 
-    def PlayAnimation(self, propertyName='all'):
-        # type: (__PropertyName) -> bool
+    def PlayAnimation(self, propertyName="all"):
+        # type: (Literal["all", "size", "offset", "alpha", "clip", "color", "flip_book", "aseprite_flip_book", "uv", "wait"] | str) -> bool
         """
         继续播放动画，从动画当前状态开始播放
         """
         pass
 
-    def StopAnimation(self, propertyName='all'):
-        # type: (__PropertyName) -> bool
+    def StopAnimation(self, propertyName="all"):
+        # type: (Literal["all", "size", "offset", "alpha", "clip", "color", "flip_book", "aseprite_flip_book", "uv", "wait"] | str) -> bool
         """
         停止动画，动画将恢复到第一段动画片段的from状态
         """
         pass
 
     def SetAnimation(self, propertyName, namespace, animName, autoPlay=False):
-        # type: (__PropertyNameNoAll, str, str, bool) -> bool
+        # type: (Literal["size", "offset", "alpha", "clip", "color", "flip_book", "aseprite_flip_book", "uv", "wait"] | str, str, str, bool) -> bool
         """
         给单一属性设置动画，已有重复的会设置失败，需要先remove
         """
         pass
 
     def RemoveAnimation(self, propertyName):
-        # type: (__PropertyNameNoAll) -> bool
+        # type: (Literal["size", "offset", "alpha", "clip", "color", "flip_book", "aseprite_flip_book", "uv", "wait"] | str) -> bool
         """
         删除单一属性的动画，删除后的值与当前状态有关，建议删除后重新设置该属性值
         """
@@ -343,112 +308,112 @@ class BaseUIControl(object):
         pass
 
     def asLabel(self):
-        # type: () -> Optional[LabelUIControl]
+        # type: () -> LabelUIControl | None
         """
         将当前BaseUIControl转换为LabelUIControl实例，如当前控件非Label类型则返回None
         """
         pass
 
     def asButton(self):
-        # type: () -> Optional[ButtonUIControl]
+        # type: () -> ButtonUIControl | None
         """
         将当前BaseUIControl转换为ButtonUIControl实例，如当前控件非button类型则返回None
         """
         pass
 
     def asImage(self):
-        # type: () -> Optional[ImageUIControl]
+        # type: () -> ImageUIControl | None
         """
         将当前BaseUIControl转换为ImageUIControl实例，如当前控件非image类型则返回None
         """
         pass
 
     def asGrid(self):
-        # type: () -> Optional[GridUIControl]
+        # type: () -> GridUIControl | None
         """
         将当前BaseUIControl转换为GridUIControl实例，如当前控件非grid类型则返回None
         """
         pass
 
     def asScrollView(self):
-        # type: () -> Optional[ScrollViewUIControl]
+        # type: () -> ScrollViewUIControl | None
         """
         将当前BaseUIControl转换为ScrollViewUIControl实例，如当前控件非scrollview类型则返回None
         """
         pass
 
     def asSwitchToggle(self):
-        # type: () -> Optional[SwitchToggleUIControl]
+        # type: () -> SwitchToggleUIControl | None
         """
         将当前BaseUIControl转换为SwitchToggleUIControl实例，如当前控件非panel类型或非toggle则返回None
         """
         pass
 
     def asTextEditBox(self):
-        # type: () -> Optional[TextEditBoxUIControl]
+        # type: () -> TextEditBoxUIControl | None
         """
         将当前BaseUIControl转换为TextEditBoxUIControl实例，如当前控件非editbox类型则返回None
         """
         pass
 
-    def asProgressBar(self, fillImagePath='/filled_progress_bar'):
-        # type: (str) -> Optional[ProgressBarUIControl]
+    def asProgressBar(self, fillImagePath="/filled_progress_bar"):
+        # type: (str) -> ProgressBarUIControl | None
         """
         将当前BaseUIControl转换为ProgressBarUIControl实例，如当前控件非panel类型则返回None
         """
         pass
 
     def asNeteasePaperDoll(self):
-        # type: () -> Optional[NeteasePaperDollUIControl]
+        # type: () -> NeteasePaperDollUIControl | None
         """
         将当前BaseUIControl转换为NeteasePaperDollUIControl实例，如当前控件非custom类型则返回None
         """
         pass
 
     def asMiniMap(self):
-        # type: () -> Optional[MiniMapUIControl]
+        # type: () -> MiniMapUIControl | None
         """
         将当前BaseUIControl转换为MiniMapUIControl实例，如当前控件非小地图类型则返回None
         """
         pass
 
     def asSlider(self):
-        # type: () -> Optional[SliderUIControl]
+        # type: () -> SliderUIControl | None
         """
         将当前BaseUIControl转换为SliderUIControl实例，如当前控件非滑动条类型则返回None
         """
         pass
 
     def asItemRenderer(self):
-        # type: () -> Optional[ItemRendererUIControl]
+        # type: () -> ItemRendererUIControl | None
         """
         将当前BaseUIControl转换为ItemRenderer实例，如当前控件非custom类型则返回None
         """
         pass
 
     def asNeteaseComboBox(self):
-        # type: () -> Optional[NeteaseComboBoxUIControl]
+        # type: () -> NeteaseComboBoxUIControl | None
         """
         将当前BaseUIControl转换为NeteaseComboBoxUIControl实例，如当前控件非panel类型则返回None
         """
         pass
 
     def asStackPanel(self):
-        # type: () -> Optional[StackPanelUIControl]
+        # type: () -> StackPanelUIControl | None
         """
         将当前BaseUIControl转换为StackPanelUIControl实例，如当前控件非stackPanel类型则返回None
         """
         pass
 
     def asInputPanel(self):
-        # type: () -> Optional[InputPanelUIControl]
+        # type: () -> InputPanelUIControl | None
         """
         将当前BaseUIControl转换为InputPanelUIControl实例，如当前控件非inputPanel类型则返回None
         """
         pass
 
     def asSelectionWheel(self):
-        # type: () -> Optional[SelectionWheelUIControl]
+        # type: () -> SelectionWheelUIControl | None
         """
         将当前BaseUIControl转换为SelectionWheelUIControl实例，如当前控件非selectionWheel类型则返回None
         """

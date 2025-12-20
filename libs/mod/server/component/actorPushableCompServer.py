@@ -7,7 +7,7 @@ from typing import Literal
 
 class ActorPushableCompServer(BaseComponent):
     def SetActorPushable(self, isPushable):
-        # type: (Literal[0, 1]) -> bool
+        # type: (Literal[0, 1] | int) -> bool
         """
         设置实体是否可推动
         """

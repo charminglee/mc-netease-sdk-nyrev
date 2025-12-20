@@ -1,10 +1,9 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from typing import List
 from mod.common.system.baseSystem import BaseSystem
-from typing import Tuple, Optional
+from typing import Tuple
 
 
 class ServerSystem(BaseSystem):
@@ -34,21 +33,21 @@ class ServerSystem(BaseSystem):
         pass
 
     def CreateEngineEntityByNBT(self, nbtDict, pos=None, rot=None, dimensionId=0, isNpc=False, isGlobal=None):
-        # type: (dict, Optional[Tuple[float, float, float]], Optional[Tuple[float, float]], int, bool, Optional[bool]) -> Union[str, None]
+        # type: (dict, Tuple[float, float, float] | None, Tuple[float, float] | None, int, bool, bool | None) -> str | None
         """
         根据nbt数据创建实体
         """
         pass
 
     def CreateEngineEntityByTypeStr(self, engineTypeStr, pos, rot, dimensionId=0, isNpc=False, isGlobal=False):
-        # type: (str, Tuple[float, float, float], Tuple[float, float], int, bool, bool) -> Union[str, None]
+        # type: (str, Tuple[float, float, float], Tuple[float, float], int, bool, bool) -> str | None
         """
         创建指定identifier的实体
         """
         pass
 
     def CreateEngineItemEntity(self, itemDict, dimensionId=0, pos=(0, 0, 0)):
-        # type: (dict, int, Tuple[float, float, float]) -> Union[str, None]
+        # type: (dict, int, Tuple[float, float, float]) -> str | None
         """
         用于创建物品实体（即掉落物），返回物品实体的entityId
         """

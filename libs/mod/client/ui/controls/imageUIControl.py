@@ -2,22 +2,7 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from typing import Tuple, Optional, Literal
-
-
-__ClipDirection = Literal[
-    "fromLeftToRight",
-    "fromRightToLeft",
-    "fromOutsideToInside",
-    "fromTopToBottom",
-    "fromBottomToTop",
-]
-__ImageAdaptionType = Literal[
-    "normal",
-    "filled",
-    "oldNineSlice",
-    "originNineSlice",
-]
+from typing import Tuple, Literal
 
 
 class ImageUIControl(BaseUIControl):
@@ -78,21 +63,21 @@ class ImageUIControl(BaseUIControl):
         pass
 
     def SetClipDirection(self, clipDirection):
-        # type: (__ClipDirection) -> bool
+        # type: (Literal["fromLeftToRight", "fromRightToLeft", "fromOutsideToInside", "fromTopToBottom", "fromBottomToTop"] | str) -> bool
         """
         设置图片控件的裁剪方向
         """
         pass
 
     def GetClipDirection(self):
-        # type: () -> __ClipDirection
+        # type: () -> Literal["fromLeftToRight", "fromRightToLeft", "fromOutsideToInside", "fromTopToBottom", "fromBottomToTop"] | str
         """
         获取图片控件的裁剪方向
         """
         pass
 
     def SetImageAdaptionType(self, imageAdaptionType, imageAdaptionData=None):
-        # type: (__ImageAdaptionType, Optional[Tuple[float, float, float, float]]) -> bool
+        # type: (Literal["normal", "filled", "oldNineSlice", "originNineSlice"] | str, Tuple[float, float, float, float] | None) -> bool
         """
         设置图片控件的图片适配方式以及信息
         """

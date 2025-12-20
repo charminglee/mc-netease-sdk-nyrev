@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import List, TypedDict, Tuple, Optional
+from typing import List, TypedDict, Tuple
 from mod.common.component.baseComponent import BaseComponent
 
 
@@ -16,7 +16,7 @@ class __ItemDict(TypedDict, total=False):
     modEnchantData: List[Tuple[str, int]]
     customTips: str
     extraId: str
-    userData: Optional[dict]
+    userData: dict | None
     durability: int
 
 

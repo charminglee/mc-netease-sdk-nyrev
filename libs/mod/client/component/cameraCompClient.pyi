@@ -1,44 +1,10 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Optional, Literal, TypedDict, Dict
+from typing import Tuple, Literal, TypedDict, Dict
 from mod.common.component.baseComponent import BaseComponent
 
 
-__TimeEaseType = Literal[
-    "linear",
-    "spring",
-    "in_quad",
-    "out_quad",
-    "in_out_quad",
-    "in_cubic",
-    "out_cubic",
-    "in_out_cubic",
-    "in_quart",
-    "out_quart",
-    "in_out_quart",
-    "in_quint",
-    "out_quint",
-    "in_out_quint",
-    "in_sine",
-    "out_sine",
-    "in_out_sine",
-    "in_expo",
-    "out_expo",
-    "in_out_expo",
-    "in_circ",
-    "out_circ",
-    "in_out_circ",
-    "in_bounce",
-    "out_bounce",
-    "in_out_bounce",
-    "in_back",
-    "out_back",
-    "in_out_back",
-    "in_elastic",
-    "out_elastic",
-    "in_out_elastic",
-]
 class __TargetInfoDict(TypedDict):
     type: Literal["Entity", "Block", "None"]
     entityId: str
@@ -48,7 +14,7 @@ class __TargetInfoDict(TypedDict):
     x: int
     y: int
     z: int
-    face: Literal[0, 1, 2, 3, 4, 5]
+    face: int
 
 
 class CameraComponentClient(BaseComponent):
@@ -207,7 +173,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def LockModCameraPitch(self, enable):
-        # type: (Literal[0, 1]) -> bool
+        # type: (Literal[0, 1] | int) -> bool
         """
         锁定摄像机上下角度（第三人称下生效，锁定后不能上下调整视角）
         """
@@ -235,7 +201,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def LockModCameraYaw(self, enable):
-        # type: (Literal[0, 1]) -> bool
+        # type: (Literal[0, 1] | int) -> bool
         """
         锁定摄像机左右角度（第三人称下生效，锁定后不能通过鼠标左右调整视角）
         """
@@ -256,14 +222,14 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def AddCameraTrackMotion(self, targetPos, duraTime, startPos=None, relativeCoord=False, isLoop=False, targetRot=None, startRot=None, useVelocityDir=False, ease='linear'):
-        # type: (Tuple[float, float, float], float, Optional[Tuple[float, float, float]], bool, bool, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]], bool, __TimeEaseType) -> int
+        # type: (Tuple[float, float, float], float, Tuple[float, float, float] | None, bool, bool, Tuple[float, float, float] | None, Tuple[float, float, float] | None, bool, Literal["linear", "spring", "in_quad", "out_quad", "in_out_quad", "in_cubic", "out_cubic", "in_out_cubic", "in_quart", "out_quart", "in_out_quart", "in_quint", "out_quint", "in_out_quint", "in_sine", "out_sine", "in_out_sine", "in_expo", "out_expo", "in_out_expo", "in_circ", "out_circ", "in_out_circ", "in_bounce", "out_bounce", "in_out_bounce", "in_back", "out_back", "in_out_back", "in_elastic", "out_elastic", "in_out_elastic"] | str) -> int
         """
         给相机添加轨迹运动器
         """
         pass
 
     def AddCameraVelocityMotion(self, velocity, accelerate=None, useVelocityDir=True):
-        # type: (Tuple[float, float, float], Optional[Tuple[float, float, float]], bool) -> int
+        # type: (Tuple[float, float, float], Tuple[float, float, float] | None, bool) -> int
         """
         给相机添加速度运动器
         """
@@ -284,7 +250,7 @@ class CameraComponentClient(BaseComponent):
         pass
 
     def GetCameraMotions(self):
-        # type: () -> Dict[int, Literal[0, 1, 2]]
+        # type: () -> Dict[int, Literal[0, 1, 2] | int]
         """
         获取相机上的所有运动器
         """

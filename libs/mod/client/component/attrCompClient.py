@@ -5,9 +5,6 @@ from mod.common.component.baseComponent import BaseComponent
 from typing import Literal
 
 
-__AttrType = Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-
-
 class AttrCompClient(BaseComponent):
     def isEntityInLava(self):
         # type: () -> bool
@@ -24,14 +21,14 @@ class AttrCompClient(BaseComponent):
         pass
 
     def GetAttrValue(self, attrType):
-        # type: (__AttrType) -> float
+        # type: (Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] | int) -> float
         """
         获取属性值，包括生命值，饥饿度，移速
         """
         pass
 
     def GetAttrMaxValue(self, type):
-        # type: (__AttrType) -> float
+        # type: (Literal[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] | int) -> float
         """
         获取属性最大值，包括生命值，饥饿度，移速等
         """

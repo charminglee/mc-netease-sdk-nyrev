@@ -3,14 +3,14 @@
 
 from typing import Literal
 from typing import List
-from typing import Tuple, Optional
+from typing import Tuple
 from mod.client.ui.controls.baseUIControl import BaseUIControl
 from mod.client.ui.richText import RichTextItem
 
 
 class ScreenNode(object):
     def __init__(self, namespace, name, param=None):
-        # type: (str, str, Optional[dict]) -> None
+        # type: (str, str, dict | None) -> None
         self.namespace = namespace
         self.name = name
         self.full_name = namespace + "." + name
@@ -108,7 +108,7 @@ class ScreenNode(object):
         pass
 
     def ChangeBindAutoScale(self, autoScale):
-        # type: (Literal[0, 1]) -> bool
+        # type: (Literal[0, 1] | int) -> bool
         """
         设置已绑定实体的UI是否根据绑定实体与本地玩家间的距离动态缩放，**只对已绑定实体的UI界面生效，如何将UI与实体绑定详见CreateUI接口**
         """
@@ -136,7 +136,7 @@ class ScreenNode(object):
         pass
 
     def GetBindAutoScale(self):
-        # type: () -> Literal[0, 1]
+        # type: () -> Literal[0, 1] | int
         """
         获取该绑定实体的UI是否动态缩放，未绑定的UI将传回默认值1
         """
@@ -178,7 +178,7 @@ class ScreenNode(object):
         pass
 
     def CreateChildControl(self, defName, childName, parentControl=None, forceUpdate=True):
-        # type: (str, str, Optional[BaseUIControl], bool) -> Optional[BaseUIControl]
+        # type: (str, str, BaseUIControl | None, bool) -> BaseUIControl | None
         """
         在当前画布中创建子控件，如果该子控件已经存在则返回已存在的子控件
         """
@@ -269,7 +269,7 @@ class ScreenNode(object):
         pass
 
     def GetBaseUIControl(self, path):
-        # type: (str) -> Optional[BaseUIControl]
+        # type: (str) -> BaseUIControl | None
         """
         根据路径获取BaseUIControl实例
         """

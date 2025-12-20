@@ -2,7 +2,7 @@
 
 
 from mod.client.ui.controls.baseUIControl import BaseUIControl
-from typing import Optional, TypedDict
+from typing import TypedDict
 
 
 class __UiItemDict(TypedDict):
@@ -13,7 +13,7 @@ class __UiItemDict(TypedDict):
 
 class ItemRendererUIControl(BaseUIControl):
     def SetUiItem(self, itemName, auxValue, isEnchanted=False, userData=None):
-        # type: (str, int, bool, Optional[dict]) -> bool
+        # type: (str, int, bool, dict | None) -> bool
         """
         设置ItemRenderer控件显示的物品，ItemRenderer控件的配置方式详见控件介绍ItemRenderer
         """

@@ -1,11 +1,10 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from typing import Tuple
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Any, Optional, TypedDict, Literal
+from typing import Any, TypedDict, Literal
 
 
 class __BlockDict(TypedDict, total=False):
@@ -18,29 +17,26 @@ class __JigsawBlockDict(TypedDict, total=False):
     jigsaw_target_name: str
     jigsaw_target_pool: str
     jigsaw_final_block: str
-    jigsaw_join_type: Literal[0, 1]
-__ItemPosType = Literal[0, 1, 2, 3]
-__Facing = Literal[0, 1, 2, 3, 4, 5]
+    jigsaw_join_type: int
 class _Tier(TypedDict, total=False):
     digger: Literal["shovel", "pickaxe", "hatchet", "hoe"]
     destroy_special: bool
-    level: Literal[0, 1, 2, 3]
+    level: int
 class __BlockInfoDict(TypedDict, total=False):
     blockLightAbsorption: int
     blockLightEmission: int
-    breathability: Literal[0, 1]
+    breathability: int
     explosionResistance: float
     loot: str
     mapColor: str
     unwalkable: bool
     tier: _Tier
-    renderLayer: Literal[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+    renderLayer: int
     solid: bool
     pathable: bool
     fireResistant: bool
-    creativeCategory: Literal[1, 2, 3, 4, 7]
+    creativeCategory: int
     destroyTime: float
-__Side = Literal[0, 1]
 class __MiningArgs(TypedDict, total=False):
     haste: int
     conduit_power: int
@@ -57,7 +53,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def SetBlockNew(self, pos, blockDict, oldBlockHandling=0, dimensionId=-1, isLegacy=False, updateNeighbors=True):
-        # type: (Tuple[int, int, int], __BlockDict, Literal[0, 1, 2], int, bool, bool) -> bool
+        # type: (Tuple[int, int, int], __BlockDict, Literal[0, 1, 2] | int, int, bool, bool) -> bool
         """
         设置某一位置的方块
         """
@@ -85,7 +81,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def PlayerDestoryBlock(self, pos, particle=1, sendInv=False):
-        # type: (Tuple[int, int, int], Literal[0, 1], bool) -> bool
+        # type: (Tuple[int, int, int], Literal[0, 1] | int, bool) -> bool
         """
         使用手上工具破坏方块
         """
@@ -99,7 +95,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def PlayerUseItemToPos(self, pos, posType, slotPos=0, facing=1):
-        # type: (Tuple[int, int, int], __ItemPosType, int, __Facing) -> bool
+        # type: (Tuple[int, int, int], Literal[0, 1, 2, 3] | int, int, Literal[0, 1, 2, 3, 4, 5] | int) -> bool
         """
         模拟玩家对某个坐标使用物品
         """
@@ -162,7 +158,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetTopBlockHeight(self, pos, dimension=0):
-        # type: (Tuple[int, int], int) -> Union[int, None]
+        # type: (Tuple[int, int], int) -> int | None
         """
         获取某一位置最高的非空气方块的高度
         """
@@ -190,7 +186,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetBlockTileEntityWholeCustomData(self, pos, dimensionId=-1):
-        # type: (Tuple[int, int, int], int) -> Union[dict, None]
+        # type: (Tuple[int, int, int], int) -> dict | None
         """
         读取指定位置的特殊方块（箱子、头颅、熔炉、花盆等）绑定的TileEntity内存储的自定义数据字典。
         """
@@ -204,7 +200,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetBlockEntityData(self, dimension, pos):
-        # type: (int, Tuple[int, int, int]) -> Union[dict, None]
+        # type: (int, Tuple[int, int, int]) -> dict | None
         """
         用于获取方块（包括自定义方块）的数据，如需修改，请使用setblockentitydata接口
         """
@@ -232,7 +228,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetChestPairedPosition(self, pos, dimensionId=-1):
-        # type: (Tuple[int, int, int], int) -> Union[Tuple[int, int, int], None]
+        # type: (Tuple[int, int, int], int) -> Tuple[int, int, int] | None
         """
         获取与箱子A合并成一个大箱子的箱子B的坐标
         """
@@ -253,21 +249,21 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetSignBlockText(self, pos, dimensionId=-1, side=0):
-        # type: (Tuple[int, int, int], int, __Side) -> str
+        # type: (Tuple[int, int, int], int, Literal[0, 1] | int) -> str
         """
         获取告示牌（方块）的文本内容
         """
         pass
 
     def SetSignBlockText(self, pos, text, dimensionId=-1, side=0):
-        # type: (Tuple[int, int, int], str, int, __Side) -> bool
+        # type: (Tuple[int, int, int], str, int, Literal[0, 1] | int) -> bool
         """
         设置告示牌（方块）的文本内容
         """
         pass
 
     def MayPlace(self, identifier, blockPos, facing, dimensionId=0):
-        # type: (str, Tuple[int, int, int], __Facing, int) -> bool
+        # type: (str, Tuple[int, int, int], Literal[0, 1, 2, 3, 4, 5] | int, int) -> bool
         """
         判断方块是否可以放置
         """
@@ -281,7 +277,7 @@ class BlockInfoComponentServer(BaseComponent):
         pass
 
     def GetDestroyTotalTime(self, blockName, itemName=None, miningArgs=None):
-        # type: (str, Optional[str], __MiningArgs) -> float
+        # type: (str, str | None, __MiningArgs) -> float
         """
         获取使用物品破坏方块需要的时间
         """

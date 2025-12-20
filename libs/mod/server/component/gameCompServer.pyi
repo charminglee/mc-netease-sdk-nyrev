@@ -2,15 +2,12 @@
 
 
 from typing import Tuple
-from typing import Optional
 from mod.common.utils.timer import CallLater
 from typing import List
 from typing import Any, Callable, Literal, TypedDict
 from mod.common.component.baseComponent import BaseComponent
 
 
-__GameType = Literal[0, 1, 2]
-__GameDifficulty = Literal[0, 1, 2, 3]
 class _OptionInfoDict(TypedDict, total=False):
     pvp: bool
     show_coordinates: bool
@@ -47,62 +44,25 @@ class __ItemDict(TypedDict, total=False):
     modEnchantData: List[Tuple[str, int]]
     customTips: str
     extraId: str
-    userData: Optional[dict]
+    userData: dict | None
     durability: int
 class __ScoreDict(TypedDict, total=False):
     displayName: str
     name: str
     criteriaName: Literal["dummy"]
     value: int
-__ActorDamageCause = Literal[
-    "none",
-    "override",
-    "contact",
-    "entity_attack",
-    "projectile",
-    "suffocation",
-    "fall",
-    "fire",
-    "fire_tick",
-    "lava",
-    "drowning",
-    "block_explosion",
-    "entity_explosion",
-    "void",
-    "self_destruct",
-    "self_destruct",
-    "magic",
-    "wither",
-    "starve",
-    "anvil",
-    "thorns",
-    "falling_block",
-    "piston",
-    "fly_into_wall",
-    "magma",
-    "fireworks",
-    "lightning",
-    "freezing",
-    "stalactite",
-    "stalagmite",
-    "ram_attack",
-    "custom",
-    "sonic_boom",
-    "camp_fire",
-    "soul_camp_fire",
-]
 
 
 class GameComponentServer(BaseComponent):
     def GetGameType(self):
-        # type: () -> __GameType
+        # type: () -> Literal[0, 1, 2] | int
         """
         获取默认游戏模式
         """
         pass
 
     def GetGameDiffculty(self):
-        # type: () -> __GameDifficulty
+        # type: () -> Literal[0, 1, 2, 3] | int
         """
         获取游戏难度
         """
@@ -228,7 +188,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def GetPlayerGameType(self, playerId):
-        # type: (str) -> __GameType
+        # type: (str) -> Literal[0, 1, 2] | int
         """
         获取指定玩家的游戏模式
         """
@@ -249,7 +209,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def SetGameDifficulty(self, difficulty):
-        # type: (__GameDifficulty) -> bool
+        # type: (Literal[0, 1, 2, 3] | int) -> bool
         """
         设置游戏难度
         """
@@ -277,7 +237,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def SetDefaultGameType(self, gameType):
-        # type: (__GameType) -> bool
+        # type: (Literal[0, 1, 2] | int) -> bool
         """
         设置默认游戏模式
         """
@@ -375,7 +335,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def PlaceStructure(self, playerId, pos, structureName, dimensionId=-1, rotation=0, animationMode=0, animationTime=0, inculdeEntity=True, removeBlock=False, mirrorMode=0, integrity=100, seed=-1):
-        # type: (None, Tuple[float, float, float], str, int, Literal[0, 90, 180, 270], Literal[0, 1, 2], float, bool, bool, Literal[0, 1, 2, 3], float, int) -> bool
+        # type: (None, Tuple[float, float, float], str, int, Literal[0, 90, 180, 270] | int, Literal[0, 1, 2] | int, float, bool, bool, Literal[0, 1, 2, 3] | int, float, int) -> bool
         """
         放置结构
         """
@@ -480,7 +440,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def SetSpawnDimensionAndPosition(self, dimensionId=None, pos=None):
-        # type: (Optional[int], Optional[Tuple[int, int, int]]) -> bool
+        # type: (int | None, Tuple[int, int, int] | None) -> bool
         """
         设置世界出生点维度与坐标
         """
@@ -543,7 +503,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def GetEntityDamage(self, entityId, targetEntityId=None):
-        # type: (str, Optional[str]) -> float
+        # type: (str, str | None) -> float
         """
         获取生物(包括玩家)的攻击力
         """
@@ -564,7 +524,7 @@ class GameComponentServer(BaseComponent):
         pass
 
     def UseItemAttackEntity(self, itemDict, entityId, cause=None, attackerPos=None, knocked=False, customTag=None):
-        # type: (__ItemDict, str, __ActorDamageCause, Optional[Tuple[float, float, float]], bool, Optional[str]) -> __ItemDict
+        # type: (__ItemDict, str, Literal["none", "override", "contact", "entity_attack", "projectile", "suffocation", "fall", "fire", "fire_tick", "lava", "drowning", "block_explosion", "entity_explosion", "void", "self_destruct", "self_destruct", "magic", "wither", "starve", "anvil", "thorns", "falling_block", "piston", "fly_into_wall", "magma", "fireworks", "lightning", "freezing", "stalactite", "stalagmite", "ram_attack", "custom", "sonic_boom", "camp_fire", "soul_camp_fire"] | str | None, Tuple[float, float, float] | None, bool, str | None) -> __ItemDict
         """
         使用指定物品攻击某个实体。
         """

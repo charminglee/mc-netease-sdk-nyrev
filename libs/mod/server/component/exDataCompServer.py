@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from typing import Any
 from mod.common.component.baseComponent import BaseComponent
 
@@ -36,7 +35,7 @@ class ExDataCompServer(BaseComponent):
         pass
 
     def GetWholeExtraData(self):
-        # type: () -> Union[dict, None]
+        # type: () -> dict | None
         """
         获取完整的实体的自定义数据或者世界的自定义数据，获取实体数据时使用对应实体id创建组件，获取世界数据时使用levelId创建组件
         """

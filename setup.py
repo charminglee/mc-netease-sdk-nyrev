@@ -5,7 +5,7 @@
 #  ⠀
 #   Author: Nuoyan <https://github.com/charminglee>
 #   Email : 1279735247@qq.com
-#   Date  : 2025-12-20
+#   Date  : 2025-12-21
 #  ⠀
 # =================================================
 
@@ -14,19 +14,24 @@ from setuptools import setup, find_packages
 
 
 try:
-    long_description = open("README.md").read()
+    LONG_DESCR = open("README.md").read()
 except:
     try:
-        long_description = open("README.md", encoding="utf-8").read()
+        LONG_DESCR = open("README.md", encoding="utf-8").read()
     except:
-        long_description = "Netease ModSDK completion library revised version by Nuoyan.\nSee https://github.com/charminglee/mc-netease-sdk-nyrev"
+        LONG_DESCR = "Netease ModSDK completion library revised version by Nuoyan.\nSee https://github.com/charminglee/mc-netease-sdk-nyrev"
+
+
+MODSDK_VER = "3.6.0.64490"
+LIB_ROOT = "libs"
 
 
 setup(
     name="mc-netease-sdk-nyrev",
-    version="3.6.0.64490-4",
+    # version=MODSDK_VER + "-4",
+    version=MODSDK_VER + "a5",
     description="Netease ModSDK completion library revised version by Nuoyan",
-    long_description=long_description,
+    long_description=LONG_DESCR,
     long_description_content_type="text/markdown",
     author="Nuoyan",
     author_email="1279735247@qq.com",
@@ -38,10 +43,10 @@ setup(
         "Operating System :: OS Independent",
     ],
 
-    packages=find_packages(where="libs"),
+    packages=find_packages(LIB_ROOT),
+    package_dir={'': LIB_ROOT},
     include_package_data=True,
     package_data={'': ["*.pyi"]},
-    package_dir={'': "libs"},
 
     python_requires=">=2.7, <4",
     install_requires=[

@@ -5,7 +5,7 @@
 """
 
 
-from typing import Callable, Any, Union, List
+from typing import Callable, Any, List
 from mod.common.utils.timer import CallLater
 
 
@@ -109,7 +109,7 @@ def CloseAsyncTaskSlowCheck():
 
 
 def ConvertBsonToInt(input):
-	# type: (Union[dict, list, tuple, str, unicode]) -> Union[dict, list, tuple, str, unicode]
+	# type: (dict | list | tuple | str | unicode) -> dict | list | tuple | str | unicode
 	"""
 	递归转换输入数据中的所有bson.int64.Int64类型的对象为int类型
 
@@ -216,7 +216,7 @@ def GetModScriptRootDir(scriptRootName):
 
 
 def GetOnlineKey(uid):
-	# type: (Union[int, long]) -> str
+	# type: (int | long) -> str
 	"""
 	输入玩家uid，返回此玩家保存在redis中的在线标识的key
 
@@ -230,7 +230,7 @@ def GetOnlineKey(uid):
 
 
 def GetOnlineServerInfoOfMultiPlayers(uids, callback):
-	# type: (List[Union[int, long]], Callable) -> None
+	# type: (List[int | long], Callable) -> None
 	"""
 	获取多个玩家在线信息
 
@@ -243,7 +243,7 @@ def GetOnlineServerInfoOfMultiPlayers(uids, callback):
 
 
 def GetOnlineServerInfoOfPlayer(uid, callback):
-	# type: (Union[int, long], Callable) -> None
+	# type: (int | long, Callable) -> None
 	"""
 	获取玩家在线信息
 
@@ -266,7 +266,7 @@ def GetServerType():
 
 
 def GetWeekOnlineKey(uid, week):
-	# type: (Union[int, long], int) -> str
+	# type: (int | long, int) -> str
 	"""
 	输入玩家uid，返回此玩家保存在redis中的本周的在线时间
 
@@ -346,7 +346,7 @@ def StopYappiProfile(fileName):
 
 
 def ToPcUid(uid):
-	# type: (Union[int, long]) -> Union[int, long]
+	# type: (int | long) -> int | long
 	"""
 	将玩家的uid转换为pc平台的uid
 
@@ -360,7 +360,7 @@ def ToPcUid(uid):
 
 
 def ToPeUid(uid):
-	# type: (Union[int, long]) -> Union[int, long]
+	# type: (int | long) -> int | long]
 	"""
 	将玩家的uid转换为pe平台的uid
 
@@ -374,7 +374,7 @@ def ToPeUid(uid):
 
 
 def UnicodeConvert(input):
-	# type: (Union[dict, list, tuple, str, unicode]) -> Union[dict, list, tuple, str, unicode]
+	# type: (dict | list | tuple | str | unicode) -> dict | list | tuple | str | unicode
 	"""
 	递归转换输入数据中的所有unicode格式的字符串为utf-8格式
 

@@ -1,14 +1,13 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 
 
 class EntityDefinitionsCompServer(BaseComponent):
     def GetEntityNBTTags(self):
-        # type: () -> Union[dict, None]
+        # type: () -> dict | None
         """
         获取实体的NBT标签
         """

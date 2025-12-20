@@ -5,7 +5,7 @@
 """
 
 
-from typing import Callable, Union, Optional, Tuple
+from typing import Callable, Tuple
 
 
 def AddGetPlayerLockTask(func):
@@ -178,7 +178,7 @@ def GetOnlinePlayerNum():
 
 
 def GetPlatformUid(playerId):
-	# type: (str) -> Union[int, long, None]
+	# type: (str) -> int | long | None
 	"""
 	获取玩家登录端的uid，假如玩家从手机端登录，返回手机端的uid，否则返回PC端的uid
 
@@ -243,7 +243,7 @@ def GetPlayerNickname(playerId):
 
 
 def GetPlayerUid(playerId):
-	# type: (str) -> Union[int, long]
+	# type: (str) -> int | long
 	"""
 	获取玩家的uid
 
@@ -327,7 +327,7 @@ def HidePlayerMagicCircle(playerId, hide):
 
 
 def IsPlayerPeUser(playerId):
-	# type: (str) -> Optional[bool]
+	# type: (str) -> bool | None
 	"""
 	获取玩家是否从手机端登录
 

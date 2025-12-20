@@ -2,12 +2,12 @@
 
 
 from mod.client.plugin.illustratedBook.comp.baseComp import BaseComp
-from typing import Tuple, Optional, Any
+from typing import Tuple, Any
 
 
 class BasePage(object):
     def __init__(self, size = None, position = None):
-        # type: (Optional[Tuple[int, int]], Optional[Tuple[int, int]]) -> None
+        # type: (Tuple[int, int] | None, Tuple[int, int] | None) -> None
         """
             初始化页面
         """

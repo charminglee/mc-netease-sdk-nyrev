@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union, TypedDict, Any
+from typing import TypedDict, Any
 from mod.common.component.baseComponent import BaseComponent
 
 
@@ -40,7 +40,7 @@ class QueryVariableComponentClient(BaseComponent):
         pass
 
     def GetMolangValue(self, molangName):
-        # type: (str) -> Union[float, long]
+        # type: (str) -> float | long
         """
         获取实体molang变量的值
         """

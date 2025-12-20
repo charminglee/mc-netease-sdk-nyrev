@@ -5,11 +5,11 @@
 """
 
 
-from typing import Union, Callable
+from typing import Callable
 
 
 def AsyncExecuteWithOrderKey(dbName, orderKey, sql, params, callback):
-	# type: (str, Union[str, int], str, tuple, Callable) -> None
+	# type: (str, str | int, str, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，执行所有mysql操作。同AsyncExecute的区别是可以显示指定orderKey
 
@@ -25,7 +25,7 @@ def AsyncExecuteWithOrderKey(dbName, orderKey, sql, params, callback):
 
 
 def AsyncQueryWithOrderKey(dbName, orderKey, sql, params, callback):
-	# type: (str, Union[str, int], str, tuple, Callable) -> None
+	# type: (str, str | int, str, tuple, Callable) -> None
 	"""
 	添加一个异步mysql任务，执行mysql查询。同AsyncQuery区别是可以显示指定orderKey
 

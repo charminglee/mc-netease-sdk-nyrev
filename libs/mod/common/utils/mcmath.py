@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Union, List
+from typing import Tuple, List
 
 
 def Clamp(x, minVal, maxVal):
@@ -11,7 +11,7 @@ def Clamp(x, minVal, maxVal):
 
 class Vector3(object):
     def __init__(self, *args):
-        # type: (Union[float, Tuple[float, float, float]]) -> None
+        # type: (float | Tuple[float, float, float]) -> None
         self.x = 0.0 # type: float
         self.y = 0.0 # type: float
         self.z = 0.0 # type: float
@@ -94,28 +94,28 @@ class Vector3(object):
         pass
 
     def __add__(self, other):
-        # type: (Union['Vector3', float]) -> 'Vector3'
+        # type: ('Vector3' | None) -> 'Vector3'
         pass
 
     def __radd__(self, other):
-        # type: (Union['Vector3', float]) -> 'Vector3'
+        # type: ('Vector3' | None) -> 'Vector3'
         pass
 
     def __sub__(self, other):
-        # type: (Union['Vector3', float]) -> 'Vector3'
+        # type: ('Vector3' | None) -> 'Vector3'
         """ Returns the vector difference of self and other """
         pass
 
     def __rsub__(self, other):
-        # type: (Union['Vector3', float]) -> 'Vector3'
+        # type: ('Vector3' | None) -> 'Vector3'
         pass
 
     def __mul__(self, other):
-        # type: (Union['Vector3', float]) -> Union['Vector3', float]
+        # type: ('Vector3' | None) -> 'Vector3' | None
         pass
 
     def __rmul__(self, other):
-        # type: (Union['Vector3', float]) -> Union['Vector3', float]
+        # type: ('Vector3' | None) -> 'Vector3' | None
         pass
 
     def __div__(self, other):
@@ -145,7 +145,7 @@ class Vector3(object):
 
 class Quaternion(object):
     def __init__(self, *args):
-        # type: (Union[float, Tuple[float, float, float, float]]) -> None
+        # type: (float | Tuple[float, float, float, float]) -> None
         pass
 
     @staticmethod
@@ -211,27 +211,27 @@ class Quaternion(object):
         pass
 
     def __add__(self, other):
-        # type: (Union['Quaternion', float]) -> 'Quaternion'
+        # type: ('Quaternion' | float) -> 'Quaternion'
         pass
 
     def __radd__(self, other):
-        # type: (Union['Quaternion', float]) -> 'Quaternion'
+        # type: ('Quaternion' | float) -> 'Quaternion'
         pass
 
     def __sub__(self, other):
-        # type: (Union['Quaternion', float]) -> 'Quaternion'
+        # type: ('Quaternion' | float) -> 'Quaternion'
         pass
 
     def __rsub__(self, other):
-        # type: (Union['Quaternion', float]) -> 'Quaternion'
+        # type: ('Quaternion' | float) -> 'Quaternion'
         pass
 
     def __mul__(self, other):
-        # type: (Union['Quaternion', float]) -> Union['Quaternion', float]
+        # type: ('Quaternion' | float) -> 'Quaternion' | float
         pass
 
     def __rmul__(self, other):
-        # type: (Union['Quaternion', float]) -> Union['Quaternion', float]
+        # type: ('Quaternion' | float) -> 'Quaternion' | float
         pass
 
     def __div__(self, other):

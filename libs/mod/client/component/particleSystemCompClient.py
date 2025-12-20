@@ -1,21 +1,20 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional
+from typing import Tuple
 
 
 class ParticleSystemCompClient(BaseComponent):
     def Create(self, effect_name, offset=None, rotation=None):
-        # type: (str, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]]) -> int
+        # type: (str, Tuple[float, float, float] | None, Tuple[float, float, float] | None) -> int
         """
         创建粒子发射器, 创建后立即播放
         """
         pass
 
     def CreateBindEntityNew(self, effect_name, entity_id, bone_name='body', offset=None, rotation=None):
-        # type: (str, Union[str, int], str, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]]) -> int
+        # type: (str, str | int, str, Tuple[float, float, float] | None, Tuple[float, float, float] | None) -> int
         """
         创建粒子发射器并绑定到指定实体的指定骨骼上, 创建后立即播放
         """
@@ -29,14 +28,14 @@ class ParticleSystemCompClient(BaseComponent):
         pass
 
     def BindEntity(self, par_id, entity_id, bone_name='body', offset=None, rotation=None):
-        # type: (int, Union[str, int], str, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]]) -> bool
+        # type: (int, str | int, str, Tuple[float, float, float] | None, Tuple[float, float, float] | None) -> bool
         """
         绑定粒子发射器到指定实体的指定骨骼上
         """
         pass
 
     def BindModel(self, par_id, model_id, bone_name='root', offset=None, rotation=None):
-        # type: (int, int, str, Optional[Tuple[float, float, float]], Optional[Tuple[float, float, float]]) -> bool
+        # type: (int, int, str, Tuple[float, float, float] | None, Tuple[float, float, float] | None) -> bool
         """
         绑定粒子发射器到指定骨骼模型的指定骨骼上
         """
@@ -162,7 +161,7 @@ class ParticleSystemCompClient(BaseComponent):
         pass
 
     def SetPos(self, par_id, pos=None):
-        # type: (int, Optional[Tuple[float, float, float]]) -> bool
+        # type: (int, Tuple[float, float, float] | None) -> bool
         """
         设置粒子发射器位置
         """
@@ -176,14 +175,14 @@ class ParticleSystemCompClient(BaseComponent):
         pass
 
     def SetRot(self, par_id, rot=None):
-        # type: (int, Optional[Tuple[float, float, float]]) -> bool
+        # type: (int, Tuple[float, float, float] | None) -> bool
         """
         设置粒子发射器局部旋转
         """
         pass
 
     def SetRotUseZXY(self, par_id, rot=None):
-        # type: (int, Optional[Tuple[float, float, float]]) -> bool
+        # type: (int, Tuple[float, float, float] | None) -> bool
         """
         设置粒子发射器局部旋转，旋转顺序按照绕z,x,y轴旋转
         """

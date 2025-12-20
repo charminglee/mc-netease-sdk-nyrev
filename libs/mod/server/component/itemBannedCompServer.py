@@ -1,7 +1,6 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Union
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 
@@ -15,7 +14,7 @@ class ItemBannedCompServer(BaseComponent):
         pass
 
     def GetBannedItemList(self):
-        # type: () -> Union[List[str], None]
+        # type: () -> List[str] | None
         """
         获取禁用物品列表
         """

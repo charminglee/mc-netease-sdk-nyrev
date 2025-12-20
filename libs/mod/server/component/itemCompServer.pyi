@@ -3,7 +3,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Optional, TypedDict, Literal, Dict
+from typing import Tuple, TypedDict, Literal, Dict
 
 
 class __ItemDict(TypedDict, total=False):
@@ -17,15 +17,14 @@ class __ItemDict(TypedDict, total=False):
     modEnchantData: List[Tuple[str, int]]
     customTips: str
     extraId: str
-    userData: Optional[dict]
+    userData: dict | None
     durability: int
-__ItemPosType = Literal[0, 1, 2, 3]
 class __ItemBasicInfo(TypedDict, total=False):
     itemName: str
     maxStackSize: int
     maxDurability: int
     id_aux: int
-    tierDict: Optional[dict]
+    tierDict: dict | None
     itemCategory: Literal[
         "construction",
         "nature",
@@ -58,7 +57,7 @@ class __ItemBasicInfo(TypedDict, total=False):
     customItemType: str
     tags: List[str]
     customTips: str
-    itemTierLevel: Literal[-1, 0, 1, 2, 3, 4]
+    itemTierLevel: int
     fuelDuration: float
     foodNutrition: int
     foodSaturation: float
@@ -68,7 +67,6 @@ class __ItemBasicInfo(TypedDict, total=False):
     armorToughness: int
     armorKnockbackResistance: float
     enchant_slot_type: int
-__Facing = Literal[0, 1, 2, 3, 4, 5]
 class __EnchantDict(TypedDict, total=False):
     identifier: str
     description: str
@@ -131,14 +129,14 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetPlayerItem(self, posType, slotPos=0, getUserData=False):
-        # type: (__ItemPosType, int, bool) -> __ItemDict
+        # type: (Literal[0, 1, 2, 3] | int, int, bool) -> __ItemDict
         """
         获取玩家物品，支持获取背包，盔甲栏，副手以及主手物品
         """
         pass
 
     def ChangePlayerItemTipsAndExtraId(self, posType, slotPos=0, customTips='', extraId=''):
-        # type: (__ItemPosType, int, str, str) -> bool
+        # type: (Literal[0, 1, 2, 3] | int, int, str, str) -> bool
         """
         修改玩家物品的自定义tips和自定义标识符
         """
@@ -236,28 +234,28 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetPlayerAllItems(self, posType, getUserData=False):
-        # type: (__ItemPosType, bool) -> List[__ItemDict]
+        # type: (Literal[0, 1, 2, 3] | int, bool) -> List[__ItemDict]
         """
         获取玩家指定的槽位的批量物品信息
         """
         pass
 
     def SetPlayerAllItems(self, itemsDictMap):
-        # type: (Dict[Tuple[__ItemPosType, int], __ItemDict]) -> Dict[Tuple[__ItemPosType, int], bool]
+        # type: (Dict[Tuple[Literal[0, 1, 2, 3] | int, int], __ItemDict | None]) -> Dict[Tuple[int, int], bool]
         """
         添加批量物品信息到指定槽位
         """
         pass
 
     def GetEntityItem(self, posType, slotPos=0, getUserData=False):
-        # type: (__ItemPosType, int, bool) -> __ItemDict
+        # type: (Literal[0, 1, 2, 3] | int, int, bool) -> __ItemDict
         """
         获取生物物品，支持获取背包，盔甲栏，副手以及主手物品
         """
         pass
 
     def SetEntityItem(self, posType, itemDict, slotPos=0):
-        # type: (__ItemPosType, __ItemDict, int) -> bool
+        # type: (Literal[0, 1, 2, 3] | int, __ItemDict, int) -> bool
         """
         设置生物物品，建议开发者根据生物特性来进行设置，部分生物设置装备后可能不显示但是死亡后仍然会掉落所设置的装备
         """
@@ -348,49 +346,49 @@ class ItemCompServer(BaseComponent):
         pass
 
     def MayPlaceOn(self, identifier, auxValue, blockPos, facing):
-        # type: (str, int, Tuple[int, int, int], __Facing) -> bool
+        # type: (str, int, Tuple[int, int, int], Literal[0, 1, 2, 3, 4, 5] | int) -> bool
         """
         判断物品是否可以放到指定的位置上
         """
         pass
 
     def GetItemDurability(self, posType, slotPos):
-        # type: (__ItemPosType, int) -> int
+        # type: (Literal[0, 1, 2, 3] | int, int) -> int
         """
         获取指定槽位的物品耐久
         """
         pass
 
     def SetItemDurability(self, posType, slotPos, durability):
-        # type: (__ItemPosType, int, int) -> bool
+        # type: (Literal[0, 1, 2, 3] | int, int, int) -> bool
         """
         设置物品的耐久值
         """
         pass
 
     def GetItemDefenceAngle(self, posType, slotPos):
-        # type: (__ItemPosType, int) -> List[float]
+        # type: (Literal[0, 1, 2, 3] | int, int) -> List[float]
         """
         获取盾牌物品的抵挡角度范围
         """
         pass
 
     def SetItemDefenceAngle(self, posType, slotPos, angleLeft, angleRight):
-        # type: (__ItemPosType, int, float, float) -> bool
+        # type: (Literal[0, 1, 2, 3] | int, int, float, float) -> bool
         """
         设置盾牌物品的抵挡角度范围
         """
         pass
 
     def SetItemMaxDurability(self, posType, slotPos, maxDurability, isUserData):
-        # type: (__ItemPosType, int, int, bool) -> bool
+        # type: (Literal[0, 1, 2, 3] | int, int, int, bool) -> bool
         """
         设置物品的最大耐久值
         """
         pass
 
     def GetItemMaxDurability(self, posType, slotPos, isUserData):
-        # type: (__ItemPosType, int, bool) -> int
+        # type: (Literal[0, 1, 2, 3] | int, int, bool) -> int
         """
         获取指定槽位的物品耐最大耐久
         """

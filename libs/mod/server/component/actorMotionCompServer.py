@@ -1,44 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, Optional, Literal, Dict
+from typing import Tuple, Literal, Dict
 from mod.common.component.baseComponent import BaseComponent
-
-
-__TimeEaseType = Literal[
-    "linear",
-    "spring",
-    "in_quad",
-    "out_quad",
-    "in_out_quad",
-    "in_cubic",
-    "out_cubic",
-    "in_out_cubic",
-    "in_quart",
-    "out_quart",
-    "in_out_quart",
-    "in_quint",
-    "out_quint",
-    "in_out_quint",
-    "in_sine",
-    "out_sine",
-    "in_out_sine",
-    "in_expo",
-    "out_expo",
-    "in_out_expo",
-    "in_circ",
-    "out_circ",
-    "in_out_circ",
-    "in_bounce",
-    "out_bounce",
-    "in_out_bounce",
-    "in_back",
-    "out_back",
-    "in_out_back",
-    "in_elastic",
-    "out_elastic",
-    "in_out_elastic",
-]
 
 
 class ActorMotionComponentServer(BaseComponent):
@@ -71,14 +35,14 @@ class ActorMotionComponentServer(BaseComponent):
         pass
 
     def AddEntityTrackMotion(self, targetPos, duraTime, startPos=None, relativeCoord=False, isLoop=False, targetRot=None, startRot=None, useVelocityDir=False, ease='linear'):
-        # type: (Tuple[float, float, float], float, Optional[Tuple[float, float, float]], bool, bool, Optional[Tuple[float, float]], Optional[Tuple[float, float]], bool, __TimeEaseType) -> int
+        # type: (Tuple[float, float, float], float, Tuple[float, float, float] | None, bool, bool, Tuple[float, float] | None, Tuple[float, float] | None, bool, Literal["linear", "spring", "in_quad", "out_quad", "in_out_quad", "in_cubic", "out_cubic", "in_out_cubic", "in_quart", "out_quart", "in_out_quart", "in_quint", "out_quint", "in_out_quint", "in_sine", "out_sine", "in_out_sine", "in_expo", "out_expo", "in_out_expo", "in_circ", "out_circ", "in_out_circ", "in_bounce", "out_bounce", "in_out_bounce", "in_back", "out_back", "in_out_back", "in_elastic", "out_elastic", "in_out_elastic"] | str) -> int
         """
         给实体（不含玩家）添加轨迹运动器
         """
         pass
 
     def AddEntityVelocityMotion(self, velocity, accelerate=None, useVelocityDir=True):
-        # type: (Tuple[float, float, float], Optional[Tuple[float, float, float]], bool) -> int
+        # type: (Tuple[float, float, float], Tuple[float, float, float] | None, bool) -> int
         """
         给实体（不含玩家）添加速度运动器
         """
@@ -99,7 +63,7 @@ class ActorMotionComponentServer(BaseComponent):
         pass
 
     def GetEntityMotions(self):
-        # type: () -> Dict[int, Literal[0, 1, 2]]
+        # type: () -> Dict[int, Literal[0, 1, 2] | int]
         """
         获取实体（不含玩家）身上的所有运动器
         """
@@ -127,14 +91,14 @@ class ActorMotionComponentServer(BaseComponent):
         pass
 
     def AddPlayerTrackMotion(self, targetPos, duraTime, startPos=None, relativeCoord=False, isLoop=False, targetRot=None, startRot=None, useVelocityDir=False, ease='linear'):
-        # type: (Tuple[float, float, float], float, Optional[Tuple[float, float, float]], bool, bool, Optional[Tuple[float, float]], Optional[Tuple[float, float]], bool, __TimeEaseType) -> int
+        # type: (Tuple[float, float, float], float, Tuple[float, float, float] | None, bool, bool, Tuple[float, float] | None, Tuple[float, float] | None, bool, Literal["linear", "spring", "in_quad", "out_quad", "in_out_quad", "in_cubic", "out_cubic", "in_out_cubic", "in_quart", "out_quart", "in_out_quart", "in_quint", "out_quint", "in_out_quint", "in_sine", "out_sine", "in_out_sine", "in_expo", "out_expo", "in_out_expo", "in_circ", "out_circ", "in_out_circ", "in_bounce", "out_bounce", "in_out_bounce", "in_back", "out_back", "in_out_back", "in_elastic", "out_elastic", "in_out_elastic"] | str) -> int
         """
         给玩家添加轨迹运动器
         """
         pass
 
     def AddPlayerVelocityMotion(self, velocity, accelerate=None, useVelocityDir=True):
-        # type: (Tuple[float, float, float], Optional[Tuple[float, float, float]], bool) -> int
+        # type: (Tuple[float, float, float], Tuple[float, float, float] | None, bool) -> int
         """
         给玩家添加速度运动器
         """
@@ -155,7 +119,7 @@ class ActorMotionComponentServer(BaseComponent):
         pass
 
     def GetPlayerMotions(self):
-        # type: () -> Dict[int, Literal[0, 1, 2]]
+        # type: () -> Dict[int, Literal[0, 1, 2] | int]
         """
         获取玩家身上的所有运动器
         """

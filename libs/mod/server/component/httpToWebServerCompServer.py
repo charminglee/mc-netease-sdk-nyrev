@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Optional, Callable, Any
+from typing import Callable, Any
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
 
@@ -29,7 +29,7 @@ class HttpToWebServerCompServer(BaseComponent):
         pass
 
     def LobbySetStorageAndUserItem(self, callback, uid, orderId=None, entitiesGetter=None):
-        # type: (Callable[[dict], Any], int, Optional[int], Optional[Callable[[], List[dict]]]) -> None
+        # type: (Callable[[dict], Any], int, int | None, Callable[[], List[dict]] | None) -> None
         """
         设置订单已发货或者存数据。仅联机大厅可用
         """

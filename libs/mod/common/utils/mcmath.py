@@ -1,7 +1,8 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Tuple, List
+from typing import Tuple, List, Any
+import math
 
 
 def Clamp(x, minVal, maxVal):
@@ -12,9 +13,9 @@ def Clamp(x, minVal, maxVal):
 class Vector3(object):
     def __init__(self, *args):
         # type: (float | Tuple[float, float, float]) -> None
-        self.x = 0.0 # type: float
-        self.y = 0.0 # type: float
-        self.z = 0.0 # type: float
+        self._x = 0.0 # type: float
+        self._y = 0.0 # type: float
+        self._z = 0.0 # type: float
 
     @staticmethod
     def One():
@@ -50,6 +51,21 @@ class Vector3(object):
     def Backward():
         # type: () -> 'Vector3'
         pass
+
+    @property
+    def x(self):
+        # type: () -> float
+        return self._x
+
+    @property
+    def y(self):
+        # type: () -> float
+        return self._y
+
+    @property
+    def z(self):
+        # type: () -> float
+        return self._z
 
     def Normalized(self):
         # type: () -> 'Vector3'
@@ -94,28 +110,28 @@ class Vector3(object):
         pass
 
     def __add__(self, other):
-        # type: ('Vector3' | None) -> 'Vector3'
+        # type: ('Vector3' | float) -> 'Vector3'
         pass
 
     def __radd__(self, other):
-        # type: ('Vector3' | None) -> 'Vector3'
+        # type: ('Vector3' | float) -> 'Vector3'
         pass
 
     def __sub__(self, other):
-        # type: ('Vector3' | None) -> 'Vector3'
+        # type: ('Vector3' | float) -> 'Vector3'
         """ Returns the vector difference of self and other """
         pass
 
     def __rsub__(self, other):
-        # type: ('Vector3' | None) -> 'Vector3'
+        # type: ('Vector3' | float) -> 'Vector3'
         pass
 
     def __mul__(self, other):
-        # type: ('Vector3' | None) -> 'Vector3' | None
+        # type: ('Vector3' | float) -> 'Vector3'
         pass
 
     def __rmul__(self, other):
-        # type: ('Vector3' | None) -> 'Vector3' | None
+        # type: ('Vector3' | float) -> 'Vector3'
         pass
 
     def __div__(self, other):
@@ -123,11 +139,11 @@ class Vector3(object):
         pass
 
     def __eq__(self, other):
-        # type: ('Vector3') -> bool
+        # type: (Any) -> bool
         pass
 
     def __ne__(self, other):
-        # type: ('Vector3') -> bool
+        # type: (Any) -> bool
         pass
 
     def __repr__(self):
@@ -144,9 +160,35 @@ class Vector3(object):
 
 
 class Quaternion(object):
+    M_DEGTORAD = math.pi / 180.0
+    M_RADTODEG = 1.0 / M_DEGTORAD
+
     def __init__(self, *args):
         # type: (float | Tuple[float, float, float, float]) -> None
-        pass
+        self._x = 0.0 # type: float
+        self._y = 0.0 # type: float
+        self._z = 0.0 # type: float
+        self._w = 0.0 # type: float
+
+    @property
+    def x(self):
+        # type: () -> float
+        return self._x
+
+    @property
+    def y(self):
+        # type: () -> float
+        return self._y
+
+    @property
+    def z(self):
+        # type: () -> float
+        return self._z
+
+    @property
+    def w(self):
+        # type: () -> float
+        return self._w
 
     @staticmethod
     def Euler(roll=0.0, pitch=0.0, yaw=0.0):
@@ -156,6 +198,16 @@ class Quaternion(object):
     @staticmethod
     def AngleAxis(angle=0.0, axis=Vector3.Up()):
         # type: (float, Vector3) -> 'Quaternion'
+        pass
+
+    @staticmethod
+    def RotationTo(start=Vector3.Up(), end=Vector3.Up()):
+        # type: (Vector3, Vector3) -> 'Quaternion'
+        pass
+
+    @staticmethod
+    def LookDirection(direction=Vector3.Backward(), up=Vector3.Up()):
+        # type: (Vector3, Vector3) -> 'Quaternion'
         pass
 
     @staticmethod
@@ -178,6 +230,25 @@ class Quaternion(object):
         # type: ('Quaternion') -> 'Quaternion'
         pass
 
+    @property
+    def roll(self):
+        # type: () -> float
+        return 0.0
+
+    @property
+    def pitch(self):
+        # type: () -> float
+        return 0.0
+
+    @property
+    def yaw(self):
+        # type: () -> float
+        return 0.0
+
+    def HasRotation(self):
+        # type: () -> bool
+        pass
+
     def Length(self):
         # type: () -> float
         pass
@@ -190,6 +261,10 @@ class Quaternion(object):
         # type: () -> Tuple[float, float, float, float]
         pass
 
+    def wxyz(self):
+        # type: () -> List[float, float, float, float]
+        pass
+
     def Normalized(self):
         # type: () -> 'Quaternion'
         pass
@@ -199,7 +274,11 @@ class Quaternion(object):
         pass
 
     def EulerAngles(self):
-        # type: () -> Tuple[float, float, float]
+        # type: () -> Vector3
+        pass
+
+    def EulerAnglesZYX(self):
+        # type: () -> Vector3
         pass
 
     def __neg__(self):
@@ -227,11 +306,11 @@ class Quaternion(object):
         pass
 
     def __mul__(self, other):
-        # type: ('Quaternion' | float) -> 'Quaternion' | float
+        # type: ('Quaternion' | Vector3 | float) -> 'Quaternion' | Vector3
         pass
 
     def __rmul__(self, other):
-        # type: ('Quaternion' | float) -> 'Quaternion' | float
+        # type: ('Quaternion' | Vector3 | float) -> 'Quaternion' | Vector3
         pass
 
     def __div__(self, other):
@@ -239,11 +318,11 @@ class Quaternion(object):
         pass
 
     def __eq__(self, other):
-        # type: ('Quaternion') -> bool
+        # type: (Any) -> bool
         pass
 
     def __ne__(self, other):
-        # type: ('Quaternion') -> bool
+        # type: (Any) -> bool
         pass
 
     def __repr__(self):
@@ -259,7 +338,9 @@ class Matrix(object):
     # Creates a matrix of size numRows * numCols initialized to 0
     def __init__(self, rowNum, colNum):
         # type: (int, int) -> None
-        pass
+        self._data = None  # type: List[float] | None
+        self._row = rowNum # type: int
+        self._col = colNum # type: int
 
     # Create A Identity Matrix  of rowNum * rowNum
     @staticmethod

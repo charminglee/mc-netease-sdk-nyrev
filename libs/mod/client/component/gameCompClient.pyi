@@ -194,14 +194,14 @@ class GameComponentClient(BaseComponent):
     def GetCurrentAirSupply(self, entityId):
         # type: (str) -> int
         """
-        玩家当前氧气储备值
+        生物当前氧气储备值
         """
         pass
 
     def GetMaxAirSupply(self, entityId):
         # type: (str) -> int
         """
-        玩家最大氧气储备值
+        生物最大氧气储备值
         """
         pass
 
@@ -226,10 +226,24 @@ class GameComponentClient(BaseComponent):
         """
         pass
 
+    def GetEntitiesAroundForClientEntity(self, entityId, radius, filters):
+        # type: (str, int, dict) -> List[str]
+        """
+        获取区域内的客户端实体列表
+        """
+        pass
+
     def GetEntitiesInSquareArea(self, entityId, startPos, endPos):
         # type: (None, Tuple[int, int, int], Tuple[int, int, int]) -> List[str]
         """
         获取区域内的entity列表
+        """
+        pass
+
+    def GetEntitiesInSquareAreaForClientEntity(self, startPos, endPos):
+        # type: (Tuple[int, int, int], Tuple[int, int, int]) -> List[str]
+        """
+        获取区域内的客户端实体列表
         """
         pass
 

@@ -478,9 +478,23 @@ class GameComponentServer(BaseComponent):
         """
         pass
 
-    def UseItemAttackEntity(self, itemDict, entityId, cause=None, attackerPos=None, knocked=False, customTag=None):
-        # type: (Dict[str, str | int | bool | list | dict | None] | None, str, Literal["none", "override", "contact", "entity_attack", "projectile", "suffocation", "fall", "fire", "fire_tick", "lava", "drowning", "block_explosion", "entity_explosion", "void", "self_destruct", "self_destruct", "magic", "wither", "starve", "anvil", "thorns", "falling_block", "piston", "fly_into_wall", "magma", "fireworks", "lightning", "freezing", "stalactite", "stalagmite", "ram_attack", "custom", "sonic_boom", "camp_fire", "soul_camp_fire"] | str | None, Tuple[float, float, float] | None, bool, str | None) -> Dict[str, str | int | bool | list | dict | None]
+    def UseItemAttackEntity(self, itemDict, entityId, cause=None, attackerPos=None, knocked=False, customTag=None, damageFormula=None):
+        # type: (Dict[str, str | int | bool | list | dict | None], str, Literal["none", "override", "contact", "entity_attack", "projectile", "suffocation", "fall", "fire", "fire_tick", "lava", "drowning", "block_explosion", "entity_explosion", "void", "self_destruct", "self_destruct", "magic", "wither", "starve", "anvil", "thorns", "falling_block", "piston", "fly_into_wall", "magma", "fireworks", "lightning", "freezing", "stalactite", "stalagmite", "ram_attack", "custom", "sonic_boom", "camp_fire", "soul_camp_fire"] | str | None, Tuple[float, float, float] | None, bool, str | None, str | None) -> Dict[str, str | int | bool | list | dict | None]
         """
         使用指定物品攻击某个实体。
+        """
+        pass
+
+    def EntityUseItemToPos(self, entityId, itemDict, pos, facing):
+        # type: (str, Dict[str, str | int | bool | list | dict | None], Tuple[int, int, int], Literal[0, 1, 2, 3, 4, 5] | int) -> Dict[str, str | int | bool | list | dict | None]
+        """
+        模拟实体对某个坐标使用指定物品。
+        """
+        pass
+
+    def UseItemToEntity(self, itemDict, entityId):
+        # type: (Dict[str, str | int | bool | list | dict | None], str) -> Dict[str, str | int | bool | list | dict | None]
+        """
+        模拟对某个实体使用物品。
         """
         pass

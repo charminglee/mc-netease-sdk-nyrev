@@ -19,3 +19,10 @@ class PosComponentClient(object):
         """
         pass
 
+    def SetPosForClientEntity(self, pos):
+        # type: (Tuple[float, float, float]) -> bool
+        """
+        设置客户端实体位置。
+        """
+        pass
+

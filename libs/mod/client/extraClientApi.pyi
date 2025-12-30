@@ -254,84 +254,11 @@ def SetResponse(response):
     """
     pass
 
-class __MinecraftEnumModule:
-    ActorDamageCause = minecraftEnum.ActorDamageCause
-    AniCheatBlockBreak = minecraftEnum.AniCheatBlockBreak
-    AniCheatConsts = minecraftEnum.AniCheatConsts
-    AniCheatMove = minecraftEnum.AniCheatMove
-    AniCheatMoveRewind = minecraftEnum.AniCheatMoveRewind
-    AnimationModeType = minecraftEnum.AnimationModeType
-    ArmorSlotType = minecraftEnum.ArmorSlotType
-    AttrType = minecraftEnum.AttrType
-    AttributeBuffType = minecraftEnum.AttributeBuffType
-    BiomeType = minecraftEnum.BiomeType
-    BlockBreathability = minecraftEnum.BlockBreathability
-    BrewingStandSlotType = minecraftEnum.BrewingStandSlotType
-    ButtonEventType = minecraftEnum.ButtonEventType
-    ButtonState = minecraftEnum.ButtonState
-    CatVariantType = minecraftEnum.CatVariantType
-    Change = minecraftEnum.Change
-    ColorCode = minecraftEnum.ColorCode
-    CommandBlockType = minecraftEnum.CommandBlockType
-    ConditionType = minecraftEnum.ConditionType
-    ContainerType = minecraftEnum.ContainerType
-    EffectType = minecraftEnum.EffectType
-    EnchantSlotType = minecraftEnum.EnchantSlotType
-    EnchantType = minecraftEnum.EnchantType
-    EntityColorType = minecraftEnum.EntityColorType
-    EntityComponentType = minecraftEnum.EntityComponentType
-    EntityTeleportCause = minecraftEnum.EntityTeleportCause
-    EntityType = minecraftEnum.EntityType
-    Facing = minecraftEnum.Facing
-    FoxType = minecraftEnum.FoxType
-    GameDiffculty = minecraftEnum.GameDiffculty
-    GameType = minecraftEnum.GameType
-    GamepadKeyType = minecraftEnum.GamepadKeyType
-    HorseSpotType = minecraftEnum.HorseSpotType
-    HorseType = minecraftEnum.HorseType
-    InputMode = minecraftEnum.InputMode
-    InventoryType = minecraftEnum.InventoryType
-    ItemAcquisitionMethod = minecraftEnum.ItemAcquisitionMethod
-    ItemCategory = minecraftEnum.ItemCategory
-    ItemColor = minecraftEnum.ItemColor
-    ItemPosType = minecraftEnum.ItemPosType
-    ItemType = minecraftEnum.ItemType
-    ItemUseMethodEnum = minecraftEnum.ItemUseMethodEnum
-    KeyBoardType = minecraftEnum.KeyBoardType
-    MirrorModeType = minecraftEnum.MirrorModeType
-    OpenContainerId = minecraftEnum.OpenContainerId
-    OptionId = minecraftEnum.OptionId
-    OriginGUIName = minecraftEnum.OriginGUIName
-    PermissionChangeCause = minecraftEnum.PermissionChangeCause
-    PistonFacing = minecraftEnum.PistonFacing
-    PlayerActionType = minecraftEnum.PlayerActionType
-    PlayerExhauseRatioType = minecraftEnum.PlayerExhauseRatioType
-    PlayerUISlot = minecraftEnum.PlayerUISlot
-    RayFilterType = minecraftEnum.RayFilterType
-    RedstoneModeType = minecraftEnum.RedstoneModeType
-    RenderControllerArrayType = minecraftEnum.RenderControllerArrayType
-    RenderLayer = minecraftEnum.RenderLayer
-    SetBlockType = minecraftEnum.SetBlockType
-    ShapeType = minecraftEnum.ShapeType
-    SliderOptionId = minecraftEnum.SliderOptionId
-    StructureFeatureType = minecraftEnum.StructureFeatureType
-    TimeEaseType = minecraftEnum.TimeEaseType
-    TouchEvent = minecraftEnum.TouchEvent
-    TradeLevelType = minecraftEnum.TradeLevelType
-    TransferServerFailReason = minecraftEnum.TransferServerFailReason
-    UICategory = minecraftEnum.UICategory
-    UiBaseLayer = minecraftEnum.UiBaseLayer
-    UseAnimation = minecraftEnum.UseAnimation
-    VillagerClothingType = minecraftEnum.VillagerClothingType
-    VirtualWorldObjectType = minecraftEnum.VirtualWorldObjectType
-    WalkState = minecraftEnum.WalkState
-
 def GetMinecraftEnum():
-    # type: () -> __MinecraftEnumModule
+    # type: () -> minecraftEnum._MinecraftEnumModule
     """
     用于获取枚举值文档中的枚举值
     """
-    pass
 
 def GetClientSystemCls():
     # type: () -> Type[ClientSystem]

@@ -18,23 +18,24 @@ from mod.server.component.nameCompServer import NameComponentServer
 from mod.server.component.bulletAttributesCompServer import BulletAttributesComponentServer
 from mod.server.component.dimensionCompServer import DimensionCompServer
 from mod.server.component.mobSpawnCompServer import MobSpawnComponentServer
+from mod.server.component.redStoneCompServer import RedStoneComponentServer
 from mod.server.component.levelCompServer import LevelComponentServer
 from mod.server.component.timeCompServer import TimeComponentServer
 from mod.server.component.aiCommandCompServer import AiCommandComponentServer
 from mod.server.component.chunkSourceComp import ChunkSourceCompServer
-from mod.server.component.biomeCompServer import BiomeCompServer
 from mod.server.component.chestContainerCompServer import ChestContainerCompServer
 from mod.server.component.tameCompServer import TameComponentServer
 from mod.server.component.petCompServer import PetComponentServer
 from mod.server.component.lootCompServer import LootComponentServer
-from mod.server.component.blockStateCompServer import BlockStateComponentServer
+from mod.server.component.engineTypeCompServer import EngineTypeComponentServer
 from mod.server.component.collisionBoxCompServer import CollisionBoxComponentServer
-from mod.server.component.redStoneCompServer import RedStoneComponentServer
+from mod.server.component.biomeCompServer import BiomeCompServer
 from mod.server.component.rotCompServer import RotComponentServer
 from mod.server.component.modelCompServer import ModelComponentServer
 from mod.server.component.moveToCompServer import MoveToComponentServer
 from mod.server.component.gameCompServer import GameComponentServer
-from mod.server.component.engineTypeCompServer import EngineTypeComponentServer
+from mod.server.component.domainGameCompServer import DomainGameCompServer
+from mod.server.component.blockStateCompServer import BlockStateComponentServer
 from mod.server.component.rideCompServer import RideCompServer
 from mod.server.component.httpToWebServerCompServer import HttpToWebServerCompServer
 from mod.server.component.actorPushableCompServer import ActorPushableCompServer
@@ -43,12 +44,13 @@ from mod.server.component.weatherCompServer import WeatherComponentServer
 from mod.server.component.interactCompServer import InteractComponentServer
 from mod.server.component.projectileCompServer import ProjectileComponentServer
 from mod.server.component.attrCompServer import AttrCompServer
-from mod.server.component.exDataCompServer import ExDataCompServer
+from mod.server.component.shareableCompServer import ShareableComponentServer
 from mod.server.component.itemBannedCompServer import ItemBannedCompServer
 from mod.server.component.breathCompServer import BreathCompServer
 from mod.server.component.controlAiCompServer import ControlAiCompServer
 from mod.server.component.playerCompServer import PlayerCompServer
 from mod.server.component.chatExtensionCompServer import ChatExtensionComponentServer
+from mod.server.component.physxCompServer import PhysxComponentServer
 from mod.server.component.entityDefinitionsCompServer import EntityDefinitionsCompServer
 from mod.server.component.explosionCompServer import ExplosionComponentServer
 from mod.server.component.persistenceCompServer import PersistenceCompServer
@@ -66,7 +68,7 @@ from mod.server.component.actorOwnerCompServer import ActorOwnerComponentServer
 from mod.server.component.entityComponentServer import EntityComponentServer
 from mod.server.component.featureCompServer import FeatureCompServer
 from mod.server.component.modAttrCompServer import ModAttrComponentServer
-from mod.server.component.shareableCompServer import ShareableComponentServer
+from mod.server.component.exDataCompServer import ExDataCompServer
 from mod.server.component.blockUseEventWhiteListCompServer import BlockUseEventWhiteListComponentServer
 from mod.server.component.actorLootCompServer import ActorLootComponentServer
 
@@ -251,6 +253,13 @@ class EngineCompFactoryServer(object):
         # type: (str | int) -> DimensionCompServer
         """
         创建dimension组件
+        """
+        pass
+
+    def CreateDomainGame(self):
+        # type: () -> DomainGameCompServer
+        """
+        创建山头服组件
         """
         pass
 
@@ -440,6 +449,13 @@ class EngineCompFactoryServer(object):
         # type: (str | int) -> PetComponentServer
         """
         创建pet组件
+        """
+        pass
+
+    def CreatePhysx(self):
+        # type: () -> PhysxComponentServer
+        """
+        创建Physx组件
         """
         pass
 

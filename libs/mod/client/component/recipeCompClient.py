@@ -20,3 +20,10 @@ class RecipeCompClient(BaseComponent):
         """
         pass
 
+    def GetRecipeByRecipeId(self, recipeId, tag="crafting_table"):
+        # type: (str, str) -> dict
+        """
+        根据配方id查询配方内容。
+        """
+        pass
+

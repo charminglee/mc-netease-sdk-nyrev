@@ -76,6 +76,34 @@ class PlayerViewCompClient(BaseComponent):
         """
         pass
 
+    def GetKeyMappings(self, name):
+        # type: (str) -> int
+        """
+        获取指定的自定义按键映射配置
+        """
+        pass
+
+    def RegisterCustomKeyMapping(self, name, key, category):
+        # type: (str, int, str) -> bool
+        """
+        注册自定义按键映射
+        """
+        pass
+
+    def GetGamepadKeyMappings(self, name):
+        # type: (str) -> int
+        """
+        获取自定义手柄按键映射
+        """
+        pass
+
+    def RegisterCustomGamepadMapping(self, name, key, category):
+        # type: (str, int, str) -> bool
+        """
+        注册自定义手柄按键映射
+        """
+        pass
+
     def GetSliderOption(self, optionId):
         # type: (Literal["MOUSE_SENSITIVITY", "MOUSE_SPYGLASS_DAMPING", "GAMEPAD_SENSITIVITY", "GAMEPAD_SPYGLASS_DAMPING", "GAMEPAD_CURSOR_SENSITIVITY", "TOUCH_SENSITIVITY", "TOUCH_SPYGLASS_DAMPING", "DPAD_SCALE", "GAMMA", "INTERFACE_OPACITY", "FIELD_OF_VIEW"] | str) -> float
         """

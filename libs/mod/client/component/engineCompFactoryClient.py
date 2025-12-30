@@ -1,24 +1,25 @@
 # -*- coding: utf-8 -*-
 
 
-from typing import Any
 from mod.client.component.skyRenderCompClient import SkyRenderCompClient
 from mod.client.component.frameAniTransComp import FrameAniTransComp
 from mod.client.component.actorRenderCompClient import ActorRenderCompClient
 from mod.client.component.actionCompClient import ActionCompClient
 from mod.client.component.itemCompClient import ItemCompClient
-from mod.client.component.frameAniControlComp import FrameAniControlComp
+from mod.client.component.blockGeometryCompClient import BlockGeometryCompClient
 from mod.client.component.attrCompClient import AttrCompClient
+from mod.client.component.physxCompClient import PhysxComponentClient
 from mod.client.component.textNotifyCompClient import TextNotifyComponet
 from mod.client.component.particleSkeletonBindComp import ParticleSkeletonBindComp
 from mod.client.component.playerViewCompClient import PlayerViewCompClient
+from typing import Any
 from mod.client.component.queryVariableCompClient import QueryVariableComponentClient
 from mod.client.component.effectCompClient import EffectComponentClient
 from mod.client.component.particleEntityBindComp import ParticleEntityBindComp
 from mod.client.component.virtualWorldCompClient import VirtualWorldCompClient
 from mod.client.component.cameraCompClient import CameraComponentClient
 from mod.client.component.engineTypeCompClient import EngineTypeComponentClient
-from mod.client.component.blockGeometryCompClient import BlockGeometryCompClient
+from mod.client.component.frameAniControlComp import FrameAniControlComp
 from mod.client.component.actorMotionCompClient import ActorMotionComponentClient
 from mod.client.component.frameAniSkeletonBindComp import FrameAniSkeletonBindComp
 from mod.client.component.healthCompClient import HealthComponentClient
@@ -47,7 +48,7 @@ from mod.client.component.postProcessControlComp import PostProcessComponent
 from mod.client.component.auxValueCompClient import AuxValueComponentClient
 from mod.client.component.brightnessCompClient import BrightnessCompClient
 from mod.client.component.deviceCompClient import DeviceCompClient
-from mod.client.component.frameAniEntityBindComp import FrameAniEntityBindComp
+from mod.client.component.playerAnimCompClient import PlayerAnimCompClient
 from mod.client.component.operationCompClient import OperationCompClient
 from mod.client.component.chunkSourceCompClient import ChunkSourceCompClient
 from mod.client.component.rotCompClient import RotComponentClient
@@ -56,7 +57,7 @@ from mod.client.component.collisionBoxCompClient import CollisionBoxComponentCli
 from mod.client.component.particleControlComp import ParticleControlComp
 from mod.client.component.tameCompClient import TameComponentClient
 from mod.client.component.modAttrCompClient import ModAttrComponentClient
-from mod.client.component.playerAnimCompClient import PlayerAnimCompClient
+from mod.client.component.frameAniEntityBindComp import FrameAniEntityBindComp
 from mod.client.component.achievementCompClient import AchievementCompClient
 from mod.client.component.dimensionCompClient import DimensionCompClient
 
@@ -353,6 +354,13 @@ class EngineCompFactoryClient(object):
         # type: (str | int) -> ParticleTransComp
         """
         创建particleTrans组件
+        """
+        pass
+
+    def CreatePhysx(self, entityId):
+        # type: (str) -> PhysxComponentClient
+        """
+        创建Physx组件
         """
         pass
 

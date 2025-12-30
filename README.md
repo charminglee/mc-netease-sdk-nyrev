@@ -1,7 +1,7 @@
 <div align="center">
 
   # 网易我的世界 [ModSDK](https://mc.163.com/dev/index.html) 补全库修正版  
-  **已更新至 3.6 版本，支持 Python2 与 Python3**
+  **已更新至 3.7 版本，支持 Python2 与 Python3**
 
 </div>
 
@@ -19,33 +19,32 @@ pip install mc-netease-sdk-nyrev
 
 1. 移除所有接口返回值类型上的单引号。
 2. 删除文档注释中多余的网址。
-3. 补充`BaseUIControl.__init__()`。
-4. 补充`ScreenNode.__init__()`。
-5. 修复`EngineCompFactoryClient.CreateDrawing()`的返回值类型错误导致无法补全的问题。
-6. 修复`EngineCompFactoryClient.CreateDimension()`的返回值类型错误导致无法补全的问题。
-7. 修复`DrawingCompClient`一系列接口的返回值类型错误导致无法补全的问题。
-8. 补充`mcmath`模块的类型注解。
-9. 补充`mod`模块的类型注解。
-10. 优化`baseSystem`模块的类型注解。
-11. 补充`BlockEntityData`的类型注解。
-12. 补充`CustomUIControlProxy`的类型注解。
-13. 补充`CustomUIScreenProxy`的类型注解。
-14. 补充缺失的`miniMapBaseScreen`模块。
-15. 补充`NativeScreenManager`的类型注解。
-16. 补充`ViewBinder`的类型注解。
-17. 优化`BaseUIControl`的类型注解。
-18. 优化`ButtonUIControl`的类型注解。
-19. 优化`NeteaseComboBoxUIControl`的类型注解。
-20. 优化`NeteasePaperDollUIControl`的类型注解。
-21. 优化`SelectionWheelUIControl`的类型注解。
-22. 优化`extraClientApi`模块的类型注解。
-23. 优化`extraServerApi`模块的类型注解。
-24. 优化各component类的类型注解。
-25. 修复`NativeScreenManager`的补全问题。
-26. 用`Literal`显式表示枚举值参数。
-27. 优化`illustratedBook`各模块的类型注解。
-28. 优化了`apolloCommon`、`lobby`、`lobbyGame`、`master`、`service`各模块的类型注解。
-29. 补充富文本控件实例`RichTextItem`相关补全。
+3. 补充`mcmath`模块的类型注解。
+4. 补充`mod`模块的类型注解。
+5. 优化`baseSystem`模块的类型注解。
+6. 优化各component类的类型注解。
+7. 补充缺失的`miniMapBaseScreen`模块。
+8. 优化`extraClientApi`模块的类型注解。
+9. 优化`extraServerApi`模块的类型注解。
+10. 优化`illustratedBook`各模块的类型注解。
+11. 优化了`apolloCommon`、`lobby`、`lobbyGame`、`master`、`service`各模块的类型注解。
+12. 补充`BaseUIControl.__init__()`。
+13. 补充`ScreenNode.__init__()`。
+14. 修复`EngineCompFactoryClient.CreateDrawing()`的返回值类型错误导致无法补全的问题。
+15. 修复`EngineCompFactoryClient.CreateDimension()`的返回值类型错误导致无法补全的问题。
+16. 修复`DrawingCompClient`一系列接口的返回值类型错误导致无法补全的问题。
+17. 补充`BlockEntityData`的类型注解。
+18. 补充`CustomUIControlProxy`的类型注解。
+19. 补充`CustomUIScreenProxy`的类型注解。
+20. 补充`NativeScreenManager`的类型注解。
+21. 补充`ViewBinder`的类型注解。
+22. 优化`BaseUIControl`的类型注解。
+23. 优化`ButtonUIControl`的类型注解。
+24. 优化`NeteaseComboBoxUIControl`的类型注解。
+25. 优化`NeteasePaperDollUIControl`的类型注解。
+26. 优化`SelectionWheelUIControl`的类型注解。
+27. 修复`NativeScreenManager`的补全问题。
+28. 补充富文本控件实例`RichTextItem`相关补全。
 
 ### 其他修正
 

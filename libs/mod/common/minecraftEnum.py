@@ -1308,6 +1308,9 @@ class OriginGUIName(object):
     DestroyOrAttackBtn = "binding.area.destroy_or_attack" # 破坏/攻击按钮
     BuildOrInteractBtn = "binding.area.build_or_interact" # 建造/交互按钮
     MoveStickBtn = "binding.area.default_move_stick_area" # 新触控摇杆按钮
+    WalkState = "binding.area.walkstate"  # 方向键模式下强制疾跑按钮
+    MobEffects = "binding.area.mobeffects"  # buff状态
+    Emote = "binding.area.emote"  # 表情按钮
 
 class PermissionChangeCause(object):
     ProgrammingInterfaceCaused = 1 	#  API变更
@@ -1383,6 +1386,35 @@ class PlayerUISlot(object):
     SmithingTableInput = 51 # 锻造台输入位
     SmithingTableMaterial = 52 # 锻造台材料位
     SmithingTableTemplate = 53 # 锻造台模板位
+
+class PxActorFlag(object):
+    eDISABLE_GRAVITY = (1 << 1)     # 禁用重力
+    eDISABLE_SIMULATION = (1 << 3)  # 禁用物理模拟
+
+class PxEventMask(object):
+    Null = 0x0          # 不需要碰撞事件。若不为Null，则Found或Lost必须有一个，Server或Client必须有一个
+    Found = 0x1         # 需要接触开始事件
+    Found_Detail = 0x2  # 接触开始事件需要附带碰撞点与法线信息。性能消耗较大。
+    Lost = 0x4          # 需要接触结束事件
+    Server = 0x8        # 需要服务器事件
+    Client = 0x10       # 需要客户端事件
+
+class PxForceMode(object):
+    eFORCE = 0              # 力，单位为质量 × 距离 / 时间²
+    eIMPULSE = 1            # 冲量，单位为质量 × 距离 / 时间
+    eVELOCITY_CHANGE = 2    # 速度变化，单位为距离 / 时间，直接改变速度，与质量无关
+    eACCELERATION = 3       # 加速度，单位为距离 / 时间²，直接施加加速度，与质量无关
+
+class PxRigidBodyFlag(object):
+    eKINEMATIC = (1 << 0)   # 设置刚体的运动学模式。运动学刚体不受力的影响，使用setKinematicTarget控制移动
+
+class PxRigidDynamicLockFlag(object):
+    eLOCK_LINEAR_X = (1 << 0)   # 锁定x轴平移
+    eLOCK_LINEAR_Y = (1 << 1)   # 锁定y轴平移
+    eLOCK_LINEAR_Z = (1 << 2)   # 锁定z轴平移
+    eLOCK_ANGULAR_X = (1 << 3)  # 锁定x轴旋转
+    eLOCK_ANGULAR_Y = (1 << 4)  # 锁定y轴旋转
+    eLOCK_ANGULAR_Z = (1 << 5)  # 锁定z轴旋转
 
 class RayFilterType(object):
     OnlyEntities = 1 << 0 #仅检测实体
@@ -1588,3 +1620,80 @@ class WalkState(object):
     Walk = 1   # 移动
     Sneak = 2  # 潜行
     Sprint = 3    # 跑步
+
+class _MinecraftEnumModule:
+    ActorDamageCause = ActorDamageCause
+    AniCheatBlockBreak = AniCheatBlockBreak
+    AniCheatConsts = AniCheatConsts
+    AniCheatMove = AniCheatMove
+    AniCheatMoveRewind = AniCheatMoveRewind
+    AnimationModeType = AnimationModeType
+    ArmorSlotType = ArmorSlotType
+    AttrType = AttrType
+    AttributeBuffType = AttributeBuffType
+    BiomeType = BiomeType
+    BlockBreathability = BlockBreathability
+    BrewingStandSlotType = BrewingStandSlotType
+    ButtonEventType = ButtonEventType
+    ButtonState = ButtonState
+    CatVariantType = CatVariantType
+    Change = Change
+    ColorCode = ColorCode
+    CommandBlockType = CommandBlockType
+    ConditionType = ConditionType
+    ContainerType = ContainerType
+    EffectType = EffectType
+    EnchantSlotType = EnchantSlotType
+    EnchantType = EnchantType
+    EntityColorType = EntityColorType
+    EntityComponentType = EntityComponentType
+    EntityTeleportCause = EntityTeleportCause
+    EntityType = EntityType
+    Facing = Facing
+    FoxType = FoxType
+    GameDiffculty = GameDiffculty
+    GameType = GameType
+    GamepadKeyType = GamepadKeyType
+    HorseSpotType = HorseSpotType
+    HorseType = HorseType
+    InputMode = InputMode
+    InventoryType = InventoryType
+    ItemAcquisitionMethod = ItemAcquisitionMethod
+    ItemCategory = ItemCategory
+    ItemColor = ItemColor
+    ItemPosType = ItemPosType
+    ItemType = ItemType
+    ItemUseMethodEnum = ItemUseMethodEnum
+    KeyBoardType = KeyBoardType
+    MirrorModeType = MirrorModeType
+    OpenContainerId = OpenContainerId
+    OptionId = OptionId
+    OriginGUIName = OriginGUIName
+    PermissionChangeCause = PermissionChangeCause
+    PistonFacing = PistonFacing
+    PlayerActionType = PlayerActionType
+    PlayerExhauseRatioType = PlayerExhauseRatioType
+    PlayerUISlot = PlayerUISlot
+    RayFilterType = RayFilterType
+    RedstoneModeType = RedstoneModeType
+    RenderControllerArrayType = RenderControllerArrayType
+    RenderLayer = RenderLayer
+    SetBlockType = SetBlockType
+    ShapeType = ShapeType
+    SliderOptionId = SliderOptionId
+    StructureFeatureType = StructureFeatureType
+    TimeEaseType = TimeEaseType
+    TouchEvent = TouchEvent
+    TradeLevelType = TradeLevelType
+    TransferServerFailReason = TransferServerFailReason
+    UICategory = UICategory
+    UiBaseLayer = UiBaseLayer
+    UseAnimation = UseAnimation
+    VillagerClothingType = VillagerClothingType
+    VirtualWorldObjectType = VirtualWorldObjectType
+    WalkState = WalkState
+    PxActorFlag = PxActorFlag
+    PxEventMask = PxEventMask
+    PxForceMode = PxForceMode
+    PxRigidBodyFlag = PxRigidBodyFlag
+    PxRigidDynamicLockFlag = PxRigidDynamicLockFlag

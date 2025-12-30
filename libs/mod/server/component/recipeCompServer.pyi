@@ -28,6 +28,13 @@ class RecipeCompServer(BaseComponent):
         """
         pass
 
+    def GetRecipeByRecipeId(self, recipeId, tag="crafting_table"):
+        # type: (str, str) -> dict
+        """
+        根据配方id查询配方内容。
+        """
+        pass
+
     def GetRecipesByResult(self, resultIdentifier, tag, aux=0, maxResultNum=-1):
         # type: (str, str, int, int) -> List[dict]
         """

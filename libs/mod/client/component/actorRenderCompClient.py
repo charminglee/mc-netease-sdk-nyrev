@@ -392,8 +392,8 @@ class ActorRenderCompClient(BaseComponent):
         """
         pass
 
-    def AddActorBlockGeometry(self, geometryName, offset=(0, 0, 0), rotation=(0, 0, 0)):
-        # type: (str, Tuple[float, float, float], Tuple[float, float, float]) -> bool
+    def AddActorBlockGeometry(self, geometryName, offset=(0, 0, 0), rotation=(0, 0, 0), rotateFirst=False):
+        # type: (str, Tuple[float, float, float], Tuple[float, float, float], bool) -> bool
         """
         为实体添加方块几何体模型。
         """

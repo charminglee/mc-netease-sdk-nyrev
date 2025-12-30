@@ -19,6 +19,13 @@ class RotComponentClient(object):
         """
         pass
 
+    def SetRotForClientEntity(self, rot):
+        # type: (Tuple[float, float]) -> bool
+        """
+        设置客户端实体头与水平方向的俯仰角度和竖直方向的旋转角度
+        """
+        pass
+
     def GetBodyRot(self):
         # type: () -> float
         """

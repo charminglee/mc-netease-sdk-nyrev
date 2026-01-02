@@ -276,7 +276,7 @@ class PlayerCompServer(BaseComponent):
     def GetInteracteCenterOffset(self):
         # type: () -> Tuple[float, float, float]
         """
-        获取玩家服务端交互中心的偏移
+        获取玩家服务端交互中心的偏移，对应使用SetPickCenterOffset修改的偏移值
         """
         pass
 

@@ -22,15 +22,15 @@ except:
         LONG_DESCR = "Netease ModSDK completion library revised version by Nuoyan.\nSee https://github.com/charminglee/mc-netease-sdk-nyrev"
 
 
-MODSDK_VER = "3.7.0.70014"
+MODSDK_VER = "3.7.0.70028"
 LIB_ROOT = "libs"
 
 
 setup(
     name="mc-netease-sdk-nyrev",
-    # version=MODSDK_VER,
+    version=MODSDK_VER,
     # version=MODSDK_VER + "-6",
-    version=MODSDK_VER + "a1",
+    # version=MODSDK_VER + "a1",
     description="Netease ModSDK completion library revised version by Nuoyan",
     long_description=LONG_DESCR,
     long_description_content_type="text/markdown",

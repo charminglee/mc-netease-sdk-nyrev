@@ -1,0 +1,3 @@
+<component name="DependencyValidationManager">
+  <scope name="libs" pattern="file[mc-netease-sdk-nyrev]:libs//*" />
+</component>

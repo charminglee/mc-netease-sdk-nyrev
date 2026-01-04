@@ -45,6 +45,7 @@ pip install mc-netease-sdk-nyrev
 26. 优化`SelectionWheelUIControl`的类型注解。
 27. 修复`NativeScreenManager`的补全问题。
 28. 补充富文本控件实例`RichTextItem`相关补全。
+29. 补充`EngineCompFactoryServer.CreatePhysx()`的`entityId`参数。
 
 ### 其他修正
 

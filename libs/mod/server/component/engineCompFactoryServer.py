@@ -452,8 +452,8 @@ class EngineCompFactoryServer(object):
         """
         pass
 
-    def CreatePhysx(self):
-        # type: () -> PhysxComponentServer
+    def CreatePhysx(self, entityId):
+        # type: (str | int) -> PhysxComponentServer
         """
         创建Physx组件
         """

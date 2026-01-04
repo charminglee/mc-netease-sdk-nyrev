@@ -28,8 +28,8 @@ LIB_ROOT = "libs"
 
 setup(
     name="mc-netease-sdk-nyrev",
-    version=MODSDK_VER,
-    # version=MODSDK_VER + "-6",
+    # version=MODSDK_VER,
+    version=MODSDK_VER + "-1",
     # version=MODSDK_VER + "a1",
     description="Netease ModSDK completion library revised version by Nuoyan",
     long_description=LONG_DESCR,

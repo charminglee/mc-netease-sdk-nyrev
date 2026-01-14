@@ -6,7 +6,7 @@ from mod.common.component.baseComponent import BaseComponent
 
 class ActionCompServer(BaseComponent):
     def SetAttackTarget(self, targetId):
-        # type: (str) -> bool
+        # type: (str | None) -> bool
         """
         设置仇恨目标
         """

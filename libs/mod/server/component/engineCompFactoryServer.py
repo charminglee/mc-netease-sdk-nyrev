@@ -256,8 +256,8 @@ class EngineCompFactoryServer(object):
         """
         pass
 
-    def CreateDomainGame(self):
-        # type: () -> DomainGameCompServer
+    def CreateDomainGame(self, entityId):
+        # type: (str) -> DomainGameCompServer
         """
         创建山头服组件
         """
@@ -453,7 +453,7 @@ class EngineCompFactoryServer(object):
         pass
 
     def CreatePhysx(self, entityId):
-        # type: (str | int) -> PhysxComponentServer
+        # type: (str) -> PhysxComponentServer
         """
         创建Physx组件
         """

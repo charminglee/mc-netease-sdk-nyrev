@@ -676,13 +676,6 @@ def OpenFoldGui():
     """
     pass
 
-def OpenVoiceGui():
-    # type: () -> None
-    """
-    打开原版语音界面
-    """
-    pass
-
 def OpenReportGui():
     # type: () -> None
     """

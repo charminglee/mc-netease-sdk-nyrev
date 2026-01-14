@@ -43,7 +43,7 @@ class DimensionCompServer(BaseComponent):
         pass
 
     def RegisterEntityAOIEvent(self, dimension, name, aabb, ignoredEntities, entityType=1):
-        # type: (int, str, Tuple[float, float, float, float, float, float], List[str], int) -> bool
+        # type: (int, str, Tuple[float, float, float, float, float, float], List[str] | None, int) -> bool
         """
         注册感应区域，有实体进入时和离开时会有消息通知
         """

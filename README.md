@@ -9,6 +9,9 @@
 
 ## 安装
 
+> [!NOTE]  
+> 安装前请先卸载网易补全库。
+
 ```commandline
 pip install mc-netease-sdk-nyrev
 ```

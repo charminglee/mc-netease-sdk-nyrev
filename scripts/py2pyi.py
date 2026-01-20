@@ -20,7 +20,7 @@ def py2pyi(path):
         for fn in files:
             if fn != "__init__.py" and fn.endswith('.py'):
                 old_path = os.path.join(root, fn)
-                new_path = os.path.join(root, fn[:-3] + '.pyi')
+                new_path = os.path.join(root, fn[:fn.rindex(".")] + '.pyi')
                 os.rename(old_path, new_path)
 
 

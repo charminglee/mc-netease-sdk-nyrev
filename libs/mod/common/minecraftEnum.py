@@ -37,6 +37,7 @@ class ActorDamageCause(object):
     SonicBoom = "sonic_boom"				# 音波尖啸(监守者的远程攻击)
     Campfire = "campfire"					# 营火
     SoulCampfire = "soul_campfire"			# 灵魂营火(营火的灵魂火变种)
+    MaceSmash = "mace_smash"				# 重锤粉碎攻击
 
 class AniCheatBlockBreak(object):
     OpenSwitch = "server-authoritative-block-breaking"		# 是否开启破坏方块反作弊检查
@@ -186,6 +187,7 @@ class BiomeType(object):
     deep_dark = 190						    # 深暗之域
     mangrove_swamp = 191					# 红树林沼泽
     cherry_grove = 192						# 樱花树林
+    pale_garden = 193                       # 苍白花园
 
 class BlockBreathability(object):
     Solid = 0	# 固体
@@ -714,6 +716,7 @@ class EntityType(object):
     WindChargeProjectile = 143 | Projectile			# 风弹
     Bogged = 144 | SkeletonMonster					# 沼骸
     OminousItemSpawner = 145						# 不祥之物生成器
+    Creaking = 146 | Monster                        # 嘎枝
     CustomProjectile = 254 | Projectile				# 自定义抛射物
     EntityExtension = 255							# 实体扩展
     MAX_ENTITY_ID = 256								# 最大实体ID
@@ -1267,8 +1270,9 @@ class OpenContainerId(object):
     CreatedOutputContainer  = 61 # 创造输出位(目前无用)
     SmithingTableTemplateContainer = 62 # 锻造台模板位
     CrafterLevelEntityContainer = 63 # 合成器输入位
-    NeteaseContainer = 64  # 自定义方块容器槽位 (关闭后放入物品数据存于方块实体中)
-    NeteaseUIContainer = 65 # 网易UI槽位 (数据存于玩家中，关闭ui后放入物品返回背包)
+    DynamicContainer = 64  # 收纳袋槽位
+    NeteaseContainer = 65  # 自定义方块容器槽位 (关闭后放入物品数据存于方块实体中)
+    NeteaseUIContainer = 66 # 网易UI槽位 (数据存于玩家中，关闭ui后放入物品返回背包)
 
 class OptionId(object):
     Undefined = ""
@@ -1438,15 +1442,16 @@ class RenderLayer(object):
     DEFERRED_WATER = 4 # 原版延迟渲染水面
     BLEND = 5 # 半透明
     OPAQUE = 6 # 不透明
-    OPTIONAL_ALPHATEST = 7 # 局部全透明
-    ALPHATEST = 8 # 全透明
-    SEASONS_OPAQUE = 9 # 原版用于渲染不透明树叶
-    SEASONS_OPTIONAL_ALPHATEST = 10 # 原版用于渲染局部全透明方块
-    ALPHATEST_SINGLE_SIDE = 11 # 单面全透明
-    ENDPORTAL = 12 # 原版末地传送门
-    BARRIER = 13 # 原版屏障
-    LIGHT = 14 # 原版光源
-    STRUCTURE_VOID = 15
+    LIGHT_SOURCE = 7  # 原版发光方块
+    OPTIONAL_ALPHATEST = 8 # 局部全透明
+    ALPHATEST = 9 # 全透明
+    SEASONS_OPAQUE = 10 # 原版用于渲染不透明树叶
+    SEASONS_OPTIONAL_ALPHATEST = 11 # 原版用于渲染局部全透明方块
+    ALPHATEST_SINGLE_SIDE = 12 # 单面全透明
+    ENDPORTAL = 13 # 原版末地传送门
+    BARRIER = 14 # 原版屏障
+    LIGHT = 15 # 原版光源
+    STRUCTURE_VOID = 16
 
 class SetBlockType(object):
     MAN_MADE = 0       #人为

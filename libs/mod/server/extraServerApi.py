@@ -6,7 +6,7 @@ from typing import Generator
 from typing import Tuple
 from typing import List
 from typing import Any
-from typing import Callable
+from typing import Callable, Dict
 from mod.server.gamePlay.AI.customGoal import CustomGoal
 from mod.server.system.serverSystem import ServerSystem
 from typing import Type

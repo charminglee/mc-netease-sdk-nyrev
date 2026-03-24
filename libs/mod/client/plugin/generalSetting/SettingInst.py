@@ -2,6 +2,7 @@
 
 
 from typing import Callable, List, Any
+from typing import Dict
 
 
 class SettingInst(object):
@@ -22,7 +23,7 @@ class SettingInst(object):
         pass
 
     def AddToggle(self, key, name, callback, priority=None, default=False):
-        # type: (str, str, Callable, int | None, bool) -> 'SettingInst'
+        # type: (str, str, Callable[[...], Any], int | None, bool) -> 'SettingInst'
         """
         添加开关控件
 
@@ -35,7 +36,7 @@ class SettingInst(object):
         pass
 
     def AddSlider(self, key, name, step, callback, priority=None, default=0):
-        # type: (str, str, int, Callable, int | None, int) -> 'SettingInst'
+        # type: (str, str, int, Callable[[...], Any], int | None, int) -> 'SettingInst'
         """
         添加滑动条控件
 
@@ -49,7 +50,7 @@ class SettingInst(object):
         pass
 
     def AddDropDown(self, key, name, options, callback, priority=None, default=None):
-        # type: (str, str, List[str], Callable, int | None, str | None) -> 'SettingInst'
+        # type: (str, str, List[str], Callable[[...], Any], int | None, str | None) -> 'SettingInst'
         """
         添加下拉选项控件
 
@@ -63,7 +64,7 @@ class SettingInst(object):
         pass
 
     def AddInput(self, key, name, callback, priority=None, default=""):
-        # type: (str, str, Callable, int | None, str) -> 'SettingInst'
+        # type: (str, str, Callable[[...], Any], int | None, str) -> 'SettingInst'
         """
         添加输入框控件
 
@@ -72,6 +73,19 @@ class SettingInst(object):
         :param function callback: 控件的回调函数，定义：def callback(*args)
         :param int|None priority: 显示顺序优先级，默认根据添加顺序排列
         :param str default: 默认显示的文本
+        """
+        pass
+
+    def AddButton(self, key, name, buttonText, callback, priority=None):
+        # type: (str, str, str, Callable[[...], Any], int | None) -> 'SettingInst'
+        """
+        添加按钮控件
+
+        :param str key: 控件id
+        :param str name: 控件的文字描述
+        :param str buttonText: 按钮的文字描述
+        :param function callback: 控件的回调函数，定义：def callback(*args)
+        :param int|None priority: 显示顺序优先级，默认根据添加顺序排列
         """
         pass
 
@@ -112,6 +126,16 @@ class SettingInst(object):
 
         :param str key: 控件id
         :return int: 滑块的值
+        """
+        pass
+
+    def SetButtonText(self, key, value):
+        # type: (str, str) -> 'SettingInst'
+        """
+        设置按钮控件的文字
+
+        :param str key: 控件id
+        :param str value: 显示的文字
         """
         pass
 
@@ -186,7 +210,7 @@ class SettingInst(object):
         pass
 
     def GetFormatData(self):
-        # type: () -> dict[str, str | list]
+        # type: () -> Dict[str, str | list]
         """
         获取当前实例的结构化数据，控件数据根据priority的值升序排序
 
@@ -203,7 +227,7 @@ class SettingInst(object):
         pass
 
     def GetSettingsControl(self, key):
-        # type: (str) -> dict[str, Any]
+        # type: (str) -> Dict[str, Any]
         """获取控件的结构化数据"""
         pass
 

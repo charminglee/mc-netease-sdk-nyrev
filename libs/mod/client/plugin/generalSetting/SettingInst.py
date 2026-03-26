@@ -23,7 +23,7 @@ class SettingInst(object):
         pass
 
     def AddToggle(self, key, name, callback, priority=None, default=False):
-        # type: (str, str, Callable, int | None, bool) -> 'SettingInst'
+        # type: (str, str, Callable[[str, bool], Any], int | None, bool) -> 'SettingInst'
         """
         添加开关控件
 
@@ -36,7 +36,7 @@ class SettingInst(object):
         pass
 
     def AddSlider(self, key, name, step, callback, priority=None, default=0):
-        # type: (str, str, int, Callable, int | None, int) -> 'SettingInst'
+        # type: (str, str, int, Callable[[str, float], Any], int | None, int) -> 'SettingInst'
         """
         添加滑动条控件
 
@@ -50,7 +50,7 @@ class SettingInst(object):
         pass
 
     def AddDropDown(self, key, name, options, callback, priority=None, default=None):
-        # type: (str, str, List[str], Callable, int | None, str | None) -> 'SettingInst'
+        # type: (str, str, List[str], Callable[[str, int, str], Any], int | None, str | None) -> 'SettingInst'
         """
         添加下拉选项控件
 
@@ -64,7 +64,7 @@ class SettingInst(object):
         pass
 
     def AddInput(self, key, name, callback, priority=None, default=""):
-        # type: (str, str, Callable, int | None, str) -> 'SettingInst'
+        # type: (str, str, Callable[[str, str], Any], int | None, str) -> 'SettingInst'
         """
         添加输入框控件
 
@@ -77,7 +77,7 @@ class SettingInst(object):
         pass
 
     def AddButton(self, key, name, buttonText, callback, priority=None):
-        # type: (str, str, str, Callable, int | None) -> 'SettingInst'
+        # type: (str, str, str, Callable[[str, None], Any], int | None) -> 'SettingInst'
         """
         添加按钮控件
 

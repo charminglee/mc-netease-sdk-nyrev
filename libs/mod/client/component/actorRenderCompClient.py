@@ -525,3 +525,17 @@ class ActorRenderCompClient(BaseComponent):
         """
         pass
 
+    def GetQueryableBoneOrientation(self, boneName, isClientEntity=False):
+        # type: (str, bool) -> List[Tuple[float, float, float, float]]
+        """
+        获取实体的原版模型指定骨骼的骨骼矩阵信息。
+        """
+        pass
+
+    def ResetEntityExtraSkin(self, entityId, skinType=None):
+        # type: (str, int | None) -> bool
+        """
+        清除通过 actorRender 接口为实体（包括玩家）额外添加的皮肤渲染组件（几何体、动画、动画控制器、贴图、材质、渲染控制器），还原实体到原始渲染状态。
+        """
+        pass
+

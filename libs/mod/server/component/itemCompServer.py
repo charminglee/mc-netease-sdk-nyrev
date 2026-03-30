@@ -413,3 +413,17 @@ class ItemCompServer(BaseComponent):
         """
         pass
 
+    def GetPlayerFishHookEntity(self):
+        # type: () -> list
+        """
+        获取玩家钓鱼时候的鱼漂实体id
+        """
+        pass
+
+    def GetPlayerFishItem(self, getUserData=False):
+        # type: (bool) -> dict
+        """
+        获取玩家钓鱼时候的鱼竿物品字典
+        """
+        pass
+

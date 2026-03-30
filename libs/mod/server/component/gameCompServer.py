@@ -485,10 +485,10 @@ class GameComponentServer(BaseComponent):
         """
         pass
 
-    def EntityUseItemToPos(self, entityId, itemDict, pos, facing):
-        # type: (str, Dict[str, str | int | bool | list | dict | None], Tuple[int, int, int], Literal[0, 1, 2, 3, 4, 5] | int) -> Dict[str, str | int | bool | list | dict | None]
+    def UseItemToPos(self, itemDict, dimensionId, pos, facing=1):
+        # type: (dict, int, Tuple[int, int, int], int) -> dict
         """
-        模拟实体对某个坐标使用指定物品。
+        对某个方块使用指定物品。
         """
         pass
 

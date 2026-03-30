@@ -118,6 +118,13 @@ class CameraComponentClient(BaseComponent):
         """
         pass
 
+    def ResetCameraPos(self):
+        # type: () -> None
+        """
+        重置相机位置模式，使相机恢复跟随玩家。用于取消SetCameraPos设置的独立相机位置。
+        """
+        pass
+
     def SetCameraRotation(self, rot):
         # type: (Tuple[float, float, float]) -> bool
         """

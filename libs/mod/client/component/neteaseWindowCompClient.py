@@ -33,18 +33,3 @@ class NeteaseWindowCompClient(BaseComponent):
         获取当前模组的通用设置实例
         """
         pass
-
-    def OpenSettingUI(self):
-        # type: () -> bool
-        """
-        在模组信息界面中打开设置页面（此操作仅可访问本模组的配置选项）
-        """
-        pass
-
-    def CloseSettingUI(self):
-        # type: () -> bool
-        """
-        关闭模组信息界面
-        """
-        pass
-

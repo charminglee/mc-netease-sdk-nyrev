@@ -161,3 +161,87 @@ class ItemCompClient(BaseComponent):
         """
         pass
 
+    def BindItemToMinecraftModel(self, entityId, itemDict, boneName='root', isClientEntity=False, offset=(0, 0, 0), rotation=(0, 0, 0), scale=1.0):
+        # type: (str, dict, str, bool, Tuple[float, float, float], Tuple[float, float, float], float) -> int
+        """
+        将指定物品作为附作物动态挂接到实体原版模型上，在实体原版模型上渲染指定物品。
+        """
+        pass
+
+    def BindItemToSkeletonModel(self, entityId, itemDict, boneName='root', isClientEntity=False, offset=(0, 0, 0), rotation=(0, 0, 0), scale=1.0):
+        # type: (str, dict, str, bool, Tuple[float, float, float], Tuple[float, float, float], float) -> int
+        """
+        将指定物品作为附作物动态挂接到实体的网易版骨骼模型，在实体的网易版骨骼模型上指定骨骼渲染指定物品。
+        """
+        pass
+
+    def SetBindBoneForBindItem(self, entityId, itemModelId, boneName, isClientEntity=False):
+        # type: (str, int, str, bool) -> bool
+        """
+        改变实体上已绑定的物品附着物所绑定的骨骼，又或者移除该物品附着物。
+        """
+        pass
+
+    def GetBindBoneForBindItem(self, entityId, itemModelId, isClientEntity=False):
+        # type: (str, int, bool) -> str
+        """
+        查询获取实体上已绑定的物品附着物所绑定的骨骼名称。
+        """
+        pass
+
+    def SetBindItemRotation(self, entityId, itemModelId, rotation, isClientEntity=False):
+        # type: (str, int, Tuple[float, float, float], bool) -> bool
+        """
+        设置实体上的物品附着物相对骨骼的旋转角度。
+        """
+        pass
+
+    def SetBindItemOffset(self, entityId, itemModelId, offset, isClientEntity=False):
+        # type: (str, int, Tuple[float, float, float], bool) -> bool
+        """
+        设置实体上的物品附着物相对骨骼的位置偏移。
+        """
+        pass
+
+    def SetBindItemScale(self, entityId, itemModelId, scale, isClientEntity=False):
+        # type: (str, int, float, bool) -> bool
+        """
+        设置实体上的物品附着物的缩放比例。
+        """
+        pass
+
+    def GetBindItemRotation(self, entityId, itemModelId, isClientEntity=False):
+        # type: (str, int, bool) -> Tuple[float, float, float]
+        """
+        查询获取实体上的物品附着物相对骨骼的旋转角度。
+        """
+        pass
+
+    def GetBindItemOffset(self, entityId, itemModelId, isClientEntity=False):
+        # type: (str, int, bool) -> Tuple[float, float, float]
+        """
+        查询获取实体上的物品附着物相对骨骼的位置偏移。
+        """
+        pass
+
+    def GetBindItemScale(self, entityId, itemModelId, isClientEntity=False):
+        # type: (str, int, bool) -> float
+        """
+        查询获取实体上的物品附着物的缩放比例。
+        """
+        pass
+
+    def GetPlayerFishHookEntity(self):
+        # type: () -> list
+        """
+        获取玩家钓鱼时候的鱼漂实体id
+        """
+        pass
+
+    def GetPlayerFishItem(self, getUserData=False):
+        # type: (bool) -> dict
+        """
+        获取玩家钓鱼时候的鱼竿物品字典
+        """
+        pass
+

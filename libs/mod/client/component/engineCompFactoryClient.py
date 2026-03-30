@@ -42,6 +42,7 @@ from mod.client.component.neteaseWindowCompClient import NeteaseWindowCompClient
 from mod.client.component.configCompClient import ConfigCompClient
 from mod.client.component.playerCompClient import PlayerCompClient
 from mod.client.component.fogCompClient import FogCompClient
+from mod.client.component.fishingLineCompClient import FishingLineCompClient
 from mod.client.component.particleTransComp import ParticleTransComp
 from mod.client.component.textBoardCompClient import TextBoardComponentClient
 from mod.client.component.postProcessControlComp import PostProcessComponent
@@ -221,6 +222,13 @@ class EngineCompFactoryClient(object):
         # type: (str | int) -> EngineTypeComponentClient
         """
         创建engineType组件
+        """
+        pass
+
+    def CreateFishingLine(self, entityId):
+        # type: (str) -> FishingLineCompClient
+        """
+        创建fishingLine组件
         """
         pass
 

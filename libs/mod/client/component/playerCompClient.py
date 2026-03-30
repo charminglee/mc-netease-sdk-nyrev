@@ -181,3 +181,9 @@ class PlayerCompClient(BaseComponent):
         """
         pass
 
+    def GetPlayerIsFishing(self):
+        # type: () -> bool
+        """
+        获取玩家是否在钓鱼
+        """
+        pass

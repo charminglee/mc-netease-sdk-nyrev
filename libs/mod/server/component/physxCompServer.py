@@ -21,6 +21,27 @@ class PhysxComponentServer(BaseComponent):
         """
         pass
 
+    def AddCapsuleGeometry(self, localTransform, radius, halfHeight, staticFriction, dynamicFriction, restitution, eventMask=0, userData=None):
+        # type: (Tuple[float, float, float], float, float, float, float, float, int, str | None) -> bool
+        """
+        给自定义刚体创建胶囊形碰撞体
+        """
+        pass
+
+    def AddSphereGeometry(self, localTransform, radius, staticFriction, dynamicFriction, restitution, eventMask=0, userData=None):
+        # type: (Tuple[float, float, float], float, float, float, float, int, str | None) -> bool
+        """
+        给自定义刚体创建球形碰撞体
+        """
+        pass
+
+    def AddBoxTrigger(self, localTransform, halfX, halfY, halfZ, eventMask=0, userData=None):
+        # type: (Tuple[float, float, float], float, float, float, int, str | None) -> bool
+        """
+        给自定义刚体创建盒子形触发器
+        """
+        pass
+
     def SetRigidBodyFlag(self, flag, val):
         # type: (int, bool) -> bool
         """
@@ -60,6 +81,20 @@ class PhysxComponentServer(BaseComponent):
         # type: (Tuple[float, float, float], int) -> bool
         """
         对自定义刚体的质心添加力，对运动学刚体无效
+        """
+        pass
+
+    def AddForceAtPosLocal(self, force, mode, pos):
+        # type: (Tuple[float, float, float], int, Tuple[float, float, float]) -> bool
+        """
+        对自定义刚体的指定位置添加力，对运动学刚体无效
+        """
+        pass
+
+    def AddForceAtPos(self, force, mode, pos):
+        # type: (Tuple[float, float, float], int, Tuple[float, float, float]) -> bool
+        """
+        对自定义刚体的指定位置添加力，对运动学刚体无效
         """
         pass
 

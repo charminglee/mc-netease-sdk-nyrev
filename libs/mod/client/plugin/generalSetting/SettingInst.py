@@ -76,19 +76,6 @@ class SettingInst(object):
         """
         pass
 
-    def AddButton(self, key, name, buttonText, callback, priority=None):
-        # type: (str, str, str, Callable[[str, None], Any], int | None) -> 'SettingInst'
-        """
-        添加按钮控件
-
-        :param str key: 控件id
-        :param str name: 控件的文字描述
-        :param str buttonText: 按钮的文字描述
-        :param function callback: 控件的回调函数，定义：def callback(*args)
-        :param int|None priority: 显示顺序优先级，默认根据添加顺序排列
-        """
-        pass
-
     def GetToggleDefault(self, key):
         # type: (str) -> bool
         """
@@ -126,16 +113,6 @@ class SettingInst(object):
 
         :param str key: 控件id
         :return int: 滑块的值
-        """
-        pass
-
-    def SetButtonText(self, key, value):
-        # type: (str, str) -> 'SettingInst'
-        """
-        设置按钮控件的文字
-
-        :param str key: 控件id
-        :param str value: 显示的文字
         """
         pass
 

@@ -8,6 +8,7 @@ from mod.server.component.blockEntityCompServer import BlockEntityCompServer
 from mod.server.component.blockCompServer import BlockCompServer
 from mod.server.component.scaleCompServer import ScaleComponentServer
 from mod.server.component.gravityCompServer import GravityComponentServer
+from mod.server.component.fishingLineCompServer import FishingLineCompServer
 from mod.server.component.itemCompServer import ItemCompServer
 from mod.server.component.msgCompServer import MsgComponentServer
 from mod.server.component.posCompServer import PosComponentServer
@@ -323,6 +324,13 @@ class EngineCompFactoryServer(object):
         # type: (str | int) -> FeatureCompServer
         """
         创建feature组件
+        """
+        pass
+
+    def CreateFishingLine(self, entityId):
+        # type: (str) -> FishingLineCompServer
+        """
+        创建fishingLine组件
         """
         pass
 

@@ -73,19 +73,29 @@ class ArmorSlotType(object):
     FOOT = 3    # 鞋子
 
 class AttrType(object):
-    HEALTH = 0              # 生命值, 原版的值范围为[0,20]
-    SPEED = 1               # 移速, 原版的值范围为[0,+∞]
-    DAMAGE = 2              # 攻击力, 原版的值范围为[1,+∞], 默认最大值为1
-    UNDERWATER_SPEED = 3    # 水里的移速, 原版的值范围为[0,+∞]
-    HUNGER = 4              # 饥饿值, 原版的值范围为[0,20]
-    SATURATION = 5          # 饱和值, 原版的值范围为[0,20]
-    ABSORPTION = 6          # 伤害吸收生命值，详见备注, 原版的值范围为[0,16]
-    LAVA_SPEED = 7          # 岩浆里的移速, 原版的值范围为[0,+∞]
-    LUCK = 8                # 幸运值，原版的值范围为[-1024,1024]
-    FOLLOW_RANGE = 9		# 跟随方块数(一般指怪的仇恨范围), 原版值范围为[1,2024]，默认值为16
-    KNOCKBACK_RESISTANCE = 10	# 击退抵抗，原版值范围为[1,+∞]，默认最大值为1
-    JUMP_STRENGTH = 11		# 跳跃力(指骑乘后跳跃可跳跃的高度)，原版值范围为[0,+∞]
-    ARMOR = 12				# 护甲值，取决于身上穿戴的护甲总防御量和接口增加的额外护甲值。客户端无法获取接口增加的护甲值，建议开发者自行同步
+    HEALTH = 0                          # 生命值, 原版的值范围为[0,20]
+    SPEED = 1                           # 移速, 原版的值范围为[0,+∞]
+    DAMAGE = 2                          # 攻击力, 原版的值范围为[1,+∞], 默认最大值为1
+    UNDERWATER_SPEED = 3                # 水里的移速, 原版的值范围为[0,+∞]
+    HUNGER = 4                          # 饥饿值, 原版的值范围为[0,20]
+    SATURATION = 5                      # 饱和值, 原版的值范围为[0,20]
+    ABSORPTION = 6                      # 伤害吸收生命值，详见备注, 原版的值范围为[0,16]
+    LAVA_SPEED = 7                      # 岩浆里的移速, 原版的值范围为[0,+∞]
+    LUCK = 8                            # 幸运值，原版的值范围为[-1024,1024]
+    FOLLOW_RANGE = 9		            # 跟随方块数(一般指怪的仇恨范围), 原版值范围为[1,2024]，默认值为16
+    KNOCKBACK_RESISTANCE = 10	        # 击退抵抗，原版值范围为[1,+∞]，默认最大值为1
+    JUMP_STRENGTH = 11		            # 跳跃力(指骑乘后跳跃可跳跃的高度)，原版值范围为[0,+∞]
+    ARMOR = 12				            # 护甲值，取决于身上穿戴的护甲总防御量和接口增加的额外护甲值。客户端无法获取接口增加的护甲值，建议开发者自行同步。无法通过属性修饰符操作符接口进行操作。
+    ATTACK_KNOCKBACK = 13               # 生物的攻击造成的击退强度的增量
+    ATTACK_SPEED = 14                   # 玩家的攻击速度
+    EXPLOSION_KNOCKBACK_RESISTANCE = 15 # 生物对爆炸击退的抵抗强度
+    FLYING_SPEED = 16                   # 生物的飞行移动的速度
+    SNEAKING_SPEED = 17                 # 玩家的潜行时的速度乘数
+    MOVEMENT_EFFICIENCY = 18            # 生物对脚下方块影响移动效果的抵抗
+    WATER_MOVEMENT_EFFICIENCY = 19      # 生物对水影响移动效果的抵抗
+    BLOCK_BREAK_SPEED = 20              # 玩家破坏方块的速度乘数
+    MINING_EFFICIENCY = 21              # 玩家的挖掘速度增量
+    SUBMERGED_MINING_SPEED = 22         # 玩家浸没在水中时的挖掘速度乘数
 
 class AttributeBuffType(object):
     Hunger = 0                    # 饥饿
@@ -99,6 +109,21 @@ class AttributeBuffType(object):
     FatalPoison = 8               # 致命中毒
     SelfHeal = 9                  # 自愈
     SelfDestruct = 10             # 自毁
+
+class AttributeModifierOperation(object):
+    OperationAddition = 0		# 加法运算
+    OperationMultiplyBase = 1	# 基础乘法运算
+    OperationMultiplyTotal = 2	# 总值乘法运算
+    OperationCap = 3			# 上限运算
+    TotalOperations = 4			# 操作类型总数
+    OperationInvalid = 5		# 无效操作类型
+
+class AttributeOperands(object):
+    OperandMin = 0			# 最小值操作数
+    OperandMax = 1			# 最大值操作数
+    OperandCurrent = 2		# 当前值操作数
+    TotalOperands = 3		# 操作数总数
+    OperandInvalid = 4		# 无效操作数
 
 class BiomeType(object):
     ocean = 0								# 海洋

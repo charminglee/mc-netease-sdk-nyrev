@@ -97,3 +97,38 @@ class AttrCompServer(BaseComponent):
         """
         pass
 
+    def AddModifier(self, attrType, modifierId, amount, operation, operand):
+        # type: (int, str, float, int, int) -> bool
+        """
+        为指定生物增加属性修饰符
+        """
+        pass
+
+    def UpdateModifier(self, attrType, modifierId, amount, operation, operand):
+        # type: (int, str, float, int, int) -> bool
+        """
+        为指定生物更新属性修饰符
+        """
+        pass
+
+    def RemoveModifier(self, attrType, modifierId):
+        # type: (int, str) -> bool
+        """
+        为指定生物移除属性修饰符
+        """
+        pass
+
+    def HasModifier(self, attrType, modifierId):
+        # type: (int, str) -> bool
+        """
+        获取指定生物是否含有属性修饰符
+        """
+        pass
+
+    def GetAllModifiers(self, attrType):
+        # type: (int) -> List[dict]
+        """
+        获取指定生物的某属性所有属性修饰符
+        """
+        pass
+

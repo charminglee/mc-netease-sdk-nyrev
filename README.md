@@ -1,7 +1,7 @@
 <div align="center">
 
   # 网易我的世界 [ModSDK](https://mc.163.com/dev/index.html) 补全库修正版  
-  **已更新至 3.7 版本，支持 Python2 与 Python3**
+  **已更新至 3.8 版本，支持 Python2 与 Python3**
 
 </div>
 

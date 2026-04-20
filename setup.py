@@ -5,7 +5,7 @@
 #  ⠀
 #   Author: Nuoyan <https://github.com/charminglee>
 #   Email : 1279735247@qq.com
-#   Date  : 2026-3-31
+#   Date  : 2026-4-21
 #  ⠀
 # =================================================
 
@@ -22,7 +22,7 @@ except:
         LONG_DESCR = "Netease ModSDK completion library revised version by Nuoyan.\nSee https://github.com/charminglee/mc-netease-sdk-nyrev"
 
 
-MODSDK_VER = "3.8.0.75642"
+MODSDK_VER = "3.8.0.75795"
 LIB_ROOT = "libs"
 
 

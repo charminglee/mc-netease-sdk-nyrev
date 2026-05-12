@@ -29,35 +29,35 @@ class SettingInst(object):
 
         :param str key: 控件id
         :param str name: 控件的文字描述
-        :param function callback: 控件的回调函数，定义：def callback(*args)
+        :param function callback: 控件的回调函数，定义：def callback(key, value)，key为控件id，value为bool类型
         :param int|None priority: 显示顺序优先级，默认根据添加顺序排列
         :param bool default: 默认值
         """
         pass
 
     def AddSlider(self, key, name, step, callback, priority=None, default=0):
-        # type: (str, str, int, Callable[[str, float], Any], int | None, int) -> 'SettingInst'
+        # type: (str, str, int, Callable[[str, int], Any], int | None, int) -> 'SettingInst'
         """
         添加滑动条控件
 
         :param str key: 控件id
         :param str name: 控件的文字描述
         :param int step: 滑动条的最大值，范围：0~step
-        :param function callback: 控件的回调函数，定义：def callback(*args)
+        :param function callback: 控件的回调函数，定义：def callback(key, value)，key为控件id，value为int类型
         :param int|None priority: 显示顺序优先级，默认根据添加顺序排列
         :param int default: 默认值
         """
         pass
 
     def AddDropDown(self, key, name, options, callback, priority=None, default=None):
-        # type: (str, str, List[str], Callable[[str, int, str], Any], int | None, str | None) -> 'SettingInst'
+        # type: (str, str, List[str], Callable[[str, int], Any], int | None, str | None) -> 'SettingInst'
         """
         添加下拉选项控件
 
         :param str key: 控件id
         :param str name: 控件的文字描述
         :param list[str] options: 下拉选项列表
-        :param function callback: 控件的回调函数，定义：def callback(*args)
+        :param function callback: 控件的回调函数，定义：def callback(key, value)，key为控件id，value为选项索引int类型
         :param int|None priority: 显示顺序优先级，默认根据添加顺序排列
         :param str|None default: 默认选项，该值需在options中
         """
@@ -70,7 +70,7 @@ class SettingInst(object):
 
         :param str key: 控件id
         :param str name: 控件的文字描述
-        :param function callback: 控件的回调函数，定义：def callback(*args)
+        :param function callback: 控件的回调函数，定义：def callback(key, value)，key为控件id，value为str类型
         :param int|None priority: 显示顺序优先级，默认根据添加顺序排列
         :param str default: 默认显示的文本
         """
@@ -84,7 +84,7 @@ class SettingInst(object):
         :param str key: 控件id
         :param str name: 控件的文字描述
         :param str buttonText: 按钮的文字描述
-        :param function callback: 控件的回调函数，定义：def callback(*args)
+        :param function callback: 控件的回调函数，定义：def callback(key, value)，key为控件id，value为None
         :param int|None priority: 显示顺序优先级，默认根据添加顺序排列
         """
         pass
@@ -136,6 +136,96 @@ class SettingInst(object):
 
         :param str key: 控件id
         :return str: 显示的文本
+        """
+        pass
+
+    def GetButtonText(self, key):
+        # type: (str) -> str | None
+        """
+        获取按钮控件的文字
+
+        :param str key: 控件id
+        :return str|None: 按钮文字，控件不存在时返回 None
+        """
+        pass
+
+    def GetToggleValue(self, key):
+        # type: (str) -> bool | None
+        """
+        获取开关控件的当前值
+
+        :param str key: 控件id
+        :return bool|None: 开关状态，控件不存在时返回 None
+        """
+        pass
+
+    def GetSliderValue(self, key):
+        # type: (str) -> int | None
+        """
+        获取滑动条控件的当前值
+
+        :param str key: 控件id
+        :return int|None: 滑块的值，控件不存在时返回 None
+        """
+        pass
+
+    def GetDropDownValue(self, key):
+        # type: (str) -> str | None
+        """
+        获取下拉选项控件的当前选中文本
+
+        :param str key: 控件id
+        :return str|None: 选中的文本，控件不存在时返回 None
+        """
+        pass
+
+    def GetInputValue(self, key):
+        # type: (str) -> str | None
+        """
+        获取输入框控件的当前值
+
+        :param str key: 控件id
+        :return str|None: 输入的文本，控件不存在时返回 None
+        """
+        pass
+
+    def SetToggleValue(self, key, value):
+        # type: (str, bool) -> 'SettingInst'
+        """
+        设置开关控件的当前值，保存到本地存储，不会触发回调
+
+        :param str key: 控件id
+        :param bool value: 开关的值
+        """
+        pass
+
+    def SetSliderValue(self, key, value):
+        # type: (str, int) -> 'SettingInst'
+        """
+        设置滑动条控件的当前值，保存到本地存储，不会触发回调
+
+        :param str key: 控件id
+        :param int value: 滑块的值
+        """
+        pass
+
+    def SetDropDownValue(self, key, value):
+        # type: (str, int | str) -> 'SettingInst'
+        """
+        设置下拉选项控件的当前值，保存到本地存储，不会触发回调
+
+        :param str key: 控件id
+        :param str value: 选项文本，如果选项不在options中，则设置失败
+        """
+        pass
+
+    def SetInputValue(self, key, value):
+        # type: (str, str) -> 'SettingInst'
+        """
+        设置输入框控件的当前值，保存到本地存储，不会触发回调
+
+        :param str key: 控件id
+        :param str value: 输入的文本
         """
         pass
 

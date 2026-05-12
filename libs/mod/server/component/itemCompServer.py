@@ -336,21 +336,21 @@ class ItemCompServer(BaseComponent):
         """
         pass
 
-    def SetShearsDestoryBlockSpeed(self, blockName, speed):
+    def SetShearsDestroyBlockSpeed(self, blockName, speed):
         # type: (str, float) -> bool
         """
          设置剪刀对某一方块的破坏速度
         """
         pass
 
-    def CancelShearsDestoryBlockSpeed(self, blockName):
+    def CancelShearsDestroyBlockSpeed(self, blockName):
         # type: (str) -> bool
         """
          取消剪刀对某一方块的破坏速度设置
         """
         pass
 
-    def CancelShearsDestoryBlockSpeedAll(self):
+    def CancelShearsDestroyBlockSpeedAll(self):
         # type: () -> bool
         """
          取消剪刀对全部方块的破坏速度设置

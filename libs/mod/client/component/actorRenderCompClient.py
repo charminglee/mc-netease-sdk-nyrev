@@ -343,6 +343,13 @@ class ActorRenderCompClient(BaseComponent):
         """
         pass
 
+    def RemovePlayerAnimationFromState(self, animationControllerName, stateName, animationName):
+        # type: (str, str, str) -> bool
+        """
+        在玩家的动画控制器中的状态移除动画或者动画控制器
+        """
+        pass
+
     def AddActorScriptAnimate(self, actorIdentifier, animateName, condition='', autoReplace=False):
         # type: (str, str, str, bool) -> bool
         """

@@ -147,8 +147,8 @@ class ModelComponentClient(BaseComponent):
         """
         pass
 
-    def CreateFreeModel(self, modelName):
-        # type: (str) -> int
+    def CreateFreeModel(self, modelName, dimensionId=-1):
+        # type: (str, int) -> int
         """
         创建自由的模型（无需绑定Entity）
         """
@@ -214,6 +214,13 @@ class ModelComponentClient(BaseComponent):
         # type: (int, Tuple[float, float, float], Tuple[float, float, float]) -> bool
         """
         设置自由模型的包围盒
+        """
+        pass
+
+    def SetFreeModelDimensionId(self, modelId, dimensionId):
+        # type: (int, int) -> bool
+        """
+        设置自由模型的维度归属
         """
         pass
 
@@ -389,6 +396,41 @@ class ModelComponentClient(BaseComponent):
         # type: (int, str) -> List[str]
         """
         获取骨骼模型的正在使用的材质名称，也可获取骨骼模型中指定骨骼所使用的材质名称。如果获取指定骨骼所使用的材质，需要先在netease_model.json下设置"useSplitMeshes"字段为true。
+        """
+        pass
+
+    def SetFreeModelTexture(self, modelId, texturePath, slotIndex=0):
+        # type: (int, str, int) -> bool
+        """
+        动态设置自由模型(FreeModel)指定纹理槽位的贴图。路径相对于textures/models/。
+        """
+        pass
+
+    def SetGlobalIBLTexture(self, texturePath):
+        # type: (str) -> bool
+        """
+        设置全局IBL环境贴图，会自动应用到所有已注册的PBR FreeModel的TEXTURE_3槽位。
+        """
+        pass
+
+    def GetGlobalIBLTexture(self):
+        # type: () -> str
+        """
+        获取当前全局IBL环境贴图路径
+        """
+        pass
+
+    def CreatePbrFreeModel(self, modelName):
+        # type: (str) -> int
+        """
+        创建PBR自由模型。与CreateFreeModel相同，但会自动注册到全局IBL系统，
+        """
+        pass
+
+    def RemovePbrFreeModel(self, modelId):
+        # type: (int) -> bool
+        """
+        移除PBR自由模型，同时从全局IBL追踪列表中移除。
         """
         pass
 

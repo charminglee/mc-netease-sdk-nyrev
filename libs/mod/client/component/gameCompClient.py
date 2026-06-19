@@ -275,6 +275,20 @@ class GameComponentClient(BaseComponent):
         """
         pass
 
+    def SetActorPBRRestrictionEnabled(self, enable):
+        # type: (bool) -> bool
+        """
+        设置actor路径PBR限制开关
+        """
+        pass
+
+    def GetActorPBRRestrictionEnabled(self):
+        # type: () -> bool
+        """
+        获取actor路径PBR限制开关状态
+        """
+        pass
+
     def CanSee(self, fromId, targetId, viewRange=8.0, onlySolid=True, angleX=180.0, angleY=180.0):
         # type: (str, str, float, bool, float, float) -> bool
         """

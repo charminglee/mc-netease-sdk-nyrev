@@ -1,6 +1,7 @@
 ### Project
 *.zip
 /.token
+.idea/mc-netease-sdk-nyrev.iml
 
 
 ### Python template

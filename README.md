@@ -1,7 +1,7 @@
 <div align="center">
 
   # 网易我的世界 [ModSDK](https://mc.163.com/dev/index.html) 补全库修正版  
-  **已更新至 3.8 版本，支持 Python2 与 Python3**
+  **已更新至 3.9 版本，支持 Python2 与 Python3**
 
 </div>
 
@@ -10,7 +10,7 @@
 ## 安装
 
 > [!NOTE]  
-> 安装前请先卸载网易补全库。
+> 安装前请先卸载网易官方补全库：``pip uninstall mc-netease-sdk`` 。
 
 ```commandline
 pip install mc-netease-sdk-nyrev

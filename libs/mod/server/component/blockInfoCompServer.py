@@ -99,8 +99,8 @@ class BlockInfoComponentServer(BaseComponent):
         """
         pass
 
-    def GetBlockCollision(self, pos, dimensionId=-1):
-        # type: (Tuple[int, int, int], int) -> dict
+    def GetBlockCollision(self, pos, dimensionId=-1, getAll=False):
+        # type: (Tuple[int, int, int], int, bool) -> dict
         """
         获取某一位置方块当前collision的aabb
         """

@@ -414,7 +414,7 @@ class ItemCompServer(BaseComponent):
         pass
 
     def GetPlayerFishHookEntity(self):
-        # type: () -> list
+        # type: () -> List[str]
         """
         获取玩家钓鱼时候的鱼漂实体id
         """

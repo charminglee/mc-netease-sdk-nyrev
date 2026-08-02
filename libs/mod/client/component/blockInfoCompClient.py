@@ -13,8 +13,8 @@ class BlockInfoComponentClient(BaseComponent):
         """
         pass
 
-    def GetBlockCollision(self, pos):
-        # type: (Tuple[int, int, int]) -> dict
+    def GetBlockCollision(self, pos, getAll=False):
+        # type: (Tuple[int, int, int], bool) -> dict
         """
         获取指定位置方块当前collision的aabb
         """

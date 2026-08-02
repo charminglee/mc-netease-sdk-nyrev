@@ -56,8 +56,8 @@ class PhysxComponentServer(BaseComponent):
         """
         pass
 
-    def SetActorFlag(self, flag):
-        # type: (int) -> bool
+    def SetActorFlag(self, flag, val):
+        # type: (int, bool) -> bool
         """
         设置物理实体的行为开关
         """

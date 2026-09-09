@@ -12,35 +12,65 @@ class ScreenNode(object):
     def __init__(self, namespace, name, param=None):
         # type: (str, str, dict | None) -> None
         self.namespace = namespace
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.name = name
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.full_name = namespace + "." + name
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.screen_name = ""
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.component_path = ""
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.parent = None
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.children = []
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.visible = True
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.enable = True
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.removed = False
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.def_key = ""
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.org_key = ""
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.input_mode = 1
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._button_state = {}
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._uiId = -1
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._bindEntityId = None
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._bindOffset = (0, 1, 0)
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._bindAutoScale = 1
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._bindScaleRate = -1
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._bindDimension = -1
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._bindPosition = None
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._touchEvents = {}
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._hoverEvents = {}
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._cachePathToUIControl = {}
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.is_push_screen = False
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.touch_with_mouse = False
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.dirty = False
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.fresh_async = False
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._is_create_by_ui_preset = False
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self._origin_screen_visible = None
+        """ ``ScreenNode`` 内部属性，请勿修改，否则可能导致界面异常。 """
 
     def SetBindWorldPosition(self, dimension, position):
         # type: (int, Tuple[float, float, float]) -> bool

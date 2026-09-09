@@ -10,6 +10,7 @@ class ProgressBarUIControl(BaseUIControl):
         # type: (ScreenNode, str, str) -> None
         super(ProgressBarUIControl, self).__init__(screenNode, path)
         self.valueImagePath = valueImagePath # type: str
+        """ ``ProgressBarUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
 
     def SetValue(self, progress):
         # type: (float) -> None

@@ -11,16 +11,27 @@ class ButtonUIControl(BaseUIControl):
         # type: (ScreenNode, str) -> None
         super(ButtonUIControl, self).__init__(screenNode, path)
         self.buttonArgs = None                      # type: dict | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.buttonHoverArgs = None                 # type: dict | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonTouchUpCallback = None         # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonTouchDownCallback = None       # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonTouchCancelCallback = None     # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonTouchMoveCallback = None       # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonTouchMoveInCallback = None     # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonTouchMoveOutCallback = None    # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonScreenExitCallback = None      # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonHoverMoveInCallback = None     # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.onButtonHoverMoveOutCallback = None    # type: Callable[[dict], Any] | None
+        """ ``ButtonUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
 
     def AddTouchEventParams(self, args=None):
         # type: (dict | None) -> None

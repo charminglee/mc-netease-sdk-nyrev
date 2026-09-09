@@ -25,10 +25,15 @@ class BaseUIControl(object):
     def __init__(self, screenNode, path):
         # type: (ScreenNode, str) -> None
         self.mNode = screenNode # type: ScreenNode
+        """ ``BaseUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.mScreenName = ""   # type: str
+        """ ``BaseUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.mRootPath = ""     # type: str
+        """ ``BaseUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.mPath = path       # type: str
+        """ ``BaseUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
         self.ControlType = 0    # type: int
+        """ ``BaseUIControl`` 内部属性，请勿修改，否则可能导致界面异常。 """
 
     def SetPosition(self, pos):
         # type: (Tuple[float, float]) -> None

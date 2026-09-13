@@ -70,3 +70,7 @@ pip install mc-netease-sdk-nyrev
    https://mc.163.com/dev/mcmanual/mc-dev/mcdocs/1-ModAPI/%E6%8E%A5%E5%8F%A3/Api%E7%B4%A2%E5%BC%95%E8%A1%A8.html?key={function.name}&docindex=0&type=0
    ```
 4. 最后点击 OK（确定）即可。
+
+## 作者的其他项目
+
+- [nuoyanlib](https://github.com/charminglee/nuoyanlib) ：基于网易我的世界 ModSDK 的 Mod 开发工具库。

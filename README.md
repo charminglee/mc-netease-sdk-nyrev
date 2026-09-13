@@ -10,9 +10,12 @@
 ## 安装
 
 > [!NOTE]  
-> 安装前请先卸载网易官方补全库：``pip uninstall mc-netease-sdk`` 。
+> 安装前请先卸载网易官方补全库：
+> ```powershell
+> pip uninstall mc-netease-sdk
+> ```
 
-```commandline
+```powershell
 pip install mc-netease-sdk-nyrev
 ```
 

@@ -4,7 +4,7 @@
 from typing import List
 from mod.common.component.blockPaletteComp import BlockPaletteComponent
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple
+from typing import Tuple, Dict, Any
 
 
 class BlockCompClient(BaseComponent):
@@ -26,6 +26,13 @@ class BlockCompClient(BaseComponent):
         # type: (Tuple[int, int, int], Tuple[int, int, int], bool) -> BlockPaletteComponent
         """
         根据输入的两个位置创建并获取一个方块调色板，该接口会搜索这两个位置之间的所有方块创建方块调色板，方块调色板用于描述和记录世界中的多个方块的组合。这个方块调色板包含了这两个位置之间的所有方块及其相对位置。
+        """
+        pass
+
+    def LookupBlocksByBlockTag(self, blockTag):
+        # type: (str) -> List[Dict[str, Any]]
+        """
+        根据netease_tags中注册的方块tag名，查找该tag下所有方块，支持#引用的标签自动展开；同一tag名被多个模组注册时自动合并去重；未注册的原版tag可直接查询
         """
         pass
 

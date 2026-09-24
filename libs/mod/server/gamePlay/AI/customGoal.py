@@ -31,3 +31,7 @@ class CustomGoal(object):
     def GetArgs(self):
         # type: () -> dict
         pass
+
+    def OnArgsChanged(self, argsJson):
+        # type: (dict) -> None
+        pass

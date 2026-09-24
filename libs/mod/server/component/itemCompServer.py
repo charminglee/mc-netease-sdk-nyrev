@@ -3,7 +3,7 @@
 
 from typing import List
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Literal, Dict
+from typing import Tuple, Literal, Dict, Any
 
 
 class ItemCompServer(BaseComponent):
@@ -115,7 +115,14 @@ class ItemCompServer(BaseComponent):
     def GetItemTags(self, itemName, auxValue=0):
         # type: (str, int) -> List[str]
         """
-        获取物品在minecraft:tags中定义的tags列表
+        获取物品的tags列表，包含原版minecraft:tags中定义的tags，以及netease_tags中注册并挂载到物品上的自定义标签
+        """
+        pass
+
+    def LookupItemsByItemTag(self, itemTag):
+        # type: (str) -> List[Dict[str, Any]]
+        """
+        根据netease_tags中注册的物品tag名，查找该tag下所有物品，支持#引用的标签自动展开；同一tag名被多个模组注册时自动合并去重；未注册的原版tag可直接查询
         """
         pass
 

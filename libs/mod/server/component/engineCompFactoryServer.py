@@ -47,6 +47,7 @@ from mod.server.component.projectileCompServer import ProjectileComponentServer
 from mod.server.component.attrCompServer import AttrCompServer
 from mod.server.component.shareableCompServer import ShareableComponentServer
 from mod.server.component.itemBannedCompServer import ItemBannedCompServer
+from mod.server.component.lobbyGameCompServer import LobbyGameCompServer
 from mod.server.component.breathCompServer import BreathCompServer
 from mod.server.component.controlAiCompServer import ControlAiCompServer
 from mod.server.component.playerCompServer import PlayerCompServer
@@ -387,6 +388,13 @@ class EngineCompFactoryServer(object):
         # type: (str | int) -> ItemBannedCompServer
         """
         创建itembanned组件
+        """
+        pass
+
+    def CreateLobbyGame(self, entityId):
+        # type: (str) -> LobbyGameCompServer
+        """
+        创建联机大厅组件
         """
         pass
 

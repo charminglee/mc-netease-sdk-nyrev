@@ -48,6 +48,13 @@ class BlockInfoComponentClient(BaseComponent):
         """
         pass
 
+    def GetTextureAtlasUV(self, textureKey):
+        # type: (str) -> Tuple[float, float, float, float]
+        """
+        获取指定纹理在atlas.terrain图集中的UV坐标位置与尺寸信息
+        """
+        pass
+
     def GetDestroyTotalTime(self, blockName, itemName=None, miningArgs=None):
         # type: (str, str | None, Dict[str, int]) -> float
         """
@@ -255,6 +262,13 @@ class BlockInfoComponentClient(BaseComponent):
         # type: (str, int, Tuple[float, float, float]) -> bool
         """
         停止指定位置播放的方块被开始破坏时的粒子效果。
+        """
+        pass
+
+    def SpawnDestroyParticleEffect(self, name, aux, pos):
+        # type: (str, int, Tuple[float, float, float]) -> bool
+        """
+        在指定位置播放指定方块的破坏爆发粒子效果（一次性，强度与原版一致）。
         """
         pass
 

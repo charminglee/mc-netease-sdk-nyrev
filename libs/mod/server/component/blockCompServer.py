@@ -4,7 +4,7 @@
 from typing import List
 from mod.common.component.blockPaletteComp import BlockPaletteComponent
 from mod.common.component.baseComponent import BaseComponent
-from typing import Tuple, Dict
+from typing import Tuple, Dict, Any
 
 
 class BlockCompServer(BaseComponent):
@@ -47,6 +47,13 @@ class BlockCompServer(BaseComponent):
         # type: (BlockPaletteComponent, int, Tuple[int, int, int], int, int) -> bool
         """
         根据输入的方块调色板内容，将调色板内记录的所有方块设置为实际的方块。
+        """
+        pass
+
+    def LookupBlocksByBlockTag(self, blockTag):
+        # type: (str) -> List[Dict[str, Any]]
+        """
+        根据netease_tags中注册的方块tag名，查找该tag下所有方块，支持#引用的标签自动展开；同一tag名被多个模组注册时自动合并去重；未注册的原版tag可直接查询
         """
         pass
 

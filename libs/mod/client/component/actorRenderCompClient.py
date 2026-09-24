@@ -448,6 +448,13 @@ class ActorRenderCompClient(BaseComponent):
         """
         pass
 
+    def SetActorBlockGeometryRotationQuat(self, geometryName, quat=(0, 0, 0, 1)):
+        # type: (str, Tuple[float, float, float, float]) -> bool
+        """
+        使用四元数设置实体的方块几何体模型的旋转，避免欧拉角万向锁问题。
+        """
+        pass
+
     def EnableActorBlockGeometryTransparent(self, geometryName, enable):
         # type: (str, bool) -> bool
         """

@@ -272,3 +272,45 @@ class CameraComponentClient(BaseComponent):
         """
         pass
 
+    def GetWorldRayFromScreenPoint(self, screenX, screenY):
+        # type: (float, float) -> Dict[str, Tuple[float, float, float]]
+        """
+        将屏幕坐标转换为一条世界射线，可用于自定义拾取、瞄准辅助等玩法
+        """
+        pass
+
+    def WorldToScreenPoint(self, x, y, z):
+        # type: (float, float, float) -> Dict[str, float | bool]
+        """
+        将世界坐标转换为屏幕坐标，可用于UI指示箭头、血条跟随等玩法
+        """
+        pass
+
+    def GetViewMatrix(self):
+        # type: () -> Tuple[Tuple[float, float, float, float], Tuple[float, float, float, float], Tuple[float, float, float, float], Tuple[float, float, float, float]]
+        """
+        获取视图矩阵，为以相机位置为原点的相对空间视图矩阵（右手系），即仅描述相机朝向的旋转矩阵，不含相机位置平移，开发者可自行计算
+        """
+        pass
+
+    def GetProjectionMatrix(self):
+        # type: () -> Tuple[Tuple[float, float, float, float], Tuple[float, float, float, float], Tuple[float, float, float, float], Tuple[float, float, float, float]]
+        """
+        获取当前帧的相机投影矩阵，为标准透视投影矩阵，开发者可自行计算
+        """
+        pass
+
+    def GetNearFarPlane(self):
+        # type: () -> Tuple[float, float]
+        """
+        获取近远裁剪面距离
+        """
+        pass
+
+    def GetAspectRatio(self):
+        # type: () -> float
+        """
+        获取画面宽高比
+        """
+        pass
+
